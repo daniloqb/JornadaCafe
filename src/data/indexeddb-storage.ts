@@ -1,4 +1,5 @@
 import type { LocalStorage } from '../domain/local-storage';
+import { applyMutation, type CollectionData, type CollectionMutation } from '../domain/collection';
 
 export class IndexedDBStorage implements LocalStorage {
   readonly engine = 'indexeddb';
@@ -11,7 +12,7 @@ export class IndexedDBStorage implements LocalStorage {
     if (!globalThis.indexedDB) throw new Error('Este navegador não disponibiliza o IndexedDB.');
 
     this.database = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open(this.name, 1);
+      const request = indexedDB.open(this.name, 2);
       let settled = false;
       const fail = (error: unknown) => {
         settled = true;
@@ -23,6 +24,15 @@ export class IndexedDBStorage implements LocalStorage {
         if (!request.result.objectStoreNames.contains('metadata')) {
           request.result.createObjectStore('metadata');
         }
+        for (const name of ['coffees', 'packages', 'records', 'photos']) {
+          if (!request.result.objectStoreNames.contains(name)) request.result.createObjectStore(name, { keyPath: 'id' });
+        }
+        const metadata = request.transaction!.objectStore('metadata');
+        const version = metadata.get('schema-version');
+        version.onsuccess = () => {
+          if (version.result !== undefined && version.result !== '1') { request.transaction!.abort(); return; }
+          metadata.put('2', 'schema-version');
+        };
       };
       request.onblocked = () => fail(new Error('Feche outras abas deste aplicativo e tente novamente.'));
       request.onerror = () => fail(request.error ?? new Error('Falha ao abrir o armazenamento.'));
@@ -62,4 +72,60 @@ export class IndexedDBStorage implements LocalStorage {
     this.database?.close();
     this.database = undefined;
   }
+
+  async loadCollection(): Promise<CollectionData> {
+    return this.collectionTransaction();
+  }
+
+  async mutateCollection(mutation: CollectionMutation): Promise<void> {
+    await this.collectionTransaction(mutation);
+  }
+
+  private collectionTransaction(mutation?: CollectionMutation): Promise<CollectionData> {
+    if (!this.database) return Promise.reject(new Error('Armazenamento não inicializado.'));
+    return new Promise((resolve, reject) => {
+      const transaction = this.database!.transaction(['coffees', 'packages', 'records'], mutation ? 'readwrite' : 'readonly');
+      const data: CollectionData = { coffees: [], packages: [], records: [] };
+      let pending = 3;
+      let failure: unknown;
+      for (const name of ['coffees', 'packages', 'records'] as const) {
+        const request = transaction.objectStore(name).getAll();
+        request.onsuccess = () => {
+          Object.assign(data, { [name]: request.result });
+          if (--pending || !mutation) return;
+          try {
+            const next = applyMutation(data, mutation);
+            if (mutation.type === 'deleteCoffee') {
+              transaction.objectStore('coffees').delete(mutation.id);
+              data.packages.filter(p => p.coffeeId === mutation.id).forEach(p => transaction.objectStore('packages').delete(p.id));
+            } else if (mutation.type === 'deleteRecord') transaction.objectStore('records').delete(mutation.id);
+            else {
+              const name = mutation.type === 'coffee' ? 'coffees' : mutation.type === 'package' ? 'packages' : 'records';
+              transaction.objectStore(name).put(next[name].find(item => item.id === mutation.value.id));
+            }
+          } catch (error) { failure = error; transaction.abort(); }
+        };
+      }
+      transaction.oncomplete = () => resolve(data);
+      transaction.onerror = () => reject(failure ?? transaction.error ?? new Error('Falha ao ler a coleção.'));
+      transaction.onabort = () => reject(failure ?? transaction.error ?? new Error('Não foi possível salvar a coleção.'));
+    });
+  }
+
+  private photoOperation<T>(mode: IDBTransactionMode, operation: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+    if (!this.database) return Promise.reject(new Error('Armazenamento não inicializado.'));
+    return new Promise((resolve, reject) => {
+      const transaction = this.database!.transaction('photos', mode);
+      const request = operation(transaction.objectStore('photos'));
+      transaction.oncomplete = () => resolve(request.result);
+      transaction.onerror = () => reject(transaction.error ?? request.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Falha ao armazenar a fotografia.'));
+    });
+  }
+  async savePhoto(id: string, blob: Blob): Promise<void> { await this.photoOperation('readwrite', store => store.put({ id, blob })); }
+  async photoUrl(id: string): Promise<string | undefined> {
+    const photo = await this.photoOperation<{ id: string; blob: Blob } | undefined>('readonly', store => store.get(id));
+    return photo?.blob ? URL.createObjectURL(photo.blob) : undefined;
+  }
+  async deletePhoto(id: string): Promise<void> { await this.photoOperation('readwrite', store => store.delete(id)); }
 }

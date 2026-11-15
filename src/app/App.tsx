@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Coffee, Leaf, LockKeyhole } from 'lucide-react';
 import { LoadingIndicator, Notice } from '../components/ui';
-import { initializeStorage } from '../data/storage';
+import { useCollection } from '../data/CollectionContext';
 import { HomePage } from '../features/home/HomePage';
 import { CoffeesPage } from '../features/coffees/CoffeesPage';
 import { PreparePage } from '../features/prepare/PreparePage';
@@ -11,21 +11,26 @@ import { Navigation } from './Navigation';
 import { currentDestination } from './navigation';
 import { AppearanceControl } from '../theme/AppearanceControl';
 
-type StorageState = { status: 'loading' | 'ready' } | { status: 'error'; message: string };
-
 export function App() {
   const [active, setActive] = useState(currentDestination);
   const [search, setSearch] = useState('');
   const [view, setView] = useState<'grid' | 'list'>('grid');
-  const [storage, setStorage] = useState<StorageState>({ status: 'loading' });
-  const [attempt, setAttempt] = useState(0);
+  const { loading, error, warning, retry } = useCollection();
+  const [path, setPath] = useState(() => window.location.hash.replace(/^#/, '') || '/inicio');
   const main = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const positions = new Map<string, number>();
+    let previous = window.location.hash;
     function handleNavigation() {
+      positions.set(previous, window.scrollY);
+      previous = window.location.hash;
       setActive(currentDestination());
-      window.scrollTo(0, 0);
-      requestAnimationFrame(() => main.current?.querySelector('h1')?.focus({ preventScroll: true }));
+      setPath(window.location.hash.replace(/^#/, '') || '/inicio');
+      requestAnimationFrame(() => {
+        window.scrollTo(0, positions.get(previous) ?? 0);
+        [...(main.current?.querySelectorAll('h1') ?? [])].find(heading => heading.getClientRects().length)?.focus({ preventScroll: true });
+      });
     }
     window.addEventListener('hashchange', handleNavigation);
     return () => window.removeEventListener('hashchange', handleNavigation);
@@ -35,30 +40,20 @@ export function App() {
     document.title = `${({ inicio: 'Início', cafes: 'Meus Cafés', preparar: 'Preparar', jornada: 'Minha Jornada', descobertas: 'Minhas Descobertas' })[active]} · Minha Jornada pelo Café`;
   }, [active]);
 
-  useEffect(() => {
-    let cancelled = false;
-    setStorage({ status: 'loading' });
-    initializeStorage().then(() => {
-      if (!cancelled) setStorage({ status: 'ready' });
-    }).catch((error: unknown) => {
-      if (!cancelled) setStorage({ status: 'error', message: error instanceof Error ? error.message : 'Não foi possível abrir o armazenamento local.' });
-    });
-    return () => { cancelled = true; };
-  }, [attempt]);
-
   return <div className="app-shell">
     <a className="skip-link" href="#main-content" onClick={(event) => { event.preventDefault(); main.current?.focus(); }}>Pular para o conteúdo</a>
     <aside className="sidebar"><a href="#/inicio" className="brand" aria-label="Minha Jornada pelo Café — Início"><span className="brand-icon"><Coffee size={27} strokeWidth={1.4} aria-hidden="true" /></span><span>Minha Jornada<em>pelo Café</em></span></a><span className="sidebar-divider" /><span className="sidebar-label eyebrow">SEU ESPAÇO, SEU RITMO</span><Navigation active={active} /><div className="sidebar-bottom"><Leaf size={24} strokeWidth={1.2} aria-hidden="true" /><p>Entre um gole e outro,<br />um mundo para descobrir.</p><span>UM DIÁRIO FEITO DE CAFÉ.</span></div></aside>
     <div className="main-shell"><div className="topbar"><span>SEU DIÁRIO DE CAFÉS ESPECIAIS</span><AppearanceControl /></div>
       <main id="main-content" ref={main} tabIndex={-1}>
-        {storage.status === 'error' && <Notice title="O armazenamento local precisa de atenção" onRetry={() => setAttempt((value) => value + 1)}>{storage.message} Você pode explorar as áreas enquanto isso.</Notice>}
+        {error && <Notice title="O armazenamento local precisa de atenção" onRetry={retry}>{error} Você pode explorar as áreas enquanto isso.</Notice>}
+        {warning && <Notice title="Fotografia antiga">{warning}</Notice>}
         {active === 'inicio' && <HomePage />}
-        {active === 'cafes' && <CoffeesPage search={search} onSearch={setSearch} view={view} onView={setView} />}
+        <div hidden={active !== 'cafes'}><CoffeesPage path={active === 'cafes' ? path : '/cafes'} search={search} onSearch={setSearch} view={view} onView={setView} /></div>
         {active === 'preparar' && <PreparePage />}
         {active === 'jornada' && <JourneyPage />}
         {active === 'descobertas' && <DiscoveriesPage />}
       </main>
-      <footer className="app-footer"><span>Minha Jornada pelo Café <span className="footer-dot">·</span> Cada xícara conta uma história.</span><span>{storage.status === 'loading' ? <LoadingIndicator>Preparando seu espaço…</LoadingIndicator> : storage.status === 'ready' ? <span className="storage-ready" role="status"><LockKeyhole size={13} aria-hidden="true" />Armazenamento local pronto</span> : <span>Armazenamento indisponível</span>}</span></footer>
+      <footer className="app-footer"><span>Minha Jornada pelo Café <span className="footer-dot">·</span> Cada xícara conta uma história.</span><span>{loading ? <LoadingIndicator>Preparando seu espaço…</LoadingIndicator> : !error ? <span className="storage-ready" role="status"><LockKeyhole size={13} aria-hidden="true" />Armazenamento local pronto</span> : <span>Armazenamento indisponível</span>}</span></footer>
     </div>
   </div>;
 }

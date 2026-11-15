@@ -12,7 +12,7 @@ describe('armazenamento local', () => {
     await first.close();
     const reopened = new IndexedDBStorage(name);
     await validateStorage(reopened);
-    expect(await reopened.getMetadata('schema-version')).toBe('1');
+    expect(await reopened.getMetadata('schema-version')).toBe('2');
     expect(await reopened.getMetadata('test-value')).toBe('persistido');
     await reopened.close();
     indexedDB.deleteDatabase(name);
@@ -22,9 +22,9 @@ describe('armazenamento local', () => {
     const name = `jornada-${crypto.randomUUID()}`;
     const storage = new IndexedDBStorage(name);
     await storage.initialize();
-    await storage.setMetadata('schema-version', '2');
+    await storage.setMetadata('schema-version', '3');
     await expect(validateStorage(storage)).rejects.toThrow('não é compatível');
-    expect(await storage.getMetadata('schema-version')).toBe('2');
+    expect(await storage.getMetadata('schema-version')).toBe('3');
     await storage.close();
     indexedDB.deleteDatabase(name);
   });
