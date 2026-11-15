@@ -1,13 +1,13 @@
 import { ArrowRight, BookOpen, Coffee, Compass, Leaf, Sprout } from 'lucide-react';
 import { ActionLink, Card, EmptyState, PageHeader } from '../../components/ui';
-import ritual from '../../assets/coffee-ritual.svg';
+import { CoffeeRitual } from '../../assets/CoffeeRitual';
 
 export function HomePage() {
   return <>
     <PageHeader eyebrow="UM DIÁRIO, MUITAS POSSIBILIDADES" title="Sua jornada começa aqui." description="Um espaço para cultivar seu olhar, seu paladar e suas histórias com o café." />
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy"><span className="eyebrow"><span className="small-rule" /> O PRAZER ESTÁ NO CAMINHO</span><h2 id="hero-title">Uma xícara.<br />Infinitas descobertas.</h2><p>Desacelere. Sinta o aroma. Cada café é um convite para descobrir algo novo.</p><ActionLink href="#/preparar">Preparar um café</ActionLink><span className="hero-footnote"><Leaf size={14} aria-hidden="true" />No seu tempo, do seu jeito.</span></div>
-      <div className="hero-art"><img src={ritual} alt="Ilustração de um café sendo coado, com chaleira verde, xícara e um pequeno ramo sobre uma mesa de madeira." /><span className="illustration-caption">pequenos rituais, grandes encontros</span></div>
+      <div className="hero-art"><CoffeeRitual /><span className="illustration-caption">pequenos rituais, grandes encontros</span></div>
     </section>
     <section className="collection-summary" aria-label="Resumo da sua coleção">
       <div className="summary-intro"><span className="eyebrow">SEU UNIVERSO DO CAFÉ</span><span>Tudo começa com curiosidade.</span></div>

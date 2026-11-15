@@ -1,6 +1,6 @@
 # Minha Jornada pelo Café
 
-Fundação técnica e visual da **Fase 01**: um diário pessoal de cafés especiais, com funcionamento local e uma interface inspirada em cadernos, materiais naturais e no ritual do café.
+Fundação técnica e visual da **Fase 01**, com **Fase 01.1 — Tema Escuro**: um diário pessoal de cafés especiais, com funcionamento local e uma interface inspirada em cadernos, materiais naturais e no ritual do café.
 
 ## Executar no navegador
 
@@ -45,7 +45,7 @@ cd android
 
 No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/outputs/apk/debug/app-debug.apk`. Após alterações na interface, execute `npm run android:sync` antes de recompilar.
 
-As barras do sistema usam ícones escuros. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
+As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
 
 ## Escopo entregue
 
@@ -60,6 +60,19 @@ As barras do sistema usam ícones escuros. O Capacitor fornece os insets e o tem
 
 Não há autenticação, backend, sincronização, dados demonstrativos, cadastro, cronômetro ou receitas. Os espaços futuros estão identificados por texto, sem botões de cadastro inativos.
 
+## Aparência — Fase 01.1
+
+O seletor **Aparência**, no cabeçalho das cinco áreas, oferece **Claro**, **Escuro** e **Automático (sistema)**. Automático é o padrão inicial e acompanha `prefers-color-scheme`, inclusive quando o sistema muda durante o uso.
+
+- A escolha fica no `localStorage`, na chave `jornada-cafe:appearance`, sem tabelas, migrações ou dependências adicionais. Ela é restaurada pelo script inicial do HTML antes de renderizar a aplicação.
+- A troca aplica imediatamente os tokens de `src/theme/theme.css`, o `color-scheme` e a cor do navegador. Também preserva a área, a pesquisa e o estado da coleção. Abas da mesma origem acompanham alterações da preferência.
+- Se o navegador bloquear o armazenamento da preferência, o tema funciona na sessão atual e o seletor mostra um aviso acessível.
+- O modo escuro usa fundo café, superfícies marrons, texto creme, cobre nas ações e verde suave nos detalhes. As fontes, os layouts e as cinco áreas foram preservados. O texto secundário claro recebeu um pequeno ajuste de contraste.
+- A ilustração SVG original foi convertida no componente `src/assets/CoffeeRitual.tsx`, mantendo o desenho e permitindo herdar os tokens dos dois temas.
+- No Android, o `SystemBars` acompanha o tema ativo. Uma ponte local mínima (`AppearancePlugin`) ajusta apenas o fundo nativo atrás dos insets, inclusive em WebViews antigas. A janela e o splash iniciais acompanham a aparência do sistema; a preferência explícita passa a valer quando a interface inicializa. A ponte não salva preferências nem acessa o banco.
+
+Para experimentar no navegador, execute `npm run dev` e altere o seletor do cabeçalho. Para testar a atualização Android, execute `npm run android:run` ou sincronize e recompile o APK conforme as instruções acima.
+
 ## Organização
 
 ```text
@@ -70,7 +83,7 @@ src/
   domain/       Contrato de armazenamento e validação de versão
   data/         Adaptadores IndexedDB/SQLite e inicialização
   theme/        Tokens, tipografia e layout responsivo
-  assets/       Ilustração original em SVG
+  assets/       Ilustração SVG como componente React
 android/        Projeto nativo Capacitor
 public/         Favicon e licenças das fontes
 ```
@@ -94,7 +107,7 @@ Desenvolvimento: TypeScript 5.9, Vite 8, plugin React, Tailwind CSS 4 com plugin
 
 As fontes são distribuídas sob OFL-1.1; suas licenças estão em `public/licenses/`.
 
-## Verificações da entrega
+## Verificações da entrega — Fase 01
 
 Executadas em 15/11/2026:
 
@@ -113,8 +126,32 @@ Executadas em 15/11/2026:
 | Instalação no aparelho conectado | Aprovada: `adb install -r android/app/build/outputs/apk/debug/app-debug.apk` retornou `Success` |
 | Execução no aparelho | Pendente: inicialização do aplicativo e do SQLite nativo, navegação e áreas seguras ainda não verificadas |
 
-A instalação foi concluída em uma nova tentativa, após os bloqueios iniciais com `INSTALL_FAILED_USER_RESTRICTED`. O APK de desenvolvimento está instalado no aparelho conectado.
+A instalação da Fase 01 foi concluída em uma nova tentativa, após os bloqueios iniciais com `INSTALL_FAILED_USER_RESTRICTED`. Essa confirmação corresponde ao APK anterior à atualização de aparência.
 
 **Pendência:** abrir o aplicativo no aparelho e confirmar a inicialização do SQLite nativo, a navegação entre as cinco áreas e o respeito às áreas seguras. A instalação bem-sucedida não confirma essas verificações de execução. O build apresentou avisos do template/dependências sobre `flatDir`, ferramentas do SDK e stripping da biblioteca SQLCipher, sem impedir a compilação. A versão de produção assinada não faz parte desta fase.
+
+### Verificações da Fase 01.1
+
+Executadas em 15/11/2026 no build de produção:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript e build | Aprovados |
+| Temas claro e escuro | Cinco áreas revisadas visualmente em 390 px (smartphone) e 1440 px (desktop), sem rolagem horizontal |
+| Controle de aparência | Rótulo acessível, foco visível, área de toque de 44 px e verificação adicional em 320 px |
+| Preferência local | Preservada após recarga; troca de tema mantém a área e a pesquisa |
+| Automático | Padrão inicial, reação à mudança do sistema e restauração após recarga confirmados |
+| Inicialização sem tema incorreto | Tema escuro salvo e fundo correto confirmados com o bundle React temporariamente retido |
+| Armazenamento bloqueado e múltiplas abas | Troca na sessão com aviso acessível e sincronização entre abas confirmadas |
+| Contraste e avisos | Amostras de texto, navegação e botões acima de 4,5:1 nos dois temas; aviso de armazenamento revisado visualmente |
+| Capacitor e APK atualizado | Sincronização e `assembleDebug` aprovados |
+| Atualização no aparelho conectado | Aprovada: `adb install -r android/app/build/outputs/apk/debug/app-debug.apk` retornou `Success`, preservando os dados do aplicativo |
+| Correção da faixa de título Android | Temas sem barra de título e inicialização do splash corrigidos; APK recompilado, instalado e aberto a frio no aparelho. Hierarquia nativa confirma o WebView ocupando a janela sem barra de título |
+
+A verificação de navegador foi pontual, em uma pasta temporária, sem adicionar uma suíte de testes ao projeto. Não houve alterações no banco, nos modelos de domínio ou nas dependências.
+
+O APK da Fase 01.1 foi instalado com sucesso no aparelho conectado em 15/11/2026, como atualização da instalação existente.
+
+**Pendência Android da Fase 01.1:** verificar Claro/Escuro/Automático, persistência ao reabrir, mudanças do sistema, ícones e fundos das barras e áreas seguras. Conferir também o splash quando a preferência explícita difere do tema do sistema. A compilação, a instalação e a abertura a frio foram validadas após a remoção da faixa de título; os demais cenários de execução ainda não foram verificados nesta etapa.
 
 Documentação de referência: [Capacitor Android](https://capacitorjs.com/docs/android), [System Bars e áreas seguras](https://capacitorjs.com/docs/apis/system-bars), [SQLite Community](https://github.com/capacitor-community/sqlite) e [Tailwind com Vite](https://tailwindcss.com/docs/installation/using-vite).

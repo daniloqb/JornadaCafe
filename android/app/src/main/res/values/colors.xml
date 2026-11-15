@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#315344</color>
     <color name="colorAccent">#B77B4D</color>
     <color name="colorCream">#F6F2EA</color>
+    <color name="colorAppBackgroundLight">#F6F2EA</color>
+    <color name="colorAppBackgroundDark">#211B18</color>
+    <color name="colorWindowBackground">@color/colorAppBackgroundLight</color>
 </resources>
