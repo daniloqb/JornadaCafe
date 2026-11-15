@@ -1,3 +1,5 @@
+import { applyBrewingMutation, type BrewMethod, type BrewTechnique, type BrewRecipe, type BrewingMutation } from './brewing';
+
 export type RecordKind = 'producer' | 'property' | 'origin' | 'roaster';
 export const recordLabels: Record<RecordKind, string> = { producer: 'Produtor', property: 'Propriedade', origin: 'Origem', roaster: 'Torrefação' };
 export interface Entity { id: string; createdAt: string; updatedAt: string }
@@ -15,10 +17,10 @@ export interface CoffeePackage extends Entity {
   purchasedOn?: string; roastedOn?: string; openedOn?: string; lot?: string; price?: number;
   purchasedAt?: string; notes?: string; adjustments: StockAdjustment[];
 }
-export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[] }
+export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[] }
 export type CollectionMutation = { type: 'coffee'; value: Coffee } | { type: 'package'; value: CoffeePackage; reason?: string }
-  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string };
-export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [] });
+  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation;
+export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [] });
 export const normalizeText = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('pt-BR');
 export function newEntity(): Entity { const now = new Date().toISOString(); return { id: crypto.randomUUID(), createdAt: now, updatedAt: now }; }
 export const relationFields = { producerId: 'producer', propertyId: 'property', originId: 'origin', roasterId: 'roaster' } as const;
@@ -40,7 +42,9 @@ export function shelfCoffees(data: CollectionData) {
 
 /** Shared rules; both adapters apply these inside their write transaction. */
 export function applyMutation(data: CollectionData, mutation: CollectionMutation): CollectionData {
-  const next = { coffees: [...data.coffees], packages: [...data.packages], records: [...data.records] };
+  const brewing = applyBrewingMutation(data, mutation);
+  if (brewing) return brewing;
+  const next = { ...data, coffees: [...data.coffees], packages: [...data.packages], records: [...data.records] };
   const upsert = <T extends Entity>(items: T[], value: T) => {
     if (!value.id || !Number.isFinite(Date.parse(value.createdAt))) throw new Error('Registro sem identificação ou data válida.');
     const index = items.findIndex(item => item.id === value.id);
@@ -81,9 +85,24 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
   } else if (mutation.type === 'deleteRecord') {
     if (associatedCoffees(data, mutation.id).length) throw new Error('Este registro está em uso. Edite os cafés associados para desvincular ou substituir a referência antes de excluir.');
     next.records = next.records.filter(r => r.id !== mutation.id);
-  } else {
+  } else if (mutation.type === 'deleteCoffee') {
+    if (data.recipes.some(r => r.coffeeId === mutation.id)) throw new Error('Este café é referência de uma receita. Remova ou substitua a referência nas receitas e suas versões antes de excluir.');
     next.coffees = next.coffees.filter(c => c.id !== mutation.id);
     next.packages = next.packages.filter(p => p.coffeeId !== mutation.id);
   }
   return next;
+}
+
+export const collectionTables = ['coffees', 'packages', 'records', 'methods', 'techniques', 'recipes'] as const;
+export type CollectionTable = typeof collectionTables[number];
+/** Only changed entities are written, with shared validation inside the transaction. */
+export function collectionChanges(before: CollectionData, after: CollectionData) {
+  return collectionTables.flatMap(table => {
+    const previous = new Map<string, Entity>(before[table].map(item => [item.id, item]));
+    const current = new Map<string, Entity>(after[table].map(item => [item.id, item]));
+    return [
+      ...before[table].filter(item => !current.has(item.id)).map(item => ({ table, id: item.id, value: undefined as Entity | undefined })),
+      ...after[table].filter(item => previous.get(item.id) !== item).map(value => ({ table, id: value.id, value: value as Entity | undefined })),
+    ];
+  });
 }

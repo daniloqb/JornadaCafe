@@ -49,7 +49,7 @@ export function App() {
         {warning && <Notice title="Fotografia antiga">{warning}</Notice>}
         {active === 'inicio' && <HomePage />}
         <div hidden={active !== 'cafes'}><CoffeesPage path={active === 'cafes' ? path : '/cafes'} search={search} onSearch={setSearch} view={view} onView={setView} /></div>
-        {active === 'preparar' && <PreparePage />}
+        <div hidden={active !== 'preparar'}><PreparePage path={active === 'preparar' ? path : '/preparar'} /></div>
         {active === 'jornada' && <JourneyPage />}
         {active === 'descobertas' && <DiscoveriesPage />}
       </main>

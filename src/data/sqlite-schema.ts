@@ -8,3 +8,12 @@ export const sqliteVersion2 = [
   "UPDATE metadata SET value = '2' WHERE key = 'schema-version' AND value = '1';",
   "INSERT OR IGNORE INTO metadata (key, value) VALUES ('schema-version', '2');",
 ];
+
+export const sqliteVersion3 = [
+  'CREATE TABLE IF NOT EXISTS methods (id TEXT PRIMARY KEY NOT NULL, payload TEXT NOT NULL);',
+  'CREATE TABLE IF NOT EXISTS techniques (id TEXT PRIMARY KEY NOT NULL, method_id TEXT REFERENCES methods(id) ON DELETE RESTRICT, payload TEXT NOT NULL);',
+  `CREATE TABLE IF NOT EXISTS recipes (id TEXT PRIMARY KEY NOT NULL, family_id TEXT NOT NULL, version INTEGER NOT NULL CHECK(version > 0), previous_id TEXT REFERENCES recipes(id) ON DELETE RESTRICT, method_id TEXT NOT NULL REFERENCES methods(id) ON DELETE RESTRICT, technique_id TEXT REFERENCES techniques(id) ON DELETE RESTRICT, coffee_id TEXT REFERENCES coffees(id) ON DELETE RESTRICT, payload TEXT NOT NULL, UNIQUE(family_id, version));`,
+  'CREATE INDEX IF NOT EXISTS recipes_method ON recipes(method_id);',
+  'CREATE INDEX IF NOT EXISTS recipes_technique ON recipes(technique_id);',
+  "UPDATE metadata SET value = '3' WHERE key = 'schema-version' AND value = '2';",
+];

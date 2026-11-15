@@ -1,5 +1,5 @@
 import type { LocalStorage } from '../domain/local-storage';
-import { applyMutation, type CollectionData, type CollectionMutation } from '../domain/collection';
+import { applyMutation, emptyCollection, collectionTables, collectionChanges, type CollectionData, type CollectionMutation } from '../domain/collection';
 
 export class IndexedDBStorage implements LocalStorage {
   readonly engine = 'indexeddb';
@@ -12,7 +12,7 @@ export class IndexedDBStorage implements LocalStorage {
     if (!globalThis.indexedDB) throw new Error('Este navegador não disponibiliza o IndexedDB.');
 
     this.database = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open(this.name, 2);
+      const request = indexedDB.open(this.name, 3);
       let settled = false;
       const fail = (error: unknown) => {
         settled = true;
@@ -24,14 +24,14 @@ export class IndexedDBStorage implements LocalStorage {
         if (!request.result.objectStoreNames.contains('metadata')) {
           request.result.createObjectStore('metadata');
         }
-        for (const name of ['coffees', 'packages', 'records', 'photos']) {
+        for (const name of [...collectionTables, 'photos']) {
           if (!request.result.objectStoreNames.contains(name)) request.result.createObjectStore(name, { keyPath: 'id' });
         }
         const metadata = request.transaction!.objectStore('metadata');
         const version = metadata.get('schema-version');
         version.onsuccess = () => {
-          if (version.result !== undefined && version.result !== '1') { request.transaction!.abort(); return; }
-          metadata.put('2', 'schema-version');
+          if (version.result !== undefined && version.result !== '1' && version.result !== '2') { request.transaction!.abort(); return; }
+          metadata.put('3', 'schema-version');
         };
       };
       request.onblocked = () => fail(new Error('Feche outras abas deste aplicativo e tente novamente.'));
@@ -84,24 +84,20 @@ export class IndexedDBStorage implements LocalStorage {
   private collectionTransaction(mutation?: CollectionMutation): Promise<CollectionData> {
     if (!this.database) return Promise.reject(new Error('Armazenamento não inicializado.'));
     return new Promise((resolve, reject) => {
-      const transaction = this.database!.transaction(['coffees', 'packages', 'records'], mutation ? 'readwrite' : 'readonly');
-      const data: CollectionData = { coffees: [], packages: [], records: [] };
-      let pending = 3;
+      const transaction = this.database!.transaction([...collectionTables], mutation ? 'readwrite' : 'readonly');
+      const data = emptyCollection();
+      let pending = collectionTables.length;
       let failure: unknown;
-      for (const name of ['coffees', 'packages', 'records'] as const) {
+      for (const name of collectionTables) {
         const request = transaction.objectStore(name).getAll();
         request.onsuccess = () => {
           Object.assign(data, { [name]: request.result });
           if (--pending || !mutation) return;
           try {
             const next = applyMutation(data, mutation);
-            if (mutation.type === 'deleteCoffee') {
-              transaction.objectStore('coffees').delete(mutation.id);
-              data.packages.filter(p => p.coffeeId === mutation.id).forEach(p => transaction.objectStore('packages').delete(p.id));
-            } else if (mutation.type === 'deleteRecord') transaction.objectStore('records').delete(mutation.id);
-            else {
-              const name = mutation.type === 'coffee' ? 'coffees' : mutation.type === 'package' ? 'packages' : 'records';
-              transaction.objectStore(name).put(next[name].find(item => item.id === mutation.value.id));
+            for (const change of collectionChanges(data, next)) {
+              const store = transaction.objectStore(change.table);
+              if (change.value) store.put(change.value); else store.delete(change.id);
             }
           } catch (error) { failure = error; transaction.abort(); }
         };

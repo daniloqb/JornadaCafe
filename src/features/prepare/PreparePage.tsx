@@ -1,11 +1,38 @@
-import { Coffee, NotebookPen, Sprout } from 'lucide-react';
-import { Card, EmptyState, PageHeader } from '../../components/ui';
+import { useState } from 'react';
+import { BookOpen } from 'lucide-react';
+import { ActionLink, Card, EmptyState, LoadingIndicator, PageHeader, TextInput } from '../../components/ui';
+import { CoffeePhoto } from '../../components/CoffeePhoto';
+import { useCollection } from '../../data/CollectionContext';
+import { normalizeText } from '../../domain/collection';
+import { latestRecipes } from '../../domain/brewing';
+import { MethodForm, TechniqueForm } from './LibraryForms';
+import { RecipeForm } from './RecipeForm';
+import { MethodDetail, RecipeCards, RecipeDetail, TechniqueDetail } from './LibraryDetails';
 
-export function PreparePage() {
-  return <>
-    <PageHeader eyebrow="SEU PRÓXIMO RITUAL" title="Preparar" description="Um pouco de atenção, água quente e tempo para apreciar." />
-    <div className="intro-banner"><Sprout size={29} strokeWidth={1.3} aria-hidden="true" /><div><h2>O ritual começa antes da primeira gota.</h2><p>Este será seu espaço para transformar bons cafés em bons momentos.</p></div></div>
-    <div className="prepare-grid"><Card className="future-area"><span className="step-label">01 — O CAFÉ</span><Coffee size={30} strokeWidth={1.3} aria-hidden="true" /><h2>Qual café vai para a xícara?</h2><p>Seus cafés aparecerão aqui para você escolher o protagonista do preparo.</p><span className="coming-soon">Nas próximas fases</span></Card><Card className="future-area"><span className="step-label">02 — A RECEITA</span><NotebookPen size={30} strokeWidth={1.3} aria-hidden="true" /><h2>Encontre o seu jeito de preparar</h2><p>Um lugar para suas futuras receitas, proporções e métodos favoritos.</p><span className="coming-soon">Nas próximas fases</span></Card></div>
-    <EmptyState icon={Sprout} title="Estamos preparando este cantinho">Os preparos estarão disponíveis nas próximas fases.<br />Por enquanto, aproveite para conhecer sua nova jornada.</EmptyState>
-  </>;
+export function PreparePage({ path = '/preparar' }: { path?: string }) {
+  const { data, loading, error } = useCollection();
+  const [search, setSearch] = useState('');
+  const [, section = 'receitas', id, action] = path.split('/').filter(Boolean);
+  const kind = section === 'metodos' ? 'metodos' : section === 'tecnicas' ? 'tecnicas' : 'receitas';
+  const label = kind === 'metodos' ? 'método' : kind === 'tecnicas' ? 'técnica' : 'receita';
+  const root = `#/preparar/${kind}`;
+  if (loading) return <div className="collection-loading"><LoadingIndicator>Abrindo seu caderno de preparo…</LoadingIndicator></div>;
+  const method = data.methods.find(m => kind === 'metodos' && m.id === id);
+  const technique = data.techniques.find(t => kind === 'tecnicas' && t.id === id);
+  const recipe = data.recipes.find(r => r.id === id);
+  if (!error && id === 'novo' && kind === 'receitas') return <RecipeForm key="new-recipe" />;
+  if (!error && (id === 'novo' || (action === 'editar' && (method || technique)))) return <><a className="text-link" href={id === 'novo' ? root : `${root}/${id}`}>← Voltar à biblioteca</a><PageHeader eyebrow="CONHECIMENTO QUE ACOMPANHA O CAFÉ" title={`${id === 'novo' ? 'Cadastrar' : 'Editar'} ${label}`} description="Registre o essencial agora e acrescente detalhes quando quiser." /><Card className="form-card">{kind === 'metodos' ? <MethodForm key={id} existing={method} onSaved={saved => { window.location.hash = `/preparar/metodos/${saved}`; }} /> : <TechniqueForm key={id} existing={technique} onSaved={saved => { window.location.hash = `/preparar/tecnicas/${saved}`; }} />}</Card></>;
+  if (id && kind === 'receitas' && recipe) return action === 'editar' || action === 'nova-versao' ? <RecipeForm key={`${id}-${action}`} existing={recipe} newVersion={action === 'nova-versao'} /> : <RecipeDetail key={id} recipe={recipe} />;
+  if (id && kind === 'metodos' && method) return <MethodDetail key={id} method={method} />;
+  if (id && kind === 'tecnicas' && technique) return <TechniqueDetail key={id} technique={technique} />;
+  if (id) return <><PageHeader eyebrow="SEU CADERNO DE PREPARO" title="Registro indisponível" description="Este registro pode ter sido removido ou ainda não ter sido carregado." /><ActionLink href={root}>Voltar à biblioteca</ActionLink></>;
+  const term = normalizeText(search);
+  const sourceText = (sources: { title?: string; author?: string; notes?: string }[]) => sources.flatMap(s => [s.title, s.author, s.notes]).join(' ');
+  const techniqueText = (techniqueId?: string) => { const t = data.techniques.find(t => t.id === techniqueId); return t ? [t.name, t.creator, sourceText(t.sources)].join(' ') : ''; };
+  const matches = (text: string) => normalizeText(text).includes(term);
+  const recipes = latestRecipes(data.recipes).filter(r => matches([r.name, data.methods.find(m => m.id === r.methodId)?.name, techniqueText(r.techniqueId), r.source && sourceText([r.source])].join(' '))).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  const methods = data.methods.filter(m => matches([m.name, m.description, ...data.techniques.filter(t => t.methodId === m.id).map(t => techniqueText(t.id))].join(' '))).sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+  const techniques = data.techniques.filter(t => matches(techniqueText(t.id))).sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+  const count = kind === 'receitas' ? recipes.length : kind === 'metodos' ? methods.length : techniques.length;
+  return <><PageHeader eyebrow="SEU PRÓXIMO RITUAL" title="Preparar" description="Um caderno de receitas, métodos e técnicas para encontrar o seu jeito de preparar.">{!error && <ActionLink href={`${root}/novo`}>{kind === 'receitas' ? 'Criar receita' : `Cadastrar ${label}`}</ActionLink>}</PageHeader><nav className="collection-perspectives library-tabs" aria-label="Biblioteca de preparo">{[['receitas', 'Receitas'], ['metodos', 'Métodos'], ['tecnicas', 'Técnicas']].map(([key, title]) => <a key={key} href={`#/preparar/${key}`} aria-current={kind === key ? 'page' : undefined}>{title}</a>)}</nav><div className="collection-toolbar"><TextInput label="Pesquisar na biblioteca" placeholder="Nome, criador, canal ou fonte…" value={search} onChange={e => setSearch(e.target.value)} /></div><p className="collection-label">{count} {count === 1 ? label : kind === 'receitas' ? 'receitas' : kind === 'metodos' ? 'métodos' : 'técnicas'}{term && ' na pesquisa'}</p>{count ? kind === 'receitas' ? <RecipeCards recipes={recipes} /> : <div className="library-grid">{kind === 'metodos' ? methods.map(m => <a className="card library-card" key={m.id} href={`#/preparar/metodos/${m.id}`}>{m.photoId && <CoffeePhoto id={m.photoId} name={m.name} subject="Método" />}<span className="eyebrow">MÉTODO</span><h2>{m.name}</h2>{m.description && <p>{m.description}</p>}<small>{data.techniques.filter(t => t.methodId === m.id).length} técnicas · {latestRecipes(data.recipes).filter(r => r.methodId === m.id).length} receitas</small></a>) : techniques.map(t => <a className="card library-card" key={t.id} href={`#/preparar/tecnicas/${t.id}`}><span className="eyebrow">{data.methods.find(m => m.id === t.methodId)?.name || 'TÉCNICA'}</span><h2>{t.name}</h2>{t.creator && <p>Criador: {t.creator}</p>}{t.sources.length > 0 && <p>Fontes: {t.sources.map(s => s.author || s.title).filter(Boolean).join(' · ') || `${t.sources.length} referências`}</p>}<small>{latestRecipes(data.recipes).filter(r => r.techniqueId === t.id).length} receitas</small></a>)}</div> : <EmptyState icon={BookOpen} title={term ? 'Nenhum resultado por aqui' : 'Seu caderno começa com uma ideia'}>{term ? 'Tente outro nome, criador, canal ou fonte.' : `Cadastre ${kind === 'receitas' ? 'uma receita com seu método e suas etapas' : kind === 'metodos' ? 'o primeiro método da sua biblioteca' : 'uma técnica e registre onde você a aprendeu'}.`}</EmptyState>}</>;
 }

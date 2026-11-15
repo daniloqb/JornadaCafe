@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import { emptyCollection, type Coffee, type CollectionData, type CollectionMutation } from '../domain/collection';
+import type { BrewMethod } from '../domain/brewing';
 import type { LocalStorage } from '../domain/local-storage';
 import { initializeStorage } from './storage';
 
@@ -8,6 +9,8 @@ interface CollectionContextValue {
   retry: () => void; mutate: (mutation: CollectionMutation) => Promise<void>;
   saveCoffee: (coffee: Coffee, photo?: Blob | null) => Promise<void>;
   deleteCoffee: (id: string) => Promise<void>;
+  saveMethod: (method: BrewMethod, photo?: Blob | null) => Promise<void>;
+  deleteMethod: (id: string) => Promise<void>;
 }
 const CollectionContext = createContext<CollectionContextValue | null>(null);
 export function useCollection() { const value = useContext(CollectionContext); if (!value) throw new Error('Coleção indisponível.'); return value; }
@@ -59,5 +62,18 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
     await mutate({ type: 'deleteCoffee', id });
     await cleanPhoto(photoId);
   }
-  return <CollectionContext.Provider value={{ data, storage, loading, error, warning, retry: () => setAttempt(v => v + 1), mutate, saveCoffee, deleteCoffee }}>{children}</CollectionContext.Provider>;
+  async function saveMethod(method: BrewMethod, photo?: Blob | null) {
+    if (!storage) throw new Error('Armazenamento indisponível.');
+    const oldPhoto = data.methods.find(m => m.id === method.id)?.photoId;
+    const photoId = photo ? crypto.randomUUID() : photo === null ? undefined : method.photoId;
+    if (photo && photoId) await storage.savePhoto(photoId, photo);
+    try { await mutate({ type: 'method', value: { ...method, photoId } }); }
+    catch (reason) { if (photo && photoId) await cleanPhoto(photoId); throw reason; }
+    if (oldPhoto && oldPhoto !== photoId) await cleanPhoto(oldPhoto);
+  }
+  async function deleteMethod(id: string) {
+    const photoId = data.methods.find(m => m.id === id)?.photoId;
+    await mutate({ type: 'deleteMethod', id }); await cleanPhoto(photoId);
+  }
+  return <CollectionContext.Provider value={{ data, storage, loading, error, warning, retry: () => setAttempt(v => v + 1), mutate, saveCoffee, deleteCoffee, saveMethod, deleteMethod }}>{children}</CollectionContext.Provider>;
 }

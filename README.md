@@ -1,6 +1,6 @@
 # Minha Jornada pelo Café
 
-**Fase 02 — Meus Cafés, Produtores, Origens e Pacotes**, sobre a fundação das Fases 01 e 01.1. Uma coleção pessoal de cafés especiais com armazenamento local, estoque por pacote e temas claro, escuro e automático. Versão atual: **0.2.0**.
+**Fase 03 — Métodos, Técnicas e Receitas**, preservando as Fases 01, 01.1 e 02. Uma coleção pessoal de cafés especiais e uma biblioteca de preparo com armazenamento local, estoque por pacote e temas claro, escuro e automático. Versão atual: **0.3.0**.
 
 ## Executar no navegador
 
@@ -15,7 +15,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # Nove verificações pontuais de persistência e domínio
+npm test            # 14 verificações pontuais de persistência e domínio
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```
@@ -47,6 +47,25 @@ No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/ou
 
 As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
 
+## Escopo entregue — Fase 03
+
+A área **Preparar** abre nas receitas e oferece as perspectivas **Receitas**, **Métodos** e **Técnicas**, sem alterar as cinco áreas principais.
+
+- Cadastro, consulta e edição de métodos, com descrição, observações e imagem opcional. Métodos e técnicas podem ser criados dentro do formulário de receita.
+- Técnicas com método opcional, criador original, princípio, orientações e notas pessoais. Várias fontes podem registrar separadamente título, canal/autor/publicação, link e observações. O autor de uma fonte não é tratado como criador da técnica.
+- Pesquisa sem distinção de acentos por nome, criador, canal ou fonte. As receitas também são encontradas pelas referências de suas técnicas. Fichas de métodos e técnicas mostram os registros associados.
+- Receitas com método obrigatório, técnica e café de referência opcionais, dose e água em gramas, proporção calculada, temperatura, moagem, moedor, filtro, tempo estimado, instruções e fonte adicional. O café é uma sugestão e não exige estoque.
+- O cálculo pela proporção desejada só altera a água quando o usuário escolhe **Aplicar cálculo à água total**. As etapas permanecem para conferência.
+- Etapas ordenadas de despejo, espera, ação manual e finalização. Água adicionada e acumulada são distintas e recalculadas de forma consistente, inclusive após mover ou remover etapas. O acumulado final deve corresponder à água total para salvar.
+- Início previsto em segundos **desde o início do preparo** e duração prevista **da etapa** são campos independentes e opcionais. O avanço pode ser manual, por duração definida ou por condição observável descrita pelo usuário. Tempos indicativos não implicam avanço por tempo.
+- **Corrigir esta versão** mantém a identificação e o número. **Criar nova versão** preserva a anterior, com parâmetros e etapas próprios, número sequencial, relação com a versão-base e nota opcional. A biblioteca prioriza a versão mais recente; o histórico permite consultar e corrigir as anteriores.
+- Exclusões confirmadas e protegidas: métodos e técnicas em uso não podem ser excluídos. Um café usado como referência também exige desvinculação nas receitas e suas versões. Uma versão que é base de versões posteriores deve ser mantida até remover suas descendentes.
+- Links HTTP/HTTPS abrem somente pela ação **Abrir referência**. Não há integração com YouTube nem busca automática de informações.
+
+Nenhum exemplo é inserido automaticamente. Os modelos permitem cadastrar os cinco despejos de 60 g, os despejos de 75/175/125 g e os três de 125 g, sem impor tempos, temperaturas ou moagem. A referência ambígua de 1:40 pode ficar nas observações até ser esclarecida.
+
+Não há cronômetro, execução guiada, registro de preparos, desconto de estoque ou avaliação sensorial. A estrutura ordenada de etapas e os parâmetros de cada versão ficam disponíveis para uma futura cópia no registro de preparo da Fase 04. Nenhuma dependência foi adicionada nesta fase.
+
 ## Escopo entregue — Fase 02
 
 - Cadastro e edição progressivos: somente o nome do café é obrigatório. Fotografia, torrefação, descrição, produção, origem e características são opcionais.
@@ -61,7 +80,7 @@ As barras do sistema usam ícones escuros no tema claro e claros no tema escuro.
 - Exclusão de café exige confirmação e informa a remoção de pacotes, histórico e fotografia. Referências de produção/origem em uso não podem ser excluídas: primeiro é necessário desvincular ou substituir nos cafés.
 - As cinco áreas principais, a identidade editorial, as fontes e os três modos de aparência foram preservados. A barra nativa de título Android continua removida.
 
-Receitas, preparações, cronômetro, avaliações sensoriais, descobertas e experiências da jornada permanecem para fases futuras. Não há autenticação, nuvem, mapas, pesquisa externa nem dados demonstrativos inseridos no aplicativo.
+Receitas foram acrescentadas na Fase 03. Preparações realizadas, cronômetro, avaliações sensoriais, descobertas e experiências da jornada permanecem para fases futuras. Não há autenticação, nuvem, mapas, pesquisa externa nem dados demonstrativos inseridos no aplicativo.
 
 ## Aparência — Fase 01.1
 
@@ -83,8 +102,8 @@ src/
   app/          Estrutura principal e navegação
   components/   Interface compartilhada, formulários, diálogo e fotografia
   features/     home, coffees, prepare, journey, discoveries
-  domain/       Café, pacote, registros relacionados e regras de estoque/exclusão
-  data/         Adaptadores, migrações, coleção compartilhada e fotografias
+  domain/       Coleção, biblioteca de preparo, etapas, versões e regras de integridade
+  data/         Adaptadores, migrações, coleção/biblioteca compartilhadas e fotografias
   theme/        Tokens, tipografia e layout responsivo
   assets/       Ilustração SVG como componente React
 android/        Projeto nativo Capacitor
@@ -98,14 +117,24 @@ As telas usam `CollectionContext`, sem conhecer SQL, object stores ou caminhos n
 - **Café:** identidade do produto, com UUID, datas de criação/atualização, campos opcionais, referências relacionadas, favorito e indicação de já experimentado. Pode existir sem pacote.
 - **Pacote:** UUID e referência obrigatória ao café, pesos, dados da compra e histórico de correções. O estoque é sempre calculado pela soma dos pesos restantes; não há indicador independente nem desconto automático.
 - **Registros relacionados:** produtores, propriedades, origens e torrefações têm UUIDs próprios e um tipo explícito, nome, geografia e observações opcionais. São persistidos no conjunto `records`, mantendo relações distintas no café.
-- **Navegador:** IndexedDB `minha-jornada-pelo-cafe`, versão física **2**, com `metadata`, `coffees`, `packages`, `records` e `photos`. Fotografias são Blobs separados dos registros de domínio. Escritas e exclusões relacionadas aguardam o commit da transação.
-- **Android:** SQLite `minha_jornada_pelo_cafe`, `user_version` **2**, com `metadata`, `coffees`, `packages` e `records`. As colunas relacionais têm chaves estrangeiras e os pesos têm restrições SQL. Os atributos opcionais e o histórico de correção ficam no payload JSON de cada registro, sem imagens embutidas. Operações de coleção são serializadas e transacionais.
+- **Navegador:** IndexedDB `minha-jornada-pelo-cafe`, versão física **3**, com `metadata`, `coffees`, `packages`, `records`, `photos`, `methods`, `techniques` e `recipes`. Fotografias são Blobs separados dos registros de domínio. Escritas e exclusões relacionadas aguardam o commit da transação.
+- **Android:** SQLite `minha_jornada_pelo_cafe`, `user_version` **3**, com `metadata`, `coffees`, `packages`, `records`, `methods`, `techniques` e `recipes`. As colunas relacionais têm chaves estrangeiras e os pesos têm restrições SQL. Os atributos opcionais e o histórico de correção ficam no payload JSON de cada registro, sem imagens embutidas. Operações de coleção são serializadas e transacionais.
 
 #### Migrações da Fase 02
 
-O IndexedDB evolui de 1 para 2 por `onupgradeneeded`, acrescentando os object stores na transação de atualização. O SQLite usa `addUpgradeStatement` do plugin nativo para evoluir seu próprio `user_version`; novas instalações também recebem o esquema completo. Os mecanismos são independentes, embora ambos cheguem ao número 2 nesta entrega.
+O IndexedDB evolui de 1 para 2 por `onupgradeneeded`, acrescentando os object stores na transação de atualização. O SQLite usa `addUpgradeStatement` do plugin nativo para evoluir seu próprio `user_version`; novas instalações também recebem o esquema completo. Os mecanismos são independentes, embora ambos tenham chegado ao número 2 naquela entrega.
 
-A chave lógica `metadata.schema-version` passa de `1` para `2`. Os demais metadados são preservados. Bancos existentes não são apagados nem recriados. Versões não suportadas são recusadas; falhas mostram aviso e nova tentativa. Não há fallback em memória. A preferência `jornada-cafe:appearance` permanece no `localStorage` e não participa da migração do banco.
+Na Fase 02, a chave lógica `metadata.schema-version` passou de `1` para `2`. Os demais metadados são preservados. Bancos existentes não são apagados nem recriados. Versões não suportadas são recusadas; falhas mostram aviso e nova tentativa. Não há fallback em memória. A preferência `jornada-cafe:appearance` permanece no `localStorage` e não participa da migração do banco.
+
+#### Migração e entidades da Fase 03
+
+O IndexedDB evolui de **2 para 3**, acrescentando `methods`, `techniques` e `recipes` na transação de atualização. O SQLite recebe as três tabelas pelo upgrade nativo para `user_version = 3`, com chaves estrangeiras para método, técnica, café de referência e versão-base. O par família/versão é único. A chave lógica `metadata.schema-version` passa a `3`; os dados e metadados anteriores permanecem. Instalações da Fase 01 também podem migrar diretamente, e novas instalações recebem o esquema completo.
+
+- **Método:** UUID, datas, nome e detalhes opcionais, com imagem pelo mesmo armazenamento local usado para fotografias.
+- **Técnica:** UUID, datas, método opcional e fontes incorporadas ao seu payload, cada uma com UUID estável. Criador e apresentador são campos separados.
+- **Receita:** um registro por versão, com UUID próprio, `familyId`, número de versão e `previousVersionId`. Os parâmetros, a fonte adicional e as etapas estruturadas ficam no payload de cada versão. Cada etapa tem UUID, ordem, pesos, tempos e condição de avanço; não há tabelas de execução de preparos.
+
+As validações de referências, versões e etapas são compartilhadas pelos adaptadores e executadas dentro de suas transações. O SQLite também aplica as restrições relacionais em suas colunas. A aparência continua no `localStorage`, fora da migração. Fotografias existentes e pesos de pacotes não são modificados pela biblioteca.
 
 #### Fotografias locais
 
@@ -117,11 +146,42 @@ Um backup futuro precisará incluir os Blobs/arquivos referenciados junto ao ban
 
 ## Dependências
 
-Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, única dependência direta adicionada nesta fase para as fotografias nativas.
+Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, dependência direta adicionada na Fase 02 para as fotografias nativas. A Fase 03 não acrescentou dependências.
 
 Desenvolvimento: TypeScript 5.9, Vite 8, Tailwind CSS 4, Capacitor CLI, Vitest 5 e fake-indexeddb. O teste pontual das instruções SQL utiliza `node:sqlite`, incluído no Node.js. As versões resolvidas ficam em `package-lock.json`. Playwright é usado apenas em uma pasta temporária de validação, sem dependência ou suíte adicional no projeto.
 
 As fontes são distribuídas sob OFL-1.1; suas licenças estão em `public/licenses/`.
+
+## Verificações da entrega — Fase 03
+
+Executadas em 15/11/2026, com dados temporários em um perfil isolado do Chrome:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript e build de produção | Aprovados |
+| Vitest | 14 testes aprovados no total; cinco novos testes pontuais para cálculos, integridade, versões e migrações |
+| Métodos e técnicas | Cadastro dentro da receita, edição de método, criador distinto do canal, fonte com link e proteção de método em uso aprovados |
+| Receitas e etapas | Três distribuições de referência cadastradas manualmente; proporção, edição por acumulado, condições observáveis e etapas sem água aprovadas |
+| Edição e versões | Correção mantém versão 1; nova versão preserva a anterior e seus pesos, com histórico acessível |
+| Persistência no navegador | Métodos, técnicas, fontes, receitas e etapas recuperados após recarga; pesquisa por canal e criador aprovada; sem erros de execução |
+| Migração IndexedDB | 1 → 3 e 2 → 3 verificadas; café, pacote, foto e metadados anteriores preservados; preferência escura mantida |
+| Migração SQLite | Instruções SQL 2 → 3 verificadas com SQLite local: preservação de estoque, referências e unicidade de versões |
+| Temas e responsividade | Listagens, fichas e editor em claro/escuro, em 390 e 1440 px; editor também em 320 px, sem rolagem horizontal |
+| Android 0.3.0 | Sincronização, `assembleDebug` e instalação como atualização aprovados (`adb install -r`: `Success`) |
+| Migração SQLite no aparelho | Plugin confirmou 2 → 3; metadados e preferência de aparência preservados. A base do aparelho estava sem cafés/pacotes antes da atualização |
+| Cadastro Android | Método com imagem privada, técnica com criador distinto do canal, fonte com link, receita de 25 g / 375 g e etapas de 75/175/125 g aprovados |
+| Versões e reabertura Android | Versões 1 e 2 recuperadas após encerrar e reabrir; distribuição original e alterada preservadas, imagem recuperada e proteção de exclusão de método em uso confirmada |
+| Limpeza da validação nativa | Somente receitas, técnica, método e imagem temporários removidos; estado anterior e aparência mantidos |
+
+A conferência de navegador utilizou Playwright apenas em `/tmp`, sem adicionar dependências nem testes de componentes ao projeto. Os exemplos ficaram somente no perfil de validação, sem popular a instalação do usuário. Os avisos Gradle de `flatDir` não impediram a compilação.
+
+O APK da Fase 03 foi instalado e executado no aparelho conectado em 15/11/2026. A validação ocorreu no próprio WebView e usou os plugins SQLite e Filesystem nativos. Também foi exercitada a troca Claro/Escuro, restaurando a preferência anterior ao concluir.
+
+**Pendências manuais Android:** conferir o seletor visual de imagens com arquivos reais, a abertura de referências no navegador/YouTube e barras/recortes em outros aparelhos. O arquivo de teste foi fornecido ao campo de seleção durante a validação; isso confirma otimização, gravação e recuperação da imagem, sem exercitar a interface da galeria do sistema.
+
+Para executar no navegador, use `npm run dev` e abra a URL indicada, normalmente `http://127.0.0.1:5173`. Para instalar e abrir no Android, com o aparelho conectado, use `npm run android:run`. O APK de desenvolvimento fica em `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+Não houve commits, pushes ou início da Fase 04.
 
 ## Verificações da entrega — Fase 02
 
@@ -150,7 +210,7 @@ O APK atualizado fica em `android/app/build/outputs/apk/debug/app-debug.apk`. Pa
 5. Feche e reabra para conferir dados e foto. Verifique Claro/Escuro/Automático.
 6. Confira a confirmação de exclusão e a proteção dos registros relacionados em uso.
 
-Não foram adicionadas funcionalidades da Fase 03 nem executados commits ou pushes.
+Na entrega da Fase 02, ainda não haviam sido adicionadas as funcionalidades da Fase 03. Não foram executados commits ou pushes.
 
 **Pendências de validação manual:** testar o seletor visual da galeria Android com fotografias reais e diferentes formatos, além de barras/recortes e splash em outros aparelhos ou WebViews. A validação automatizada nativa forneceu o arquivo de teste ao campo de seleção e confirmou sua gravação/recuperação no diretório privado. Backup e APK de produção assinado não fazem parte desta fase.
 
