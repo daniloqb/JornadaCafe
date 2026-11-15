@@ -72,7 +72,7 @@ describe('biblioteca de preparo', () => {
       await expect(local.mutateCollection({ type: 'deleteRecipe', id: recipe.id })).rejects.toThrow('posteriores');
     } finally { await local.close(); }
   });
-  it('migra IndexedDB 2 → 3 preservando café, pacote, foto e metadados', async () => {
+  it('migra IndexedDB 2 → 4 preservando café, pacote, foto e metadados', async () => {
     const name = `legacy2-${crypto.randomUUID()}`;
     const coffee = { ...newEntity(), name: 'Existente', tried: true, favorite: true, photoId: crypto.randomUUID() };
     const pack = { ...newEntity(), coffeeId: coffee.id, initialWeight: 250, remainingWeight: 80, adjustments: [] };

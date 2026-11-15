@@ -16,11 +16,11 @@ export interface LocalStorage {
 export async function validateStorage(storage: LocalStorage): Promise<void> {
   await storage.initialize();
   const version = await storage.getMetadata('schema-version');
-  if (version !== '3') {
+  if (version !== '4') {
     throw new Error('Esta versão do armazenamento não é compatível com o aplicativo.');
   }
-  await storage.setMetadata('schema-version', '3');
-  if (await storage.getMetadata('schema-version') !== '3') {
+  await storage.setMetadata('schema-version', '4');
+  if (await storage.getMetadata('schema-version') !== '4') {
     throw new Error('Não foi possível verificar o armazenamento local.');
   }
 }

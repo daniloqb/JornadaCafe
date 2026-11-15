@@ -1,7 +1,7 @@
 import { CapacitorSQLite, SQLiteConnection, type SQLiteDBConnection } from '@capacitor-community/sqlite';
 import type { LocalStorage } from '../domain/local-storage';
-import { applyMutation, emptyCollection, collectionTables, type CollectionData, type CollectionMutation } from '../domain/collection';
-import { sqliteVersion2, sqliteVersion3 } from './sqlite-schema';
+import { applyMutation, emptyCollection, collectionTables, collectionChanges, type CollectionData, type CollectionMutation } from '../domain/collection';
+import { sqliteVersion2, sqliteVersion3, sqliteVersion4 } from './sqlite-schema';
 import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 
@@ -21,17 +21,17 @@ export class SQLiteStorage implements LocalStorage {
 
   async initialize(): Promise<void> {
     if (this.database) return;
-    await this.connections.addUpgradeStatement(DATABASE, [{ toVersion: 2, statements: sqliteVersion2 }, { toVersion: 3, statements: sqliteVersion3 }]);
+    await this.connections.addUpgradeStatement(DATABASE, [{ toVersion: 2, statements: sqliteVersion2 }, { toVersion: 3, statements: sqliteVersion3 }, { toVersion: 4, statements: sqliteVersion4 }]);
     const consistent = (await this.connections.checkConnectionsConsistency()).result;
     const exists = (await this.connections.isConnection(DATABASE, false)).result;
     const database = consistent && exists
       ? await this.connections.retrieveConnection(DATABASE, false)
-      : await this.connections.createConnection(DATABASE, false, 'no-encryption', 3, false);
+      : await this.connections.createConnection(DATABASE, false, 'no-encryption', 4, false);
     try {
       await database.open();
       await database.execute('PRAGMA foreign_keys = ON;', false);
-      // New databases start at user_version 3, so also install the schema on first creation.
-      await database.execute([...sqliteVersion2, ...sqliteVersion3].join('\n'));
+      // New databases start at user_version 4, so also install the schema on first creation.
+      await database.execute([...sqliteVersion2, ...sqliteVersion3, ...sqliteVersion4].join('\n'));
       this.database = database;
     } catch (error) {
       await this.connections.closeConnection(DATABASE, false).catch(() => undefined);
@@ -75,7 +75,29 @@ export class SQLiteStorage implements LocalStorage {
       try {
         const data = await this.readCollection();
         const next = applyMutation(data, mutation);
-        if (mutation.type === 'deleteCoffee') {
+        if (['startSession', 'checkpoint', 'discardSession', 'finishPreparation'].includes(mutation.type)) {
+          for (const change of collectionChanges(data, next)) {
+            if (!change.value) await database.run(`DELETE FROM ${change.table} WHERE id = ?;`, [change.id], false);
+            else if (change.table === 'packages') {
+              const packet = next.packages.find(p => p.id === change.id)!;
+              await database.run('UPDATE packages SET remaining_weight=?,payload=? WHERE id=?;', [packet.remainingWeight, JSON.stringify(packet), packet.id], false);
+            } else await database.run(`INSERT INTO ${change.table} (id,payload) VALUES (?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload;`, [change.id, JSON.stringify(change.value)], false);
+          }
+        } else if (mutation.type === 'importReference') {
+          // Dependency order comes from collectionTables: methods, techniques, then recipes.
+          for (const change of collectionChanges(data, next)) {
+            if (change.table === 'methods') {
+              const value = next.methods.find(v => v.id === change.id)!;
+              await database.run('INSERT INTO methods (id,payload) VALUES (?,?);', [value.id, JSON.stringify(value)], false);
+            } else if (change.table === 'techniques') {
+              const value = next.techniques.find(v => v.id === change.id)!;
+              await database.run('INSERT INTO techniques (id,method_id,payload) VALUES (?,?,?);', [value.id, value.methodId ?? null, JSON.stringify(value)], false);
+            } else if (change.table === 'recipes') {
+              const value = next.recipes.find(v => v.id === change.id)!;
+              await database.run('INSERT INTO recipes (id,family_id,version,previous_id,method_id,technique_id,coffee_id,payload) VALUES (?,?,?,?,?,?,?,?);', [value.id, value.familyId, value.version, value.previousVersionId ?? null, value.methodId, value.techniqueId ?? null, value.coffeeId ?? null, JSON.stringify(value)], false);
+            }
+          }
+        } else if (mutation.type === 'deleteCoffee') {
           await database.run('DELETE FROM packages WHERE coffee_id = ?;', [mutation.id], false);
           await database.run('DELETE FROM coffees WHERE id = ?;', [mutation.id], false);
         } else if (mutation.type === 'deleteRecord') await database.run('DELETE FROM records WHERE id = ?;', [mutation.id], false);
@@ -88,7 +110,7 @@ export class SQLiteStorage implements LocalStorage {
         } else if (mutation.type === 'package') {
           const packet = next.packages.find(p => p.id === mutation.value.id)!;
           await database.run('INSERT INTO packages (id,coffee_id,initial_weight,remaining_weight,payload) VALUES (?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET initial_weight=excluded.initial_weight,remaining_weight=excluded.remaining_weight,payload=excluded.payload;', [packet.id, packet.coffeeId, packet.initialWeight, packet.remainingWeight, JSON.stringify(packet)], false);
-        }        else if (mutation.type === 'method') {
+        } else if (mutation.type === 'method') {
           const value = next.methods.find(v => v.id === mutation.value.id)!;
           await database.run('INSERT INTO methods (id,payload) VALUES (?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload;', [value.id, JSON.stringify(value)], false);
         } else if (mutation.type === 'technique') {
@@ -97,7 +119,7 @@ export class SQLiteStorage implements LocalStorage {
         } else if (mutation.type === 'recipe') {
           const value = next.recipes.find(v => v.id === mutation.value.id)!;
           await database.run('INSERT INTO recipes (id,family_id,version,previous_id,method_id,technique_id,coffee_id,payload) VALUES (?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET method_id=excluded.method_id,technique_id=excluded.technique_id,coffee_id=excluded.coffee_id,payload=excluded.payload;', [value.id, value.familyId, value.version, value.previousVersionId ?? null, value.methodId, value.techniqueId ?? null, value.coffeeId ?? null, JSON.stringify(value)], false);
-        } else {
+        } else if (mutation.type === 'deleteMethod' || mutation.type === 'deleteTechnique' || mutation.type === 'deleteRecipe') {
           const table = mutation.type === 'deleteMethod' ? 'methods' : mutation.type === 'deleteTechnique' ? 'techniques' : 'recipes';
           await database.run(`DELETE FROM ${table} WHERE id = ?;`, [mutation.id], false);
         }

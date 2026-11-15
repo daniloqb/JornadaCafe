@@ -1,8 +1,9 @@
 import type { CollectionData, Entity } from './collection';
 
-export interface BrewMethod extends Entity { name: string; description?: string; photoId?: string; notes?: string }
+export interface ReferenceOrigin { referenceKey?: string }
+export interface BrewMethod extends Entity, ReferenceOrigin { name: string; description?: string; photoId?: string; notes?: string }
 export interface SourceReference { id: string; title?: string; author?: string; url?: string; notes?: string }
-export interface BrewTechnique extends Entity {
+export interface BrewTechnique extends Entity, ReferenceOrigin {
   name: string; methodId?: string; creator?: string; sources: SourceReference[];
   principle?: string; guidance?: string; notes?: string;
 }
@@ -14,7 +15,7 @@ export interface RecipeStep {
   startSeconds?: number; durationSeconds?: number;
   advance: AdvanceCondition; condition?: string; notes?: string;
 }
-export interface BrewRecipe extends Entity {
+export interface BrewRecipe extends Entity, ReferenceOrigin {
   familyId: string; version: number; previousVersionId?: string; versionNote?: string;
   name: string; methodId: string; techniqueId?: string; coffeeId?: string;
   dose: number; water: number; temperature?: number; grind?: string; grinder?: string; filter?: string;
@@ -111,6 +112,7 @@ export function applyBrewingMutation(data: CollectionData, mutation: { type: str
       const previous = data.recipes.find(r => r.id === action.fromId);
       if (!previous || old) throw new Error('A versão anterior não está disponível ou a nova identificação já está em uso.');
       value.familyId = previous.familyId;
+      value.referenceKey = previous.referenceKey;
       value.previousVersionId = previous.id;
       value.version = Math.max(...data.recipes.filter(r => r.familyId === previous.familyId).map(r => r.version)) + 1;
     } else if (old) {

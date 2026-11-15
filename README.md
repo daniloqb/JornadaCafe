@@ -1,6 +1,6 @@
 # Minha Jornada pelo Café
 
-**Fase 03 — Métodos, Técnicas e Receitas**, preservando as Fases 01, 01.1 e 02. Uma coleção pessoal de cafés especiais e uma biblioteca de preparo com armazenamento local, estoque por pacote e temas claro, escuro e automático. Versão atual: **0.3.0**.
+**Fase 04.1 — Biblioteca de Referência**, preservando as Fases 01 a 04. Catálogo educativo offline, biblioteca pessoal e preparo guiado com histórico e integração opcional com o estoque. Versão atual: **0.4.1**.
 
 ## Executar no navegador
 
@@ -15,7 +15,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # 14 verificações pontuais de persistência e domínio
+npm test            # 23 verificações pontuais de persistência, domínio, cronômetro e referências
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```
@@ -47,6 +47,47 @@ No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/ou
 
 As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
 
+## Escopo entregue — Fase 04.1
+
+Em **Preparar → Biblioteca de referência**, o catálogo local oferece explicações e originais imutáveis. **Minha biblioteca** reúne somente os registros criados ou incorporados pela pessoa. A navegação principal continua com cinco áreas.
+
+- **8 métodos:** V60, Melitta, Prensa francesa, AeroPress, Moka, Espresso, Chemex e Clever Dripper, com descrição, princípio, características e fontes.
+- **5 técnicas:** 4:6 — Tetsu Kasuya, Três despejos, Imersão total, Imersão seguida de filtragem e Espresso tradicional. Pour-over com pré-infusão e despejos sucessivos é uma orientação geral, sem duplicar técnicas.
+- **4 receitas V60:** 4:6 equilibrado (20/300 g; 60/60/60/60/60 g), 4:6 com distribuição modificada (20/300 g; 50/70/60/60/60 g), três despejos iguais (25/375 g; 125/125/125 g) e referência Café Gerações (25/375 g; 75/175/125 g). Todas têm proporção 1:15.
+- Os 93 °C e a moagem 27/40 aparecem somente como referência experimental do usuário na receita equilibrada. A distribuição modificada é ilustrativa, sem atribuição de receita oficial. Não foram inventados intervalos, parâmetros de outras receitas ou links.
+- Na referência de Alberto/Café Gerações, a pré-infusão tem 40 segundos indicativos e avanço manual. Uma espera observável precede o terceiro despejo. O tempo ambíguo de 1min40s permanece nas notas, sem definir início nem duração de etapa.
+- **Adicionar à minha biblioteca** importa uma cópia editável e as dependências necessárias em uma única transação. Método e técnica também podem ser adicionados individualmente. Cópias existentes são reutilizadas por identidade, sem comparação por nome nem substituição de edições pessoais. A ficha pessoal permite consultar o original; receitas incorporadas usam o preparo guiado existente.
+- Nenhum item é persistido apenas por abrir ou atualizar o aplicativo. O catálogo não cria cafés, pacotes, estoques, sessões ou preparações realizadas. A biblioteca educativa funciona sem conexão; abrir fontes externas exige acesso à internet e uma ação explícita.
+
+O catálogo versão **1** fica em `src/reference/catalog.ts`, incluído no build e congelado em memória. A importação em `src/reference/import-reference.ts` usa as validações e os adaptadores atuais. Identificações estáveis e o campo opcional `referenceKey` no payload mantêm a origem das cópias e suas versões. **IndexedDB, SQLite e metadado continuam na versão 4**, sem migração, novas tabelas ou dependências. Estoque e histórico só mudam pelas ações normais de preparação existentes.
+
+As descrições usam fontes dos fabricantes e documentação de preparo: [HARIO V60](https://www.hario-europe.com/pages/the-v60-dripper), [entrevista com Kasuya](https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya), [Melitta](https://shoponline.melitta.com/products/1-cup-pour-over-coffee-brew-cone-black), [Bodum](https://www.bodum.com/us/en/10938-01b-brazil), [AeroPress](https://aeropress.com/pages/how-it-works), [Bialetti](https://bialettiafrica.com/blogs/news/how-the-moka-works-lift-the-lid-and-discover-all-its-secrets), [Chemex](https://chemexcoffeemaker.com/pages/how-to-brew-with-chemex), [Clever / Sweet Maria’s](https://library.sweetmarias.com/clever-coffee-dripper-a-full-immersion-brewing-method/) e [La Marzocco](https://www.lamarzocco.com/ca/en/beginners-guide-to-espresso/). As fontes específicas também aparecem nas fichas. Os parâmetros das quatro receitas vieram da referência fornecida pelo usuário; a biblioteca não apresenta resultados de degustação nem avaliações inventadas.
+
+## Escopo entregue — Fase 04
+
+Na ficha de uma receita, **Preparar** abre a revisão daquela versão. Café e pacote são opcionais. Confira a dose, a água, a proporção, a temperatura, a moagem, o moedor, o filtro e as etapas antes de iniciar.
+
+- Ajustes valem apenas para o preparo atual. Alterar a água não muda os despejos: **Recalcular despejos para a água total** faz a redistribuição proporcional por ação explícita; também é possível editar as etapas manualmente. A soma e o estoque do pacote são validados ao iniciar.
+- Execução com destaque para instrução, água adicionada, peso acumulado esperado, tempo total, tempo da etapa e próxima ação. Os parâmetros ficam recolhidos. O cabeçalho é compacto no smartphone, preservando navegação e controle de aparência.
+- Cronômetro por referências monotônicas, com intervalo apenas para atualização da interface. Pausa, retomada, avanço e retorno confirmado à etapa anterior preservam os tempos acompanhados. Voltar não desfaz água fisicamente adicionada.
+- Somente etapas com avanço por **Tempo definido** avançam automaticamente. Duração indicativa, confirmação manual e condição observável aguardam o usuário. Um retorno após suspensão ou atraso significativo da interface não dispara uma sequência de despejos: etapas temporizadas vencidas pedem confirmação.
+- Checkpoint a cada cinco segundos e nas ações, mudanças de visibilidade e saída da tela. Após recarga ou encerramento, a recuperação abre pausada, mantém a etapa e pede revisão antes de retomar. Navegar pela biblioteca mantém a sessão e mostra um acesso para voltar ao preparo.
+- Avisos opcionais com sons locais nos cinco segundos finais e sinal distinto ao mudar de etapa. Som e vibração começam desativados; **Testar avisos** ajuda a conferir o suporte. As escolhas ficam em `localStorage`, chave `jornada-cafe:brew-alerts`, com aviso se não puderem ser salvas.
+- Durante a execução visível, tenta manter a tela ligada. No navegador usa Screen Wake Lock; no Android, a ponte local `PreparationPlugin` usa a janela da Activity, oferece feedback tátil e intercepta Voltar na execução para permitir guardar a sessão pausada. Não foram adicionados plugins, permissões ou serviços de segundo plano.
+- Finalizar ou cancelar abre confirmação com observação opcional. É possível salvar concluído, salvar interrompido ou descartar sem registro. Ao interromper com pacote, um consumo da dose só ocorre com a confirmação explícita do usuário.
+- O salvamento de um concluído com pacote desconta a dose configurada exatamente uma vez. Registro, saldo, entrada no histórico de estoque e remoção do checkpoint são gravados na mesma transação. O saldo é conferido novamente ao salvar; falha ou confirmação repetida não cria desconto sem registro nem estoque negativo.
+- **Histórico de preparações**, dentro de Preparar, mostra os registros e suas fichas. A ficha do café reúne preparações relacionadas. Cada registro mantém as cópias de receita, versão, método, técnica, café, pacote, parâmetros e etapas, além dos tempos de cada passagem acompanhada, mesmo se os cadastros forem alterados depois.
+
+Os valores de água são previstos; o aplicativo não mede nem comprova despejos físicos. Avaliações sensoriais, gráficos, comparações, balanças e nuvem continuam fora desta fase. Nenhuma dependência foi acrescentada.
+
+### Limites de execução e recuperação
+
+Não há promessa de JavaScript, áudio ou vibração contínuos com tela bloqueada ou aplicativo em segundo plano. A tela ligada é uma tentativa sujeita à plataforma, e seu recurso é liberado ao pausar, sair da execução ou terminar a sessão. Consulte [Screen Wake Lock](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API) e [controle da tela no Android](https://developer.android.com/develop/background-work/background-tasks/awake/screen-on).
+
+Enquanto ativo, o cronômetro usa `performance.now()`. Ao retornar de suspensão ou recuperar o app, também usa a referência de data do checkpoint, pois o relógio monotônico pode parar durante suspensão em algumas plataformas; mudanças no relógio do sistema podem afetar essa estimativa. Uma morte abrupta do processo pode perder a ação mais recente ainda não persistida, por isso a recuperação pede conferência da etapa. Referência: [Performance.now](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now).
+
+Há uma sessão ativa por origem/instalação; o acompanhamento foi pensado para uma aba/instância por vez. O checkpoint não é um serviço de segundo plano. A gravação do histórico continua atômica e protegida contra confirmação duplicada.
+
 ## Escopo entregue — Fase 03
 
 A área **Preparar** abre nas receitas e oferece as perspectivas **Receitas**, **Métodos** e **Técnicas**, sem alterar as cinco áreas principais.
@@ -64,7 +105,7 @@ A área **Preparar** abre nas receitas e oferece as perspectivas **Receitas**, *
 
 Nenhum exemplo é inserido automaticamente. Os modelos permitem cadastrar os cinco despejos de 60 g, os despejos de 75/175/125 g e os três de 125 g, sem impor tempos, temperaturas ou moagem. A referência ambígua de 1:40 pode ficar nas observações até ser esclarecida.
 
-Não há cronômetro, execução guiada, registro de preparos, desconto de estoque ou avaliação sensorial. A estrutura ordenada de etapas e os parâmetros de cada versão ficam disponíveis para uma futura cópia no registro de preparo da Fase 04. Nenhuma dependência foi adicionada nesta fase.
+Na Fase 03, a biblioteca ainda não executava preparos. A Fase 04 acrescenta o acompanhamento e copia os parâmetros e as etapas ao iniciar, sem alterar a biblioteca. Avaliações sensoriais continuam para fases futuras.
 
 ## Escopo entregue — Fase 02
 
@@ -80,7 +121,7 @@ Não há cronômetro, execução guiada, registro de preparos, desconto de estoq
 - Exclusão de café exige confirmação e informa a remoção de pacotes, histórico e fotografia. Referências de produção/origem em uso não podem ser excluídas: primeiro é necessário desvincular ou substituir nos cafés.
 - As cinco áreas principais, a identidade editorial, as fontes e os três modos de aparência foram preservados. A barra nativa de título Android continua removida.
 
-Receitas foram acrescentadas na Fase 03. Preparações realizadas, cronômetro, avaliações sensoriais, descobertas e experiências da jornada permanecem para fases futuras. Não há autenticação, nuvem, mapas, pesquisa externa nem dados demonstrativos inseridos no aplicativo.
+Receitas foram acrescentadas na Fase 03 e o preparo guiado na Fase 04. Avaliações sensoriais, descobertas e experiências da jornada permanecem para fases futuras. Não há autenticação, nuvem, mapas, pesquisa externa nem dados demonstrativos inseridos no aplicativo.
 
 ## Aparência — Fase 01.1
 
@@ -101,10 +142,11 @@ Para experimentar no navegador, execute `npm run dev` e altere o seletor do cabe
 src/
   app/          Estrutura principal e navegação
   components/   Interface compartilhada, formulários, diálogo e fotografia
-  features/     home, coffees, prepare, journey, discoveries
-  domain/       Coleção, biblioteca de preparo, etapas, versões e regras de integridade
+  features/     home, coffees, prepare, preparations, journey, discoveries
+  domain/       Coleção, biblioteca, sessão, cronômetro e regras de estoque/integridade
   data/         Adaptadores, migrações, coleção/biblioteca compartilhadas e fotografias
   theme/        Tokens, tipografia e layout responsivo
+  reference/    Catálogo educativo estático e importação explícita
   assets/       Ilustração SVG como componente React
 android/        Projeto nativo Capacitor
 public/         Favicon e licenças das fontes
@@ -112,13 +154,13 @@ public/         Favicon e licenças das fontes
 
 ### Entidades e persistência
 
-As telas usam `CollectionContext`, sem conhecer SQL, object stores ou caminhos nativos. O contrato `LocalStorage` oferece operações de coleção, metadados e fotografias. As regras compartilhadas em `src/domain/collection.ts` são aplicadas dentro das transações de cada adaptador.
+As telas usam `CollectionContext`, sem conhecer SQL, object stores ou caminhos nativos. O `BrewContext` mantém o cronômetro e a sessão durante a navegação. O contrato `LocalStorage` oferece operações de coleção, metadados e fotografias. As regras compartilhadas em `src/domain/collection.ts` são aplicadas dentro das transações de cada adaptador.
 
 - **Café:** identidade do produto, com UUID, datas de criação/atualização, campos opcionais, referências relacionadas, favorito e indicação de já experimentado. Pode existir sem pacote.
-- **Pacote:** UUID e referência obrigatória ao café, pesos, dados da compra e histórico de correções. O estoque é sempre calculado pela soma dos pesos restantes; não há indicador independente nem desconto automático.
+- **Pacote:** UUID e referência obrigatória ao café, pesos, dados da compra e histórico de correções. O estoque é sempre calculado pela soma dos pesos restantes; não há indicador independente. A Fase 04 desconta a dose apenas ao salvar um preparo com consumo confirmado.
 - **Registros relacionados:** produtores, propriedades, origens e torrefações têm UUIDs próprios e um tipo explícito, nome, geografia e observações opcionais. São persistidos no conjunto `records`, mantendo relações distintas no café.
-- **Navegador:** IndexedDB `minha-jornada-pelo-cafe`, versão física **3**, com `metadata`, `coffees`, `packages`, `records`, `photos`, `methods`, `techniques` e `recipes`. Fotografias são Blobs separados dos registros de domínio. Escritas e exclusões relacionadas aguardam o commit da transação.
-- **Android:** SQLite `minha_jornada_pelo_cafe`, `user_version` **3**, com `metadata`, `coffees`, `packages`, `records`, `methods`, `techniques` e `recipes`. As colunas relacionais têm chaves estrangeiras e os pesos têm restrições SQL. Os atributos opcionais e o histórico de correção ficam no payload JSON de cada registro, sem imagens embutidas. Operações de coleção são serializadas e transacionais.
+- **Navegador:** IndexedDB `minha-jornada-pelo-cafe`, versão física **4**, com `metadata`, `coffees`, `packages`, `records`, `photos`, `methods`, `techniques`, `recipes`, `preparations` e `sessions`. Fotografias são Blobs separados dos registros de domínio. Escritas e exclusões relacionadas aguardam o commit da transação.
+- **Android:** SQLite `minha_jornada_pelo_cafe`, `user_version` **4**, com `metadata`, `coffees`, `packages`, `records`, `methods`, `techniques`, `recipes`, `preparations` e `sessions`. As colunas relacionais têm chaves estrangeiras e os pesos têm restrições SQL. Os atributos opcionais e o histórico de correção ficam no payload JSON de cada registro, sem imagens embutidas. Operações de coleção são serializadas e transacionais.
 
 #### Migrações da Fase 02
 
@@ -132,9 +174,19 @@ O IndexedDB evolui de **2 para 3**, acrescentando `methods`, `techniques` e `rec
 
 - **Método:** UUID, datas, nome e detalhes opcionais, com imagem pelo mesmo armazenamento local usado para fotografias.
 - **Técnica:** UUID, datas, método opcional e fontes incorporadas ao seu payload, cada uma com UUID estável. Criador e apresentador são campos separados.
-- **Receita:** um registro por versão, com UUID próprio, `familyId`, número de versão e `previousVersionId`. Os parâmetros, a fonte adicional e as etapas estruturadas ficam no payload de cada versão. Cada etapa tem UUID, ordem, pesos, tempos e condição de avanço; não há tabelas de execução de preparos.
+- **Receita:** um registro por versão, com UUID próprio, `familyId`, número de versão e `previousVersionId`. Os parâmetros, a fonte adicional e as etapas estruturadas ficam no payload de cada versão. Cada etapa tem UUID, ordem, pesos, tempos e condição de avanço; nessa fase ainda não havia entidades de execução de preparos.
 
 As validações de referências, versões e etapas são compartilhadas pelos adaptadores e executadas dentro de suas transações. O SQLite também aplica as restrições relacionais em suas colunas. A aparência continua no `localStorage`, fora da migração. Fotografias existentes e pesos de pacotes não são modificados pela biblioteca.
+
+#### Migração e entidades da Fase 04
+
+IndexedDB e SQLite passam de **3 para 4**; `metadata.schema-version` passa a `4`. São acrescentados somente `preparations` e `sessions`. Upgrades anteriores continuam registrados e novas instalações recebem o esquema completo, sem recriar ou apagar as bases existentes.
+
+- **Preparação:** UUID igual ao da sessão, datas inicial/final, estado concluído/interrompido, observação, dose consumida, cópia integral dos dados configurados e passagens pelas etapas, com tempos em milissegundos. As identificações da receita, método, técnica, café e pacote são proveniência histórica dentro da cópia; a apresentação não depende dos cadastros atuais. Editar ou excluir um cadastro não reescreve o histórico.
+- **Sessão ativa:** UUID, cópia dos parâmetros, etapa, estado ativo/pausado, tempo acumulado, início relativo da etapa, passagens, necessidade de confirmação e data do checkpoint. O SQLite também limita `sessions` a uma linha por uma coluna única de posição fixa.
+- Preferências de avisos ficam em `localStorage`; não foram criadas tabelas para preferências.
+
+As regras em `src/domain/preparation.ts` são executadas dentro das transações dos dois adaptadores. O primeiro salvamento de um UUID grava o histórico, atualiza o pacote e remove a sessão. Tentativas posteriores com o mesmo UUID não alteram o registro nem o saldo. Checkpoints atrasados de sessões já encerradas são ignorados. Um café selecionado em sessão ativa não pode ser excluído antes de encerrá-la.
 
 #### Fotografias locais
 
@@ -146,11 +198,65 @@ Um backup futuro precisará incluir os Blobs/arquivos referenciados junto ao ban
 
 ## Dependências
 
-Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, dependência direta adicionada na Fase 02 para as fotografias nativas. A Fase 03 não acrescentou dependências.
+Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, dependência direta adicionada na Fase 02 para as fotografias nativas. As Fases 03, 04 e 04.1 não acrescentaram dependências.
 
 Desenvolvimento: TypeScript 5.9, Vite 8, Tailwind CSS 4, Capacitor CLI, Vitest 5 e fake-indexeddb. O teste pontual das instruções SQL utiliza `node:sqlite`, incluído no Node.js. As versões resolvidas ficam em `package-lock.json`. Playwright é usado apenas em uma pasta temporária de validação, sem dependência ou suíte adicional no projeto.
 
 As fontes são distribuídas sob OFL-1.1; suas licenças estão em `public/licenses/`.
+
+## Verificações da entrega — Fase 04.1
+
+Executadas em 15/11/2026, com dados temporários em ambientes de validação:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript e build de produção | Aprovados; versão 0.4.1 |
+| Vitest | 23 testes aprovados; três novos testes pontuais para catálogo, dependências/idempotência/edições e persistência concorrente |
+| Consulta educativa | Oito métodos, cinco técnicas e quatro receitas acessíveis; nenhuma gravação automática nem requisição externa ao consultar as 17 fichas |
+| Consulta sem conexão | Navegação no catálogo já carregado aprovada com o Chrome em modo offline; não há instalação PWA nem promessa de recarregar o site sem servidor |
+| Importação | Receita com método e técnica, método isolado e técnica com método aprovados; reimportação não duplica nem sobrescreve edições; nomes iguais não são mesclados |
+| Cópia e original | Nome pessoal corrigido e recuperado após recarga; referência original preservada e identificada separadamente |
+| Preparo guiado | Receita Café Gerações importada, pausa/retomada, espera observável antes do terceiro despejo e conclusão sem pacote aprovadas; histórico recuperado após recarga |
+| Temas e responsividade | Listagens, orientação geral, método e receita revisados em claro/escuro, a 390 e 1440 px; receita também em 320 px, sem rolagem horizontal ou erros de execução |
+| Android 0.4.1 | Sincronização, `assembleDebug` e atualização com `adb install -r` aprovados; abertura a frio confirmada |
+| Biblioteca e preparo nativos | Catálogo consultado, receita com dependências importada pelo WebView/SQLite, cópia editada e preparo iniciado/pausado |
+| Reabertura Android | Cópia editada e sessão recuperadas após encerrar/reabrir; preparo concluído sem pacote nem desconto; SQLite permaneceu na versão 4 |
+| Preservação e limpeza | Metadados, aparência e dados anteriores conferidos; somente método, técnica, receita e preparo temporários da validação nativa removidos |
+
+A verificação de navegador usou perfil isolado e scripts em `/tmp`, sem nova infraestrutura ou dependências. A base do aparelho foi registrada antes da atualização e comparada novamente após a limpeza. O APK final está em `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+**Pendências:** confirmar a fonte/link e o significado de 1min40s da referência Café Gerações antes de acrescentar instruções temporais. A inspeção manual de barras/recortes em outros aparelhos e as pendências de som, vibração e botão físico Voltar da Fase 04 continuam aplicáveis; esta fase não altera esses recursos. Não houve migração de banco, commits, pushes ou início da Fase 05.
+
+## Verificações da entrega — Fase 04
+
+Executadas em 15/11/2026, com dados temporários e sem acrescentar infraestrutura de testes:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript e build de produção | Aprovados |
+| Vitest | 20 testes no total; seis novos testes pontuais para relógio, transições, suspensão/recuperação, recálculo, integridade e transações |
+| Revisão e receita original | Dose/água e moagem ajustadas somente no preparo; recálculo explícito de despejos e receita original preservada |
+| Cronômetro no Chrome | Pausa/retomada, avanço por tempo, espera manual e condição observável aprovados; troca de tema preserva o relógio |
+| Avisos no Chrome | Botão de teste gerou dois osciladores Web Audio; preferência de som recuperada após recarga |
+| Suspensão e recuperação web | Etapa vencida aguarda confirmação após retorno; recarga recupera a etapa pausada, sem conclusão automática |
+| Conclusão, interrupção e descarte | Concluído com dose descontada; interrompido sem consumo; interrompido com consumo explícito; descarte sem registro nem desconto aprovados |
+| Integridade de estoque | Confirmações concorrentes descontam uma única dose; saldo alterado/insuficiente não grava preparo nem desconto parcial; SQL testa rollback após falha de gravação |
+| Histórico web | Registro, cópia da receita e tempos recuperados após recarga; edição posterior da receita mantém o nome histórico; preparos relacionados aparecem na ficha do café |
+| Migração | IndexedDB 3 → 4 e SQL SQLite 3 → 4 preservam os dados anteriores; upgrades de versões anteriores continuam cobertos pelos testes existentes |
+| Temas e responsividade | Execução e ficha em claro/escuro, 390 e 1440 px; histórico também em 320 px, sem rolagem horizontal. Controles principais conferidos no smartphone |
+| APK Android 0.4.0 | Sincronização, compilação e instalação como atualização aprovadas (`adb install -r`: `Success`) |
+| Migração nativa | Plugin confirmou 3 → 4, preservando receita e pacote temporários inseridos antes da atualização e os registros originais |
+| Preparo nativo | Revisão 25 g / 375 g, pausa/retomada, avanço temporizado e espera observável aprovados no WebView |
+| Recuperação e salvamento nativos | Após encerrar e reabrir, sessão recuperada; conclusão gerou um registro e saldo de 125 g → 100 g; receita original permaneceu com dose de 20 g |
+| Reabertura e limpeza Android | Registro e saldo confirmados após nova abertura; somente os registros temporários identificados foram removidos, mantendo os dados anteriores e a aparência atual |
+
+A validação web usou um perfil isolado do Chrome e scripts em `/tmp`, sem suíte de componentes nem dependências no projeto. O Android foi verificado pelo WebView e plugin SQLite reais. Os registros de estudo não são inseridos automaticamente no aplicativo.
+
+**Pendências manuais:** ouvir os sinais no aparelho, sentir a vibração conforme suas configurações e conferir tela ligada/bloqueio prolongado, barras e recortes em outros aparelhos. A proteção do botão Voltar foi implementada e compilada, mas o dispositivo recusou a simulação por ADB com `INJECT_EVENTS`; falta exercitar o botão físico manualmente. A troca de tema e a geração de avisos foram exercitadas no navegador, sem prometer saída audível em todo ambiente.
+
+Para executar na web, use `npm run dev` e abra a URL indicada, normalmente `http://127.0.0.1:5173`. No Android, abra uma receita, escolha **Preparar**, revise os parâmetros e inicie. O APK fica em `android/app/build/outputs/apk/debug/app-debug.apk`; atualizações podem ser executadas com `npm run android:run`.
+
+Não foram executados commits ou pushes, nem iniciada a Fase 05.
 
 ## Verificações da entrega — Fase 03
 
@@ -181,7 +287,7 @@ O APK da Fase 03 foi instalado e executado no aparelho conectado em 15/11/2026. 
 
 Para executar no navegador, use `npm run dev` e abra a URL indicada, normalmente `http://127.0.0.1:5173`. Para instalar e abrir no Android, com o aparelho conectado, use `npm run android:run`. O APK de desenvolvimento fica em `android/app/build/outputs/apk/debug/app-debug.apk`.
 
-Não houve commits, pushes ou início da Fase 04.
+Na entrega da Fase 03, não houve commits, pushes ou início da Fase 04.
 
 ## Verificações da entrega — Fase 02
 

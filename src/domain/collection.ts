@@ -1,3 +1,5 @@
+import { importReference, type ReferenceMutation } from '../reference/import-reference';
+import { applyPreparationMutation, type BrewSession, type Preparation, type PreparationMutation } from './preparation';
 import { applyBrewingMutation, type BrewMethod, type BrewTechnique, type BrewRecipe, type BrewingMutation } from './brewing';
 
 export type RecordKind = 'producer' | 'property' | 'origin' | 'roaster';
@@ -17,10 +19,10 @@ export interface CoffeePackage extends Entity {
   purchasedOn?: string; roastedOn?: string; openedOn?: string; lot?: string; price?: number;
   purchasedAt?: string; notes?: string; adjustments: StockAdjustment[];
 }
-export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[] }
+export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[]; preparations: Preparation[]; sessions: BrewSession[] }
 export type CollectionMutation = { type: 'coffee'; value: Coffee } | { type: 'package'; value: CoffeePackage; reason?: string }
-  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation;
-export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [] });
+  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation | PreparationMutation | ReferenceMutation;
+export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [], preparations: [], sessions: [] });
 export const normalizeText = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('pt-BR');
 export function newEntity(): Entity { const now = new Date().toISOString(); return { id: crypto.randomUUID(), createdAt: now, updatedAt: now }; }
 export const relationFields = { producerId: 'producer', propertyId: 'property', originId: 'origin', roasterId: 'roaster' } as const;
@@ -42,6 +44,9 @@ export function shelfCoffees(data: CollectionData) {
 
 /** Shared rules; both adapters apply these inside their write transaction. */
 export function applyMutation(data: CollectionData, mutation: CollectionMutation): CollectionData {
+  if (mutation.type === 'importReference') return importReference(data, mutation);
+  const preparation = applyPreparationMutation(data, mutation);
+  if (preparation) return preparation;
   const brewing = applyBrewingMutation(data, mutation);
   if (brewing) return brewing;
   const next = { ...data, coffees: [...data.coffees], packages: [...data.packages], records: [...data.records] };
@@ -86,6 +91,7 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
     if (associatedCoffees(data, mutation.id).length) throw new Error('Este registro está em uso. Edite os cafés associados para desvincular ou substituir a referência antes de excluir.');
     next.records = next.records.filter(r => r.id !== mutation.id);
   } else if (mutation.type === 'deleteCoffee') {
+    if (data.sessions.some(s => s.snapshot.coffee?.id === mutation.id)) throw new Error('Este café está em um preparo em andamento. Conclua ou descarte a sessão antes de excluir.');
     if (data.recipes.some(r => r.coffeeId === mutation.id)) throw new Error('Este café é referência de uma receita. Remova ou substitua a referência nas receitas e suas versões antes de excluir.');
     next.coffees = next.coffees.filter(c => c.id !== mutation.id);
     next.packages = next.packages.filter(p => p.coffeeId !== mutation.id);
@@ -93,7 +99,7 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
   return next;
 }
 
-export const collectionTables = ['coffees', 'packages', 'records', 'methods', 'techniques', 'recipes'] as const;
+export const collectionTables = ['coffees', 'packages', 'records', 'methods', 'techniques', 'recipes', 'preparations', 'sessions'] as const;
 export type CollectionTable = typeof collectionTables[number];
 /** Only changed entities are written, with shared validation inside the transaction. */
 export function collectionChanges(before: CollectionData, after: CollectionData) {
