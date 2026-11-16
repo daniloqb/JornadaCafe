@@ -57,7 +57,11 @@ export function App() {
     document.title = `${({ inicio: 'Início', cafes: 'Meus Cafés', preparar: 'Preparar', jornada: 'Minha Jornada', descobertas: 'Minhas Descobertas' })[active]} · Minha Jornada pelo Café`;
   }, [active]);
 
-  return <div className={`app-shell${active === 'preparar' && path.startsWith('/preparar/sessao') ? ' app-shell--brewing' : ''}`}>
+  const brewing = active === 'preparar' && path.startsWith('/preparar/sessao');
+  const reviewing = active === 'preparar' && /^\/preparar\/receitas\/[^/]+\/preparar/.test(path);
+  const settings = active === 'preparar' && path.startsWith('/preparar/configuracoes');
+  const prepareLibrary = active === 'preparar' && /^\/preparar(?:\/(?:receitas|metodos|tecnicas))?\/?$/.test(path);
+  return <div className={`app-shell${brewing ? ' app-shell--brewing' : ''}${reviewing || brewing ? ' app-shell--ritual' : ''}${settings ? ' app-shell--settings' : ''}${prepareLibrary ? ' app-shell--prepare-library' : ''}`}>
     <a className="skip-link" href="#main-content" onClick={(event) => { event.preventDefault(); main.current?.focus(); }}>Pular para o conteúdo</a>
     <aside className="sidebar"><a href="#/inicio" className="brand" aria-label="Minha Jornada pelo Café — Início"><span className="brand-icon"><Coffee size={27} strokeWidth={1.4} aria-hidden="true" /></span><span>Minha Jornada<em>pelo Café</em></span></a><span className="sidebar-divider" /><span className="sidebar-label eyebrow">SEU ESPAÇO, SEU RITMO</span><Navigation active={active} /><div className="sidebar-bottom"><Leaf size={24} strokeWidth={1.2} aria-hidden="true" /><p>Entre um gole e outro,<br />um mundo para descobrir.</p><span>UM DIÁRIO FEITO DE CAFÉ.</span></div></aside>
     <div className="main-shell"><div className="topbar"><span>SEU DIÁRIO DE CAFÉS ESPECIAIS</span><AppearanceControl /></div>

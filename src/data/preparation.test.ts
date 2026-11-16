@@ -21,10 +21,23 @@ function fixture() {
   ]) };
   let data = emptyCollection();
   data = applyMutation(data, { type: 'method', value: method }); data = applyMutation(data, { type: 'coffee', value: coffee }); data = applyMutation(data, { type: 'package', value: packet }); data = applyMutation(data, { type: 'recipe', value: recipe });
-  const session = makeSession(data, recipe, coffee.id, packet.id, wall);
+  const session = makeSession(data, recipe, coffee.id, packet.id, wall, 'running');
   return { data, method, coffee, packet, recipe, session };
 }
 describe('preparo e estoque', () => {
+  it('confirma a revisão sem contar tempo nem avançar etapas antes de Iniciar, inclusive após recuperar', () => {
+    const { data, recipe } = fixture();
+    const session = makeSession(data, recipe, undefined, undefined, wall);
+    const saved = applyMutation(data, { type: 'startSession', value: session });
+    const clock = new BrewClock(saved.sessions[0], 0);
+    expect(clock.tick(60000, wall + 60000).session).toMatchObject({ status: 'paused', elapsedMs: 0, stepIndex: 0, needsConfirmation: false });
+    const recovered = BrewClock.recover(clock.read(60000, wall + 60000), 0, wall + 120000);
+    expect(recovered.read(60000, wall + 180000)).toMatchObject({ status: 'paused', elapsedMs: 0, stepIndex: 0 });
+    recovered.resume(60000, wall + 180000);
+    expect(recovered.tick(61000, wall + 181000).session).toMatchObject({ status: 'running', elapsedMs: 1000, stepIndex: 0 });
+    expect(saved.recipes).toEqual(data.recipes);
+    expect(saved.preparations).toHaveLength(0);
+  });
   it('usa tempo monotônico, respeita pausa e avança uma etapa automática; manual/observável aguardam', () => {
     const { session } = fixture(); const clock = new BrewClock(session, 0);
     clock.tick(1500, wall + 1500); clock.pause(2000, wall + 2000);

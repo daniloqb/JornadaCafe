@@ -25,40 +25,52 @@
 }
 
 @theme {
-  --color-background: #F6F2EA;
-  --color-surface-raised: #E9E0D2;
-  --color-positive: #315344;
-  --color-text: #352B25;
-  --color-text-warm: #624535;
-  --color-accent: #B77B4D;
-  --color-accent-strong: #89572F;
-  --color-text-muted: #6B6258;
-  --color-border: #DED7CA;
-  --color-surface: #FBF8F2;
-  --color-hero: #E2E7D9;
-  --color-hero-border: #CCD4C1;
+  --color-background: #FBF1E6;
+  --color-surface: #FFF8F0;
+  --color-surface-raised: #F3DEC7;
+  --color-text: #38200F;
+  --color-text-warm: #6D5141;
+  --color-text-muted: #765A43;
+  --color-border: #E8D4C0;
+  --color-positive: #486A36;
+  --color-accent: #AF765E;
+  --color-accent-strong: #8D513D;
+  --color-hero: #EDE3D3;
+  --color-hero-border: #DCCBB6;
   --color-warning: #7A4629;
   --color-danger: #913E35;
-  --color-danger-text: #FBF8F2;
+  --color-danger-text: #FFFCF6;
   --color-danger-hover: #783128;
-  --color-edit: #315344;
-  --color-edit-text: #F6F2EA;
-  --color-edit-hover: #243F33;
-  --color-recipe: #E4E9DB;
-  --color-library-panel: #EEE5D8;
-  --color-action: var(--color-positive);
-  --color-action-text: var(--color-background);
-  --color-action-hover: color-mix(in srgb, var(--color-positive), var(--color-text) 24%);
-  --color-focus: var(--color-positive);
+  --color-edit: #536044;
+  --color-edit-text: #FFFCF6;
+  --color-edit-hover: #414D35;
+  --color-recipe: #F6EFE3;
+  --color-library-panel: #F5E1CD;
+  --color-action: #4A3025;
+  --color-action-text: #FFFAF1;
+  --color-action-hover: #352219;
+  --color-focus: #8D513D;
+  --color-confirm: #416C34;
+  --color-confirm-text: #FFF9F1;
+  --color-timer-action: #A64913;
+  --color-timer-text: #FFF9F1;
+  --color-navigation: #35200F;
+  --color-navigation-text: #F8E8D3;
+  --color-navigation-active: #E2AF7C;
+  --color-navigation-active-text: #35200F;
+  --color-instruction: #643B25;
+  --color-instruction-text: #FFF4DF;
+  --color-instruction-muted: #E1CAB4;
+  --color-instruction-border: #684C3A;
   --art-halo: #D2D8C5;
   --art-mark: #849A7A;
-  --art-ceramic: #F6F2EA;
-  --art-green: #315344;
-  --art-copper: #B77B4D;
-  --shadow-navigation: 0 -3px 20px rgb(53 43 37 / 4%);
+  --art-ceramic: #FBF1E6;
+  --art-green: #536044;
+  --art-copper: #AF765E;
+  --shadow-navigation: 0 -3px 20px rgb(56 40 31 / 4%);
   --font-sans: 'DM Sans Variable', 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
-  --shadow-soft: 0 3px 12px rgb(53 43 37 / 3%);
+  --shadow-soft: 0 3px 12px rgb(56 40 31 / 3%);
 }
 
 :root {
@@ -77,36 +89,48 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --color-background: #211B18;
-  --color-surface: #302722;
-  --color-surface-raised: #3B3029;
-  --color-text: #F2E6D6;
-  --color-text-muted: #C9B8A8;
-  --color-text-warm: #D7C4B1;
-  --color-accent: #B9926A;
-  --color-accent-strong: #B9926A;
-  --color-positive: #9FB9A4;
-  --color-border: #55453B;
-  --color-hero: #2E2D25;
-  --color-hero-border: #555744;
+  --color-background: #1F1713;
+  --color-surface: #2B211C;
+  --color-surface-raised: #382B24;
+  --color-text: #F5EADC;
+  --color-text-muted: #CEBBA9;
+  --color-text-warm: #D8C3AC;
+  --color-accent: #C99278;
+  --color-accent-strong: #D29C82;
+  --color-positive: #BBC29B;
+  --color-border: #534135;
+  --color-hero: #382B24;
+  --color-hero-border: #5F493A;
   --color-warning: #E6B88F;
   --color-danger: #DFA18E;
-  --color-danger-text: #211B18;
+  --color-danger-text: #1F1713;
   --color-danger-hover: #EAB5A4;
-  --color-edit: #9FB9A4;
-  --color-edit-text: #211B18;
-  --color-edit-hover: #B3CBB8;
-  --color-recipe: #34392D;
-  --color-library-panel: #3B3029;
-  --color-action: var(--color-accent);
-  --color-action-text: var(--color-background);
-  --color-action-hover: #CAA77F;
-  --color-focus: var(--color-accent);
+  --color-edit: #BBC29B;
+  --color-edit-text: #1F1713;
+  --color-edit-hover: #CCD2B2;
+  --color-recipe: #30251F;
+  --color-library-panel: #342820;
+  --color-action: #E7D5BA;
+  --color-action-text: #2B1C15;
+  --color-action-hover: #F5E5CD;
+  --color-focus: #D29C82;
+  --color-confirm: #B9C89A;
+  --color-confirm-text: #1F2819;
+  --color-timer-action: #CD9A77;
+  --color-timer-text: #2A1B12;
+  --color-navigation: #241912;
+  --color-navigation-text: #F5EADC;
+  --color-navigation-active: #C9A078;
+  --color-navigation-active-text: #241912;
+  --color-instruction: #4B3528;
+  --color-instruction-text: #FFF4DF;
+  --color-instruction-muted: #E1CAB4;
+  --color-instruction-border: #81624A;
   --art-halo: #3F4334;
   --art-mark: #9BAE8C;
   --art-ceramic: #DCCBB2;
-  --art-green: #54745F;
-  --art-copper: #B9926A;
+  --art-green: #647451;
+  --art-copper: #C99278;
   --shadow-soft: 0 3px 12px rgb(0 0 0 / 14%);
   --shadow-navigation: 0 -3px 20px rgb(0 0 0 / 18%);
 }
@@ -155,17 +179,17 @@ main { min-height: calc(100dvh - 146px); padding-top: 36px; }
 .page-header .eyebrow { margin-bottom: 9px; color: var(--color-accent-strong); font-size: 9px; letter-spacing: 1.6px; }
 h1 { font-size: clamp(30px, 2.8vw, 42px); letter-spacing: -1.2px; line-height: 1.2; }
 .page-description { font-size: 14px; color: var(--color-text-muted); line-height: 1.8; margin-top: 10px; }
-.button { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 46px; padding: 12px 20px; border: 1px solid transparent; border-radius: 6px; font-size: 13px; font-weight: 500; line-height: 1.5; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 46px; padding: 12px 20px; border: 1px solid transparent; border-radius: 9px; font-size: 13px; font-weight: 600; line-height: 1.5; }
 .button--primary { background: var(--color-action); color: var(--color-action-text); }
 .button--primary:hover { background: var(--color-action-hover); }
-.button--secondary { background: transparent; border-color: var(--color-border); color: var(--color-positive); }
+.button--secondary { background: var(--color-surface); border-color: var(--color-border); color: var(--color-positive); }
 .button--secondary:hover { background: var(--color-surface-raised); }
 .hero { position: relative; display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; min-height: 343px; overflow: hidden; background: var(--color-hero); border: 1px solid var(--color-hero-border); border-radius: 10px; }
 .hero-copy { padding: 36px 0 32px 35px; z-index: 1; }
 .hero-copy > .eyebrow { display: flex; align-items: center; gap: 8px; font-size: 8px; color: var(--color-positive); letter-spacing: 1.35px; }
 .small-rule { width: 20px; height: 1px; background: var(--color-positive); }
-.hero h2 { color: var(--color-positive); font-size: clamp(31px, 3vw, 46px); letter-spacing: -1.5px; line-height: 1.16; margin-top: 18px; }
-.hero-copy > p { max-width: 310px; font-size: 14px; line-height: 1.8; margin: 17px 0 22px; color: var(--color-positive); }
+.hero h2 { color: var(--color-text); font-size: clamp(31px, 3vw, 46px); letter-spacing: -1.5px; line-height: 1.16; margin-top: 18px; }
+.hero-copy > p { max-width: 310px; font-size: 14px; line-height: 1.8; margin: 17px 0 22px; color: var(--color-text-warm); }
 .hero-footnote { display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--color-positive); margin-top: 14px; }
 .hero-art { align-self: stretch; display: flex; justify-content: center; flex-direction: column; position: relative; min-width: 0; }
 .hero-art svg { width: 113%; height: auto; max-width: none; margin-left: -10%; }
@@ -186,7 +210,7 @@ h1 { font-size: clamp(30px, 2.8vw, 42px); letter-spacing: -1.2px; line-height: 1
 .section-heading h2 { font-size: 23px; letter-spacing: -.7px; }
 .text-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; color: var(--color-positive); font-size: 15px; font-weight: 600; line-height: 1.5; }
 .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; box-shadow: var(--shadow-soft); }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; box-shadow: var(--shadow-soft); }
 .empty-state { display: flex; align-items: center; flex-direction: column; text-align: center; padding: 55px 22px; }
 .empty-icon { display: grid; place-items: center; width: 66px; height: 66px; background: var(--color-surface-raised); color: var(--color-text-warm); border-radius: 50%; margin-bottom: 22px; }
 .empty-state h3 { font-size: 25px; letter-spacing: -.6px; line-height: 1.35; }
@@ -665,32 +689,127 @@ h1 { font-size: clamp(30px, 2.8vw, 42px); letter-spacing: -1.2px; line-height: 1
 .detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
 .recipe-step-number { flex: 0 0 32px; white-space: nowrap; }
 
-/* A quieter surface for a phone resting beside the coffee preparation. */
-.active-brew-notice { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; border: 1px solid var(--color-border); border-left: 3px solid var(--color-positive); border-radius: 8px; background: var(--color-surface); margin-bottom: 28px; font-size: 14px; }
+/* Phase 04.4 — composition follows the approved review and guided references. */
+.active-brew-notice { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; border: 1px solid var(--color-border); border-left: 3px solid var(--color-positive); border-radius: 14px; background: var(--color-surface); margin-bottom: 28px; font-size: 14px; }
 .active-brew-notice p { color: var(--color-text-muted); font-size: 12px; margin-top: 7px; }
 .preparation-history-link { margin: -8px 0 20px; }
-.review-identity h2 { font-size: 26px; }
-.review-identity p { color: var(--color-text-muted); font-size: 13px; line-height: 1.8; margin-top: 10px; }
-.guided-preparation { max-width: 850px; margin: 0 auto 30px; }
-.guided-preparation .page-header h1 { font-size: clamp(28px, 3vw, 38px); }
-.brew-current-step { padding: 30px; }
-.brew-current-step > progress { width: 100%; height: 6px; accent-color: var(--color-positive); margin: 16px 0 25px; }
-.brew-current-step h2 { font-size: clamp(29px, 4vw, 42px); line-height: 1.3; margin-bottom: 20px; }
-.brew-addition { color: var(--color-text-warm); font-size: 17px; }
-.brew-addition strong { font-size: 24px; }
-.brew-scale { display: flex; flex-direction: column; gap: 8px; padding: 26px 0; }
-.brew-scale span { color: var(--color-text-muted); font-size: 13px; line-height: 1.6; }
-.brew-scale strong { font: 500 clamp(54px, 7vw, 80px)/1.15 var(--font-serif); color: var(--color-text); font-variant-numeric: tabular-nums; }
-.brew-timers { display: flex; flex-wrap: wrap; gap: 20px 35px; border-block: 1px solid var(--color-border); padding: 22px 0; }
-.brew-timers > div { display: flex; flex-direction: column; gap: 8px; }
-.brew-timers span { color: var(--color-text-muted); font-size: 11px; }
-.brew-timers strong { font-size: 32px; font-variant-numeric: tabular-nums; font-weight: 500; }
-.brew-condition, .brew-next { font-size: 15px; line-height: 1.8; margin-top: 22px; color: var(--color-text-warm); }
-.brew-next { border-top: 1px solid var(--color-border); padding-top: 20px; font-size: 13px; color: var(--color-text-muted); }
-.brew-main-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 14px; }
-.brew-main-controls .button { min-height: 60px; font-size: 16px; padding: 16px; }
-.brew-secondary-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
-.brew-secondary-controls .button { font-size: 12px; }
+.preparation-review, .guided-preparation { max-width: 880px; margin: 0 auto 40px; }
+.preparation-heading { display: flex; align-items: center; gap: 28px; min-width: 0; padding: 0 0 24px; margin-bottom: 24px; border-bottom: 1px solid var(--color-border); }
+.preparation-heading .back-link { flex-shrink: 0; min-height: 44px; padding: 5px; margin: 0; border: 0; background: transparent; color: var(--color-text); font-size: 17px; }
+.preparation-heading-brand { display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 650; line-height: 1.4; }
+.preparation-heading-brand svg { flex-shrink: 0; }
+.review-page-title { margin-bottom: 28px; }
+.review-page-title h1 { font-size: clamp(34px, 4.5vw, 48px); font-weight: 600; }
+.review-page-title > p { font-size: clamp(16px, 2.5vw, 22px); color: var(--color-text-warm); line-height: 1.5; margin-top: 8px; }
+.review-form { gap: 20px; }
+.review-identity { display: grid; grid-template-columns: minmax(0, .38fr) minmax(0, .62fr); align-items: center; gap: 28px; padding: 16px; border-radius: 22px; }
+.review-identity > .coffee-photo { width: 100%; height: 100%; min-height: 190px; aspect-ratio: 1.05; border-radius: 14px; }
+.review-identity h2 { font: 700 clamp(22px, 3vw, 30px)/1.25 var(--font-sans); overflow-wrap: anywhere; }
+.review-technique { color: var(--color-text-warm); font-size: 18px; line-height: 1.5; margin-top: 9px; }
+.review-version { display: inline-block; margin-top: 9px; padding: 4px 10px; border-radius: 12px; background: var(--color-library-panel); font-size: 13px; color: var(--color-text-warm); }
+.review-recipe-description { font-size: 16px; line-height: 1.5; margin-top: 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.review-section { padding: 24px; min-width: 0; border-radius: 22px; }
+.review-section h2, .settings-section h2 { font: 700 22px/1.4 var(--font-sans); }
+.review-section-heading { display: flex; align-items: center; gap: 12px; }
+.review-section-heading > svg { color: var(--color-text-warm); flex-shrink: 0; }
+.review-section-heading h2 > span { font-size: .8em; font-weight: 450; }
+.review-parameter-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 26px 0 22px; }
+.review-parameter-facts > div { display: grid; grid-template-columns: 26px minmax(0, 1fr); align-items: center; gap: 8px; padding: 0 14px; min-width: 0; border-left: 1px solid var(--color-border); }
+.review-parameter-facts > div:first-child { border-left: 0; padding-left: 0; }
+.review-parameter-facts > div:last-child { padding-right: 0; }
+.review-parameter-facts svg { grid-row: 1 / 3; align-self: start; width: 26px; height: 30px; color: var(--color-text-warm); }
+.review-parameter-facts dt { font-size: 14px; }
+.review-parameter-facts dd { margin: 0; font-size: clamp(20px, 2.8vw, 30px); font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.review-equipment { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.review-equipment-card { display: flex; align-items: center; min-width: 0; gap: 18px; padding: 18px; border-radius: 16px; background: var(--color-library-panel); }
+.review-equipment-card > svg { color: var(--color-text-warm); flex-shrink: 0; }
+.review-equipment-card > div { min-width: 0; }
+.review-equipment-card span { display: block; font-size: 14px; color: var(--color-text-warm); margin-bottom: 4px; }
+.review-equipment-card strong { font-size: 18px; line-height: 1.4; font-weight: 650; overflow-wrap: anywhere; }
+.review-sequence > .review-section-heading { margin-bottom: 24px; }
+.review-adjustments { padding: 16px 20px; border-radius: 16px; }
+.review-adjustments > summary { min-height: 44px; display: list-item; align-content: center; cursor: pointer; font-size: 15px; font-weight: 600; }
+.review-adjustments-body { display: flex; flex-direction: column; gap: 20px; padding-top: 16px; }
+.review-adjustments-body > .button { align-self: start; }
+.review-step-adjustments > summary { font-size: 18px; }
+.review-confirmation { margin-top: 10px; }
+.review-confirmation > .button { display: flex; flex-direction: column; gap: 5px; width: 100%; min-height: 100px; padding: 20px; border-radius: 28px; background: var(--color-confirm); color: var(--color-confirm-text); }
+.review-confirmation > .button:hover { background: color-mix(in srgb, var(--color-confirm), black 10%); }
+.review-confirmation .button > span { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 24px; font-weight: 700; }
+.review-confirmation .button small { font-size: 16px; font-weight: 400; line-height: 1.5; }
+
+.brew-timeline { list-style: none; margin: 0; padding: 0; }
+.brew-timeline > li { display: grid; grid-template-columns: 48px minmax(0, 1fr); position: relative; gap: 16px; padding: 0 0 12px; }
+.brew-timeline > li:last-child { padding-bottom: 0; }
+.brew-timeline > li:not(:last-child)::before { content: ''; position: absolute; top: 44px; bottom: -2px; left: 23px; width: 2px; background: var(--color-accent); opacity: .6; }
+.brew-timeline-number { position: relative; z-index: 1; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--color-surface-raised); color: var(--color-text); font-size: 23px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.brew-timeline-body { min-width: 0; padding: 7px 14px; border-radius: 16px; overflow-wrap: anywhere; }
+.brew-timeline h3 { font: 700 20px/1.35 var(--font-sans); }
+.brew-timeline-water { margin-top: 2px; font-size: 16px; line-height: 1.6; color: var(--color-text-warm); }
+.brew-timeline-detail { color: var(--color-text-muted); font-size: 12px; line-height: 1.7; }
+.brew-timeline-detail summary { cursor: pointer; min-height: 32px; align-content: center; }
+.brew-timeline-detail p { margin-top: 6px; }
+.brew-timeline :is(.is-current, .is-preview) .brew-timeline-number { background: var(--color-accent-strong); color: var(--color-surface); }
+.brew-timeline :is(.is-current, .is-preview) .brew-timeline-body { background: var(--color-library-panel); }
+:root[data-theme='dark'] .brew-timeline :is(.is-current, .is-preview) .brew-timeline-number { color: var(--color-background); }
+
+.preparation-heading--guided { border: 0; margin-bottom: 26px; gap: 14px; padding-bottom: 0; }
+.preparation-heading--guided .back-link span { display: none; }
+.preparation-heading-title { min-width: 0; }
+.preparation-heading-title h1 { font: 700 27px/1.2 var(--font-sans); letter-spacing: -.6px; }
+.preparation-heading-title p { color: var(--color-text-warm); margin-top: 4px; font-size: 17px; }
+.preparation-recipe-chip { display: flex; align-items: center; gap: 10px; max-width: 45%; margin-left: auto; padding: 12px 18px; border-radius: 30px; color: var(--color-instruction-text); background: var(--color-instruction); font-size: 16px; line-height: 1.4; font-weight: 650; overflow-wrap: anywhere; }
+.preparation-recipe-chip svg { flex-shrink: 0; }
+.brew-panel { padding: 24px 16px 18px; border-radius: 24px; }
+.brew-stage-progress { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding: 0 12px 24px; }
+.brew-stage-progress > strong { font-size: 24px; }
+.brew-stage-dots { display: flex; flex-wrap: wrap; gap: 10px; max-width: 50%; }
+.brew-stage-dots > span { width: 15px; height: 15px; border-radius: 50%; background: var(--color-border); }
+.brew-stage-dots > .is-current { background: var(--color-accent-strong); }
+.brew-stage-progress progress { appearance: none; border: 0; width: 100%; height: 10px; border-radius: 8px; overflow: hidden; background: var(--color-border); }
+.brew-stage-progress progress::-webkit-progress-bar { background: var(--color-border); }
+.brew-stage-progress progress::-webkit-progress-value { background: var(--color-action); border-radius: 8px; }
+.brew-stage-progress progress::-moz-progress-bar { background: var(--color-action); border-radius: 8px; }
+.brew-current-step { display: flex; align-items: center; gap: 24px; padding: 24px; border-radius: 20px; background: linear-gradient(115deg, var(--color-instruction), color-mix(in srgb, var(--color-instruction), var(--color-text) 12%)); color: var(--color-instruction-text); }
+.brew-current-step > div:last-child { min-width: 0; }
+.brew-action-icon { position: relative; flex-shrink: 0; width: 80px; height: 90px; border-right: 1px solid var(--color-instruction-muted); }
+.brew-action-icon > svg:first-child { position: absolute; top: 3px; left: 5px; width: 54px; height: 54px; transform: rotate(-40deg); stroke-width: 1.6; }
+.brew-action-icon > svg:last-child:not(:first-child) { position: absolute; left: -3px; bottom: 4px; width: 28px; height: 28px; }
+.brew-action-label { font-size: 18px; line-height: 1.5; margin-bottom: 8px; }
+.brew-current-step h2 { font: 700 clamp(23px, 3.7vw, 37px)/1.25 var(--font-sans); overflow-wrap: anywhere; }
+.brew-step-name { font-size: 19px; line-height: 1.5; margin-top: 8px; }
+.brew-condition, .brew-instruction-notes { color: var(--color-instruction-muted); font-size: 13px; line-height: 1.7; margin-top: 8px; }
+.brew-instruction-notes summary { min-height: 36px; cursor: pointer; align-content: center; }
+.brew-instruction-notes p { margin-top: 6px; }
+.brew-clock-card { display: flex; flex-direction: column; align-items: center; padding: 16px 0; }
+.brew-clock { position: relative; width: min(100%, 360px); aspect-ratio: 1; }
+.brew-clock-ring { width: 100%; height: 100%; fill: none; stroke-width: 8; }
+.brew-clock-track { stroke: var(--color-border); }
+.brew-clock-progress { stroke: var(--color-accent-strong); stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+.brew-clock-face { position: absolute; inset: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+.brew-clock-face [role='timer'] { display: flex; flex-direction: column; gap: 2px; max-width: 100%; }
+.brew-clock-face span { font-size: 19px; line-height: 1.4; font-weight: 650; }
+.brew-clock-face strong { font: 750 clamp(42px, 11vw, 74px)/1.15 var(--font-sans); font-variant-numeric: tabular-nums; letter-spacing: -2px; overflow-wrap: anywhere; }
+.brew-clock-face small { color: var(--color-text-warm); font-size: 18px; line-height: 1.4; }
+.brew-clock-toggle { min-height: 50px; width: 80%; max-width: 200px; gap: 10px; padding: 10px 16px; font-size: 20px; font-weight: 700; border-radius: 32px; background: var(--color-timer-action); color: var(--color-timer-text); }
+.brew-clock-toggle:hover { background: color-mix(in srgb, var(--color-timer-action), var(--color-text) 12%); }
+.brew-clock-caption { color: var(--color-text-muted); font-size: 12px; text-align: center; line-height: 1.8; margin-top: 10px; }
+.brew-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 0 0 22px; }
+.brew-metric { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; border: 1px solid var(--color-border); border-radius: 18px; min-width: 0; }
+.brew-metric > svg { flex-shrink: 0; color: var(--color-text-warm); width: 26px; height: 30px; }
+.brew-metric > div { display: flex; flex-direction: column; min-width: 0; gap: 4px; }
+.brew-metric span { font-size: 17px; font-weight: 600; line-height: 1.4; }
+.brew-metric strong { font: 700 clamp(26px, 4vw, 40px)/1.2 var(--font-sans); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.brew-metric small { color: var(--color-text-warm); font-size: 14px; line-height: 1.5; }
+.brew-sequence { padding: 16px 12px; border: 1px solid var(--color-border); border-radius: 18px; }
+.brew-main-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; margin-top: 24px; }
+.brew-main-controls .button { min-height: 68px; font-size: 21px; font-weight: 650; padding: 14px 22px; gap: 16px; border-radius: 22px; }
+.brew-main-controls .button--secondary { border-color: var(--color-accent-strong); color: var(--color-text-warm); background: transparent; }
+.brew-main-controls svg { flex-shrink: 0; }
+.brew-next { font-size: 13px; line-height: 1.8; margin: 16px 0 24px; color: var(--color-text-muted); }
+.brew-secondary-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+.brew-secondary-controls .button { font-size: 13px; }
+.guided-preparation > .review-adjustments { margin-bottom: 24px; }
 .brew-alert-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 18px 0; font-size: 13px; }
 .brew-alert-controls label { min-height: 44px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .brew-alert-controls input, .brew-consume-confirm input { width: 20px; height: 20px; accent-color: var(--color-action); flex-shrink: 0; }
@@ -699,32 +818,85 @@ h1 { font-size: clamp(30px, 2.8vw, 42px); letter-spacing: -1.2px; line-height: 1
 .brew-consume-confirm { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.8; margin: 20px 0; }
 .preparation-state { font-size: 12px; color: var(--color-positive); }
 @media (max-width: 760px) {
-  .brew-current-step { padding: 22px; }
-  .brew-main-controls { grid-template-columns: 1fr; gap: 12px; }
-  .brew-timers { gap: 20px; }
-  .brew-timers strong { font-size: 28px; }
+  .preparation-heading-brand { font-size: 15px; gap: 10px; }
+  .preparation-heading { gap: 18px; }
+  .review-identity { gap: 18px; }
+  .review-parameter-facts > div { grid-template-columns: 1fr; text-align: center; padding: 0 8px; gap: 6px; }
+  .review-parameter-facts svg { display: none; }
+  .review-parameter-facts dt { font-size: 12px; }
+  .review-parameter-facts dd { font-size: 21px; }
+  .review-equipment { gap: 12px; }
+  .review-equipment-card { padding: 14px; gap: 12px; }
+  .review-equipment-card strong { font-size: 16px; }
+  .preparation-recipe-chip { font-size: 13px; padding: 10px 12px; }
 }
-.brew-current-step > progress { appearance: none; border: 0; background: var(--color-border); border-radius: 3px; overflow: hidden; }
-.brew-current-step > progress::-webkit-progress-bar { background: var(--color-border); }
-.brew-current-step > progress::-webkit-progress-value { background: var(--color-positive); }
-.brew-current-step > progress::-moz-progress-bar { background: var(--color-positive); }
-@media (max-width: 760px) {
-  .app-shell--brewing .sidebar { padding: 0; border: 0; }
-  .app-shell--brewing .sidebar > .brand { display: none; }
-  .app-shell--brewing main { padding-top: 16px; }
-  .guided-preparation .page-header { margin-bottom: 18px; }
-  .guided-preparation .page-header h1 { font-size: 27px; }
-  .guided-preparation .page-description { margin-top: 8px; }
-  .brew-current-step { padding: 20px; }
-  .brew-current-step > progress { margin: 10px 0 16px; }
-  .brew-current-step h2 { font-size: 28px; margin-bottom: 12px; }
-  .brew-scale { padding: 16px 0; }
-  .brew-scale strong { font-size: 56px; }
-  .brew-timers { padding: 14px 0; }
-  .brew-condition { font-size: 13px; margin-top: 14px; }
-  .brew-next { font-size: 12px; padding-top: 12px; margin-top: 14px; }
-  .brew-main-controls { grid-template-columns: 1fr 1fr; margin-top: 16px; }
-  .brew-main-controls .button { font-size: 14px; padding: 12px; }
+@media (max-width: 480px) {
+  .preparation-heading { flex-wrap: wrap; row-gap: 10px; padding-bottom: 18px; margin-bottom: 20px; }
+  .preparation-heading .back-link { font-size: 15px; }
+  .preparation-heading-brand { font-size: 14px; }
+  .preparation-heading-brand svg { width: 23px; }
+  .review-page-title { margin-bottom: 20px; }
+  .review-form { gap: 12px; }
+  .review-identity { padding: 10px; gap: 14px; border-radius: 16px; }
+  .review-identity > .coffee-photo { min-height: 145px; border-radius: 10px; }
+  .review-identity h2 { font-size: 18px; }
+  .review-technique { font-size: 14px; margin-top: 6px; }
+  .review-version { font-size: 11px; padding: 3px 8px; margin-top: 6px; }
+  .review-recipe-description { font-size: 13px; margin-top: 7px; -webkit-line-clamp: 3; }
+  .review-section { padding: 16px 12px; border-radius: 18px; }
+  .review-section h2 { font-size: 18px; }
+  .review-section-heading { gap: 9px; }
+  .review-parameter-facts { margin: 20px 0 16px; }
+  .review-parameter-facts dd { font-size: 19px; }
+  .review-parameter-facts dt { font-size: 11px; }
+  .review-equipment-card { gap: 8px; padding: 12px 10px; border-radius: 12px; }
+  .review-equipment-card > svg { width: 22px; }
+  .review-equipment-card span { font-size: 12px; }
+  .review-equipment-card strong { font-size: 14px; }
+  .review-confirmation > .button { min-height: 88px; border-radius: 24px; }
+  .review-confirmation .button > span { font-size: 22px; }
+  .review-confirmation .button small { font-size: 13px; }
+  .brew-timeline > li { grid-template-columns: 38px minmax(0, 1fr); gap: 8px; padding-bottom: 8px; }
+  .brew-timeline > li:not(:last-child)::before { top: 35px; left: 18px; }
+  .brew-timeline-number { width: 38px; height: 38px; font-size: 20px; }
+  .brew-timeline-body { padding: 5px 9px; border-radius: 12px; }
+  .brew-timeline h3 { font-size: 16px; }
+  .brew-timeline-water { font-size: 13px; }
+  .brew-timeline-detail { font-size: 11px; }
+  .preparation-heading--guided { column-gap: 8px; }
+  .preparation-heading-title h1 { font-size: 21px; }
+  .preparation-heading-title p { font-size: 13px; }
+  .preparation-recipe-chip { margin-left: 36px; max-width: calc(100% - 36px); font-size: 12px; padding: 7px 12px; }
+  .preparation-recipe-chip svg { width: 18px; height: 18px; }
+  .brew-panel { padding: 18px 10px 12px; border-radius: 20px; }
+  .brew-stage-progress { padding: 0 6px 18px; gap: 12px; }
+  .brew-stage-progress > strong { font-size: 20px; }
+  .brew-stage-dots { gap: 7px; }
+  .brew-stage-dots > span { width: 11px; height: 11px; }
+  .brew-stage-progress progress { height: 8px; }
+  .brew-current-step { padding: 18px 14px; gap: 12px; border-radius: 15px; }
+  .brew-action-icon { width: 46px; height: 70px; }
+  .brew-action-icon > svg:first-child { width: 35px; height: 35px; left: 0; }
+  .brew-action-icon > svg:last-child:not(:first-child) { width: 21px; height: 21px; bottom: 10px; }
+  .brew-action-label { font-size: 14px; margin-bottom: 6px; }
+  .brew-current-step h2 { font-size: 23px; }
+  .brew-step-name { font-size: 15px; }
+  .brew-condition { font-size: 12px; }
+  .brew-clock { max-width: 300px; }
+  .brew-clock-face { inset: 24px; gap: 12px; }
+  .brew-clock-face span { font-size: 16px; }
+  .brew-clock-face strong { font-size: clamp(42px, 14vw, 58px); }
+  .brew-clock-face small { font-size: 15px; }
+  .brew-clock-toggle { font-size: 18px; min-height: 46px; max-width: 168px; padding: 8px 14px; }
+  .brew-metrics { gap: 10px; margin-bottom: 16px; }
+  .brew-metric { padding: 14px 10px; gap: 7px; border-radius: 14px; }
+  .brew-metric > svg { width: 21px; height: 25px; }
+  .brew-metric span { font-size: 13px; }
+  .brew-metric strong { font-size: 27px; }
+  .brew-metric small { font-size: 11px; }
+  .brew-sequence { padding: 12px 8px; border-radius: 14px; }
+  .brew-main-controls { gap: 12px; margin-top: 18px; }
+  .brew-main-controls .button { min-height: 60px; padding: 12px; font-size: 16px; gap: 8px; border-radius: 18px; }
 }
 
 /* Reference content shares the personal library's surfaces and layout. */
@@ -791,4 +963,122 @@ h1 { font-size: clamp(30px, 2.8vw, 42px); letter-spacing: -1.2px; line-height: 1
   .prepare-intro .page-header { flex-direction: column; align-items: stretch; }
   .library-tabs a { font-size: 15px; }
   .recipe-detail-actions .button { padding: 12px 8px; }
+}
+
+/* Shared warm surfaces, compact library rows and functional settings. */
+.card { box-shadow: 0 3px 8px color-mix(in srgb, var(--color-border) 28%, transparent); }
+.button--primary { background: linear-gradient(115deg, var(--color-action), color-mix(in srgb, var(--color-action), var(--color-accent) 20%)); }
+.review-confirmation > .button { background: var(--color-confirm); }
+.brew-clock-toggle { background: var(--color-timer-action); }
+.sidebar { background: var(--color-navigation); color: var(--color-navigation-text); }
+.brand, .sidebar .eyebrow, .sidebar-bottom, .sidebar-bottom > span { color: var(--color-navigation-text); }
+.brand-icon { border-color: var(--color-navigation-text); }
+.sidebar-divider { background: var(--color-navigation-text); }
+.nav-item { color: var(--color-navigation-text); }
+.nav-item:hover { background: color-mix(in srgb, var(--color-navigation-text) 10%, transparent); }
+.nav-item.is-active { background: var(--color-navigation-active); color: var(--color-navigation-active-text); }
+.nav-mark { background: var(--color-navigation-active-text); }
+.prepare-library-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+.prepare-library-heading h1 { font: 700 32px/1.25 var(--font-sans); letter-spacing: -.8px; }
+.prepare-library-heading p { max-width: 430px; font-size: 16px; line-height: 1.5; margin-top: 5px; }
+.settings-link { display: grid; place-items: center; flex-shrink: 0; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--color-border); background: var(--color-surface); }
+.settings-link:hover { background: var(--color-library-panel); }
+.prepare-entry-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 22px; }
+.prepare-history-card { display: flex; align-items: flex-start; gap: 20px; padding: 22px; background: var(--color-library-panel); border-radius: 18px; }
+.prepare-history-card > svg { flex-shrink: 0; color: var(--color-text-warm); }
+.prepare-history-card > div { flex: 1; min-width: 0; }
+.prepare-history-card h2 { font: 700 21px/1.3 var(--font-sans); }
+.prepare-history-card p { font-size: 14px; line-height: 1.5; margin: 6px 0 12px; }
+.prepare-history-card .button { float: right; min-height: 44px; }
+.prepare-library-banner { display: flex; flex-direction: column; justify-content: space-between; min-height: 205px; position: relative; overflow: hidden; gap: 12px; padding: 22px; border-radius: 18px; color: #FFF3DF; background: linear-gradient(90deg, rgb(40 21 10 / 88%), rgb(40 21 10 / 32%) 75%), url('/images/coffee-library.png') center / cover; }
+.prepare-library-banner h2 { font: 650 25px/1.2 var(--font-sans); }
+.prepare-library-banner p { max-width: 210px; font-size: 14px; line-height: 1.5; margin-top: 8px; }
+.prepare-library-banner > span { align-self: flex-end; display: inline-flex; align-items: center; gap: 14px; padding: 9px 14px; border-radius: 13px; background: #F6DFC3; color: #42250F; font-size: 13px; font-weight: 600; }
+.prepare-library-banner:hover > span { background: #FFF2DD; }
+.prepare-list-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 16px 0; }
+.prepare-list-heading .collection-label { margin: 0; font-size: 16px; }
+.prepare-list-heading .button { gap: 8px; }
+.recipe-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.recipe-list-row { display: flex; align-items: center; gap: 22px; padding: 18px 22px; background: var(--color-surface); border-radius: 16px; min-width: 0; }
+.recipe-list-row:hover { border-color: var(--color-accent-strong); background: var(--color-recipe); }
+.recipe-list-row > svg { flex-shrink: 0; color: var(--color-text-warm); }
+.recipe-list-row > div { min-width: 0; flex: 1; }
+.recipe-list-row h2 { font: 700 18px/1.4 var(--font-sans); overflow-wrap: anywhere; }
+.recipe-list-row p { font-size: 14px; line-height: 1.5; color: var(--color-text-warm); margin-top: 3px; }
+.preparation-settings { max-width: 720px; margin: 0 auto 40px; }
+.settings-heading { position: relative; display: flex; align-items: center; gap: 12px; padding-bottom: 24px; }
+.settings-heading h1 { flex: 1; font: 700 28px/1.3 var(--font-sans); letter-spacing: -.5px; text-align: center; padding-right: 50px; }
+.settings-heading .back-link { min-height: 44px; width: 44px; padding: 8px; background: transparent; border: 0; margin: 0; color: var(--color-text); }
+.settings-section { padding: 24px; border-radius: 20px; margin-bottom: 16px; }
+.settings-section > p { font-size: 16px; line-height: 1.6; margin-top: 5px; }
+.settings-subtitle { font: 700 24px/1.3 var(--font-sans); margin: 30px 12px 16px; }
+.appearance-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; border: 0; padding: 0; margin: 20px 0 0; }
+.appearance-option { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; padding: 20px 10px; min-width: 0; border: 1px solid var(--color-border); border-radius: 18px; cursor: pointer; background: var(--color-surface); font-size: 16px; font-weight: 650; box-shadow: var(--shadow-soft); }
+.appearance-option.is-selected { background: var(--color-instruction); color: var(--color-instruction-text); outline: 3px solid var(--color-surface-raised); }
+.appearance-option input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--color-accent-strong); }
+.appearance-option:focus-within { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+@media (max-width: 760px) {
+  .sidebar { border-radius: 0 0 24px 24px; }
+  .brand { justify-content: center; }
+  .main-navigation { background: var(--color-navigation); border-color: var(--color-instruction-border); }
+  .main-shell { padding-left: calc(16px + var(--safe-left)); padding-right: calc(16px + var(--safe-right)); }
+  .app-shell--ritual .sidebar, .app-shell--settings .sidebar { padding: 0; border: 0; }
+  .app-shell--ritual .sidebar > .brand, .app-shell--settings .sidebar > .brand { display: none; }
+  .app-shell--ritual .main-navigation, .app-shell--settings .main-navigation { display: none; }
+  .app-shell--ritual .topbar, .app-shell--settings .topbar { display: none; }
+  .app-shell--ritual main, .app-shell--settings main { padding-top: calc(18px + var(--safe-top)); }
+  .app-shell--ritual .main-shell, .app-shell--settings .main-shell { padding-bottom: calc(20px + var(--safe-bottom)); }
+  .prepare-entry-cards { grid-template-columns: 1fr; gap: 12px; }
+  .prepare-history-card { padding: 18px; gap: 16px; }
+  .prepare-library-banner { min-height: 180px; padding: 20px; }
+  .prepare-library-heading h1 { font-size: 28px; }
+  .recipe-list-row { padding: 15px 16px; gap: 16px; }
+  .settings-section { padding: 20px 16px; }
+  .appearance-options { gap: 10px; }
+  .appearance-option { padding: 18px 7px; font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .preparation-heading-brand { font-size: 12px; gap: 7px; }
+  .preparation-heading { gap: 12px; }
+  .review-parameter-facts dd { font-size: 17px; }
+  .review-parameter-facts > div { padding-inline: 5px; }
+  .review-parameter-facts dt { font-size: 10px; }
+  .review-equipment-card > svg { display: none; }
+  .brew-clock-face span { font-size: 14px; }
+  .brew-clock-face strong { font-size: 44px; }
+  .brew-clock-face small { font-size: 13px; }
+  .brew-clock-toggle { min-height: 44px; font-size: 16px; padding: 8px 10px; }
+  .brew-metric > svg { display: none; }
+  .brew-metric strong { font-size: 26px; }
+  .brew-main-controls .button { font-size: 14px; gap: 6px; padding: 12px 8px; }
+}
+.brew-timeline-body { position: relative; padding-right: 40px; }
+.brew-timeline-detail > summary { position: absolute; right: 0; top: 0; width: 40px; min-height: 44px; display: grid; place-items: center; border-radius: 8px; }
+.brew-timeline-detail > summary::-webkit-details-marker { display: none; }
+.brew-timeline-detail[open] > summary svg { transform: rotate(180deg); }
+.brew-timeline-detail > summary:hover { background: color-mix(in srgb, var(--color-text) 6%, transparent); }
+.review-equipment-card strong { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 480px) { .brew-timeline-body { padding-right: 36px; } .brew-timeline-detail > summary { width: 36px; } }
+.prepare-list-heading .collection-label { margin-right: auto; }
+.prepare-list-heading .prepare-search-toggle { padding: 10px; min-width: 44px; }
+.prepare-list-heading + .collection-toolbar { margin-top: 0; margin-bottom: 16px; }
+@media (max-width: 760px) {
+  .app-shell--prepare-library .topbar { display: none; }
+  .app-shell--prepare-library main { padding-top: 22px; }
+  .prepare-library-heading { margin-bottom: 14px; }
+  .prepare-library-heading p { font-size: 14px; }
+  .prepare-entry-cards { margin-bottom: 16px; }
+  .prepare-history-card { padding: 16px; }
+  .prepare-history-card h2 { font-size: 18px; }
+  .prepare-history-card > svg { width: 32px; }
+  .prepare-history-card p { font-size: 13px; }
+  .prepare-library-banner { min-height: 160px; padding: 16px 20px; }
+  .prepare-library-banner p { font-size: 13px; max-width: 190px; }
+  .prepare-library-banner h2 { font-size: 23px; }
+  .app-shell--prepare-library .library-tabs { padding: 4px; gap: 4px; }
+  .app-shell--prepare-library .library-tabs a { min-height: 36px; font-size: 13px; padding: 6px; }
+  .app-shell--prepare-library .library-tabs a[aria-current='page'] { background: var(--color-library-panel); color: var(--color-text); border-color: var(--color-border); }
+  .prepare-list-heading { margin-block: 12px; }
+  .prepare-list-heading .button { font-size: 13px; padding: 10px; }
+  .recipe-list-row h2 { font-size: 16px; }
 }

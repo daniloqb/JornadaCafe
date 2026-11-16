@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#315344</color>
-    <color name="colorPrimaryDark">#315344</color>
-    <color name="colorAccent">#B77B4D</color>
-    <color name="colorCream">#F6F2EA</color>
-    <color name="colorAppBackgroundLight">#F6F2EA</color>
-    <color name="colorAppBackgroundDark">#211B18</color>
+    <color name="colorPrimary">#4A3025</color>
+    <color name="colorPrimaryDark">#4A3025</color>
+    <color name="colorAccent">#AF765E</color>
+    <color name="colorCream">#FBF1E6</color>
+    <color name="colorAppBackgroundLight">#FBF1E6</color>
+    <color name="colorAppBackgroundDark">#1F1713</color>
     <color name="colorWindowBackground">@color/colorAppBackgroundLight</color>
 </resources>

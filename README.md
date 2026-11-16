@@ -1,6 +1,6 @@
 # Minha Jornada pelo Café
 
-**Fase 04.2 — Refinamento do Cadastro de Cafés, Características e Produtores**, preservando a coleção, a biblioteca e o preparo guiado. Dados locais, estoque por pacote, histórico e temas claro, escuro e automático. Versão atual: **0.4.4**.
+**Fase 04.4 — Revisão visual da receita e do preparo guiado**, preservando a coleção, a biblioteca e o cadastro de cafés, características e produtores da Fase 04.2. Dados locais, estoque por pacote, histórico e temas claro, escuro e automático. Versão atual: **0.4.4**.
 
 ## Executar no navegador
 
@@ -45,7 +45,44 @@ cd android
 
 No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/outputs/apk/debug/app-debug.apk`. Após alterações na interface, execute `npm run android:sync` antes de recompilar.
 
+### Instalar ou atualizar no seu smartphone
+
+Com o cabo USB conectado, habilite **Depuração USB** nas **Opções do desenvolvedor** do Android e aceite a autorização deste computador na tela do aparelho. Na pasta do projeto, confira a conexão:
+
+```bash
+adb devices -l
+```
+
+O aparelho deve aparecer com o estado `device`. Se aparecer `unauthorized`, desbloqueie a tela e aceite a autorização. Para gerar, sincronizar, instalar e abrir a versão atual, execute:
+
+```bash
+npm run android:run
+```
+
+Se houver mais de um aparelho ou emulador conectado, escolha o smartphone quando solicitado. Repita esse comando depois de alterar o código para levar as mudanças ao celular. O aplicativo instalado inclui os arquivos web e pode ser aberto pelo ícone **Minha Jornada pelo Café**, sem manter o servidor Vite ligado.
+
+Para instalar um APK já gerado, sem recompilar, use:
+
+```bash
+adb install -r android/app/build/outputs/apk/debug/app-debug.apk
+adb shell am start -n br.com.jornadacafe.app/.MainActivity
+```
+
+A opção `-r` atualiza a instalação mantendo os dados locais, desde que a assinatura do APK seja compatível com a instalação existente. Com vários aparelhos, acrescente `-s SERIAL` depois de `adb`, usando o identificador mostrado por `adb devices -l`.
+
 As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
+
+## Fase 04.4 — Fidelidade às referências aprovadas
+
+As três imagens fornecidas pelo usuário estão preservadas em `docs/references/phase-04.4/`. Elas orientam a composição, proporções, hierarquia, contraste, espaçamentos e componentes. O [relatório visual](docs/phase-04.4.md) registra as adaptações, os assets e a validação.
+
+- **Revisão:** cabeçalho com retorno e marca, título editorial, identificação com fotografia, quatro parâmetros lado a lado, moagem e filtro em superfícies areia, etapas em linha do tempo vertical e botão verde amplo **Confirmar revisão**. A confirmação cria uma sessão **pausada, em 00:00**, e abre o preparo guiado sem iniciar o timer.
+- **Preparo guiado:** cabeçalho compacto com identificação da receita, progresso por etapa, instrução em cartão espresso, cronômetro circular contando para cima com **Iniciar/Pausar/Retomar dentro do círculo**, cartões separados de tempo total e meta acumulada, linha do tempo e botões Anterior/Próxima etapa após o painel.
+- **Biblioteca e configurações:** cartão de histórico, banner fotográfico da Biblioteca do Café, receitas em linhas compactas e acesso a Configurações. A aparência oferece Escuro, Claro e Automático, com persistência e sincronização entre os controles; som e vibração reutilizam os avisos existentes.
+- **Identidade global:** creme, areia e espresso no tema claro; espresso profundo, cacau e textos creme no escuro. Oliva sálvia e terracota aparecem nos destaques. A navegação usa fundo espresso e seleção areia, mantendo as cinco áreas. Os componentes compartilhados, cadastros, favicon e cores nativas acompanham a paleta.
+- **Dados e ações:** nomes, quantidades, durações, condições, proporções e etapas vêm dos registros. Recalcular despejos continua sendo uma ação explícita. Retorno confirmado, recuperação, salvamento e consumo de estoque preservam as regras existentes; confirmar a revisão não consome estoque nem contabiliza tempo de preparo.
+
+Os formulários completos ficam em seções expansíveis para preservar a composição de revisão. Sem duração informada, o relógio mostra apenas o tempo acompanhado, sem prazo ou porcentagem inventados. A meta é o peso **esperado** na balança, pois não há integração de medição. Unidades são informativas; recursos futuros da imagem não se tornam ações fictícias. Não há migração de banco nem substituição dos dados existentes.
 
 ## Escopo entregue — Fase 04.2
 

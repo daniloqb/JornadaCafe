@@ -25,7 +25,7 @@ export function scaleStepWater(steps: RecipeStep[], water: number) {
     assigned += amount; return { ...step, water: amount };
   }));
 }
-export function makeSession(data: CollectionData, recipe: BrewRecipe, coffeeId?: string, packageId?: string, now = Date.now()): BrewSession {
+export function makeSession(data: CollectionData, recipe: BrewRecipe, coffeeId?: string, packageId?: string, now = Date.now(), status: BrewSession['status'] = 'paused'): BrewSession {
   validateRecipe(recipe, data);
   const original = data.recipes.find(r => r.id === recipe.id && r.version === recipe.version);
   if (!original) throw new Error('A receita selecionada não está mais disponível.');
@@ -37,7 +37,7 @@ export function makeSession(data: CollectionData, recipe: BrewRecipe, coffeeId?:
   if (packageId && (!packet || packet.coffeeId !== coffeeId)) throw new Error('Selecione um pacote deste café.');
   if (packet && packet.remainingWeight < recipe.dose) throw new Error('O pacote não tem estoque suficiente para esta dose.');
   const entity = newEntity(); const at = new Date(now).toISOString();
-  return { ...entity, startedAt: at, checkpointAt: at, snapshot: structuredClone({ recipe, method, technique, coffee, packet }), elapsedMs: 0, status: 'running', stepIndex: 0, stepStartedMs: 0, executions: [{ id: crypto.randomUUID(), stepId: recipe.steps[0].id, enteredMs: 0 }], needsConfirmation: false };
+  return { ...entity, startedAt: at, checkpointAt: at, snapshot: structuredClone({ recipe, method, technique, coffee, packet }), elapsedMs: 0, status, stepIndex: 0, stepStartedMs: 0, executions: [{ id: crypto.randomUUID(), stepId: recipe.steps[0].id, enteredMs: 0 }], needsConfirmation: false };
 }
 function validateSession(value: BrewSession) {
   const steps = value.snapshot.recipe.steps;

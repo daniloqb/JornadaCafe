@@ -53,10 +53,13 @@ export function useAppearance() {
         applyAppearance(normalizeAppearance(document.documentElement.dataset.appearance));
       }
     };
+    const handleAppearanceChoice = () => setAppearance(normalizeAppearance(document.documentElement.dataset.appearance));
+    window.addEventListener('jornada:appearance', handleAppearanceChoice);
     media.addEventListener('change', handleSystemChange);
     window.addEventListener('storage', handleStorageChange);
     document.addEventListener('visibilitychange', handleResume);
     return () => {
+      window.removeEventListener('jornada:appearance', handleAppearanceChoice);
       media.removeEventListener('change', handleSystemChange);
       window.removeEventListener('storage', handleStorageChange);
       document.removeEventListener('visibilitychange', handleResume);
@@ -66,6 +69,7 @@ export function useAppearance() {
   function chooseAppearance(next: Appearance) {
     applyAppearance(next);
     setAppearance(next);
+    window.dispatchEvent(new Event('jornada:appearance'));
     try {
       localStorage.setItem(PREFERENCE_KEY, next);
       setSaveFailed(false);

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ChevronRight, Filter } from 'lucide-react';
 import { BackLink, ActionLink, Button, Card, PageHeader } from '../../components/ui';
 import { Dialog, FormError, useFormAction } from '../../components/forms';
 import { CoffeePhoto } from '../../components/CoffeePhoto';
@@ -11,8 +12,9 @@ import type { ReactNode } from 'react';
 export function ReferenceList({ sources }: { sources: SourceReference[] }) {
   return <div className="reference-list">{sources.map((s, i) => <div key={s.id} className="source-reference"><strong>{s.title || `Fonte ${i + 1}`}</strong>{s.author && <p>Canal, autor ou publicação: {s.author}</p>}{s.notes && <p className="preserve-lines">{s.notes}</p>}{safeReferenceUrl(s.url) && <a className="text-link external-reference" href={safeReferenceUrl(s.url)} target="_blank" rel="noopener noreferrer">Abrir referência ↗<span className="sr-only"> — {s.title || s.author || `fonte ${i + 1}`} (nova janela)</span></a>}</div>)}</div>;
 }
-export function RecipeCards({ recipes }: { recipes: BrewRecipe[] }) {
+export function RecipeCards({ recipes, compact = false }: { recipes: BrewRecipe[]; compact?: boolean }) {
   const { data } = useCollection();
+  if (compact) return <div className="recipe-list">{recipes.map(r => <a key={r.id} className="card recipe-list-row recipe-card" href={`#/preparar/receitas/${r.id}`}><Filter size={30} strokeWidth={1.5} aria-hidden="true" /><div><h2>{r.name}</h2><p>{grams(r.dose)} · {grams(r.water)} · {ratio(r.dose, r.water)}</p></div><ChevronRight size={20} aria-hidden="true" /></a>)}</div>;
   return recipes.length ? <div className="library-grid">{recipes.map(r => <a key={r.id} className="card library-card recipe-card" href={`#/preparar/receitas/${r.id}`}><span className="eyebrow">{data.methods.find(m => m.id === r.methodId)?.name} · V{r.version}</span><h2>{r.name}</h2>{r.techniqueId && <p>{data.techniques.find(t => t.id === r.techniqueId)?.name}</p>}<div className="recipe-card-params"><span>{grams(r.dose)} café</span><span>{grams(r.water)} água</span><strong>{ratio(r.dose, r.water)}</strong></div><small>{r.steps.length} {r.steps.length === 1 ? 'etapa' : 'etapas'}</small></a>)}</div> : <p className="field-hint">Nenhuma receita associada por enquanto.</p>;
 }
 function Expandable({ title, children, open }: { title: string; children: ReactNode; open?: boolean }) { return <details className="card detail-section library-section" open={open}><summary>{title}</summary><div className="library-section-body">{children}</div></details>; }
