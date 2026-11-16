@@ -1,12 +1,17 @@
 import { ArrowRight, CircleAlert, LoaderCircle, Search, type LucideIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
+import { goBack } from '../app/history';
 
-export function Button({ variant = 'primary', className = '', ...props }: ComponentProps<'button'> & { variant?: 'primary' | 'secondary' }) {
+export function Button({ variant = 'primary', className = '', ...props }: ComponentProps<'button'> & { variant?: 'primary' | 'secondary' | 'danger' | 'edit' }) {
   return <button className={`button button--${variant} ${className}`} {...props} />;
 }
 
-export function ActionLink({ href, children, variant = 'primary' }: { href: string; children: ReactNode; variant?: 'primary' | 'secondary' }) {
-  return <a className={`button button--${variant}`} href={href}>{children}<ArrowRight size={17} aria-hidden="true" /></a>;
+export function ActionLink({ href, children, variant = 'primary', arrow = true, className = '' }: { href: string; children: ReactNode; variant?: 'primary' | 'secondary' | 'edit'; arrow?: boolean; className?: string }) {
+  return <a className={`button button--${variant} ${className}`} href={href}>{children}{arrow && <ArrowRight size={17} aria-hidden="true" />}</a>;
+}
+
+export function BackLink({ href, children }: { href: string; children: ReactNode }) {
+  return <a className="back-link" href={href} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); goBack(href); } }}>{children}</a>;
 }
 
 export function Card({ children, className = '', ...props }: ComponentProps<'div'>) {

@@ -1,7 +1,9 @@
 import { Capacitor, registerPlugin, type PluginListenerHandle } from '@capacitor/core';
 
 export const nativePreparation = registerPlugin<{
-  setActive(options: { awake: boolean; guardBack: boolean }): Promise<void>;
+  setActive(options: { awake: boolean }): Promise<void>;
+  setNavigationActive(options: { active: boolean }): Promise<void>;
+  exit(): Promise<void>;
   vibrate(): Promise<void>;
   addListener(event: string, handler: (data: { active?: boolean }) => void): Promise<PluginListenerHandle>;
 }>('Preparation');

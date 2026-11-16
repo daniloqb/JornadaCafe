@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ActionLink, Button, Card, PageHeader } from '../../components/ui';
+import { BackLink, ActionLink, Button, Card, PageHeader } from '../../components/ui';
 import { FormError, useFormAction } from '../../components/forms';
 import { useCollection } from '../../data/CollectionContext';
 import { grams } from '../../domain/collection';
@@ -11,6 +11,7 @@ export function ReferenceLibrary({ path }: { path: string }) {
   const { data, loading, error, mutate } = useCollection();
   const action = useFormAction();
   const [imported, setImported] = useState(false);
+  const [catalogAdded, setCatalogAdded] = useState(false);
   const [, , section = 'receitas', key] = path.split('/').filter(Boolean);
   const kind: ReferenceKind = section === 'metodos' ? 'metodos' : section === 'tecnicas' ? 'tecnicas' : 'receitas';
   const items = referenceItems(kind);
@@ -19,19 +20,20 @@ export function ReferenceLibrary({ path }: { path: string }) {
   const copies = item ? personalItems.filter(v => v.id === item.id || ('familyId' in v && v.familyId === item.id)) : [];
   const copy = copies.sort((a, b) => ('version' in b ? Number(b.version) : 0) - ('version' in a ? Number(a.version) : 0))[0];
   const originalLink = `#/preparar/referencia/${kind}`;
-  if (key && !item) return <><PageHeader eyebrow="BIBLIOTECA DE REFERÊNCIA" title="Referência indisponível" description="Este conteúdo não está presente nesta versão do catálogo." /><ActionLink href={originalLink}>Voltar às referências</ActionLink></>;
+  if (key && !item) return <><PageHeader eyebrow="BIBLIOTECA DE REFERÊNCIA" title="Referência indisponível" description="Este conteúdo não está presente nesta versão do catálogo." /><BackLink href={originalLink}>Voltar às referências</BackLink></>;
   const method = kind === 'metodos' ? item as ReferenceMethod | undefined : undefined;
   const technique = kind === 'tecnicas' ? item as ReferenceTechnique | undefined : undefined;
   const recipe = kind === 'receitas' ? item as ReferenceRecipe | undefined : undefined;
   const relatedMethod = referenceCatalog.methods.find(m => m.id === (technique?.methodId ?? recipe?.methodId));
   const relatedTechnique = referenceCatalog.techniques.find(t => t.id === recipe?.techniqueId);
   return <>
-    <a className="text-link" href={item ? originalLink : '#/preparar'}>← {item ? 'Voltar às referências' : 'Minha biblioteca'}</a>
+    <BackLink href={item ? originalLink : '#/preparar'}>← {item ? 'Voltar às referências' : 'Minha biblioteca'}</BackLink>
     <PageHeader eyebrow={`BIBLIOTECA DE REFERÊNCIA · CATÁLOGO ${catalogVersion}`} title={item?.name ?? 'Aprender e experimentar'} description={item ? 'Referência original. Adicione uma cópia à sua biblioteca para editar e experimentar.' : 'Métodos são equipamentos; técnicas são estratégias; receitas são aplicações com quantidades e etapas. Explore offline e escolha o que deseja incorporar.'} />
     {!item ? <>
       <nav className="collection-perspectives library-tabs" aria-label="Biblioteca de referência">{[['receitas', 'Receitas'], ['metodos', 'Métodos'], ['tecnicas', 'Técnicas']].map(([value, label]) => <a key={value} href={`#/preparar/referencia/${value}`} aria-current={kind === value ? 'page' : undefined}>{label}</a>)}</nav>
-      <p className="field-hint">Nada é adicionado automaticamente à sua biblioteca pessoal. As fontes externas só abrem quando você escolher um link.</p>
-      <div className="library-grid">{items.map(ref => <a className="card library-card" key={ref.referenceKey} href={`#/preparar/referencia/${kind}/${ref.referenceKey}`}><span className="eyebrow">REFERÊNCIA · {kind === 'metodos' ? 'MÉTODO' : kind === 'tecnicas' ? 'TÉCNICA' : 'RECEITA'}</span><h2>{ref.name}</h2>{'description' in ref && <p>{ref.description}</p>}{'principle' in ref && kind === 'tecnicas' && <p>{ref.principle}</p>}{'dose' in ref && <div className="recipe-card-params"><span>{grams(ref.dose)} café</span><span>{grams(ref.water)} água</span><strong>{ratio(ref.dose, ref.water)}</strong></div>}</a>)}</div>
+      <Card className="detail-section reference-import"><h2>Levar as referências para o seu caderno</h2><p>Adicione os 8 métodos, 5 técnicas e 4 receitas como registros pessoais editáveis. Eles ficam salvos ao fechar e reabrir o aplicativo. Itens já incorporados e suas edições são preservados.</p><FormError error={action.error} /><div className="detail-actions"><Button disabled={action.busy || loading || !!error} onClick={() => void action.run(async () => { await mutate({ type: 'importReferenceCatalog' }); setCatalogAdded(true); })}>{action.busy ? 'Adicionando…' : 'Adicionar catálogo à minha biblioteca'}</Button><ActionLink href="#/preparar" variant="secondary">Abrir minha biblioteca</ActionLink></div>{catalogAdded && <p role="status">Métodos, técnicas e receitas salvos na sua biblioteca.</p>}{!!error && <p className="field-hint">Para salvar, tente inicializar o armazenamento novamente pelo aviso do aplicativo.</p>}</Card>
+      <p className="field-hint">Você também pode consultar e adicionar cada item separadamente. As fontes externas só abrem quando você escolher um link.</p>
+      <div className="library-grid">{items.map(ref => <a className={`card library-card${kind === 'receitas' ? ' recipe-card' : ''}`} key={ref.referenceKey} href={`#/preparar/referencia/${kind}/${ref.referenceKey}`}><span className="eyebrow">REFERÊNCIA · {kind === 'metodos' ? 'MÉTODO' : kind === 'tecnicas' ? 'TÉCNICA' : 'RECEITA'}</span><h2>{ref.name}</h2>{'description' in ref && <p>{ref.description}</p>}{'principle' in ref && kind === 'tecnicas' && <p>{ref.principle}</p>}{'dose' in ref && <div className="recipe-card-params"><span>{grams(ref.dose)} café</span><span>{grams(ref.water)} água</span><strong>{ratio(ref.dose, ref.water)}</strong></div>}</a>)}</div>
       {kind === 'tecnicas' && <Card className="detail-section"><h2>Pour-over: pré-infusão e despejos sucessivos</h2><p>{pourOverGuide}</p><ReferenceList sources={pourOverSources} /></Card>}
       {kind === 'metodos' && <p className="field-hint">Os métodos sem receitas confirmadas oferecem explicações e fontes. Você pode criar suas próprias receitas na biblioteca pessoal.</p>}
     </> : <>

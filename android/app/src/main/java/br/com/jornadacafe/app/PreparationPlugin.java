@@ -25,13 +25,23 @@ public class PreparationPlugin extends Plugin {
     @PluginMethod
     public void setActive(PluginCall call) {
         boolean awake = Boolean.TRUE.equals(call.getBoolean("awake", false));
-        boolean guard = Boolean.TRUE.equals(call.getBoolean("guardBack", false));
         getActivity().runOnUiThread(() -> {
             if (awake) getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             else getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            if (backCallback != null) backCallback.setEnabled(guard);
             call.resolve();
         });
+    }
+    @PluginMethod
+    public void setNavigationActive(PluginCall call) {
+        boolean active = Boolean.TRUE.equals(call.getBoolean("active", false));
+        getActivity().runOnUiThread(() -> {
+            if (backCallback != null) backCallback.setEnabled(active);
+            call.resolve();
+        });
+    }
+    @PluginMethod
+    public void exit(PluginCall call) {
+        getActivity().runOnUiThread(() -> { call.resolve(); getActivity().finish(); });
     }
     @PluginMethod
     public void vibrate(PluginCall call) {

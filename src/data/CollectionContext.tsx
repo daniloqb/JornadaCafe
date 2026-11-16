@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { emptyCollection, type Coffee, type CollectionData, type CollectionMutation } from '../domain/collection';
-import type { BrewMethod } from '../domain/brewing';
+import { emptyCollection, type Coffee, type CollectionData, type CollectionMutation, type RelatedRecord } from '../domain/collection';
+import type { BrewMethod, BrewTechnique } from '../domain/brewing';
 import type { LocalStorage } from '../domain/local-storage';
 import { initializeStorage } from './storage';
 
@@ -11,6 +11,10 @@ interface CollectionContextValue {
   deleteCoffee: (id: string) => Promise<void>;
   saveMethod: (method: BrewMethod, photo?: Blob | null) => Promise<void>;
   deleteMethod: (id: string) => Promise<void>;
+  saveTechnique: (technique: BrewTechnique, photo?: Blob | null) => Promise<void>;
+  deleteTechnique: (id: string) => Promise<void>;
+  saveRecord: (record: RelatedRecord, photo?: Blob | null) => Promise<void>;
+  deleteRecord: (id: string) => Promise<void>;
 }
 const CollectionContext = createContext<CollectionContextValue | null>(null);
 export function useCollection() { const value = useContext(CollectionContext); if (!value) throw new Error('Coleção indisponível.'); return value; }
@@ -75,5 +79,31 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
     const photoId = data.methods.find(m => m.id === id)?.photoId;
     await mutate({ type: 'deleteMethod', id }); await cleanPhoto(photoId);
   }
-  return <CollectionContext.Provider value={{ data, storage, loading, error, warning, retry: () => setAttempt(v => v + 1), mutate, saveCoffee, deleteCoffee, saveMethod, deleteMethod }}>{children}</CollectionContext.Provider>;
+  async function saveTechnique(technique: BrewTechnique, photo?: Blob | null) {
+    if (!storage) throw new Error('Armazenamento indisponível.');
+    const oldPhoto = data.techniques.find(m => m.id === technique.id)?.photoId;
+    const photoId = photo ? crypto.randomUUID() : photo === null ? undefined : technique.photoId;
+    if (photo && photoId) await storage.savePhoto(photoId, photo);
+    try { await mutate({ type: 'technique', value: { ...technique, photoId } }); }
+    catch (reason) { if (photo && photoId) await cleanPhoto(photoId); throw reason; }
+    if (oldPhoto && oldPhoto !== photoId) await cleanPhoto(oldPhoto);
+  }
+  async function deleteTechnique(id: string) {
+    const photoId = data.techniques.find(m => m.id === id)?.photoId;
+    await mutate({ type: 'deleteTechnique', id }); await cleanPhoto(photoId);
+  }
+  async function saveRecord(record: RelatedRecord, photo?: Blob | null) {
+    if (!storage) throw new Error('Armazenamento indisponível.');
+    const oldPhoto = data.records.find(r => r.id === record.id)?.photoId;
+    const photoId = photo ? crypto.randomUUID() : photo === null ? undefined : record.photoId;
+    if (photo && photoId) await storage.savePhoto(photoId, photo);
+    try { await mutate({ type: 'record', value: { ...record, photoId } }); }
+    catch (reason) { if (photo && photoId) await cleanPhoto(photoId); throw reason; }
+    if (oldPhoto && oldPhoto !== photoId) await cleanPhoto(oldPhoto);
+  }
+  async function deleteRecord(id: string) {
+    const photoId = data.records.find(r => r.id === id)?.photoId;
+    await mutate({ type: 'deleteRecord', id }); await cleanPhoto(photoId);
+  }
+  return <CollectionContext.Provider value={{ data, storage, loading, error, warning, retry: () => setAttempt(v => v + 1), mutate, saveCoffee, deleteCoffee, saveMethod, deleteMethod, saveTechnique, deleteTechnique, saveRecord, deleteRecord }}>{children}</CollectionContext.Provider>;
 }

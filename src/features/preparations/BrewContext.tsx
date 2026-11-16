@@ -1,3 +1,4 @@
+import { goBack } from '../../app/history';
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Capacitor, type PluginListenerHandle } from '@capacitor/core';
 import { useCollection } from '../../data/CollectionContext';
@@ -73,16 +74,17 @@ export function BrewProvider({ children }: { children: ReactNode }) {
     const handles: PluginListenerHandle[] = []; let disposed = false;
     if (Capacitor.getPlatform() === 'android') {
       void nativePreparation.addListener('visibility', event => { nativeVisible.current = event.active !== false; syncRef.current(); }).then(handle => { if (disposed) void handle.remove(); else handles.push(handle); }).catch(() => undefined);
-      void nativePreparation.addListener('back', () => { if (clock.current && onExecutionScreen()) { const dialog = [...document.querySelectorAll('dialog[open]')].at(-1); if (dialog) dialog.dispatchEvent(new Event('cancel', { cancelable: true })); else setLeaving(true); } }).then(handle => { if (disposed) void handle.remove(); else handles.push(handle); }).catch(() => undefined);
     }
-    return () => { disposed = true; handles.forEach(handle => void handle.remove()); clearInterval(interval); clearInterval(saveInterval); document.removeEventListener('visibilitychange', visibility); window.removeEventListener('hashchange', visibility); window.removeEventListener('pageshow', visibility); window.removeEventListener('pagehide', pagehide); window.removeEventListener('beforeunload', unload); };
+    const back = (event: Event) => { if (clock.current && onExecutionScreen()) { event.preventDefault(); setLeaving(true); } };
+    window.addEventListener('jornada:back', back);
+    return () => { window.removeEventListener('jornada:back', back); disposed = true; handles.forEach(handle => void handle.remove()); clearInterval(interval); clearInterval(saveInterval); document.removeEventListener('visibilitychange', visibility); window.removeEventListener('hashchange', visibility); window.removeEventListener('pageshow', visibility); window.removeEventListener('pagehide', pagehide); window.removeEventListener('beforeunload', unload); };
   }, []);
   useEffect(() => {
     const active = !!session && onExecutionScreen(); const awake = active && session.status === 'running' && foreground.current;
     let sentinel: WakeLockSentinel | undefined; let disposed = false;
-    if (Capacitor.getPlatform() === 'android') void nativePreparation.setActive({ awake, guardBack: active }).catch(() => undefined);
+    if (Capacitor.getPlatform() === 'android') void nativePreparation.setActive({ awake }).catch(() => undefined);
     else if (awake && 'wakeLock' in navigator) void navigator.wakeLock.request('screen').then(lock => { if (disposed) void lock.release(); else sentinel = lock; }).catch(() => undefined);
-    return () => { disposed = true; void sentinel?.release().catch(() => undefined); if (Capacitor.getPlatform() === 'android') void nativePreparation.setActive({ awake: false, guardBack: false }).catch(() => undefined); };
+    return () => { disposed = true; void sentinel?.release().catch(() => undefined); if (Capacitor.getPlatform() === 'android') void nativePreparation.setActive({ awake: false }).catch(() => undefined); };
   // A state change/route visibility triggers re-acquisition without cycling the lock on every tick.
   }, [!!session, session?.status, foreground.current]);
   function choosePreferences(value: AlertPreferences) { if (value.sound) alerts.current.unlock(); setPreferences(value); setPreferenceError(!saveAlertPreferences(value)); }
@@ -110,7 +112,7 @@ export function BrewProvider({ children }: { children: ReactNode }) {
     const id = clock.current?.read(performance.now(), Date.now()).id; if (!id) return;
     await latest.current.mutate({ type: 'discardSession', id }); closed.current.add(id); clock.current = undefined; setSession(undefined); setRecovered(false); setCheckpointError(undefined);
   }
-  return <BrewContext.Provider value={{ session, recovered, checkpointError, preferences, preferenceError, choosePreferences, testAlerts: () => { alerts.current.unlock(); setTimeout(() => alerts.current.signal(true, prefs.current), 100); }, start, pause: () => control('pause'), resume: () => control('resume'), next: () => control('next'), previous: () => control('previous'), finish, discard, checkpoint }}>{children}{leaving && <Dialog title="Sair da tela de preparo?" onClose={() => setLeaving(false)} busy={leaveAction.busy}><p>O preparo será pausado e guardado para você retomar. Nenhum registro será descartado e nenhum estoque será descontado.</p><FormError error={leaveAction.error} /><div className="form-actions"><Button variant="secondary" disabled={leaveAction.busy} onClick={() => setLeaving(false)}>Continuar aqui</Button><Button disabled={leaveAction.busy} onClick={() => void leaveAction.run(async () => { await control('pause'); setLeaving(false); location.hash = '/preparar'; })}>Guardar e sair</Button></div></Dialog>}</BrewContext.Provider>;
+  return <BrewContext.Provider value={{ session, recovered, checkpointError, preferences, preferenceError, choosePreferences, testAlerts: () => { alerts.current.unlock(); setTimeout(() => alerts.current.signal(true, prefs.current), 100); }, start, pause: () => control('pause'), resume: () => control('resume'), next: () => control('next'), previous: () => control('previous'), finish, discard, checkpoint }}>{children}{leaving && <Dialog title="Sair da tela de preparo?" onClose={() => setLeaving(false)} busy={leaveAction.busy}><p>O preparo será pausado e guardado para você retomar. Nenhum registro será descartado e nenhum estoque será descontado.</p><FormError error={leaveAction.error} /><div className="form-actions"><Button variant="secondary" disabled={leaveAction.busy} onClick={() => setLeaving(false)}>Continuar aqui</Button><Button disabled={leaveAction.busy} onClick={() => void leaveAction.run(async () => { await control('pause'); setLeaving(false); goBack('#/preparar'); })}>Guardar e sair</Button></div></Dialog>}</BrewContext.Provider>;
 }
 export function ActiveBrewNotice() {
   const { session, recovered, checkpointError, checkpoint } = useBrew();

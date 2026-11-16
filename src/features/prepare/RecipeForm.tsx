@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, PageHeader } from '../../components/ui';
+import { BackLink, Button, Card, PageHeader } from '../../components/ui';
 import { Field, FormError, TextArea, formNumber, formText, useFormAction } from '../../components/forms';
 import { useCollection } from '../../data/CollectionContext';
 import { newEntity } from '../../domain/collection';
@@ -19,7 +19,7 @@ export function RecipeForm({ existing, newVersion = false }: { existing?: BrewRe
   const [sources, setSources] = useState<SourceReference[]>(existing?.source ? [existing.source] : []);
   const numeric = (text: string) => Number(text.replace(',', '.'));
   const destination = existing ? `#/preparar/receitas/${existing.id}` : '#/preparar';
-  return <><a className="text-link" href={destination}>← Voltar à biblioteca</a><PageHeader eyebrow="SEU CADERNO DE PREPARO" title={newVersion ? 'Nova versão da receita' : existing ? 'Corrigir receita' : 'Criar receita'} description={newVersion ? `Partindo da versão ${existing?.version}. A versão anterior será preservada.` : existing ? 'Ajustes cadastrais mantêm esta versão. Para preservar uma mudança de preparo, crie uma nova versão pela ficha.' : 'Escolha um método e registre um preparo que você quer repetir.'} /><Card className="form-card"><form className="journal-form" onSubmit={event => {
+  return <><BackLink href={destination}>← Voltar à biblioteca</BackLink><PageHeader eyebrow="SEU CADERNO DE PREPARO" title={newVersion ? 'Nova versão da receita' : existing ? 'Corrigir receita' : 'Criar receita'} description={newVersion ? `Partindo da versão ${existing?.version}. A versão anterior será preservada.` : existing ? 'Ajustes cadastrais mantêm esta versão. Para preservar uma mudança de preparo, crie uma nova versão pela ficha.' : 'Escolha um método e registre um preparo que você quer repetir.'} /><Card className="form-card"><form className="journal-form" onSubmit={event => {
     event.preventDefault(); const form = new FormData(event.currentTarget);
     void action.run(async () => {
       const entity = existing && !newVersion ? existing : newEntity();

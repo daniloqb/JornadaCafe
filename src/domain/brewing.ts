@@ -5,7 +5,7 @@ export interface BrewMethod extends Entity, ReferenceOrigin { name: string; desc
 export interface SourceReference { id: string; title?: string; author?: string; url?: string; notes?: string }
 export interface BrewTechnique extends Entity, ReferenceOrigin {
   name: string; methodId?: string; creator?: string; sources: SourceReference[];
-  principle?: string; guidance?: string; notes?: string;
+  principle?: string; guidance?: string; notes?: string; photoId?: string;
 }
 export type StepType = 'pour' | 'wait' | 'manual' | 'finish';
 export type AdvanceCondition = 'manual' | 'time' | 'observable';

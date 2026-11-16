@@ -1,16 +1,19 @@
-import { importReference, type ReferenceMutation } from '../reference/import-reference';
+import { coffeeOptions, coffeeOptionKey, ratingLabels, standardCoffeeOptions, type CoffeeRatings, type CoffeeOptionKind } from './coffee-profile';
+import { safeReferenceUrl } from './brewing';
+import { importReference, importReferenceCatalog, type ReferenceMutation } from '../reference/import-reference';
 import { applyPreparationMutation, type BrewSession, type Preparation, type PreparationMutation } from './preparation';
 import { applyBrewingMutation, type BrewMethod, type BrewTechnique, type BrewRecipe, type BrewingMutation } from './brewing';
 
-export type RecordKind = 'producer' | 'property' | 'origin' | 'roaster';
-export const recordLabels: Record<RecordKind, string> = { producer: 'Produtor', property: 'Propriedade', origin: 'Origem', roaster: 'Torrefação' };
+export type RecordKind = 'producer' | 'property' | 'origin' | 'roaster' | 'species' | 'sensoryTag';
+export const recordLabels: Record<RecordKind, string> = { producer: 'Produtor', property: 'Propriedade', origin: 'Origem', roaster: 'Empresa torrefadora', species: 'Espécie', sensoryTag: 'Nota sensorial' };
 export interface Entity { id: string; createdAt: string; updatedAt: string }
 export interface RelatedRecord extends Entity {
-  kind: RecordKind; name: string; country?: string; state?: string; city?: string; region?: string; description?: string; additional?: string;
+  kind: RecordKind; name: string; photoId?: string; website?: string; propertyId?: string; originId?: string; country?: string; state?: string; city?: string; region?: string; description?: string; additional?: string;
 }
 export interface Coffee extends Entity {
   name: string; roasterId?: string; producerId?: string; propertyId?: string; originId?: string;
   photoId?: string; description?: string; altitude?: number; species?: string; variety?: string;
+  speciesId?: string; sensoryTagIds?: string[]; ratings?: CoffeeRatings;
   process?: string; roast?: string; commercialNotes?: string; additional?: string; tried: boolean; favorite: boolean;
 }
 export interface StockAdjustment { id: string; at: string; previous: number; remaining: number; initial: number; reason?: string }
@@ -31,7 +34,7 @@ export function inventory(data: CollectionData, id: string) {
   const packages = data.packages.filter(p => p.coffeeId === id);
   return { total: packages.reduce((sum, p) => sum + p.remainingWeight, 0), active: packages.filter(p => p.remainingWeight > 0).length, everOwned: packages.length > 0 };
 }
-export function associatedCoffees(data: CollectionData, id: string) { return data.coffees.filter(c => Object.keys(relationFields).some(key => c[key as keyof typeof relationFields] === id)); }
+export function associatedCoffees(data: CollectionData, id: string) { return data.coffees.filter(c => Object.keys(relationFields).some(key => c[key as keyof typeof relationFields] === id) || c.speciesId === id || c.sensoryTagIds?.includes(id)); }
 export function recordName(data: CollectionData, id?: string) { return data.records.find(r => r.id === id)?.name ?? ''; }
 export function originDescription(data: CollectionData, id?: string) {
   const record = data.records.find(r => r.id === id);
@@ -44,6 +47,7 @@ export function shelfCoffees(data: CollectionData) {
 
 /** Shared rules; both adapters apply these inside their write transaction. */
 export function applyMutation(data: CollectionData, mutation: CollectionMutation): CollectionData {
+  if (mutation.type === 'importReferenceCatalog') return importReferenceCatalog(data);
   if (mutation.type === 'importReference') return importReference(data, mutation);
   const preparation = applyPreparationMutation(data, mutation);
   if (preparation) return preparation;
@@ -64,12 +68,35 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
       const id = value[key as keyof typeof relationFields];
       if (id && !data.records.some(r => r.id === id && r.kind === kind)) throw new Error('Uma referência de origem ou produção não está disponível. Selecione novamente.');
     }
+    for (const [key, rating] of Object.entries(value.ratings ?? {})) {
+      if (!(key in ratingLabels) || (rating !== undefined && (!Number.isInteger(rating) || rating < 0 || rating > 10))) throw new Error('As avaliações devem ser números inteiros de 0 a 10 ou ficar sem informação.');
+    }
+    const resolveOption = (id: string, kind: CoffeeOptionKind) => {
+      if (next.records.some(r => r.id === id && r.kind !== kind)) throw new Error('A identificação da opção já está em uso por outro tipo de registro.');
+      const saved = next.records.find(r => r.id === id && r.kind === kind);
+      if (saved) return saved.id;
+      const preset = standardCoffeeOptions.find(r => r.id === id && r.kind === kind);
+      if (!preset) throw new Error('Selecione uma espécie ou nota sensorial disponível.');
+      const duplicate = next.records.find(r => r.kind === kind && coffeeOptionKey(kind, r.name) === coffeeOptionKey(kind, preset.name));
+      if (duplicate) return duplicate.id;
+      upsert(next.records, { ...preset, createdAt: new Date().toISOString() });
+      return preset.id;
+    };
+    if (value.speciesId) value.speciesId = resolveOption(value.speciesId, 'species');
+    if (value.sensoryTagIds) value.sensoryTagIds = [...new Set(value.sensoryTagIds.map(id => resolveOption(id, 'sensoryTag')))];
     upsert(next.coffees, value);
   } else if (mutation.type === 'record') {
     const value = { ...mutation.value, name: mutation.value.name.trim() };
     if (!value.name || !(value.kind in recordLabels)) throw new Error('Informe um nome e um tipo de registro válidos.');
     const existing = data.records.find(r => r.id === value.id);
     if (existing && existing.kind !== value.kind) throw new Error('O tipo de um registro existente não pode ser alterado.');
+    if (value.kind === 'species' || value.kind === 'sensoryTag') {
+      if (coffeeOptions(data, value.kind).some(r => r.id !== value.id && coffeeOptionKey(value.kind as CoffeeOptionKind, r.name) === coffeeOptionKey(value.kind as CoffeeOptionKind, value.name))) throw new Error('Esta opção já existe. Selecione o registro disponível.');
+    }
+    if (value.website && !safeReferenceUrl(value.website)) throw new Error('Informe um site válido começando por http:// ou https://.');
+    if (value.kind === 'producer') {
+      for (const [key, kind] of [['propertyId', 'property'], ['originId', 'origin']] as const) if (value[key] && !data.records.some(r => r.id === value[key] && r.kind === kind)) throw new Error('Selecione uma propriedade ou origem disponível para o produtor.');
+    }
     upsert(next.records, value);
   } else if (mutation.type === 'package') {
     const value = { ...mutation.value };
@@ -88,6 +115,7 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
     }
     upsert(next.packages, value);
   } else if (mutation.type === 'deleteRecord') {
+    if (data.records.some(r => r.kind === 'producer' && (r.propertyId === mutation.id || r.originId === mutation.id))) throw new Error('Este registro está em uso por um produtor. Desvincule ou substitua a referência antes de excluir.');
     if (associatedCoffees(data, mutation.id).length) throw new Error('Este registro está em uso. Edite os cafés associados para desvincular ou substituir a referência antes de excluir.');
     next.records = next.records.filter(r => r.id !== mutation.id);
   } else if (mutation.type === 'deleteCoffee') {

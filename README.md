@@ -1,6 +1,6 @@
 # Minha Jornada pelo Café
 
-**Fase 04.1 — Biblioteca de Referência**, preservando as Fases 01 a 04. Catálogo educativo offline, biblioteca pessoal e preparo guiado com histórico e integração opcional com o estoque. Versão atual: **0.4.1**.
+**Fase 04.2 — Refinamento do Cadastro de Cafés, Características e Produtores**, preservando a coleção, a biblioteca e o preparo guiado. Dados locais, estoque por pacote, histórico e temas claro, escuro e automático. Versão atual: **0.4.4**.
 
 ## Executar no navegador
 
@@ -15,7 +15,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # 23 verificações pontuais de persistência, domínio, cronômetro e referências
+npm test            # 31 verificações pontuais de persistência, domínio, cronômetro, referências e navegação
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```
@@ -47,6 +47,29 @@ No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/ou
 
 As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
 
+## Escopo entregue — Fase 04.2
+
+O formulário segue a ordem **Nome → Fotografia → Torra → Descrição / Observações → Características → Produtor**. Só o nome é obrigatório. Os pacotes continuam sendo gerenciados na ficha após salvar.
+
+- **Torra descritiva:** reutiliza o texto `coffee.roast`, sem conversão para número. O campo antigo de Torrefação era uma relação com empresa: `roasterId` foi preservado e continua acessível como **Empresa torrefadora** em Informações complementares.
+- **Espécie:** seleção pesquisável com teclado e **+ Novo**, reutilizável em outros cafés. As opções offline iniciais são Arábica — Coffea arabica, Canephora — Coffea canephora (Robusta/Conilon) e Libérica — Coffea liberica. A normalização impede duplicatas simples e reconhece essas denominações conhecidas sem criar uma taxonomia extensa.
+- **Características:** Variedade / Cultivar e Processo de pós-colheita continuam textuais. Torra, Acidez, Doçura e Intensidade usam estrelas e seleção acessível de inteiros entre 0 e 10. **Sem avaliação** é diferente de 0, e Limpar remove o valor. Dez ícones representam a nota; o seletor nativo evita alvos de toque pequenos.
+- **Notas sensoriais:** tags pesquisáveis, seleção múltipla, remoção e criação com **+ Novo**. Chocolate, Caramelo, Baunilha, Cacau, Castanhas, Floral, Frutas vermelhas, Cítrico e Mel são opções iniciais; nenhuma é atribuída a um café sem seleção.
+- **Avaliação geral do café:** escala independente de 0 a 10 dentro da seção opcional. Aparece separadamente na ficha e não é calculada a partir das características nem alterada ao preparar.
+- **Produtor:** seleção principal única com criação contextual. Seu cadastro reúne nome, foto otimizada, propriedade, origem, geografia, descrição, site HTTP/HTTPS e notas complementares. O site só abre pela ação explícita. A ficha do produtor mostra os cafés e os locais individuais associados.
+- **Locais distintos:** novos cafés podem incorporar o local de referência do produtor selecionado. Cada café guarda seu próprio vínculo. Alterar o produtor não reescreve as propriedades/origens dos cafés existentes. A seção recolhida **Local específico deste café** preserva e permite ajustar vínculos individuais, inclusive quando um produtor trabalha com várias propriedades.
+- **Consulta:** a ficha mostra torra, características, tags, avaliação geral, produtor, estoque e preparações relacionadas. A pesquisa inclui tags, espécie, produtor, propriedade e geografia, mantendo filtros, ordenação, favoritos, Já experimentei, Tenho em casa e Já tive.
+
+### Compatibilidade e persistência da Fase 04.2
+
+Não foi necessária migração física: IndexedDB, SQLite e `metadata.schema-version` continuam em **4**. Nenhuma base é apagada, recriada ou regravada em massa. Os upgrades anteriores permanecem.
+
+O payload do café acrescenta `speciesId`, `sensoryTagIds` e `ratings` (torra, acidez, doçura, intensidade e geral). Os registros relacionados em `records` aceitam os tipos `species` e `sensoryTag`; produtores acrescentam `photoId`, `website`, `propertyId` e `originId`. As referências novas são verificadas nas transações dos adaptadores. Opções padrão só se tornam registros persistidos quando selecionadas e salvas com o café; opções criadas com **+ Novo** já ficam disponíveis para reutilização.
+
+UUIDs, imagens, empresas torrefadoras, vínculos individuais de propriedade/origem, pesos, correções de estoque, receitas, sessões e histórico permanecem intactos. Espécies antigas são apresentadas pelo texto original; correspondências conhecidas podem aparecer selecionadas no formulário e são incorporadas ao salvar. Textos desconhecidos são preservados. Notas sensoriais antigas permanecem em **Notas anteriores — texto preservado**, editáveis sem separação automática em tags. Nenhuma torra textual é transformada em pontuação e cafés anteriores não recebem avaliações.
+
+As fotografias dos produtores usam o mesmo IndexedDB/Filesystem privado e a otimização existente. A imagem antiga só é removida após o commit; falhas na gravação do registro limpam apenas a nova imagem. Registros relacionados em uso por café ou produtor têm exclusão protegida.
+
 ## Escopo entregue — Fase 04.1
 
 Em **Preparar → Biblioteca de referência**, o catálogo local oferece explicações e originais imutáveis. **Minha biblioteca** reúne somente os registros criados ou incorporados pela pessoa. A navegação principal continua com cinco áreas.
@@ -56,8 +79,11 @@ Em **Preparar → Biblioteca de referência**, o catálogo local oferece explica
 - **4 receitas V60:** 4:6 equilibrado (20/300 g; 60/60/60/60/60 g), 4:6 com distribuição modificada (20/300 g; 50/70/60/60/60 g), três despejos iguais (25/375 g; 125/125/125 g) e referência Café Gerações (25/375 g; 75/175/125 g). Todas têm proporção 1:15.
 - Os 93 °C e a moagem 27/40 aparecem somente como referência experimental do usuário na receita equilibrada. A distribuição modificada é ilustrativa, sem atribuição de receita oficial. Não foram inventados intervalos, parâmetros de outras receitas ou links.
 - Na referência de Alberto/Café Gerações, a pré-infusão tem 40 segundos indicativos e avanço manual. Uma espera observável precede o terceiro despejo. O tempo ambíguo de 1min40s permanece nas notas, sem definir início nem duração de etapa.
+- **Adicionar catálogo à minha biblioteca** (versão 0.4.2) salva os 8 métodos, 5 técnicas e 4 receitas de uma vez como registros pessoais editáveis. No Android, ficam nas tabelas principais `methods`, `techniques` e `recipes` do SQLite; na web, nos object stores correspondentes do IndexedDB. A gravação é atômica e usa as mesmas regras dos cadastros manuais. Repetir a ação não duplica nem substitui edições existentes.
 - **Adicionar à minha biblioteca** importa uma cópia editável e as dependências necessárias em uma única transação. Método e técnica também podem ser adicionados individualmente. Cópias existentes são reutilizadas por identidade, sem comparação por nome nem substituição de edições pessoais. A ficha pessoal permite consultar o original; receitas incorporadas usam o preparo guiado existente.
 - Nenhum item é persistido apenas por abrir ou atualizar o aplicativo. O catálogo não cria cafés, pacotes, estoques, sessões ou preparações realizadas. A biblioteca educativa funciona sem conexão; abrir fontes externas exige acesso à internet e uma ação explícita.
+
+Consultar referências e salvar registros pessoais são ações distintas. Para editar ou usar no preparo, escolha **Adicionar catálogo à minha biblioteca** e depois **Abrir minha biblioteca**. Os registros permanecem após encerrar e reabrir. A abertura do app não reinsere itens excluídos; uma nova incorporação exige sua ação explícita.
 
 O catálogo versão **1** fica em `src/reference/catalog.ts`, incluído no build e congelado em memória. A importação em `src/reference/import-reference.ts` usa as validações e os adaptadores atuais. Identificações estáveis e o campo opcional `referenceKey` no payload mantêm a origem das cópias e suas versões. **IndexedDB, SQLite e metadado continuam na versão 4**, sem migração, novas tabelas ou dependências. Estoque e histórico só mudam pelas ações normais de preparação existentes.
 
@@ -158,7 +184,7 @@ As telas usam `CollectionContext`, sem conhecer SQL, object stores ou caminhos n
 
 - **Café:** identidade do produto, com UUID, datas de criação/atualização, campos opcionais, referências relacionadas, favorito e indicação de já experimentado. Pode existir sem pacote.
 - **Pacote:** UUID e referência obrigatória ao café, pesos, dados da compra e histórico de correções. O estoque é sempre calculado pela soma dos pesos restantes; não há indicador independente. A Fase 04 desconta a dose apenas ao salvar um preparo com consumo confirmado.
-- **Registros relacionados:** produtores, propriedades, origens e torrefações têm UUIDs próprios e um tipo explícito, nome, geografia e observações opcionais. São persistidos no conjunto `records`, mantendo relações distintas no café.
+- **Registros relacionados:** produtores, propriedades, origens, empresas torrefadoras, espécies e tags sensoriais têm UUIDs e tipos explícitos no conjunto `records`. Produtores possuem fotografia, site e locais de referência opcionais; cafés preservam seus vínculos individuais.
 - **Navegador:** IndexedDB `minha-jornada-pelo-cafe`, versão física **4**, com `metadata`, `coffees`, `packages`, `records`, `photos`, `methods`, `techniques`, `recipes`, `preparations` e `sessions`. Fotografias são Blobs separados dos registros de domínio. Escritas e exclusões relacionadas aguardam o commit da transação.
 - **Android:** SQLite `minha_jornada_pelo_cafe`, `user_version` **4**, com `metadata`, `coffees`, `packages`, `records`, `methods`, `techniques`, `recipes`, `preparations` e `sessions`. As colunas relacionais têm chaves estrangeiras e os pesos têm restrições SQL. Os atributos opcionais e o histórico de correção ficam no payload JSON de cada registro, sem imagens embutidas. Operações de coleção são serializadas e transacionais.
 
@@ -198,11 +224,88 @@ Um backup futuro precisará incluir os Blobs/arquivos referenciados junto ao ban
 
 ## Dependências
 
-Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, dependência direta adicionada na Fase 02 para as fotografias nativas. As Fases 03, 04 e 04.1 não acrescentaram dependências.
+Produção: React/React DOM 19, Capacitor Core/Android 8, SQLite Community 8, Lucide React, DM Sans/Fraunces e **`@capacitor/filesystem` 8.1.5**, dependência direta adicionada na Fase 02 para as fotografias nativas. As Fases 03, 04, 04.1 e 04.2 não acrescentaram dependências.
 
 Desenvolvimento: TypeScript 5.9, Vite 8, Tailwind CSS 4, Capacitor CLI, Vitest 5 e fake-indexeddb. O teste pontual das instruções SQL utiliza `node:sqlite`, incluído no Node.js. As versões resolvidas ficam em `package-lock.json`. Playwright é usado apenas em uma pasta temporária de validação, sem dependência ou suíte adicional no projeto.
 
 As fontes são distribuídas sob OFL-1.1; suas licenças estão em `public/licenses/`.
+
+## Atualização 0.4.4 — Contraste e navegação da biblioteca
+
+- Edição e escolha de imagem usam verde da paleta; exclusões e remoção de imagem usam terracota avermelhada, com cores próprias para os dois temas. Os controles Voltar ganharam texto de 15 px, superfície preenchida e altura mínima de 48 px. Os links de texto compartilhados também ficaram maiores.
+- Preparar reúne título, descrição, criação e acessos à biblioteca de referência e ao histórico em um cartão. Receitas, Métodos e Técnicas têm opções maiores com seleção preenchida; cartões de receita usam verde suave e os detalhes usam uma superfície café/areia distinta.
+- Na ficha da receita, Preparar ocupa toda a primeira linha. Corrigir esta versão e Criar nova versão dividem igualmente a segunda linha, sem setas nos três botões.
+- Técnicas aceitam imagem opcional, seguindo o mesmo seletor, otimização, persistência e limpeza dos métodos. A identificação `photoId` fica no payload existente; o Blob usa IndexedDB na web e o arquivo privado usa Filesystem no Android. Não há migração: os bancos permanecem na versão 4.
+- A navegação marca as entradas do histórico desta aplicação, inclusive após recarga. Os controles de retorno percorrem as telas visitadas e têm destino de apoio para acessos diretos. No Android, a ponte local encaminha Voltar para fechar primeiro um diálogo, respeitar a confirmação do preparo e então voltar uma tela. Somente no primeiro ponto do histórico a Activity é encerrada. A tela ligada continua independente desse controle.
+
+Verificações em 15/11/2026:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript, build e Vitest | Aprovados; 31 testes, incluindo três verificações de histórico, retorno inicial e prioridade de diálogo/preparo |
+| Biblioteca nos dois temas | Lista, fichas de receita/método/técnica e editores de método/técnica conferidos em 320, 390 e 1440 px, sem rolagem horizontal; revisão visual em smartphone e desktop |
+| Cinco áreas | Conferidas nos dois temas em 320, 390 e 1440 px após ampliar os links |
+| Imagem da técnica no Chrome | Cadastro, troca, remoção, exclusão do registro e recuperação após recarga aprovados; arquivos anteriores removidos |
+| Contraste | Amostras finais de texto dos controles, links e painéis acima de 4,5:1 nos dois temas |
+| Ações da receita | Largura integral na primeira linha, divisão igual na segunda e ausência de setas confirmadas |
+| Histórico web | Retorno pelos controles, voltar/avançar do navegador, novo caminho após retorno e recarga aprovados |
+| Proteção do preparo | Confirmação, cancelamento da saída e retorno à revisão com checkpoint pausado conferidos no navegador |
+| APK 0.4.4 | Sincronização, `assembleDebug` e instalação como atualização aprovados (`adb install -r`: `Success`); abertura a frio confirmada |
+| Controles no WebView Android | Botões preenchidos, layout integral/metades da receita e retorno entre lista, ficha e editor conferidos |
+| Técnica com imagem no Android | Técnica e arquivo privado salvos; imagem recuperada após encerrar/reabrir; exclusão pela interface removeu o registro e o arquivo temporários |
+| Dados anteriores | Registros SQLite, metadados, estoque, biblioteca, preparações e aparência comparados antes/depois e preservados; esquema permaneceu em 4 |
+| Voltar físico/gesto Android | Confirmado manualmente pelo usuário: ficha do método → Métodos → Preparar → Início; saiu do app somente ao voltar no ponto inicial |
+
+A conferência de interface utilizou um perfil isolado do Chrome e scripts temporários, sem adicionar dependências. Os mecanismos de execução do preparo, consumo de estoque e cálculo de etapas permanecem os existentes. Não houve commits ou pushes.
+
+A versão **0.4.4 foi instalada no aparelho conectado em 15/11/2026**, preservando os dados existentes. A conferência usou o WebView, SQLite e Filesystem reais. Somente a técnica e a imagem temporárias criadas para este teste foram removidas. O APK está em `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+**Voltar confirmado no aparelho:** o usuário percorreu manualmente ficha do método → Métodos → Preparar → Início e confirmou que a saída ocorreu somente no ponto inicial. O aparelho bloqueia a simulação desse botão por ADB (`INJECT_EVENTS`), por isso a confirmação física foi feita pelo usuário.
+
+**Pendências manuais Android:** conferir também o botão físico/gesto Voltar com diálogos abertos e durante um preparo protegido. A prioridade do diálogo e a confirmação/pausa do preparo foram verificadas nos testes e no navegador, mas esses cenários físicos ainda não foram confirmados. As demais pendências manuais de galeria, som, vibração e recortes em outros aparelhos continuam aplicáveis.
+
+## Verificações da entrega — Fase 04.2
+
+Executadas em 15/11/2026, na versão **0.4.3** (o número 0.4.2 já identificava a atualização anterior de importação):
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript, build e Vitest | Aprovados; 28 testes, com quatro novos testes de integridade, opções, produtor e compatibilidade de payloads |
+| Cadastro e opções | Café apenas com nome; seleção e criação de espécie/tag; duplicatas de caixa/acentos rejeitadas; múltiplas tags e remoção aprovadas |
+| Escalas | Valores 0 e 10, ausência e limpeza conferidos; avaliação geral independente e persistência após recarga aprovadas |
+| Produtor | Cadastro contextual com propriedade/origem, foto e site; edição de nome, site e imagem; Blob antigo removido após salvar |
+| Pesquisa e ficha | Busca por produtor e tag; etiquetas, escalas e links explícitos; cafés associados e navegação de fichas aprovados |
+| Compatibilidade | Payloads anteriores, UUIDs, foto, torrefador, textos, locais distintos do mesmo produtor, pacote, biblioteca, histórico e sessão preservados; sem atribuir notas |
+| Temas e responsividade | Formulário, ficha e produtor nos dois temas a 390 e 1440 px; formulário também a 320 px, sem rolagem horizontal |
+| Android 0.4.3 | APK compilado, instalado como atualização e aberto a frio; base original conferida antes e depois |
+| SQLite e Filesystem reais | Café com espécie, tags, escalas 0/10, produtor, propriedade/origem e foto privada salvos pelo WebView; dados e imagem recuperados após encerrar/reabrir |
+| Limpeza da validação | Somente café, opções, produtor, propriedade/origem e fotografia temporários removidos; dados, estoque, 17 itens da biblioteca, histórico e aparência anteriores preservados |
+
+Os testes de interface foram pontuais em `/tmp`, sem nova suíte ou dependências do projeto. O APK final fica em `android/app/build/outputs/apk/debug/app-debug.apk`. A atualização mantém os dados já presentes no aparelho; não adiciona cafés ou avaliações de demonstração.
+
+**Pendências manuais:** experimentar a galeria Android com fotografias reais de diferentes formatos, abertura do site em navegador externo e leitura por TalkBack/VoiceOver. A seleção automatizada de arquivo confirmou otimização e persistência; não exercitou a tela da galeria do sistema. Permanecem as verificações manuais anteriores de som, vibração, botão físico Voltar, tela ligada e recortes em outros aparelhos.
+
+Não houve migração física, novas dependências, commits, pushes ou início da Fase 05. A avaliação geral implementada pertence ao produto café; avaliações de preparações continuam fora desta fase.
+
+## Atualização 0.4.2 — Biblioteca pessoal persistente
+
+A consulta do catálogo educativo, por si só, não criava registros pessoais. A ação **Adicionar catálogo à minha biblioteca** agora incorpora todos os métodos, técnicas e receitas em uma única transação, reutilizando as cópias existentes. O conteúdo pode ser editado pelos mesmos formulários do cadastro manual.
+
+Verificações executadas em 15/11/2026:
+
+| Verificação | Resultado |
+| --- | --- |
+| TypeScript, build e Vitest | Aprovados; 24 testes, incluindo importação completa, repetição concorrente, edições, exclusões e rollback de lote com erro |
+| Navegador | Oito métodos, cinco técnicas e quatro receitas gravados; edições dos três tipos preservadas após recarga e nova importação |
+| Interface | Novo controle conferido em claro/escuro a 320 e 1440 px, sem rolagem horizontal ou erros de execução |
+| APK 0.4.2 | Compilado e instalado como atualização com `adb install -r`: `Success` |
+| SQLite real | Catálogo incorporado pela interface nas tabelas principais: 8 métodos, 5 técnicas e 4 receitas; nova importação não duplicou nem sobrescreveu edições |
+| Encerrar e reabrir | Edições de método, técnica e receita recuperadas após encerramento do processo; conferência final após nova abertura |
+| Dados anteriores | Café, pacote, registros relacionados, saldo, histórico, sessão e aparência preservados; esquema mantido na versão 4 |
+
+**Os 17 registros foram mantidos na biblioteca pessoal do aparelho, conforme solicitado.** Apenas as alterações temporárias de nomes usadas para testar a edição foram revertidas. Nenhum café, pacote ou preparo de exemplo foi adicionado. Uma exclusão feita pela pessoa não é desfeita ao abrir o aplicativo; uma nova incorporação depende de ação explícita.
+
+A versão 0.4.2 não acrescenta dependências nem migrações. As pendências educativas e verificações manuais Android documentadas abaixo continuam aplicáveis. Não houve commits ou pushes.
 
 ## Verificações da entrega — Fase 04.1
 

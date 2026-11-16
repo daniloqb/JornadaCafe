@@ -2,9 +2,9 @@ import type { CollectionData } from '../domain/collection';
 import { applyBrewingMutation, type BrewingMutation } from '../domain/brewing';
 import { referenceCatalog, referenceItems, type ReferenceKind } from './catalog';
 
-export type ReferenceMutation = { type: 'importReference'; kind: ReferenceKind; key: string };
+export type ReferenceMutation = { type: 'importReference'; kind: ReferenceKind; key: string } | { type: 'importReferenceCatalog' };
 /** One shared transaction imports the dependency graph. Stable IDs never merge by name. */
-export function importReference(data: CollectionData, action: ReferenceMutation): CollectionData {
+export function importReference(data: CollectionData, action: Extract<ReferenceMutation, { type: 'importReference' }>): CollectionData {
   const item = referenceItems(action.kind).find(v => v.referenceKey === action.key);
   if (!item) throw new Error('Esta referência não está disponível nesta versão do catálogo.');
   let next = data;
@@ -38,6 +38,15 @@ export function importReference(data: CollectionData, action: ReferenceMutation)
     const importedTechnique = next.techniques.find(t => t.id === ref.techniqueId);
     if (importedTechnique?.methodId && importedTechnique.methodId !== ref.methodId) throw new Error('Sua cópia da técnica foi associada a outro método. Revise essa associação antes de adicionar esta receita. Suas edições foram preservadas.');
     apply({ type: 'recipe', value: { ...structuredClone(ref), createdAt: new Date().toISOString() } });
+  }
+  return next;
+}
+
+/** Adds the complete catalog through the same personal-record validation, in dependency order. */
+export function importReferenceCatalog(data: CollectionData): CollectionData {
+  let next = data;
+  for (const kind of ['metodos', 'tecnicas', 'receitas'] as const) {
+    for (const item of referenceItems(kind)) next = importReference(next, { type: 'importReference', kind, key: item.referenceKey });
   }
   return next;
 }

@@ -66,4 +66,47 @@ describe('biblioteca de referência', () => {
       await expect(storage.mutateCollection({ ...request, key: 'inexistente' })).rejects.toThrow('não está disponível');
     } finally { await storage.close(); }
   });
+  it('salva o catálogo completo de forma atômica e preserva edições e exclusões ao reabrir', async () => {
+    const storage = new IndexedDBStorage(`catalog-${crypto.randomUUID()}`);
+    const bulk = { type: 'importReferenceCatalog' } as const;
+    try {
+      await validateStorage(storage);
+      const coffee = { ...newEntity(), name: 'Café pessoal', tried: false, favorite: true };
+      const packet = { ...newEntity(), coffeeId: coffee.id, initialWeight: 250, remainingWeight: 120, adjustments: [] };
+      await storage.mutateCollection({ type: 'coffee', value: coffee });
+      await storage.mutateCollection({ type: 'package', value: packet });
+      const before = await storage.loadCollection();
+      await Promise.all([storage.mutateCollection(bulk), storage.mutateCollection(bulk)]);
+      let data = await storage.loadCollection();
+      expect([data.methods.length, data.techniques.length, data.recipes.length]).toEqual([8, 5, 4]);
+      const method = data.methods.find(v => v.referenceKey === 'v60')!;
+      const technique = data.techniques.find(v => v.referenceKey === 'quatro-seis')!;
+      const recipe = data.recipes.find(v => v.referenceKey === 'quatro-seis-equilibrado')!;
+      await storage.mutateCollection({ type: 'method', value: { ...method, name: 'Meu V60' } });
+      await storage.mutateCollection({ type: 'technique', value: { ...technique, name: 'Minha técnica' } });
+      await storage.mutateCollection({ type: 'recipe', value: { ...recipe, name: 'Minha receita' } });
+      await storage.close(); await storage.initialize(); await storage.mutateCollection(bulk);
+      data = await storage.loadCollection();
+      expect(data.methods.find(v => v.id === method.id)?.name).toBe('Meu V60');
+      expect(data.techniques.find(v => v.id === technique.id)?.name).toBe('Minha técnica');
+      expect(data.recipes.find(v => v.id === recipe.id)?.name).toBe('Minha receita');
+      for (const table of ['coffees', 'packages', 'records', 'preparations', 'sessions'] as const) expect(data[table]).toEqual(before[table]);
+      const moka = data.methods.find(v => v.referenceKey === 'moka')!;
+      await storage.mutateCollection({ type: 'deleteMethod', id: moka.id });
+      await storage.close(); await storage.initialize();
+      expect((await storage.loadCollection()).methods.some(v => v.id === moka.id)).toBe(false);
+      await storage.mutateCollection(bulk);
+      expect((await storage.loadCollection()).methods).toHaveLength(8);
+      // A late validation failure must also undo the methods inserted earlier in the batch.
+      for (const value of data.recipes.filter(v => v.techniqueId === technique.id)) await storage.mutateCollection({ type: 'deleteRecipe', id: value.id });
+      const melitta = data.methods.find(v => v.referenceKey === 'melitta')!;
+      await storage.mutateCollection({ type: 'deleteMethod', id: melitta.id });
+      await storage.mutateCollection({ type: 'technique', value: { ...technique, methodId: moka.id } });
+      const beforeFailure = await storage.loadCollection();
+      await expect(storage.mutateCollection(bulk)).rejects.toThrow('Suas edições foram preservadas');
+      expect(await storage.loadCollection()).toEqual(beforeFailure);
+      expect(await storage.getMetadata('schema-version')).toBe('4');
+    } finally { await storage.close(); }
+  });
+
 });

@@ -11,6 +11,9 @@ import { Navigation } from './Navigation';
 import { currentDestination } from './navigation';
 import { ActiveBrewNotice } from '../features/preparations/BrewContext';
 import { AppearanceControl } from '../theme/AppearanceControl';
+import { Capacitor } from '@capacitor/core';
+import { nativePreparation } from '../features/preparations/platform';
+import { handleAppBack, trackNavigation } from './history';
 
 export function App() {
   const [active, setActive] = useState(currentDestination);
@@ -19,6 +22,19 @@ export function App() {
   const { loading, error, warning, retry } = useCollection();
   const [path, setPath] = useState(() => window.location.hash.replace(/^#/, '') || '/inicio');
   const main = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const stop = trackNavigation();
+    let disposed = false; let remove: (() => Promise<void>) | undefined;
+    if (Capacitor.getPlatform() === 'android') {
+      void nativePreparation.addListener('back', () => handleAppBack(() => { void nativePreparation.exit().catch(() => undefined); })).then(async handle => {
+        if (disposed) { await handle.remove(); return; }
+        remove = () => handle.remove();
+        await nativePreparation.setNavigationActive({ active: true });
+      }).catch(() => undefined);
+    }
+    return () => { disposed = true; stop(); void remove?.(); if (Capacitor.getPlatform() === 'android') void nativePreparation.setNavigationActive({ active: false }).catch(() => undefined); };
+  }, []);
 
   useEffect(() => {
     const positions = new Map<string, number>();
@@ -51,7 +67,7 @@ export function App() {
         {warning && <Notice title="Fotografia antiga">{warning}</Notice>}
         {active === 'inicio' && <HomePage />}
         <div hidden={active !== 'cafes'}><CoffeesPage path={active === 'cafes' ? path : '/cafes'} search={search} onSearch={setSearch} view={view} onView={setView} /></div>
-        <div hidden={active !== 'preparar'}><PreparePage path={active === 'preparar' ? path : '/preparar'} /></div>
+        <div className="prepare-area" hidden={active !== 'preparar'}><PreparePage path={active === 'preparar' ? path : '/preparar'} /></div>
         {active === 'jornada' && <JourneyPage />}
         {active === 'descobertas' && <DiscoveriesPage />}
       </main>

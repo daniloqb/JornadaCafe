@@ -1,9 +1,8 @@
-import { useEffect, useState, type ReactNode, type ComponentProps } from 'react';
+import { useState, type ReactNode, type ComponentProps } from 'react';
 import { Button } from '../../components/ui';
 import { Dialog, Field, FormError, TextArea, formText, useFormAction } from '../../components/forms';
-import { CoffeePhoto } from '../../components/CoffeePhoto';
+import { LocalPhotoPicker } from '../../components/LocalPhotoPicker';
 import { useCollection } from '../../data/CollectionContext';
-import { preparePhoto } from '../../data/photos';
 import { newEntity } from '../../domain/collection';
 import type { BrewMethod, BrewTechnique, SourceReference } from '../../domain/brewing';
 
@@ -18,27 +17,22 @@ export function MethodForm({ existing, onSaved }: { existing?: BrewMethod; onSav
   const { saveMethod } = useCollection();
   const action = useFormAction();
   const [photo, setPhoto] = useState<Blob | null>();
-  const [preview, setPreview] = useState<string>();
   const [photoBusy, setPhotoBusy] = useState(false);
-  const [photoError, setPhotoError] = useState<string>();
-  useEffect(() => { if (!photo) { setPreview(undefined); return; } const url = URL.createObjectURL(photo); setPreview(url); return () => URL.revokeObjectURL(url); }, [photo]);
   return <form className="journal-form" onSubmit={event => {
-    event.preventDefault(); event.stopPropagation(); const form = new FormData(event.currentTarget);
+    event.preventDefault(); event.stopPropagation(); if (photoBusy) return; const form = new FormData(event.currentTarget);
     void action.run(async () => { const value = { ...(existing ?? newEntity()), name: formText(form, 'name') ?? '', description: formText(form, 'description'), notes: formText(form, 'notes') }; await saveMethod(value, photo); onSaved(value.id); });
-  }}><FormError error={action.error ?? photoError} /><Field label="Nome do método" name="name" required defaultValue={existing?.name} maxLength={200} autoFocus /><TextArea label="Descrição do método" name="description" defaultValue={existing?.description} /><details className="form-section"><summary>Fotografia ou ilustração <small>Opcional, salva neste dispositivo</small></summary><div className="photo-editor"><div className="photo-preview">{preview ? <img src={preview} alt="Prévia do método" /> : <CoffeePhoto id={photo === null ? undefined : existing?.photoId} name={existing?.name ?? 'método'} subject="Método" />}</div><div><Field label="Escolher imagem do método" type="file" accept="image/jpeg,image/png,image/webp" disabled={photoBusy || action.busy} onChange={event => {
-    const file = event.target.files?.[0]; event.target.value = ''; if (!file) return;
-    setPhotoBusy(true); setPhotoError(undefined);
-    void preparePhoto(file).then(setPhoto).catch(reason => setPhotoError(reason instanceof Error ? reason.message : 'Falha ao ler a imagem.')).finally(() => setPhotoBusy(false));
-  }} hint="JPG, PNG ou WebP, até 15 MB. Imagem otimizada localmente." />{(photo || (existing?.photoId && photo !== null)) && <Button type="button" variant="secondary" onClick={() => setPhoto(null)}>Remover imagem</Button>}</div></div></details><TextArea label="Observações do método" name="notes" defaultValue={existing?.notes} /><div className="form-actions"><Button disabled={action.busy || photoBusy}>{action.busy ? 'Salvando…' : 'Salvar método'}</Button></div></form>;
+  }}><FormError error={action.error} /><Field label="Nome do método" name="name" required defaultValue={existing?.name} maxLength={200} autoFocus /><TextArea label="Descrição do método" name="description" defaultValue={existing?.description} /><details className="form-section"><summary>Fotografia ou ilustração <small>Opcional, salva neste dispositivo</small></summary><LocalPhotoPicker id={existing?.photoId} name={existing?.name ?? 'método'} subject="Método" photo={photo} onChange={setPhoto} onBusyChange={setPhotoBusy} disabled={action.busy} /></details><TextArea label="Observações do método" name="notes" defaultValue={existing?.notes} /><div className="form-actions"><Button disabled={action.busy || photoBusy}>{action.busy ? 'Salvando…' : 'Salvar método'}</Button></div></form>;
 }
 export function TechniqueForm({ existing, onSaved, defaultMethodId }: { existing?: BrewTechnique; onSaved: (id: string, methodId?: string) => void; defaultMethodId?: string }) {
-  const { data, mutate } = useCollection();
+  const { data, saveTechnique } = useCollection();
   const action = useFormAction();
+  const [photo, setPhoto] = useState<Blob | null>();
+  const [photoBusy, setPhotoBusy] = useState(false);
   const [sources, setSources] = useState<SourceReference[]>(existing?.sources ?? []);
   return <form className="journal-form" onSubmit={event => {
-    event.preventDefault(); event.stopPropagation(); const form = new FormData(event.currentTarget);
-    void action.run(async () => { const value: BrewTechnique = { ...(existing ?? newEntity()), name: formText(form, 'name') ?? '', methodId: formText(form, 'methodId'), creator: formText(form, 'creator'), principle: formText(form, 'principle'), guidance: formText(form, 'guidance'), notes: formText(form, 'notes'), sources }; await mutate({ type: 'technique', value }); onSaved(value.id, value.methodId); });
-  }}><FormError error={action.error} /><Field label="Nome da técnica" name="name" required defaultValue={existing?.name} maxLength={200} autoFocus /><SelectField label="Método associado" name="methodId" defaultValue={existing?.methodId ?? defaultMethodId ?? ''}><option value="">Sem método específico</option>{data.methods.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}</SelectField><Field label="Criador original da técnica" name="creator" defaultValue={existing?.creator} hint="Opcional. Pode ser diferente do autor ou canal que apresentou a técnica." /><TextArea label="Princípio da técnica" name="principle" defaultValue={existing?.principle} /><details className="form-section" open={!!sources.length}><summary>Fontes e referências <small>Vídeos, livros, cursos ou outras fontes</small></summary><p className="field-hint">Registre quem apresentou a técnica em cada fonte. Isso não atribui a criação a essa pessoa.</p><SourcesEditor sources={sources} onChange={setSources} /></details><details className="form-section"><summary>Orientações e notas pessoais</summary><TextArea label="Orientações gerais" name="guidance" defaultValue={existing?.guidance} /><TextArea label="Observações pessoais" name="notes" defaultValue={existing?.notes} /></details><div className="form-actions"><Button disabled={action.busy}>{action.busy ? 'Salvando…' : 'Salvar técnica'}</Button></div></form>;
+    event.preventDefault(); event.stopPropagation(); if (photoBusy) return; const form = new FormData(event.currentTarget);
+    void action.run(async () => { const value: BrewTechnique = { ...(existing ?? newEntity()), name: formText(form, 'name') ?? '', methodId: formText(form, 'methodId'), creator: formText(form, 'creator'), principle: formText(form, 'principle'), guidance: formText(form, 'guidance'), notes: formText(form, 'notes'), sources }; await saveTechnique(value, photo); onSaved(value.id, value.methodId); });
+  }}><FormError error={action.error} /><Field label="Nome da técnica" name="name" required defaultValue={existing?.name} maxLength={200} autoFocus /><details className="form-section"><summary>Fotografia ou ilustração <small>Opcional, salva neste dispositivo</small></summary><LocalPhotoPicker id={existing?.photoId} name={existing?.name ?? 'técnica'} subject="Técnica" photo={photo} onChange={setPhoto} onBusyChange={setPhotoBusy} disabled={action.busy} /></details><SelectField label="Método associado" name="methodId" defaultValue={existing?.methodId ?? defaultMethodId ?? ''}><option value="">Sem método específico</option>{data.methods.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}</SelectField><Field label="Criador original da técnica" name="creator" defaultValue={existing?.creator} hint="Opcional. Pode ser diferente do autor ou canal que apresentou a técnica." /><TextArea label="Princípio da técnica" name="principle" defaultValue={existing?.principle} /><details className="form-section" open={!!sources.length}><summary>Fontes e referências <small>Vídeos, livros, cursos ou outras fontes</small></summary><p className="field-hint">Registre quem apresentou a técnica em cada fonte. Isso não atribui a criação a essa pessoa.</p><SourcesEditor sources={sources} onChange={setSources} /></details><details className="form-section"><summary>Orientações e notas pessoais</summary><TextArea label="Orientações gerais" name="guidance" defaultValue={existing?.guidance} /><TextArea label="Observações pessoais" name="notes" defaultValue={existing?.notes} /></details><div className="form-actions"><Button disabled={action.busy || photoBusy}>{action.busy ? 'Salvando…' : 'Salvar técnica'}</Button></div></form>;
 }
 export function LibraryPicker({ kind, value, onChange, methodId }: { kind: 'method' | 'technique'; value?: string; onChange: (id?: string, methodId?: string) => void; methodId?: string }) {
   const { data } = useCollection(); const [creating, setCreating] = useState(false);

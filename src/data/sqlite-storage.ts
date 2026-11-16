@@ -83,7 +83,7 @@ export class SQLiteStorage implements LocalStorage {
               await database.run('UPDATE packages SET remaining_weight=?,payload=? WHERE id=?;', [packet.remainingWeight, JSON.stringify(packet), packet.id], false);
             } else await database.run(`INSERT INTO ${change.table} (id,payload) VALUES (?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload;`, [change.id, JSON.stringify(change.value)], false);
           }
-        } else if (mutation.type === 'importReference') {
+        } else if (mutation.type === 'importReference' || mutation.type === 'importReferenceCatalog') {
           // Dependency order comes from collectionTables: methods, techniques, then recipes.
           for (const change of collectionChanges(data, next)) {
             if (change.table === 'methods') {
@@ -105,6 +105,11 @@ export class SQLiteStorage implements LocalStorage {
           const record = next.records.find(r => r.id === mutation.value.id)!;
           await database.run('INSERT INTO records (id,kind,payload) VALUES (?,?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload;', [record.id, record.kind, JSON.stringify(record)], false);
         } else if (mutation.type === 'coffee') {
+          // Selected offline options are stored atomically with the coffee.
+          for (const change of collectionChanges(data, next).filter(c => c.table === 'records' && c.value)) {
+            const record = next.records.find(r => r.id === change.id)!;
+            await database.run('INSERT INTO records (id,kind,payload) VALUES (?,?,?);', [record.id, record.kind, JSON.stringify(record)], false);
+          }
           const coffee = next.coffees.find(c => c.id === mutation.value.id)!;
           await database.run('INSERT INTO coffees (id,producer_id,property_id,origin_id,roaster_id,payload) VALUES (?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET producer_id=excluded.producer_id,property_id=excluded.property_id,origin_id=excluded.origin_id,roaster_id=excluded.roaster_id,payload=excluded.payload;', [coffee.id, coffee.producerId ?? null, coffee.propertyId ?? null, coffee.originId ?? null, coffee.roasterId ?? null, JSON.stringify(coffee)], false);
         } else if (mutation.type === 'package') {
