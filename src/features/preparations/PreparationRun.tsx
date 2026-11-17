@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, Droplets, Layers, Milk, Pause, Play, Timer } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Droplets, Layers, Milk, Pause, Play, Timer, X } from 'lucide-react';
 import { Button, Card, Notice, PageHeader } from '../../components/ui';
 import { Dialog, FormError, TextArea, useFormAction } from '../../components/forms';
 import { useBrew } from './BrewContext';
@@ -58,7 +58,7 @@ export function PreparationRun() {
       {next ? <Button disabled={action.busy || paused} onClick={() => void action.run(brew.next)}>{step.advance === 'observable' ? 'Condição observada — continuar' : session.needsConfirmation ? 'Confirmar e continuar' : 'Próxima etapa'}<ArrowRight size={20} aria-hidden="true" /></Button> : <Button disabled={action.busy} onClick={() => openDialog('complete')}>Finalizar preparo<Check size={20} aria-hidden="true" /></Button>}
     </div>
     <p className="brew-next">{next ? <>Próxima: <strong>{next.name}</strong>{next.startSeconds !== undefined && ` · referência ${secondsLabel(next.startSeconds)} desde o início`}</> : 'Esta é a última etapa. Finalize quando terminar.'}</p>
-    <div className="brew-secondary-controls">{next && <Button variant="secondary" disabled={action.busy} onClick={() => openDialog('complete')}>Finalizar antes da última etapa</Button>}<Button variant="secondary" disabled={action.busy} onClick={() => openDialog('interrupt')}>Cancelar preparo</Button></div>
+    <div className={`brew-secondary-controls${next ? '' : ' brew-secondary-controls--single'}`}>{next && <Button variant="secondary" className="brew-finish-action" aria-label="Finalizar preparo antes da última etapa" disabled={action.busy} onClick={() => openDialog('complete')}><Check size={18} aria-hidden="true" />Finalizar</Button>}<Button variant="secondary" className="brew-cancel-action" aria-label="Cancelar preparo" disabled={action.busy} onClick={() => openDialog('interrupt')}><X size={18} aria-hidden="true" />Cancelar</Button></div>
     <details className="card detail-section"><summary>Parâmetros deste preparo</summary><SnapshotParameters snapshot={session.snapshot} /></details>
     <details className="card review-adjustments"><summary>Avisos do preparo</summary><AlertControls /></details>
     <a className="back-link" href="#/preparar">Voltar à biblioteca mantendo o preparo</a>

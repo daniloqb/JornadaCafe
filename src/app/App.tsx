@@ -11,6 +11,7 @@ import { Navigation } from './Navigation';
 import { currentDestination } from './navigation';
 import { ActiveBrewNotice } from '../features/preparations/BrewContext';
 import { useAppearance } from '../theme/appearance';
+import { useTextSize } from '../theme/text-size';
 import { PreparationSettings } from '../features/prepare/PreparationSettings';
 import { resetScreenScroll } from './screen-scroll';
 import { Capacitor } from '@capacitor/core';
@@ -24,6 +25,7 @@ export function App() {
   const { loading, error, warning, retry } = useCollection();
   const [path, setPath] = useState(() => window.location.hash.replace(/^#/, '') || '/inicio');
   const main = useRef<HTMLElement>(null);
+  useTextSize();
   useAppearance(); // Keep system/storage/native theme synchronization alive outside Settings.
   const [navigation, setNavigation] = useState(0);
   const [areaPaths, setAreaPaths] = useState(() => ({ cafes: path.startsWith('/cafes') ? path : '/cafes', preparar: path.startsWith('/preparar') ? path : '/preparar' }));

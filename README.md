@@ -1,8 +1,8 @@
 # Minha Jornada pelo Café
 
-**Fase 06.2 — Início e Histórico de Preparações:** apresentação da jornada em quatro caminhos, cabeçalhos fotográficos e histórico editorial com filtros por período, método e café, ordenação e avaliações dos preparos. Versão atual: **0.6.2 / versionCode 12**; esquema de dados **5**, sem migração. Funcionamento offline, fontes locais e temas Claro/Escuro/Automático.
+**Fase 06.3 — Tipografia e preparo guiado:** cartões com tamanhos refinados, escala global de texto em cinco posições (85/90/100/110/115%) nas Configurações e controles Finalizar/Cancelar alinhados. Versão atual: **0.6.3 / versionCode 13**; esquema de dados **5**, sem migração. Funcionamento offline, fontes locais e temas Claro/Escuro/Automático.
 
-Veja o [relatório da Fase 06.2](docs/phase-06.2.md), com implementação, integridade, testes, capturas e APK. A coleção está descrita na [Fase 06.1](docs/phase-06.1.md), Minhas Descobertas na [Fase 06](docs/phase-06.md) e o diário na [Fase 05](docs/phase-05.md).
+Veja o [relatório da Fase 06.3](docs/phase-06.3.md), com implementação, persistência, validações, capturas e APK. Início e Histórico estão descritos na [Fase 06.2](docs/phase-06.2.md), a coleção na [Fase 06.1](docs/phase-06.1.md), Minhas Descobertas na [Fase 06](docs/phase-06.md) e o diário na [Fase 05](docs/phase-05.md).
 
 ## Executar no navegador
 
@@ -17,7 +17,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # 63 verificações de persistência, Jornada, Descobertas, histórico, cronômetro, navegação e aparência
+npm test            # 68 verificações de persistência, Jornada, Descobertas, histórico, cronômetro, navegação e preferências visuais
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```

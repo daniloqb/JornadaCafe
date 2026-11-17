@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-17",
+  "timezone": "America/Sao_Paulo",
+  "tests": {
+    "command": "npm test",
+    "passed": 68,
+    "files": 14
+  },
+  "webBuild": {
+    "command": "npm run build",
+    "passed": true
+  },
+  "androidSync": {
+    "command": "npx cap sync android",
+    "passed": true
+  },
+  "androidBuild": {
+    "command": "./gradlew assembleDebug --offline",
+    "passed": true,
+    "warnings": [
+      "flatDir sem metadados de módulos"
+    ]
+  },
+  "apk": {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "package": "br.com.jornadacafe.app",
+    "versionName": "0.6.3",
+    "versionCode": 13,
+    "allDistFilesMatch": true,
+    "webFilesMatched": 22,
+    "bytes": 34962331,
+    "sha256": "dd537f70966ad002295bf0253305b091d667ef9e76c6c63d7f36321b7029e068"
+  },
+  "physicalDevice": {
+    "detected": true,
+    "model": "22101316G",
+    "updatedInThisPhase": true,
+    "physicalValidation063": false,
+    "note": "Atualização solicitada pelo usuário com adb install -r. Instalação e abertura conferidas; testes físicos específicos do slider e persistência após reinício permanecem pendentes.",
+    "previousInstalledVersion": "0.6.2",
+    "previousInstalledVersionCode": 12,
+    "installedVersion": "0.6.3",
+    "installedVersionCode": 13,
+    "installation": {
+      "at": "2026-11-17T20:47:00-03:00",
+      "result": "Success",
+      "launchStatus": "ok",
+      "launchState": "COLD",
+      "visualCheck": "Tela inicial carregada no tema claro; captura temporária em /tmp, sem editar registros nem executar preparos."
+    }
+  }
+}

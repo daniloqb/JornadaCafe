@@ -16,6 +16,14 @@
         document.documentElement.dataset.appearance = appearance;
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
+        // Text-only preference: restore before CSS/React, independently of appearance.
+        let textSize = 100;
+        try {
+          const saved = Number(localStorage.getItem('jornada-cafe:text-size'));
+          if ([85, 90, 100, 110, 115].includes(saved)) textSize = saved;
+        } catch { /* Keep the default if local storage is unavailable. */ }
+        document.documentElement.dataset.textSize = String(textSize);
+        document.documentElement.style.setProperty('--user-font-scale', String(textSize / 100));
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

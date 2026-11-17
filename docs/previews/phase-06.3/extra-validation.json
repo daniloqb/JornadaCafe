@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Automático acompanha os dois temas e persiste independentemente dos 90% após recarga",
+    "Digitação no formulário não reposiciona a página",
+    "Em 115%, cronômetro retomado avança sem reinício ou reset de rolagem; estoque e snapshot preservados",
+    "Dois acionamentos rápidos da confirmação geram um único registro e um único consumo"
+  ],
+  "errors": []
+}

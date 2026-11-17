@@ -1,0 +1,40 @@
+/* Font-only scale: rem respects browser defaults; layout lengths stay unchanged. */
+:root {
+  --user-font-scale: 1;
+  --font-size-7: calc(0.4375rem * var(--user-font-scale));
+  --font-size-7-5: calc(0.46875rem * var(--user-font-scale));
+  --font-size-8: calc(0.5rem * var(--user-font-scale));
+  --font-size-8-5: calc(0.53125rem * var(--user-font-scale));
+  --font-size-9: calc(0.5625rem * var(--user-font-scale));
+  --font-size-10: calc(0.625rem * var(--user-font-scale));
+  --font-size-11: calc(0.6875rem * var(--user-font-scale));
+  --font-size-12: calc(0.75rem * var(--user-font-scale));
+  --font-size-13: calc(0.8125rem * var(--user-font-scale));
+  --font-size-14: calc(0.875rem * var(--user-font-scale));
+  --font-size-15: calc(0.9375rem * var(--user-font-scale));
+  --font-size-16: calc(1rem * var(--user-font-scale));
+  --font-size-17: calc(1.0625rem * var(--user-font-scale));
+  --font-size-18: calc(1.125rem * var(--user-font-scale));
+  --font-size-19: calc(1.1875rem * var(--user-font-scale));
+  --font-size-20: calc(1.25rem * var(--user-font-scale));
+  --font-size-21: calc(1.3125rem * var(--user-font-scale));
+  --font-size-22: calc(1.375rem * var(--user-font-scale));
+  --font-size-23: calc(1.4375rem * var(--user-font-scale));
+  --font-size-24: calc(1.5rem * var(--user-font-scale));
+  --font-size-25: calc(1.5625rem * var(--user-font-scale));
+  --font-size-26: calc(1.625rem * var(--user-font-scale));
+  --font-size-27: calc(1.6875rem * var(--user-font-scale));
+  --font-size-28: calc(1.75rem * var(--user-font-scale));
+  --font-size-29: calc(1.8125rem * var(--user-font-scale));
+  --font-size-30: calc(1.875rem * var(--user-font-scale));
+  --font-size-31: calc(1.9375rem * var(--user-font-scale));
+  --font-size-32: calc(2rem * var(--user-font-scale));
+  --font-size-33: calc(2.0625rem * var(--user-font-scale));
+  --font-size-34: calc(2.125rem * var(--user-font-scale));
+  --font-size-35: calc(2.1875rem * var(--user-font-scale));
+  --font-size-36: calc(2.25rem * var(--user-font-scale));
+  --font-size-38: calc(2.375rem * var(--user-font-scale));
+  --font-size-39: calc(2.4375rem * var(--user-font-scale));
+  --font-size-44: calc(2.75rem * var(--user-font-scale));
+  --font-size-51: calc(3.1875rem * var(--user-font-scale));
+}

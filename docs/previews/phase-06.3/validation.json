@@ -1,0 +1,4796 @@
+{
+  "environment": "Chrome headless; perfil temporário, dados isolados e fuso America/Sao_Paulo",
+  "layouts": [
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 335,
+      "scrollWidth": 335,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 85,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 768,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 100,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 335,
+      "scrollWidth": 335,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "cut": []
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "preparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "cut": []
+    },
+    {
+      "name": "metodos",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "receita",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "revisao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "jornada",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "evolucao",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "diario",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "descobertas",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "perfil",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "comparar",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "size": 115,
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "cut": []
+    }
+  ],
+  "buttonLayouts": [
+    {
+      "theme": "light",
+      "size": 85,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1413.796875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1413.796875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 85,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1422.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1422.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 85,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1570.390625,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1570.390625,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 85,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1563.3125,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1563.3125,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 100,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1546.296875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1546.296875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 100,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1526.109375,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1526.109375,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 100,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1685.3125,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1685.3125,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 100,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1637.40625,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1637.40625,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 115,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1697.640625,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1697.640625,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 115,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1672.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1672.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 115,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1926.1875,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1926.1875,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "size": 115,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1717.21875,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 249, 241)",
+          "background": "rgb(65, 108, 52)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1717.21875,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(255, 252, 246)",
+          "background": "rgb(133, 73, 54)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 85,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1413.796875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1413.796875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 85,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1422.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1422.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 85,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1570.390625,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1570.390625,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 85,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1563.3125,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1563.3125,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 100,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1546.296875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1546.296875,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 100,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1526.109375,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1526.109375,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 100,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1685.3125,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1685.3125,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 100,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1637.40625,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1637.40625,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 115,
+      "width": 320,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1697.640625,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 166,
+          "y": 1697.640625,
+          "width": 138,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 115,
+      "width": 390,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 16,
+          "y": 1672.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 201,
+          "y": 1672.40625,
+          "width": 173,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 115,
+      "width": 768,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 214,
+          "y": 1926.1875,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 477.5,
+          "y": 1926.1875,
+          "width": 251.5,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "size": 115,
+      "width": 1440,
+      "overflow": false,
+      "buttons": [
+        {
+          "text": "Finalizar",
+          "x": 394.5,
+          "y": 1717.21875,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 40, 25)",
+          "background": "rgb(185, 200, 154)"
+        },
+        {
+          "text": "Cancelar",
+          "x": 840.5,
+          "y": 1717.21875,
+          "width": 434,
+          "height": 50,
+          "cut": false,
+          "color": "rgb(31, 23, 19)",
+          "background": "rgb(210, 156, 130)"
+        }
+      ]
+    }
+  ],
+  "clipping": [],
+  "checks": [
+    "Sem preferência usa 100%; cinco posições reais por teclado, prévia e percentual imediatos",
+    "Escala persiste em navegação/recarga, tema independente, raiz 16 px, ícones/espaçamentos estáveis e preferência de fonte do navegador respeitada",
+    "Restaurar 100%, sincronização de storage e slider sem reset de navegação",
+    "Coleção, fotos/relações, snapshots, avaliações, estoque e ausência de sessões inalterados após toda a navegação e preferências",
+    "24 layouts do preparo: par alinhado, largura/altura iguais, sem cortes e alvos >=44 px; navegação não perde tempo/etapa da sessão",
+    "Finalização antecipada exige confirmação, preserva snapshot/uma etapa e desconta uma única dose, inclusive após recarga",
+    "Cancelar mantém confirmação, registro interrompido e ausência de avaliação; consumo só com confirmação explícita",
+    "Descartar conserva confirmação adicional, não cria preparo nem desconta estoque",
+    "Última etapa conserva conclusão normal única e Cancelar separado; duas passagens registradas e uma dose descontada"
+  ],
+  "errors": []
+}
