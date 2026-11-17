@@ -10,8 +10,8 @@ export function ActionLink({ href, children, variant = 'primary', arrow = true, 
   return <a className={`button button--${variant} ${className}`} href={href}>{children}{arrow && <ArrowRight size={17} aria-hidden="true" />}</a>;
 }
 
-export function BackLink({ href, children }: { href: string; children: ReactNode }) {
-  return <a className="back-link" href={href} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); goBack(href); } }}>{children}</a>;
+export function BackLink({ href, children, className = '' }: { href: string; children: ReactNode; className?: string }) {
+  return <a className={`back-link ${className}`} href={href} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); goBack(href); } }}>{children}</a>;
 }
 
 export function Card({ children, className = '', ...props }: ComponentProps<'div'>) {

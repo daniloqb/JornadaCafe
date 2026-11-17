@@ -6,11 +6,11 @@ export type Appearance = 'light' | 'dark' | 'system';
 const PREFERENCE_KEY = 'jornada-cafe:appearance';
 const NativeAppearance = registerPlugin<{ setTheme(options: { theme: 'light' | 'dark' }): Promise<void> }>('Appearance');
 
-function normalizeAppearance(value: string | null | undefined): Appearance {
+export function normalizeAppearance(value: string | null | undefined): Appearance {
   return value === 'light' || value === 'dark' ? value : 'system';
 }
 
-function applyAppearance(appearance: Appearance) {
+export function applyAppearance(appearance: Appearance) {
   const theme = appearance === 'system'
     ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     : appearance;

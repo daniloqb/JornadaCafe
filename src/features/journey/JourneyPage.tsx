@@ -4,7 +4,6 @@ import { ActionLink, Button, Card, EmptyState, LoadingIndicator, BackLink } from
 import { Dialog, FormError, useFormAction } from '../../components/forms';
 import { useCollection } from '../../data/CollectionContext';
 import { evaluationSeries, journeyDate, journeyNarrative, journeySummary, journeyTags, journeyTimeline, monthlyEvaluations, type RatingPeriod, type Reflection } from '../../domain/journey';
-import { AppearanceControl } from '../../theme/AppearanceControl';
 import { ReflectionForm } from './ReflectionForm';
 import type { CollectionData } from '../../domain/collection';
 
@@ -77,7 +76,7 @@ export function JourneyPage({ path }: { path: string }) {
     <header className="journey-masthead">
       <BackLink href="#/inicio"><ArrowLeft size={22} aria-hidden="true" /><span className="sr-only">Voltar</span></BackLink>
       <div><Sprout size={28} strokeWidth={1.6} aria-hidden="true" /><h1 tabIndex={-1}>Minha Jornada</h1></div>
-      <AppearanceControl />
+
     </header>
     <nav className="journey-tabs" aria-label="Seções de Minha Jornada">{sections.map(([key, label, Icon]) => <a key={key} href={`#/jornada/${key}`} aria-current={section === key ? 'page' : undefined}><Icon size={23} strokeWidth={1.6} aria-hidden="true" /><span>{label}</span></a>)}</nav>
     {loading ? <LoadingIndicator>Reunindo suas experiências…</LoadingIndicator> : error ? <p>Seus registros estarão disponíveis após recuperar o armazenamento.</p> : <>

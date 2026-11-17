@@ -1,0 +1,165 @@
+{
+  "environment": "Chrome headless, perfil temporário e origem localhost isolada; fuso America/Sao_Paulo",
+  "layouts": [
+    {
+      "name": "inicio",
+      "theme": "light",
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "heading": "Uma jornada pelo mundo do café",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "overflow": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "overflow": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "overflow": false,
+      "width": 768,
+      "scrollWidth": 753,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "overflow": false,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "heading": "Meus Cafés",
+      "font": "\"Fraunces Variable\", Georgia, \"Times New Roman\", serif"
+    }
+  ],
+  "checks": [
+    "Quatro cartões e destinos, cinco áreas principais, abertura no topo",
+    "Teclado: ativação do cartão com Enter, sequência por Tab e foco visível",
+    "Configurações e Automático global fora da tela de aparência",
+    "Snapshots históricos; nota 9, zero e ausência; fotografia real da fixture e fallback neutro; interrompido",
+    "Filtros combinados, detalhe preservado, retorno com filtros e rolagem no topo",
+    "Ordenação antigas/recentes, período personalizado inclusivo, estado sem resultados e limpeza",
+    "Atualizar filtros/ordenação mantém a rolagem; seleção repetida da área reposiciona no topo",
+    "Coleção, preparos, snapshots, receitas e estoque iguais antes/depois da navegação e filtros",
+    "Persistência após recarga sem alteração dos registros",
+    "63 registros: renderização incremental 24 → 48 e contagem total correta",
+    "Sessão pausada preserva ID, 45 s, etapa, snapshot e estoque ao navegar pelas telas",
+    "Timer retomado avança sem reiniciar ou reposicionar a tela; pausa mantém ID, snapshot e estoque",
+    "Último cartão acessível ao rolar, acima da navegação fixa"
+  ],
+  "errors": []
+}

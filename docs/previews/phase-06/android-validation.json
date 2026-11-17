@@ -1,0 +1,23 @@
+{
+  "package": "br.com.jornadacafe.phase06qa",
+  "version": "0.6.0",
+  "device": "22101316G",
+  "checks": [
+    "SQLite nativo com esquema 5",
+    "Navegação, fontes e temas: abertura",
+    "Navegação, fontes e temas: perfil",
+    "Navegação, fontes e temas: comparar",
+    "Navegação, fontes e temas: observacoes",
+    "Navegação, fontes e temas: conhecimento",
+    "Comparação de três snapshots no aparelho",
+    "Editor compartilhado salva no SQLite e atualiza Minha Jornada",
+    "Comparação e edição de reflexão preservam preparos",
+    "Persistência confirmada após encerrar o processo e reabrir"
+  ],
+  "limitations": [
+    "Dados de teste em pacote isolado; a instalação principal não foi atualizada",
+    "Sem medição de desempenho prolongado ou auditoria completa de leitor de tela",
+    "Teclado virtual e todas as combinações de barras nativas ainda requerem avaliação manual"
+  ],
+  "captureNote": "Validação pelo WebView nativo e SQLite. Não foram utilizadas capturas da tela física; primeiro plano, teclado e barras do sistema não foram validados visualmente."
+}

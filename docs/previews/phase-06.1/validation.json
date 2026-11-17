@@ -1,0 +1,499 @@
+{
+  "layouts": [
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "meus-cafes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "colecao",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-cafe",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-cafe",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "produtores",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "cadastro-produtor",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "configuracoes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "detalhes-produtor",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "pacotes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "checks": [
+    "Cadastro de produtor, foto e validação recolhida",
+    "Cadastro de café, foto, vínculos e validação recolhida",
+    "Edição de café preserva campos, foto, nota zero e relacionamentos",
+    "Editar produtor não reescreve o local do café",
+    "Rotas, retornos e seleção repetida da área abrem no topo",
+    "Pesquisa e alternância de visualização preservadas",
+    "Controles de aparência só em Configurações e engrenagem só em Início",
+    "Automático fora de Configurações, preferência e foto após recarga"
+  ],
+  "errors": [],
+  "fixture": {
+    "coffee": "dda07cb9-6000-468c-9fbb-04e383477caa",
+    "producer": "bdea87dd-22b3-4d2f-8e23-04da3f07cf66"
+  }
+}

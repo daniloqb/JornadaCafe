@@ -1,0 +1,538 @@
+{
+  "results": [
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "light",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "dark",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 768
+    },
+    {
+      "state": "empty",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/perfil",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/comparar",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/observacoes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "state": "populated",
+      "area": "/conhecimento",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "Comparação de dois e três preparos",
+    "Seleção real e limite de três",
+    "Mesmo café e estados insuficientes",
+    "Snapshots sem parâmetros atuais",
+    "Rolagem horizontal restrita à tabela",
+    "Evidências e preparo original",
+    "Reflexão compartilhada com Minha Jornada",
+    "Filtros e textos sem vínculo",
+    "Persistência após recarregar",
+    "Preparos, receitas, estoque e sessões inalterados",
+    "Claro, escuro e automático"
+  ]
+}

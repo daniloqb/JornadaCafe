@@ -1,0 +1,341 @@
+{
+  "method": "Computed text contrast on solid surfaces and photographic backgrounds sampled every 3 px after hiding text without changing layout. Not a complete WCAG audit.",
+  "results": [
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 320,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 12.80377463456314
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 7.561363915306523
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 6.088872950005183
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 390,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 12.3365463841633
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 8.846084121809977
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 10.472140004903384
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 768,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 13.431002260747901
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 10.207667293147564
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 8.966563121214733
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "light",
+      "width": 1440,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 14.564830293816676
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "width": 320,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 11.354123634716228
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 8.563782193345451
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 7.805657787251042
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "width": 390,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 10.354159183002587
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 8.063633559010547
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 7.835147570154758
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "width": 768,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 9.26770956083101
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 15.04930253564476
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 15.090733875090935
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "light",
+      "width": 1440,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 14.918864808200889
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 320,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 12.80377463456314
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 7.561363915306523
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 6.088872950005183
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 390,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 12.3365463841633
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 8.846084121809977
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 10.472140004903384
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 768,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 13.431002260747901
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 10.207667293147564
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 8.966563121214733
+        }
+      ]
+    },
+    {
+      "name": "inicio",
+      "theme": "dark",
+      "width": 1440,
+      "checked": 8,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Minha Jornada\npelo Café",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Uma jornada pelo mundo do café",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Conheça, experimente, registre e descubra o que mais agrada ao seu paladar.",
+          "minRatio": 14.564830293816676
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "width": 320,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 11.354123634716228
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 8.563782193345451
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 7.805657787251042
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "width": 390,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 10.354159183002587
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 8.063633559010547
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 7.835147570154758
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "width": 768,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 9.26770956083101
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 15.04930253564476
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 15.090733875090935
+        }
+      ]
+    },
+    {
+      "name": "historico",
+      "theme": "dark",
+      "width": 1440,
+      "checked": 19,
+      "failures": [],
+      "photo": [
+        {
+          "text": "Histórico de Preparações",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "Minhas Preparações",
+          "minRatio": 14.918864808200889
+        },
+        {
+          "text": "O registro das experiências que realizei, com suas receitas, avaliações e descobertas.",
+          "minRatio": 14.918864808200889
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-17",
+  "timezone": "America/Sao_Paulo",
+  "scope": "Verificações reexecutadas ao retomar a revisão 0.6.1; não inclui nova execução integral dos fluxos de navegador.",
+  "tests": {
+    "command": "npm test",
+    "passed": 58,
+    "files": 12
+  },
+  "webBuild": {
+    "command": "npm run build",
+    "passed": true
+  },
+  "androidSync": {
+    "command": "npx cap sync android",
+    "passed": true
+  },
+  "androidBuild": {
+    "command": "./gradlew assembleDebug --offline",
+    "passed": true,
+    "warnings": [
+      "flatDir sem metadados de módulos",
+      "Ferramentas reconhecem SDK XML até versão 3; SDK contém XML versão 4"
+    ]
+  },
+  "apk": {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "package": "br.com.jornadacafe.app",
+    "versionName": "0.6.1",
+    "versionCode": 11,
+    "minSdk": 24,
+    "targetSdk": 36,
+    "windowSoftInputMode": "adjustResize (0x10), conferido com aapt no manifesto empacotado",
+    "webFilesMatched": 21,
+    "allDistFilesMatch": true,
+    "bytes": 33038236,
+    "sha256": "1c1e44f72095fee5b8f90e3f367f75b05d073f6ccd0ba34ab5b49e8d5a56172c"
+  },
+  "device": {
+    "command": "adb devices -l",
+    "connected": 0,
+    "installed": false,
+    "physicalValidation": false
+  },
+  "visualInspection": [
+    "docs/previews/phase-06.1/meus-cafes-light-390.png",
+    "docs/previews/phase-06.1/cadastro-cafe-dark-390.png"
+  ],
+  "pending": [
+    "Instalação e testes físicos Android 0.6.1",
+    "Teclado virtual, áreas seguras, barras do sistema e navegação/Voltar no aparelho",
+    "Auditoria completa de acessibilidade e bibliotecas extensas"
+  ]
+}

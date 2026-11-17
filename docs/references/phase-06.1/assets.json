@@ -1,0 +1,17 @@
+{
+  "mode": "image_gen integrado",
+  "assets": [
+    {
+      "path": "public/images/coffees-hero.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide editorial coffee collection app header. A burlap sack tipped on its side filled with glossy roasted coffee beans, with loose beans on a wooden table, green coffee leaves softly out of focus behind. Subject on right third, left half deep quiet espresso brown negative space for HTML text. Warm amber light, tactile natural texture, rich brown shadows, realistic artisanal coffee editorial photography. Horizontal 3:2. No text, logos, UI, labels, packaging brands or watermark. Generic decorative scene, not a user's product."
+    },
+    {
+      "path": "public/images/coffee-form-hero.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide editorial coffee registration app header. A living coffee branch with ripe red coffee cherries, some green cherries and glossy dark green leaves on the right half. Shallow depth of field, lush natural background fading to deep espresso brown on the left half with quiet negative space for HTML title. Warm early morning light, realistic botanical coffee editorial photography. Horizontal 3:2. No text, logos, UI, brands or watermark. Generic decorative scene."
+    },
+    {
+      "path": "public/images/producer-form-hero.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide editorial coffee producer registration app header. A generic hillside coffee farm with rows of lush green coffee plants, distant rolling mountains, a modest white farmhouse with terracotta tiled roof on the right half. Warm afternoon sunlight, natural photographic details. Left half fades naturally into deep espresso shaded foliage with quiet negative space for HTML text. Horizontal 3:2, realistic rural editorial photography. No people, text, logos, UI, farm branding, location identifiers or watermark. This is a generic decorative farm, not a real registered producer."
+    }
+  ]
+}

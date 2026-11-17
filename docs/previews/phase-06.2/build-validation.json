@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-17",
+  "timezone": "America/Sao_Paulo",
+  "tests": {
+    "command": "npm test",
+    "passed": 63,
+    "files": 13
+  },
+  "webBuild": {
+    "command": "npm run build",
+    "passed": true
+  },
+  "androidSync": {
+    "command": "npx cap sync android",
+    "passed": true
+  },
+  "androidBuild": {
+    "command": "./gradlew assembleDebug --offline",
+    "passed": true,
+    "warnings": [
+      "flatDir sem metadados de módulos"
+    ]
+  },
+  "apk": {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "package": "br.com.jornadacafe.app",
+    "versionName": "0.6.2",
+    "versionCode": 12,
+    "minSdk": 24,
+    "targetSdk": 36,
+    "webFilesMatched": 22,
+    "allDistFilesMatch": true,
+    "bytes": 34959415,
+    "sha256": "2d8dbac51d084e72ab5cdbd5366510aff2811be11526bb992f34ace8ed1a5854"
+  },
+  "physicalDevice": {
+    "detected": true,
+    "model": "22101316G",
+    "installedVersion": "0.6.2",
+    "installedVersionCode": 12,
+    "updatedInThisPhase": true,
+    "physicalValidation062": false,
+    "note": "Atualização solicitada pelo usuário com adb install -r, sem desinstalação ou limpeza. Conferência de instalação e abertura; validação completa dos fluxos permanece pendente.",
+    "previousInstalledVersion": "0.6.0",
+    "previousInstalledVersionCode": 10,
+    "installation": {
+      "at": "2026-11-17T20:22:00-03:00",
+      "command": "adb install -r android/app/build/outputs/apk/debug/app-debug.apk",
+      "result": "Success",
+      "launchStatus": "ok",
+      "launchState": "COLD",
+      "visualCheck": "Nova tela inicial carregada no tema escuro; captura temporária em /tmp, sem edição de registros ou execução de preparos."
+    }
+  }
+}

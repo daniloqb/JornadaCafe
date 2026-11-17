@@ -1,0 +1,17 @@
+{
+  "mode": "image_gen integrado, skill imagegen",
+  "reference": "inicio-historico.png — imagem combinada fornecida pelo usuário, preservada sem alteração",
+  "assets": [
+    {
+      "path": "public/images/discoveries-hero.png",
+      "use": "Cabeçalho do Início",
+      "source": "Asset local existente da Fase 06; reutilizado sem alteração ou nova geração",
+      "promptReference": "docs/phase-06.md"
+    },
+    {
+      "path": "public/images/preparations-hero.png",
+      "use": "Cabeçalho decorativo do Histórico",
+      "prompt": "Use case: photorealistic-natural. Asset type: local decorative photographic header for a personal coffee preparation history app. Create one wide 3:2 full-bleed realistic editorial photograph. A single elegant transparent hourglass pour-over glass coffee brewer with a warm wooden collar, a folded filter and dark coffee in its lower chamber on the right third of a rustic warm brown wooden tabletop. No cup. A few roasted coffee beans near its base. Soft amber side light illuminates glass and brewed coffee; deep espresso brown softly blurred backdrop. The brewer is fully visible with generous space above it, occupies the right 40 percent and the lower three quarters. Left half is very dark quiet espresso negative space for cream HTML title and paragraph to be added later. Intimate welcoming artisanal coffee atmosphere, realistic photographic texture, rich restrained highlights. The reference is a warm coffee app header, but create only the scene, no UI. No typography, letters, words, logos, brands, labels, watermark, borders, phone, people. Generic decorative brewer scene, never a photo of a particular user's preparation."
+    }
+  ]
+}

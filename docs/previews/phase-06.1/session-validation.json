@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Cronômetro não reposiciona a tela",
+    "Navegação preserva identificação, tempo e etapa",
+    "Estoque inalterado",
+    "Seções de registros abrem no topo"
+  ],
+  "passed": true
+}
