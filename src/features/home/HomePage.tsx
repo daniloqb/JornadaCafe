@@ -3,10 +3,12 @@ import { ActionLink, Card, EmptyState, PageHeader } from '../../components/ui';
 import { CoffeeRitual } from '../../assets/CoffeeRitual';
 import { useCollection } from '../../data/CollectionContext';
 import { inventory, shelfCoffees } from '../../domain/collection';
+import { journeyDate, journeyTimeline } from '../../domain/journey';
 import { CoffeeCard } from '../coffees/CoffeeCard';
 
 export function HomePage() {
   const { data, loading, error } = useCollection();
+  const recent = journeyTimeline(data).slice(0, 3);
   const stocked = data.coffees.filter(c => inventory(data, c.id).total > 0).length;
   const tried = data.coffees.filter(c => c.tried).length;
   return <>
@@ -23,7 +25,7 @@ export function HomePage() {
     </section>
     <div className="home-sections">
       <section aria-labelledby="shelf-title"><div className="section-heading"><div><span className="section-number">01 /</span><h2 id="shelf-title">Minha estante</h2></div><a className="text-link" href="#/cafes">Ver coleção <ArrowRight size={16} aria-hidden="true" /></a></div>{data.coffees.length ? <div className="shelf-coffees">{shelfCoffees(data).map(coffee => <CoffeeCard key={coffee.id} coffee={coffee} />)}</div> : <Card className="shelf-card"><div className="coffee-bags" aria-hidden="true"><div className="coffee-bag"><Leaf /></div><div className="coffee-bag coffee-bag--tall"><Coffee /></div><div className="coffee-bag"><Sprout /></div><span className="shelf-line" /></div><EmptyState compact icon={Coffee} title="Um lugar para os seus favoritos">Sua coleção de cafés vai morar aqui.<br /><a className="text-link" href="#/cafes/novo">Adicionar meu primeiro café <ArrowRight size={15} /></a></EmptyState></Card>}</section>
-      <section aria-labelledby="recent-title"><div className="section-heading"><div><span className="section-number">02 /</span><h2 id="recent-title">Minha Jornada recente</h2></div><a className="text-link" href="#/jornada" aria-label="Ver Minha Jornada"><ArrowRight size={18} aria-hidden="true" /></a></div><Card className="recent-card"><EmptyState compact icon={BookOpen} title="Toda jornada tem uma primeira página">Em breve, seus preparos e experiências vão dar vida a este espaço.</EmptyState><a href="#/jornada" className="text-link">Conhecer minha jornada <ArrowRight size={15} aria-hidden="true" /></a></Card></section>
+      <section aria-labelledby="recent-title"><div className="section-heading"><div><span className="section-number">02 /</span><h2 id="recent-title">Minha Jornada recente</h2></div><a className="text-link" href="#/jornada" aria-label="Ver Minha Jornada"><ArrowRight size={18} aria-hidden="true" /></a></div><Card className="recent-card">{recent.length ? <ul className="home-journey-recent">{recent.map(item => <li key={item.id}><a href={item.kind === 'preparation' ? `#/preparar/historico/${item.preparation.id}` : '#/jornada/diario'}><time dateTime={item.at}>{journeyDate(item.at)}</time><h3>{item.kind === 'preparation' ? item.preparation.snapshot.recipe.name : item.reflection.title || 'Reflexão pessoal'}</h3><span>{item.kind === 'preparation' ? item.preparation.snapshot.coffee?.name || 'Preparo concluído' : 'Uma página do meu diário'}</span></a></li>)}</ul> : <EmptyState compact icon={BookOpen} title="Toda jornada tem uma primeira página">Seus preparos e reflexões vão dar vida a este espaço.</EmptyState>}<a href="#/jornada" className="text-link">Conhecer minha jornada <ArrowRight size={15} aria-hidden="true" /></a></Card></section>
     </div>
     <div className="page-signature"><Sprout size={17} aria-hidden="true" /><span>O café é o começo. A jornada é sua.</span></div>
   </>;

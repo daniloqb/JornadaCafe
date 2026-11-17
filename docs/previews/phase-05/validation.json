@@ -1,0 +1,1405 @@
+{
+  "results": [
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "inicio",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-detail",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtores",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtor-detail",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "cafe-edit",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "metodo-detail",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tecnica-detail",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "metodos",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "tecnicas",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receitas",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receita-detail",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "receita-form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "revisao",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "historico",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "configuracoes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "descobertas",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "pacote-form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "produtor-form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "avaliacao-form",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "reflexao-opcoes",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "light",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "light",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "light",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "section": "preparo",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "CRUD reflexão e cancelamento da exclusão",
+    "Texto e data de criação preservados",
+    "Paginação da linha do tempo",
+    "Avaliação zero e tags registradas no histórico",
+    "Revisão confirma sessão pausada",
+    "Fraunces editorial / DM Sans no relógio"
+  ]
+}

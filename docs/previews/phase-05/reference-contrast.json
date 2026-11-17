@@ -1,0 +1,509 @@
+{
+  "method": "Cores resolvidas pelo navegador a partir dos tokens aplicados à Jornada; luminância relativa sRGB.",
+  "pairs": [
+    {
+      "theme": "light",
+      "foreground": "--color-text",
+      "background": "--journey-card",
+      "colors": [
+        "#2b1d17",
+        "#fef5ec"
+      ],
+      "ratio": 15.1,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text",
+      "background": "--journey-paper",
+      "colors": [
+        "#2b1d17",
+        "#f1e4d4"
+      ],
+      "ratio": 13.01,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text",
+      "background": "--journey-quote",
+      "colors": [
+        "#2b1d17",
+        "#ddd7c5"
+      ],
+      "ratio": 11.31,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-muted",
+      "background": "--journey-card",
+      "colors": [
+        "#6e523d",
+        "#fef5ec"
+      ],
+      "ratio": 6.63,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-muted",
+      "background": "--journey-paper",
+      "colors": [
+        "#6e523d",
+        "#f1e4d4"
+      ],
+      "ratio": 5.72,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-muted",
+      "background": "--journey-quote",
+      "colors": [
+        "#6e523d",
+        "#ddd7c5"
+      ],
+      "ratio": 4.97,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-warm",
+      "background": "--journey-card",
+      "colors": [
+        "#513629",
+        "#fef5ec"
+      ],
+      "ratio": 10.2,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-warm",
+      "background": "--journey-paper",
+      "colors": [
+        "#513629",
+        "#f1e4d4"
+      ],
+      "ratio": 8.79,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-text-warm",
+      "background": "--journey-quote",
+      "colors": [
+        "#513629",
+        "#ddd7c5"
+      ],
+      "ratio": 7.65,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-positive",
+      "background": "--journey-card",
+      "colors": [
+        "#41622f",
+        "#fef5ec"
+      ],
+      "ratio": 6.47,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-positive",
+      "background": "--journey-paper",
+      "colors": [
+        "#41622f",
+        "#f1e4d4"
+      ],
+      "ratio": 5.57,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-positive",
+      "background": "--journey-quote",
+      "colors": [
+        "#41622f",
+        "#ddd7c5"
+      ],
+      "ratio": 4.85,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-card",
+      "colors": [
+        "#854936",
+        "#fef5ec"
+      ],
+      "ratio": 6.49,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-paper",
+      "colors": [
+        "#854936",
+        "#f1e4d4"
+      ],
+      "ratio": 5.59,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-quote",
+      "colors": [
+        "#854936",
+        "#ddd7c5"
+      ],
+      "ratio": 4.86,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-photo-text",
+      "background": "--journey-olive-deep",
+      "colors": [
+        "#fff4df",
+        "#626638"
+      ],
+      "ratio": 5.54,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-photo-text",
+      "background": "--journey-terracotta-deep",
+      "colors": [
+        "#fff4df",
+        "#984c31"
+      ],
+      "ratio": 5.64,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-control-border",
+      "background": "--journey-card",
+      "colors": [
+        "#876f59",
+        "#fef5ec"
+      ],
+      "ratio": 4.38,
+      "target": 3,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-control-border",
+      "background": "--journey-quote",
+      "colors": [
+        "#876f59",
+        "#ddd7c5"
+      ],
+      "ratio": 3.28,
+      "target": 3,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-surface",
+      "background": "--color-positive",
+      "colors": [
+        "#fff8f0",
+        "#41622f"
+      ],
+      "ratio": 6.62,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "light",
+      "foreground": "--color-surface",
+      "background": "--color-accent-strong",
+      "colors": [
+        "#fff8f0",
+        "#854936"
+      ],
+      "ratio": 6.64,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text",
+      "background": "--journey-card",
+      "colors": [
+        "#f5eadc",
+        "#2c221c"
+      ],
+      "ratio": 13.07,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text",
+      "background": "--journey-paper",
+      "colors": [
+        "#f5eadc",
+        "#261d18"
+      ],
+      "ratio": 13.91,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text",
+      "background": "--journey-quote",
+      "colors": [
+        "#f5eadc",
+        "#433b30"
+      ],
+      "ratio": 9.27,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-muted",
+      "background": "--journey-card",
+      "colors": [
+        "#cebba9",
+        "#2c221c"
+      ],
+      "ratio": 8.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-muted",
+      "background": "--journey-paper",
+      "colors": [
+        "#cebba9",
+        "#261d18"
+      ],
+      "ratio": 8.89,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-muted",
+      "background": "--journey-quote",
+      "colors": [
+        "#cebba9",
+        "#433b30"
+      ],
+      "ratio": 5.93,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-warm",
+      "background": "--journey-card",
+      "colors": [
+        "#d8c3ac",
+        "#2c221c"
+      ],
+      "ratio": 9.11,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-warm",
+      "background": "--journey-paper",
+      "colors": [
+        "#d8c3ac",
+        "#261d18"
+      ],
+      "ratio": 9.69,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-text-warm",
+      "background": "--journey-quote",
+      "colors": [
+        "#d8c3ac",
+        "#433b30"
+      ],
+      "ratio": 6.46,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-positive",
+      "background": "--journey-card",
+      "colors": [
+        "#bbc29b",
+        "#2c221c"
+      ],
+      "ratio": 8.36,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-positive",
+      "background": "--journey-paper",
+      "colors": [
+        "#bbc29b",
+        "#261d18"
+      ],
+      "ratio": 8.89,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-positive",
+      "background": "--journey-quote",
+      "colors": [
+        "#bbc29b",
+        "#433b30"
+      ],
+      "ratio": 5.93,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-card",
+      "colors": [
+        "#d29c82",
+        "#2c221c"
+      ],
+      "ratio": 6.52,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-paper",
+      "colors": [
+        "#d29c82",
+        "#261d18"
+      ],
+      "ratio": 6.94,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-accent-strong",
+      "background": "--journey-quote",
+      "colors": [
+        "#d29c82",
+        "#433b30"
+      ],
+      "ratio": 4.62,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-photo-text",
+      "background": "--journey-olive-deep",
+      "colors": [
+        "#fff4df",
+        "#626638"
+      ],
+      "ratio": 5.54,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-photo-text",
+      "background": "--journey-terracotta-deep",
+      "colors": [
+        "#fff4df",
+        "#984c31"
+      ],
+      "ratio": 5.64,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-control-border",
+      "background": "--journey-card",
+      "colors": [
+        "#a38c76",
+        "#2c221c"
+      ],
+      "ratio": 4.86,
+      "target": 3,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-control-border",
+      "background": "--journey-quote",
+      "colors": [
+        "#a38c76",
+        "#433b30"
+      ],
+      "ratio": 3.45,
+      "target": 3,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-surface",
+      "background": "--color-positive",
+      "colors": [
+        "#2b211c",
+        "#bbc29b"
+      ],
+      "ratio": 8.45,
+      "target": 4.5,
+      "passed": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "--color-surface",
+      "background": "--color-accent-strong",
+      "colors": [
+        "#2b211c",
+        "#d29c82"
+      ],
+      "ratio": 6.6,
+      "target": 4.5,
+      "passed": true
+    }
+  ]
+}

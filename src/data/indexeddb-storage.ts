@@ -12,7 +12,7 @@ export class IndexedDBStorage implements LocalStorage {
     if (!globalThis.indexedDB) throw new Error('Este navegador não disponibiliza o IndexedDB.');
 
     this.database = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open(this.name, 4);
+      const request = indexedDB.open(this.name, 5);
       let settled = false;
       const fail = (error: unknown) => {
         settled = true;
@@ -30,8 +30,8 @@ export class IndexedDBStorage implements LocalStorage {
         const metadata = request.transaction!.objectStore('metadata');
         const version = metadata.get('schema-version');
         version.onsuccess = () => {
-          if (version.result !== undefined && version.result !== '1' && version.result !== '2' && version.result !== '3') { request.transaction!.abort(); return; }
-          metadata.put('4', 'schema-version');
+          if (version.result !== undefined && version.result !== '1' && version.result !== '2' && version.result !== '3' && version.result !== '4') { request.transaction!.abort(); return; }
+          metadata.put('5', 'schema-version');
         };
       };
       request.onblocked = () => fail(new Error('Feche outras abas deste aplicativo e tente novamente.'));

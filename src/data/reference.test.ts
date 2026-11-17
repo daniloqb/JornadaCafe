@@ -43,7 +43,7 @@ describe('biblioteca de referência', () => {
     expect(() => applyMutation(changed, request)).toThrow('Suas edições foram preservadas');
     expect(changed.recipes).toEqual([]);
   });
-  it('persiste importações concorrentes e edições no esquema 4 sem alterar coleção, estoque ou histórico', async () => {
+  it('persiste importações concorrentes e edições no esquema atual sem alterar coleção, estoque ou histórico', async () => {
     const storage = new IndexedDBStorage(`reference-${crypto.randomUUID()}`);
     try {
       await validateStorage(storage);
@@ -61,7 +61,7 @@ describe('biblioteca de referência', () => {
       const reopened = await storage.loadCollection();
       expect(reopened.recipes[0].name).toBe('Edição local');
       for (const table of ['coffees', 'packages', 'records', 'preparations', 'sessions'] as const) expect(reopened[table]).toEqual(before[table]);
-      expect(await storage.getMetadata('schema-version')).toBe('4');
+      expect(await storage.getMetadata('schema-version')).toBe('5');
       expect(await storage.getMetadata('preservar')).toBe('anterior');
       await expect(storage.mutateCollection({ ...request, key: 'inexistente' })).rejects.toThrow('não está disponível');
     } finally { await storage.close(); }
@@ -105,7 +105,7 @@ describe('biblioteca de referência', () => {
       const beforeFailure = await storage.loadCollection();
       await expect(storage.mutateCollection(bulk)).rejects.toThrow('Suas edições foram preservadas');
       expect(await storage.loadCollection()).toEqual(beforeFailure);
-      expect(await storage.getMetadata('schema-version')).toBe('4');
+      expect(await storage.getMetadata('schema-version')).toBe('5');
     } finally { await storage.close(); }
   });
 

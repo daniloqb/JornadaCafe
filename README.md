@@ -1,6 +1,8 @@
 # Minha Jornada pelo Café
 
-**Fase 04.4 — Revisão visual da receita e do preparo guiado**, preservando a coleção, a biblioteca e o cadastro de cafés, características e produtores da Fase 04.2. Dados locais, estoque por pacote, histórico e temas claro, escuro e automático. Versão atual: **0.4.4**.
+**Fase 05 — Minha Jornada:** abertura editorial, indicadores dos preparos concluídos, evolução das avaliações, linha do tempo e diário de reflexões. Tipografia Fraunces/DM Sans padronizada, temas claro, escuro e automático, persistência local com migração incremental para o esquema 5. Versão atual: **0.5.0**.
+
+Veja o [relatório da Fase 05](docs/phase-05.md), com decisões de dados, auditoria de contraste, capturas e limites da validação Android. Minhas Descobertas permanece reservada à Fase 06.
 
 ## Executar no navegador
 
@@ -15,7 +17,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # 31 verificações pontuais de persistência, domínio, cronômetro, referências e navegação
+npm test            # 42 verificações de persistência, Jornada, cronômetro, referências e navegação
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```

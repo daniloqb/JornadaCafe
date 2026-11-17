@@ -1,3 +1,4 @@
+import { applyJourneyMutation, type Reflection, type JourneyMutation } from './journey';
 import { coffeeOptions, coffeeOptionKey, ratingLabels, standardCoffeeOptions, type CoffeeRatings, type CoffeeOptionKind } from './coffee-profile';
 import { safeReferenceUrl } from './brewing';
 import { importReference, importReferenceCatalog, type ReferenceMutation } from '../reference/import-reference';
@@ -22,10 +23,10 @@ export interface CoffeePackage extends Entity {
   purchasedOn?: string; roastedOn?: string; openedOn?: string; lot?: string; price?: number;
   purchasedAt?: string; notes?: string; adjustments: StockAdjustment[];
 }
-export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[]; preparations: Preparation[]; sessions: BrewSession[] }
+export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[]; preparations: Preparation[]; sessions: BrewSession[]; reflections: Reflection[] }
 export type CollectionMutation = { type: 'coffee'; value: Coffee } | { type: 'package'; value: CoffeePackage; reason?: string }
-  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation | PreparationMutation | ReferenceMutation;
-export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [], preparations: [], sessions: [] });
+  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation | PreparationMutation | ReferenceMutation | JourneyMutation;
+export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [], preparations: [], sessions: [], reflections: [] });
 export const normalizeText = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('pt-BR');
 export function newEntity(): Entity { const now = new Date().toISOString(); return { id: crypto.randomUUID(), createdAt: now, updatedAt: now }; }
 export const relationFields = { producerId: 'producer', propertyId: 'property', originId: 'origin', roasterId: 'roaster' } as const;
@@ -47,6 +48,8 @@ export function shelfCoffees(data: CollectionData) {
 
 /** Shared rules; both adapters apply these inside their write transaction. */
 export function applyMutation(data: CollectionData, mutation: CollectionMutation): CollectionData {
+  const journey = applyJourneyMutation(data, mutation);
+  if (journey) return journey;
   if (mutation.type === 'importReferenceCatalog') return importReferenceCatalog(data);
   if (mutation.type === 'importReference') return importReference(data, mutation);
   const preparation = applyPreparationMutation(data, mutation);
@@ -127,7 +130,7 @@ export function applyMutation(data: CollectionData, mutation: CollectionMutation
   return next;
 }
 
-export const collectionTables = ['coffees', 'packages', 'records', 'methods', 'techniques', 'recipes', 'preparations', 'sessions'] as const;
+export const collectionTables = ['coffees', 'packages', 'records', 'methods', 'techniques', 'recipes', 'preparations', 'sessions', 'reflections'] as const;
 export type CollectionTable = typeof collectionTables[number];
 /** Only changed entities are written, with shared validation inside the transaction. */
 export function collectionChanges(before: CollectionData, after: CollectionData) {

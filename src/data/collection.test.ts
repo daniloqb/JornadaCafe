@@ -13,7 +13,7 @@ const packet = (coffeeId: string): CoffeePackage => ({ ...newEntity(), coffeeId,
 afterEach(async () => { await Promise.all(opened.splice(0).map(s => s.close())); });
 
 describe('coleção e migração', () => {
-  it('migra IndexedDB 1 → 4 sem perder metadados existentes', async () => {
+  it('migra IndexedDB 1 → 5 sem perder metadados existentes', async () => {
     const name = `legacy-${crypto.randomUUID()}`;
     await new Promise<void>((resolve, reject) => {
       const request = indexedDB.open(name, 1);
@@ -23,7 +23,7 @@ describe('coleção e migração', () => {
     const local = new IndexedDBStorage(name); opened.push(local);
     await validateStorage(local);
     expect(await local.getMetadata('existing')).toBe('preservar');
-    expect(await local.getMetadata('schema-version')).toBe('4');
+    expect(await local.getMetadata('schema-version')).toBe('5');
     expect(await local.loadCollection()).toEqual(emptyCollection());
   });
   it('persiste café sem pacote, relações, edição e fotografia separada após reabrir', async () => {

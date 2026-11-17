@@ -1,7 +1,7 @@
 import { CapacitorSQLite, SQLiteConnection, type SQLiteDBConnection } from '@capacitor-community/sqlite';
 import type { LocalStorage } from '../domain/local-storage';
 import { applyMutation, emptyCollection, collectionTables, collectionChanges, type CollectionData, type CollectionMutation } from '../domain/collection';
-import { sqliteVersion2, sqliteVersion3, sqliteVersion4 } from './sqlite-schema';
+import { sqliteVersion2, sqliteVersion3, sqliteVersion4, sqliteVersion5 } from './sqlite-schema';
 import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 
@@ -21,17 +21,17 @@ export class SQLiteStorage implements LocalStorage {
 
   async initialize(): Promise<void> {
     if (this.database) return;
-    await this.connections.addUpgradeStatement(DATABASE, [{ toVersion: 2, statements: sqliteVersion2 }, { toVersion: 3, statements: sqliteVersion3 }, { toVersion: 4, statements: sqliteVersion4 }]);
+    await this.connections.addUpgradeStatement(DATABASE, [{ toVersion: 2, statements: sqliteVersion2 }, { toVersion: 3, statements: sqliteVersion3 }, { toVersion: 4, statements: sqliteVersion4 }, { toVersion: 5, statements: sqliteVersion5 }]);
     const consistent = (await this.connections.checkConnectionsConsistency()).result;
     const exists = (await this.connections.isConnection(DATABASE, false)).result;
     const database = consistent && exists
       ? await this.connections.retrieveConnection(DATABASE, false)
-      : await this.connections.createConnection(DATABASE, false, 'no-encryption', 4, false);
+      : await this.connections.createConnection(DATABASE, false, 'no-encryption', 5, false);
     try {
       await database.open();
       await database.execute('PRAGMA foreign_keys = ON;', false);
-      // New databases start at user_version 4, so also install the schema on first creation.
-      await database.execute([...sqliteVersion2, ...sqliteVersion3, ...sqliteVersion4].join('\n'));
+      // New databases start at user_version 5, so also install the schema on first creation.
+      await database.execute([...sqliteVersion2, ...sqliteVersion3, ...sqliteVersion4, ...sqliteVersion5].join('\n'));
       this.database = database;
     } catch (error) {
       await this.connections.closeConnection(DATABASE, false).catch(() => undefined);
@@ -75,7 +75,7 @@ export class SQLiteStorage implements LocalStorage {
       try {
         const data = await this.readCollection();
         const next = applyMutation(data, mutation);
-        if (['startSession', 'checkpoint', 'discardSession', 'finishPreparation'].includes(mutation.type)) {
+        if (['reflection', 'deleteReflection', 'evaluatePreparation', 'startSession', 'checkpoint', 'discardSession', 'finishPreparation'].includes(mutation.type)) {
           for (const change of collectionChanges(data, next)) {
             if (!change.value) await database.run(`DELETE FROM ${change.table} WHERE id = ?;`, [change.id], false);
             else if (change.table === 'packages') {

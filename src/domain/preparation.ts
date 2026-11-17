@@ -1,3 +1,4 @@
+import type { PreparationEvaluation } from './journey';
 import { newEntity, type CollectionData, type Entity, type Coffee, type CoffeePackage } from './collection';
 import { recalculateSteps, validateRecipe, type BrewMethod, type BrewRecipe, type BrewTechnique, type RecipeStep } from './brewing';
 
@@ -12,7 +13,7 @@ export interface BrewSession extends Entity {
 }
 export interface Preparation extends Entity {
   snapshot: PreparationSnapshot; startedAt: string; finishedAt: string; elapsedMs: number;
-  executions: StepExecution[]; state: 'completed' | 'interrupted'; notes?: string; consumedGrams: number;
+  executions: StepExecution[]; state: 'completed' | 'interrupted'; notes?: string; consumedGrams: number; evaluation?: PreparationEvaluation;
 }
 export type PreparationMutation = { type: 'startSession' | 'checkpoint'; value: BrewSession }
   | { type: 'discardSession'; id: string } | { type: 'finishPreparation'; value: Preparation };

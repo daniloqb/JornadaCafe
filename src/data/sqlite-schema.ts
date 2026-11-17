@@ -23,3 +23,9 @@ export const sqliteVersion4 = [
   'CREATE TABLE IF NOT EXISTS sessions (id TEXT PRIMARY KEY NOT NULL, slot INTEGER NOT NULL DEFAULT 1 UNIQUE CHECK(slot = 1), payload TEXT NOT NULL);',
   "UPDATE metadata SET value = '4' WHERE key = 'schema-version' AND value = '3';",
 ];
+
+// Associations live in the payload: deleting the source never deletes a reflection.
+export const sqliteVersion5 = [
+  'CREATE TABLE IF NOT EXISTS reflections (id TEXT PRIMARY KEY NOT NULL, payload TEXT NOT NULL);',
+  "UPDATE metadata SET value = '5' WHERE key = 'schema-version' AND value = '4';",
+];

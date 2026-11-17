@@ -87,7 +87,7 @@ describe('características e produtores', () => {
       expect(data).toEqual(before); expect(data.coffees.every(c => !c.ratings && !c.sensoryTagIds)).toBe(true);
       expect(legacySpeciesId(data, first)).toBe(standardCoffeeOptions[0].id); expect(legacySpeciesId(data, second)).toBeUndefined();
       const url = await local.photoUrl(first.photoId); expect(url).toMatch(/^blob:/); URL.revokeObjectURL(url!);
-      expect(await local.getMetadata('anterior')).toBe('preservar'); expect(await local.getMetadata('schema-version')).toBe('4');
+      expect(await local.getMetadata('anterior')).toBe('preservar'); expect(await local.getMetadata('schema-version')).toBe('5');
     } finally { await local.close(); }
   });
 });

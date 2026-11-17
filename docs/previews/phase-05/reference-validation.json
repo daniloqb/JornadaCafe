@@ -1,0 +1,234 @@
+{
+  "results": [
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "caminho",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "evolucao",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "tempo",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 390,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "imagesLoaded": true
+    },
+    {
+      "section": "diario",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "imagesLoaded": true
+    }
+  ],
+  "checks": [
+    "Imagens locais carregadas",
+    "Gráficos com coordenadas ajustadas à largura real",
+    "Temas persistidos",
+    "Sem rolagem horizontal"
+  ]
+}

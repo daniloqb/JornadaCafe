@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary">#4A3025</color>
     <color name="colorPrimaryDark">#4A3025</color>
-    <color name="colorAccent">#AF765E</color>
-    <color name="colorCream">#FBF1E6</color>
-    <color name="colorAppBackgroundLight">#FBF1E6</color>
+    <color name="colorAccent">#B66C58</color>
+    <color name="colorCream">#F5EBDD</color>
+    <color name="colorAppBackgroundLight">#F5EBDD</color>
     <color name="colorAppBackgroundDark">#1F1713</color>
     <color name="colorWindowBackground">@color/colorAppBackgroundLight</color>
 </resources>
