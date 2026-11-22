@@ -1,3 +1,4 @@
+import type { ArchiveState, PortablePreferences, StoredPhoto } from '../transfer/core';
 import type { CollectionData, CollectionMutation } from './collection';
 
 export interface LocalStorage {
@@ -8,6 +9,9 @@ export interface LocalStorage {
   close(): Promise<void>;
   loadCollection(): Promise<CollectionData>;
   mutateCollection(mutation: CollectionMutation): Promise<void>;
+  exportState(): Promise<ArchiveState>;
+  replaceState(data: CollectionData, photos: StoredPhoto[], preferences: PortablePreferences): Promise<void>;
+  readPhoto(id: string): Promise<Blob | undefined>;
   savePhoto(id: string, blob: Blob): Promise<void>;
   photoUrl(id: string): Promise<string | undefined>;
   deletePhoto(id: string): Promise<void>;

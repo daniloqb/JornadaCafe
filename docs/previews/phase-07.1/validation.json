@@ -1,0 +1,122 @@
+{
+  "A": {
+    "restoredInIsolatedIndexedDB": true,
+    "scenario": "A",
+    "bytes": 2857,
+    "sha256": "5e52fa2ac42f4067f80c070016f754dfd89e59aecb66ebcb5a13be274dbbd1f8",
+    "recordsEqual": true,
+    "photoHashesEqual": true,
+    "photos": 0,
+    "manifestFiles": 1
+  },
+  "B": {
+    "restoredInIsolatedIndexedDB": true,
+    "scenario": "B",
+    "bytes": 1917593,
+    "sha256": "bb7967cbe5eb9d28727f2d0a24b6ecce2731e17cb0035e3ca09ab68eee34cf64",
+    "recordsEqual": true,
+    "photoHashesEqual": true,
+    "photos": 6,
+    "manifestFiles": 2
+  },
+  "C": {
+    "restoredInIsolatedIndexedDB": true,
+    "scenario": "C",
+    "bytes": 13138031,
+    "sha256": "2ee5e81e8bfd598519f74b5852e4b9137f3c27a63c0bf66051e7ecf51134515c",
+    "recordsEqual": true,
+    "photoHashesEqual": true,
+    "photos": 6,
+    "manifestFiles": 7
+  },
+  "C_preservation": {
+    "allPersistentRowsEqual": true,
+    "metadataEqual": false,
+    "allPhotoHashesEqual": true,
+    "photos": 6,
+    "tables": 10,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "metadataNote": "Pending preferences marker from fixture restoration consumed during subsequent startup; all nine entity tables and photo hashes equal."
+  },
+  "cause": {
+    "exception": "TransactionTooLargeException",
+    "parcelBytes": 12322024,
+    "stage": "Activity stop / Capacitor saveInstanceState before SAF returns",
+    "oomEvidence": false
+  },
+  "automated": {
+    "typescript": "passed",
+    "vitestFiles": 19,
+    "vitestTests": 141,
+    "nativeInstrumented": {
+      "passed": true,
+      "tests": 1,
+      "finalRunSeconds": 42.373
+    },
+    "webBuild": "passed",
+    "capacitorSync": "passed",
+    "sandboxBuild": "passed",
+    "normalBuild": "passed",
+    "gitDiffCheck": "passed"
+  },
+  "physicalSAF": {
+    "selectionAndSave": "manual on device by user",
+    "fixtureSetup": "CDP in sandbox only",
+    "nativeCallbackReal": true,
+    "externalFilesReopened": true,
+    "A": true,
+    "B": true,
+    "C": true,
+    "cancelled": true,
+    "adbInjectEvents": "denied even after USB setting attempt"
+  },
+  "formats": {
+    "schema": 5,
+    "personal-full": 1,
+    "library-share": 1,
+    "appVersion": "0.7.1",
+    "versionCode": 16
+  },
+  "library": {
+    "bytes": 1181,
+    "sha256": "b536f8451a5256653727801a5f7f457fbf9e03e3aa1d7b3f878a917343d8539f",
+    "zipFiles": [
+      "data/library.json",
+      "manifest.json"
+    ],
+    "projectionEqual": true,
+    "privacySentinelsAbsent": true,
+    "additiveImport": true,
+    "personalRecordsUnchanged": true,
+    "repeatDuplicates": 4,
+    "versions": 2
+  },
+  "mainPreservation": {
+    "allPersistentRowsEqual": true,
+    "metadataEqual": true,
+    "allPhotoHashesEqual": true,
+    "photos": 16,
+    "tables": 10,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0
+  },
+  "sandboxAfterCancelAndLibrary": {
+    "allPersistentRowsEqual": true,
+    "metadataEqual": true,
+    "allPhotoHashesEqual": true,
+    "photos": 6,
+    "tables": 10,
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0
+  },
+  "build": {
+    "identity": "package: name='br.com.jornadacafe.app' versionCode='16' versionName='0.7.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "webFiles": 22,
+    "identicalToDist": true,
+    "sha256": "712fa677a3e87f2e3f8b785f27ccc5dc56943699396a71dfc51fa6205b88630c"
+  },
+  "noMainInstall": true,
+  "noCommitOrPush": true,
+  "temporaryDiagnosticsRemoved": true
+}

@@ -1,0 +1,136 @@
+{
+  "package": "br.com.jornadacafe.app",
+  "versionName": "0.7.0",
+  "versionCode": 15,
+  "schemaVersion": 5,
+  "personalFormat": 1,
+  "libraryFormat": 1,
+  "apkBytes": 34991479,
+  "apkSha256": "eac21e2863e9b54f8ef05aac0226dc3e3f9ff8297a0018df4611ff88b8520aee",
+  "webFilesIdentical": 22,
+  "files": [
+    {
+      "path": "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+      "bytes": 36932
+    },
+    {
+      "path": "assets/fraunces-latin-wght-italic-Py8at3oI.woff2",
+      "sha256": "bceec2ef4d549efbc8df0194a8d5280b6a64c3e399244dffccd9ea1bd9ad6db7",
+      "bytes": 45656
+    },
+    {
+      "path": "assets/fraunces-latin-wght-normal-ukD16Tqj.woff2",
+      "sha256": "7f9d191d999336d3b9790afa72e1358e50a13b06d4f289341e92a311967a80f9",
+      "bytes": 36620
+    },
+    {
+      "path": "assets/index-DsGmQfju.css",
+      "sha256": "89907cb771ec19616089f097b82e2642625ca49715d8f9be594e70d0ae711bed",
+      "bytes": 155797
+    },
+    {
+      "path": "assets/index-mGt9x2th.js",
+      "sha256": "2c7e69e858eb73ab16a838d59a09d406b7fc5f647a06f0e8ebd19ea9a07a5baa",
+      "bytes": 567535
+    },
+    {
+      "path": "assets/sqlite-storage-BVIRw-lO.js",
+      "sha256": "c5564ab4dbb038d2b22c9e4a6d69899b9ec721a0f376d3139099f7a75822aae4",
+      "bytes": 28181
+    },
+    {
+      "path": "assets/web-BUuMRe2D.js",
+      "sha256": "917037f4be8fc6cf85a7114481627693a2ed523c763da11c7068a7584acefc62",
+      "bytes": 8480
+    },
+    {
+      "path": "assets/web-DSspehAS.js",
+      "sha256": "aff58958126d6acb863367678bd707f8bbd1186fa75711ae56d673a94eb363d8",
+      "bytes": 9464
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "42e4c3c461bba51d2a330caf7c93c854cd68d140d838eabd5dd924e05126b55e",
+      "bytes": 347
+    },
+    {
+      "path": "images/coffee-form-hero.png",
+      "sha256": "d0cc3f92e92f0ec7033ff7696cb6600f0e3ae097cd6645eeeeeb3318982a82db",
+      "bytes": 1914128
+    },
+    {
+      "path": "images/coffee-library.png",
+      "sha256": "1659dcc9b6ba21f98e0420269a811db88a6f2842380b671559355cb4be125f58",
+      "bytes": 1755443
+    },
+    {
+      "path": "images/coffees-hero.png",
+      "sha256": "b067179eccf0fbacde643f2c7001751f5bfa1b5bf5b9d2832137843ea8dc1787",
+      "bytes": 2209231
+    },
+    {
+      "path": "images/discoveries-hero.png",
+      "sha256": "f9d35d293cd44e482020ae59e49654cef43e4736939fe783bcc80d322fbb49dc",
+      "bytes": 1931242
+    },
+    {
+      "path": "images/journey-botanical.png",
+      "sha256": "a16ce7384807571dee89685db4ff27168c2194fec8344787e6febf75b1416536",
+      "bytes": 2184283
+    },
+    {
+      "path": "images/journey-cup.png",
+      "sha256": "fbabefe4c9cb9ce4642003ad13f5c2ece2acfe8a27c529666cd45ceabfd291e2",
+      "bytes": 2294985
+    },
+    {
+      "path": "images/journey-ritual.png",
+      "sha256": "7f877ab20c0d5a2ec630e3b687c49aacf3c2142395aecc48a080f313d94e2742",
+      "bytes": 2147874
+    },
+    {
+      "path": "images/preparations-hero.png",
+      "sha256": "dd31807cc96988ab4d64a544ecd6935350121d49c744cc0f3430dd7e50366c1d",
+      "bytes": 1922838
+    },
+    {
+      "path": "images/producer-form-hero.png",
+      "sha256": "e408f4a475a27b51966c574905b90efe5b2d099dc1594c6ca448d59702d0e37c",
+      "bytes": 2596100
+    },
+    {
+      "path": "images/v60-method.png",
+      "sha256": "b219d01b3ba3b1ad6446756d79f768ddac078a502b3cec6995b11d352c8d7d8f",
+      "bytes": 2375132
+    },
+    {
+      "path": "index.html",
+      "sha256": "d86f518a1dcdd1ba7156733a4eb203ca3ce69151b9763c48b0237998c9a9eb76",
+      "bytes": 1999
+    },
+    {
+      "path": "licenses/DM-Sans-OFL.txt",
+      "sha256": "6fbd040a29c2037a765dfb9f2561e9965b5c95c6dcb5dce516089d63d5f17af7",
+      "bytes": 4502
+    },
+    {
+      "path": "licenses/Fraunces-OFL.txt",
+      "sha256": "cd3384cafac6f2bddc3955273958a2e029f97027c8037ac539ef5744a77b579e",
+      "bytes": 4504
+    }
+  ],
+  "typecheck": "passed",
+  "tests": 120,
+  "testFiles": 18,
+  "productionAuditVulnerabilities": 0,
+  "webBuild": "passed",
+  "capacitorSync": "passed; existing SQLite and Filesystem plugins",
+  "androidBuild": "BUILD SUCCESSFUL (offline)",
+  "warnings": [
+    "Vite main chunk exceeds 500 kB",
+    "Gradle flatDir repositories"
+  ],
+  "mainAppInstalled": true,
+  "installationEvidence": "install-validation.json"
+}

@@ -1,0 +1,9 @@
+{
+  "package": "br.com.jornadacafe.app",
+  "allRowsAndMetadataEqual": true,
+  "allFileHashesEqual": true,
+  "preferencesEqual": true,
+  "photos": 16,
+  "integrityCheck": "ok",
+  "foreignKeyViolations": 0
+}

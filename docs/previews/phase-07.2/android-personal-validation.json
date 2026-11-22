@@ -1,0 +1,11 @@
+{
+  "kind": "personal-full",
+  "format": 2,
+  "bytes": 487244,
+  "rowsEqual": true,
+  "photoHashesEqual": true,
+  "logicalPhotos": 10,
+  "physicalPhotos": 3,
+  "fullValidatorPassed": true,
+  "isolatedRestoreAfterReopen": true
+}

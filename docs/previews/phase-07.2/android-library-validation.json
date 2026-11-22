@@ -1,0 +1,31 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "nativeSafSavesConfirmed": true,
+  "formatVersion": 2,
+  "withoutImages": {
+    "bytes": 1534,
+    "counts": {
+      "methods": 1,
+      "photos": 0,
+      "recipes": 4,
+      "techniques": 1,
+      "versions": 6
+    },
+    "members": 2
+  },
+  "withImages": {
+    "bytes": 484935,
+    "counts": {
+      "methods": 1,
+      "photos": 3,
+      "recipes": 4,
+      "techniques": 1,
+      "versions": 6
+    },
+    "members": 5
+  },
+  "fullArchiveValidator": true,
+  "technicalProjectionIdentical": true,
+  "personalSentinelsAbsent": true,
+  "localIdentifiersAbsent": true
+}

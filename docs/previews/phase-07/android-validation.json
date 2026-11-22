@@ -1,0 +1,47 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "physical": true,
+  "checks": [
+    "Web ZIP restores complete rows through real Android SQLite/Filesystem while WebView network is offline",
+    "Portable preferences apply after actual native WebView reload",
+    "Real Android FileProvider creates ZIP and opens native share chooser; nothing is sent",
+    "Complete DESTINO rows persisted after native restoration",
+    "Android-generated personal ZIP restores on Android with every record equal",
+    "Real Android additive import keeps every personal row equal and preserves conflicting families",
+    "Repeated import identifies exact duplicates on native SQLite",
+    "Imported recipe runs and saves through real Android guided preparation without stock consumption",
+    "Native library export produces a separate shareable ZIP"
+  ],
+  "pickerAutomation": "Blocked by Android INJECT_EVENTS; test file supplied to common React file handler through CDP",
+  "recordsComparedFully": true,
+  "nativeElapsedMs": 1274.5,
+  "mainInstallation": {
+    "versionName": "0.6.4",
+    "versionCode": 14,
+    "notUpdatedOrRestoredByTests": true,
+    "databaseByteIdentical": false,
+    "databaseIntegrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "testSentinelsPresent": false,
+    "databaseModifiedLocalTime": "2026-11-21 11:49:26 -0300",
+    "latestEntityUpdatedAt": "2026-11-21T14:37:46.847Z",
+    "note": "Database hash differs from 11:43 baseline; latest entity update predates baseline. A normal opening may rewrite SQLite metadata, but complete row equality cannot be asserted without a baseline row snapshot. No rollback or restore of user data performed.",
+    "photoFilesByteIdentical": 16,
+    "filesCompared": 17,
+    "currentTechnicalSafetyCopyVerified": true,
+    "technicalCopyExcludedFromProjectArtifacts": true
+  },
+  "photoIntegrity": {
+    "logicalPhotoIds": 6,
+    "deduplicatedFiles": 1,
+    "allBytesEqualWebOrigin": true
+  },
+  "nativeLibraryPrivacyInspection": "Passed ZIP members, hashes and private sentinels",
+  "testAppLeftInstalled": true,
+  "testAppVersion": "0.7.0 / 15",
+  "limitations": [
+    "INJECT_EVENTS remains blocked: native picker opened but file selection and external-save completion not automated; common file handler supplied fixture ZIP through CDP",
+    "Share chooser opened; no external send performed",
+    "No other file-provider brands or physical power-loss tests"
+  ]
+}

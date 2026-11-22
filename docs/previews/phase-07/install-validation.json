@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-21T12:07:05.189752-03:00",
+  "package": "br.com.jornadacafe.app",
+  "previousVersion": "0.6.4 / 14",
+  "installedVersion": "0.7.0 / 15",
+  "apkSha256": "eac21e2863e9b54f8ef05aac0226dc3e3f9ff8297a0018df4611ff88b8520aee",
+  "signatureCompatible": true,
+  "installation": "adb install -r: Success",
+  "firstInstallTimePreserved": true,
+  "schemaVersion": 5,
+  "filesBeforeFirstLaunch": 17,
+  "databaseAndPhotoHashesIdenticalBeforeFirstLaunch": true,
+  "photos": 16,
+  "backupVerified": true,
+  "backupPath": "/tmp/jornada070-update-20261121-120657/dados-antes-da-atualizacao.tar",
+  "backupIncludes": [
+    "databases",
+    "files",
+    "shared_prefs",
+    "app_webview"
+  ],
+  "uninstallOrClearData": false,
+  "launchOk": true,
+  "postLaunchRowsCompared": true,
+  "allPersistentRowsIdenticalAfterLaunch": true,
+  "metadataIdenticalAfterLaunch": true,
+  "photosIdenticalAfterLaunch": true,
+  "integrityCheck": "ok",
+  "foreignKeyViolations": 0,
+  "appStorageReady": true,
+  "recordCounts": {
+    "records": 19,
+    "coffees": 5,
+    "packages": 4,
+    "methods": 8,
+    "techniques": 7,
+    "recipes": 7,
+    "preparations": 6,
+    "sessions": 0,
+    "reflections": 1
+  },
+  "scope": "Atualização autorizada do aplicativo principal, sem restauração/importação; comparação integral das linhas antes/depois da inicialização e hashes de todas as fotos."
+}

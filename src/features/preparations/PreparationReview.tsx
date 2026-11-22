@@ -32,7 +32,8 @@ export function PreparationReview({ recipe }: { recipe: BrewRecipe }) {
   const coffee = data.coffees.find(c => c.id === coffeeId);
   const method = data.methods.find(m => m.id === recipe.methodId);
   const technique = data.techniques.find(t => t.id === recipe.techniqueId);
-  const photo = technique?.photoId ? { id: technique.photoId, name: technique.name, subject: 'Técnica' }
+  const photo = recipe.photoId ? { id: recipe.photoId, name: recipe.name, subject: 'Receita' }
+    : technique?.photoId ? { id: technique.photoId, name: technique.name, subject: 'Técnica' }
     : method?.photoId ? { id: method.photoId, name: method.name, subject: 'Método' }
     : { id: coffee?.photoId, name: coffee?.name ?? method?.name ?? recipe.name, subject: coffee?.photoId ? 'Embalagem de' : 'Método' };
   const packets = data.packages.filter(p => p.coffeeId === coffeeId);

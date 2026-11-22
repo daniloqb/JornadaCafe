@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "UI import into different personal collection preserves all personal rows",
+    "Imported version 2 opens real guided preparation paused",
+    "Start, pause and save imported recipe produces a completed preparation",
+    "Existing package movements, preparations and reflections remain exactly equal"
+  ],
+  "elapsedMs": 1333.4000000003725,
+  "stockUnchanged": true
+}

@@ -1,0 +1,6 @@
+Final corrected APK, temporary diagnostics removed.
+Package: br.com.jornadacafe.sandbox
+DataFilesPluginTest.nativeDestinationFailuresCancellationAndRetry
+Time: 42.373 s
+OK (1 test)
+Partial write, corrupt destination, newly created document cleanup, cancel callback, retry, missing temporary file.

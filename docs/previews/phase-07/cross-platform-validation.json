@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Android-generated ZIP restored via real web UI",
+    "Every restored row equals source ORIGEM fixture",
+    "Android-generated library ZIP imports through real web UI and preserves all personal rows"
+  ],
+  "allRowsEqual": true,
+  "nativeLibraryImported": true
+}

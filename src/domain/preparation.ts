@@ -14,9 +14,25 @@ export interface BrewSession extends Entity {
 export interface Preparation extends Entity {
   snapshot: PreparationSnapshot; startedAt: string; finishedAt: string; elapsedMs: number;
   executions: StepExecution[]; state: 'completed' | 'interrupted'; notes?: string; consumedGrams: number; evaluation?: PreparationEvaluation;
+  /** First recorded value of each corrected field. The snapshot holds the effective values. */
+  parameterCorrections?: { updatedAt: string; original: Partial<HistoricalParameters> };
 }
+export interface HistoricalParameters {
+  coffee: Coffee | null; dose: number; water: number; temperature: number | null;
+  grind: string | null; grinder: string | null; filter: string | null;
+}
+export interface PreparationParameterInput {
+  coffeeId?: string; dose: number; water: number; temperature?: number;
+  grind?: string; grinder?: string; filter?: string;
+}
+export const historicalParameters = (p: Preparation): HistoricalParameters => ({
+  coffee: p.snapshot.coffee ?? null, dose: p.snapshot.recipe.dose, water: p.snapshot.recipe.water,
+  temperature: p.snapshot.recipe.temperature ?? null, grind: p.snapshot.recipe.grind ?? null,
+  grinder: p.snapshot.recipe.grinder ?? null, filter: p.snapshot.recipe.filter ?? null,
+});
 export type PreparationMutation = { type: 'startSession' | 'checkpoint'; value: BrewSession }
-  | { type: 'discardSession'; id: string } | { type: 'finishPreparation'; value: Preparation };
+  | { type: 'discardSession'; id: string } | { type: 'deletePreparation'; id: string } | { type: 'finishPreparation'; value: Preparation }
+  | { type: 'correctPreparationParameters'; id: string; value: PreparationParameterInput };
 export function scaleStepWater(steps: RecipeStep[], water: number) {
   const total = steps.reduce((sum, step) => sum + step.water, 0);
   if (!Number.isFinite(water) || water <= 0 || !Number.isFinite(total) || total <= 0 || steps.some(step => !Number.isFinite(step.water) || step.water < 0)) throw new Error('Informe uma água total válida e pelo menos um despejo com água.');
@@ -46,8 +62,41 @@ function validateSession(value: BrewSession) {
   if (!value.executions.length || value.executions.some(e => !steps.some(s => s.id === e.stepId) || !Number.isFinite(e.enteredMs) || e.enteredMs < 0 || e.enteredMs > value.elapsedMs || (e.leftMs !== undefined && (!Number.isFinite(e.leftMs) || e.leftMs < e.enteredMs || e.leftMs > value.elapsedMs)))) throw new Error('Os tempos das etapas são inválidos.');
 }
 export function applyPreparationMutation(data: CollectionData, mutation: { type: string }): CollectionData | undefined {
-  if (!['startSession','checkpoint','discardSession','finishPreparation'].includes(mutation.type)) return undefined;
+  if (!['startSession','checkpoint','discardSession','finishPreparation','correctPreparationParameters','deletePreparation'].includes(mutation.type)) return undefined;
   const action = mutation as PreparationMutation;
+  if (action.type === 'correctPreparationParameters' || action.type === 'deletePreparation') {
+    if (data.sessions.some(s => s.id === action.id)) throw new Error('Conclua ou descarte a sessão deste preparo antes de alterar o histórico.');
+    const p = data.preparations.find(p => p.id === action.id);
+    if (action.type === 'deletePreparation') {
+      if (!p) return data; // Repeated confirmation is harmless; stock receipts remain independent events.
+      return { ...data, preparations: data.preparations.filter(item => item.id !== p.id),
+        reflections: data.reflections.map(r => r.association?.kind === 'preparation' && r.association.id === p.id
+          ? { ...r, association: undefined, updatedAt: new Date().toISOString() } : r) };
+    }
+    if (!p) throw new Error('Este preparo não está mais disponível.');
+    const v = action.value;
+    if (![v.dose, v.water].every(n => Number.isFinite(n) && n > 0)) throw new Error('A dose de café e a água devem ser maiores que zero e finitas.');
+    if (v.temperature !== undefined && (!Number.isFinite(v.temperature) || v.temperature <= 0 || v.temperature > 100)) throw new Error('Informe uma temperatura maior que 0 e até 100 °C.');
+    const sameCoffee = v.coffeeId === p.snapshot.coffee?.id;
+    const coffee = sameCoffee ? p.snapshot.coffee : data.coffees.find(c => c.id === v.coffeeId);
+    if (v.coffeeId && !coffee) throw new Error('Selecione um café disponível na coleção.');
+    // Whitelist editable parameters. Never accept a caller's recipe, execution, evaluation or stock data.
+    const recipe = { ...p.snapshot.recipe, dose: v.dose, water: v.water, temperature: v.temperature,
+      grind: v.grind?.trim() || undefined, grinder: v.grinder?.trim() || undefined, filter: v.filter?.trim() || undefined };
+    const updated = { ...p, snapshot: { ...p.snapshot, recipe, coffee: structuredClone(coffee) } };
+    const before = historicalParameters(p); const after = historicalParameters(updated);
+    const original = { ...p.parameterCorrections?.original };
+    let changed = false;
+    for (const key of Object.keys(after) as (keyof HistoricalParameters)[]) {
+      if (JSON.stringify(before[key]) === JSON.stringify(after[key])) continue;
+      changed = true;
+      if (!Object.hasOwn(original, key)) Object.assign(original, { [key]: structuredClone(before[key]) });
+    }
+    if (!changed) return data;
+    const now = new Date().toISOString();
+    return { ...data, preparations: data.preparations.map(item => item.id === p.id
+      ? { ...updated, updatedAt: now, parameterCorrections: { updatedAt: now, original } } : item) };
+  }
   const next = { ...data, sessions: [...data.sessions], preparations: [...data.preparations], packages: [...data.packages] };
   if (action.type === 'startSession') {
     if (data.sessions.length) throw new Error('Há um preparo em andamento. Retome ou descarte antes de iniciar outro.');

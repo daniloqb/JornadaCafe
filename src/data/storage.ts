@@ -1,3 +1,4 @@
+import { recoverPreferences } from '../transfer/preferences';
 import { Capacitor } from '@capacitor/core';
 import { validateStorage, type LocalStorage } from '../domain/local-storage';
 import { IndexedDBStorage } from './indexeddb-storage';
@@ -12,6 +13,7 @@ export function initializeStorage(): Promise<LocalStorage> {
       : new IndexedDBStorage();
     try {
       await validateStorage(storage);
+      await recoverPreferences(storage);
       return storage;
     } catch (error) {
       await storage.close().catch(() => undefined);

@@ -1,0 +1,12 @@
+{
+  "unsafeNativeUrlsRejected": 6,
+  "explicitButtonInvoked": true,
+  "manualTapConfirmedByUser": true,
+  "externalNavigationConfirmed": true,
+  "browser": "org.mozilla.firefox",
+  "activityEvents": [
+    "ACTION_VIEW CATEGORY_BROWSABLE https://example.org/... -> org.mozilla.fenix.IntentReceiverActivity: result code=0",
+    "ACTION_VIEW CATEGORY_BROWSABLE https://example.org/... -> org.mozilla.fenix.HomeActivity: result code=0"
+  ],
+  "note": "O usuário confirmou a abertura do navegador pelo botão. Consulta pontual a topResumedActivity não capturou o navegador; o log do ActivityTaskManager registrou a navegação externa."
+}

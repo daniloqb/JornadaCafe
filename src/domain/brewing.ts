@@ -20,9 +20,11 @@ export interface BrewRecipe extends Entity, ReferenceOrigin {
   name: string; methodId: string; techniqueId?: string; coffeeId?: string;
   dose: number; water: number; temperature?: number; grind?: string; grinder?: string; filter?: string;
   estimatedSeconds?: number; notes?: string; source?: SourceReference; steps: RecipeStep[];
+  /** One local photo identity shared by the family; historical snapshots keep their original identity. */
+  photoId?: string;
 }
 export type BrewingMutation = { type: 'method'; value: BrewMethod } | { type: 'technique'; value: BrewTechnique }
-  | { type: 'recipe'; value: BrewRecipe; fromId?: string }
+  | { type: 'recipe'; value: BrewRecipe; fromId?: string; familyPhotoId?: string | null }
   | { type: 'deleteMethod' | 'deleteTechnique' | 'deleteRecipe'; id: string };
 export const stepLabels: Record<StepType, string> = { pour: 'Despejo', wait: 'Espera', manual: 'Ação manual', finish: 'Finalização' };
 export const advanceLabels: Record<AdvanceCondition, string> = { manual: 'Confirmação manual', time: 'Tempo definido', observable: 'Condição observável' };
@@ -115,12 +117,18 @@ export function applyBrewingMutation(data: CollectionData, mutation: { type: str
       value.referenceKey = previous.referenceKey;
       value.previousVersionId = previous.id;
       value.version = Math.max(...data.recipes.filter(r => r.familyId === previous.familyId).map(r => r.version)) + 1;
+      value.photoId = previous.photoId;
     } else if (old) {
       value.familyId = old.familyId; value.version = old.version; value.previousVersionId = old.previousVersionId;
     } else {
       value.familyId = value.id; value.version = 1; value.previousVersionId = undefined;
     }
     validateRecipe(value, data);
+    if (action.familyPhotoId !== undefined) {
+      if (action.familyPhotoId !== null && !/^[a-f\d-]{36}$/i.test(action.familyPhotoId)) throw new Error('Identificação de fotografia inválida.');
+      value.photoId = action.familyPhotoId ?? undefined;
+      next.recipes = next.recipes.map(r => r.familyId === value.familyId ? { ...r, photoId: value.photoId } : r);
+    }
     upsert(next.recipes, value);
   } else if (action.type === 'deleteMethod') {
     if (data.techniques.some(t => t.methodId === action.id) || data.recipes.some(r => r.methodId === action.id)) throw new Error('Este método está em uso por técnicas ou receitas. Desvincule ou substitua as referências antes de excluir.');

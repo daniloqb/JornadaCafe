@@ -1,3 +1,5 @@
+import { applyLibraryImport, type LibraryImportPlan } from '../transfer/library';
+import { clearCollectionData, type ClearDataScope } from './data-management';
 import { applyJourneyMutation, type Reflection, type JourneyMutation } from './journey';
 import { coffeeOptions, coffeeOptionKey, ratingLabels, standardCoffeeOptions, type CoffeeRatings, type CoffeeOptionKind } from './coffee-profile';
 import { safeReferenceUrl } from './brewing';
@@ -25,7 +27,7 @@ export interface CoffeePackage extends Entity {
 }
 export interface CollectionData { coffees: Coffee[]; packages: CoffeePackage[]; records: RelatedRecord[]; methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[]; preparations: Preparation[]; sessions: BrewSession[]; reflections: Reflection[] }
 export type CollectionMutation = { type: 'coffee'; value: Coffee } | { type: 'package'; value: CoffeePackage; reason?: string }
-  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation | PreparationMutation | ReferenceMutation | JourneyMutation;
+  | { type: 'record'; value: RelatedRecord } | { type: 'deleteCoffee'; id: string } | { type: 'deleteRecord'; id: string } | BrewingMutation | PreparationMutation | ReferenceMutation | JourneyMutation | { type: 'importLibrary'; plan: LibraryImportPlan } | { type: 'clearData'; scope: ClearDataScope };
 export const emptyCollection = (): CollectionData => ({ coffees: [], packages: [], records: [], methods: [], techniques: [], recipes: [], preparations: [], sessions: [], reflections: [] });
 export const normalizeText = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('pt-BR');
 export function newEntity(): Entity { const now = new Date().toISOString(); return { id: crypto.randomUUID(), createdAt: now, updatedAt: now }; }
@@ -48,6 +50,8 @@ export function shelfCoffees(data: CollectionData) {
 
 /** Shared rules; both adapters apply these inside their write transaction. */
 export function applyMutation(data: CollectionData, mutation: CollectionMutation): CollectionData {
+  if (mutation.type === 'clearData') return clearCollectionData(data, mutation.scope);
+  if (mutation.type === 'importLibrary') return applyLibraryImport(data, mutation.plan);
   const journey = applyJourneyMutation(data, mutation);
   if (journey) return journey;
   if (mutation.type === 'importReferenceCatalog') return importReferenceCatalog(data);

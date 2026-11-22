@@ -1,7 +1,9 @@
+import { validatePhoto } from './photo-validation';
 /** Resize before persistence; domain rows only contain the photo UUID. */
 export async function preparePhoto(file: File): Promise<Blob> {
   if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) throw new Error('Escolha uma imagem JPG, PNG ou WebP.');
   if (file.size > 15 * 1024 * 1024) throw new Error('Escolha uma fotografia com até 15 MB.');
+  await validatePhoto(file);
   const url = URL.createObjectURL(file);
   try {
     const image = new Image();

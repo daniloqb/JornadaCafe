@@ -1,3 +1,5 @@
+import { PENDING_PREFERENCES, recoveredCollection, requiredPhotoIds, type ArchiveState, type PortablePreferences, type StoredPhoto } from '../transfer/core';
+import { validateCollection, validatePreferences } from '../transfer/validation';
 import type { LocalStorage } from '../domain/local-storage';
 import { applyMutation, emptyCollection, collectionTables, collectionChanges, type CollectionData, type CollectionMutation } from '../domain/collection';
 
@@ -84,7 +86,7 @@ export class IndexedDBStorage implements LocalStorage {
   private collectionTransaction(mutation?: CollectionMutation): Promise<CollectionData> {
     if (!this.database) return Promise.reject(new Error('Armazenamento não inicializado.'));
     return new Promise((resolve, reject) => {
-      const transaction = this.database!.transaction([...collectionTables], mutation ? 'readwrite' : 'readonly');
+      const transaction = this.database!.transaction(mutation?.type === 'clearData' ? [...collectionTables, 'photos'] : [...collectionTables], mutation ? 'readwrite' : 'readonly');
       const data = emptyCollection();
       let pending = collectionTables.length;
       let failure: unknown;
@@ -99,6 +101,15 @@ export class IndexedDBStorage implements LocalStorage {
               const store = transaction.objectStore(change.table);
               if (change.value) store.put(change.value); else store.delete(change.id);
             }
+            if (mutation.type === 'clearData') {
+              const retained = new Set(requiredPhotoIds(next));
+              const photos = transaction.objectStore('photos');
+              const keys = photos.getAllKeys();
+              keys.onsuccess = () => {
+                try { for (const id of keys.result) if (!retained.has(String(id))) photos.delete(id); }
+                catch (error) { failure = error; transaction.abort(); }
+              };
+            }
           } catch (error) { failure = error; transaction.abort(); }
         };
       }
@@ -107,6 +118,37 @@ export class IndexedDBStorage implements LocalStorage {
       transaction.onabort = () => reject(failure ?? transaction.error ?? new Error('Não foi possível salvar a coleção.'));
     });
   }
+
+  async exportState(): Promise<ArchiveState> {
+    if (!this.database) throw new Error('Armazenamento não inicializado.');
+    return new Promise((resolve,reject) => {
+      const tx=this.database!.transaction([...collectionTables,'photos'],'readonly');
+      const data=emptyCollection();let photos:StoredPhoto[]=[];
+      for(const table of collectionTables){const r=tx.objectStore(table).getAll();r.onsuccess=()=>Object.assign(data,{[table]:r.result});}
+      const r=tx.objectStore('photos').getAll();r.onsuccess=()=>{photos=r.result;};
+      tx.oncomplete=()=>{const ids=new Set(requiredPhotoIds(data));resolve({data,photos:photos.filter(p=>ids.has(p.id))});};
+      tx.onerror=tx.onabort=()=>reject(tx.error??new Error('Não foi possível ler os dados para o backup.'));
+    });
+  }
+  async replaceState(data:CollectionData,photos:StoredPhoto[],preferences:PortablePreferences):Promise<void>{
+    validateCollection(data);validatePreferences(preferences);
+    if(new Set(photos.map(p=>p.id)).size!==photos.length||requiredPhotoIds(data).some(id=>!photos.some(p=>p.id===id)))throw new Error('Fotografias ausentes ou duplicadas.');
+    if(!this.database)throw new Error('Armazenamento não inicializado.');
+    const restored=recoveredCollection(data);
+    return new Promise((resolve,reject)=>{
+      const tx=this.database!.transaction([...collectionTables,'photos','metadata'],'readwrite');let failure:unknown;
+      const sessions=tx.objectStore('sessions').getAll();sessions.onsuccess=()=>{
+        try{
+          if(sessions.result.length)throw new Error('Conclua ou descarte o preparo em andamento antes de restaurar.');
+          for(const table of collectionTables){const store=tx.objectStore(table);store.clear();for(const row of restored[table])store.put(row);}
+          const store=tx.objectStore('photos');store.clear();for(const photo of photos)store.put(photo);
+          tx.objectStore('metadata').put(JSON.stringify(preferences),PENDING_PREFERENCES);
+        }catch(error){failure=error;tx.abort();}
+      };
+      tx.oncomplete=()=>resolve();tx.onerror=tx.onabort=()=>reject(failure??tx.error??new Error('A restauração foi revertida.'));
+    });
+  }
+  async readPhoto(id:string):Promise<Blob|undefined>{return (await this.photoOperation<StoredPhoto|undefined>('readonly',store=>store.get(id)))?.blob;}
 
   private photoOperation<T>(mode: IDBTransactionMode, operation: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
     if (!this.database) return Promise.reject(new Error('Armazenamento não inicializado.'));

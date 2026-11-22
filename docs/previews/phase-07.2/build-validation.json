@@ -1,0 +1,22 @@
+{
+  "version": "0.7.2 / 17",
+  "schemaVersion": 5,
+  "normalApkSha256": "f97f4d2f1ebbc540167e3bda2f3d627e5dceebfce1f6df70032534cd365f8fd3",
+  "sandboxApkSha256": "5f24c0d81160309f0e98306ec555cad300b0da281a7feca00eef7d44ad099998",
+  "webFilesIdenticalToDist": 22,
+  "normalApkInstalled": true,
+  "typecheck": true,
+  "tests": 172,
+  "testFiles": 21,
+  "webBuild": true,
+  "capacitorSync": true,
+  "androidNormalBuild": true,
+  "androidSandboxBuild": true,
+  "nativeInstrumentedTests": 1,
+  "mainChunkKilobytes": 586.4,
+  "mainChunkGzipKilobytes": 173.18,
+  "identity": "package: name='br.com.jornadacafe.app' versionCode='17' versionName='0.7.2' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "nativeInstrumentedTestsPassed": true,
+  "nativeRunnerUsesShellForForeground": true,
+  "mainUpdateEvidence": "main-update-validation.json"
+}

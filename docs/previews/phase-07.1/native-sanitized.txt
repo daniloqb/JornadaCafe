@@ -1,0 +1,35 @@
+--------- beginning of main
+I/TestRunner(20935): run started: 1 tests
+I/TestRunner(20935): started: nativeDestinationFailuresCancellationAndRetry(br.com.jornadacafe.app.DataFilesPluginTest)
+I/DataTransfer(21731): temporary-file start bytes=0
+I/DataTransfer(21731): temporary-file verified bytes=2857
+I/DataTransfer(21731): picker start bytes=2857
+I/DataTransfer(21731): picker ok bytes=0
+I/DataTransfer(21731): temporary-file verified bytes=2857
+I/DataTransfer(21731): destination-write start bytes=2857
+I/DataTransfer(21731): destination-close ok bytes=2857
+I/DataTransfer(21731): destination-verify ok bytes=2857
+I/DataTransfer(21731): destination-write ok bytes=2857
+I/DataTransfer(21731): interface-return ok bytes=2857
+I/TestRunner(22403): run started: 1 tests
+I/TestRunner(22403): started: nativeDestinationFailuresCancellationAndRetry(br.com.jornadacafe.app.DataFilesPluginTest)
+I/DataTransfer(22403): temporary-file start bytes=0
+I/DataTransfer(22403): picker cancelled bytes=0
+I/DataTransfer(22403): picker ok bytes=0
+I/DataTransfer(22403): temporary-file verified bytes=524288
+I/DataTransfer(22403): destination-write start bytes=524288
+I/DataTransfer(22403): destination-write failed-IOException bytes=98304
+I/DataTransfer(22403): picker ok bytes=0
+I/DataTransfer(22403): temporary-file verified bytes=524288
+I/DataTransfer(22403): destination-write start bytes=524288
+I/DataTransfer(22403): destination-close ok bytes=524288
+I/DataTransfer(22403): destination-write failed-IOException bytes=524288
+I/DataTransfer(22403): picker ok bytes=0
+I/DataTransfer(22403): temporary-file verified bytes=524288
+I/DataTransfer(22403): destination-write start bytes=524288
+I/DataTransfer(22403): destination-close ok bytes=524288
+I/DataTransfer(22403): destination-verify ok bytes=524288
+I/DataTransfer(22403): destination-write ok bytes=524288
+I/DataTransfer(22403): interface-return ok bytes=524288
+I/TestRunner(22403): finished: nativeDestinationFailuresCancellationAndRetry(br.com.jornadacafe.app.DataFilesPluginTest)
+I/TestRunner(22403): run finished: 1 tests, 0 failed, 0 ignored

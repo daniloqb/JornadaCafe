@@ -1,0 +1,6 @@
+{
+  "identity": "package: name='br.com.jornadacafe.app' versionCode='16' versionName='0.7.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "webFiles": 22,
+  "identicalToDist": true,
+  "sha256": "712fa677a3e87f2e3f8b785f27ccc5dc56943699396a71dfc51fa6205b88630c"
+}

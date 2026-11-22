@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-21T10:54:18.951750-03:00",
+  "deviceModel": "22101316G",
+  "package": "br.com.jornadacafe.app",
+  "previousVersion": "0.6.3 / 13",
+  "installedVersion": "0.6.4 / 14",
+  "installation": "adb install -r: Success",
+  "firstInstallTimePreserved": true,
+  "dataFilesBeforeLaunch": 17,
+  "databaseFilesUnchanged": 1,
+  "photoFilesUnchanged": 16,
+  "allDatabaseAndPhotoHashesUnchangedBeforeFirstLaunch": true,
+  "apkSha256": "4845bd0b300c73dd5d9ef597d1603a189b3d841fb21e8140dff064554504378b",
+  "launch": "Starting: Intent { cmp=br.com.jornadacafe.app/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: br.com.jornadacafe.app/.MainActivity\nTotalTime: 1514\nWaitTime: 1523\nComplete",
+  "uninstallOrClearData": false,
+  "scope": "Installation, preservation of on-disk database/photos before first launch, and cold launch. Does not replace feature testing on physical Android.",
+  "homeScreenVisuallyVerified": true,
+  "physicalFeatureTestsCompleted": false
+}

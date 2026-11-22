@@ -1,0 +1,144 @@
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":1917593}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":408}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=1917593
+I/DataTransfer(23087): picker start bytes=1917593
+I/DataTransfer(23087): picker ok bytes=0
+I/DataTransfer(23087): temporary-file verified bytes=1917593
+I/DataTransfer(23087): destination-write start bytes=1917593
+I/DataTransfer(23087): destination-close ok bytes=1917593
+I/DataTransfer(23087): destination-verify ok bytes=1917593
+I/DataTransfer(23087): destination-write ok bytes=1917593
+I/DataTransfer(23087): interface-return ok bytes=1917593
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":6996}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"ok","ms":194}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"start","images":6}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"ok","ms":3339}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"ok","ms":14}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"ok","ms":96}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"ok","ms":359}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":2101}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker ok bytes=0
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): destination-write start bytes=13138031
+I/DataTransfer(23087): destination-close ok bytes=13138031
+I/DataTransfer(23087): destination-verify ok bytes=13138031
+I/DataTransfer(23087): destination-write ok bytes=13138031
+I/DataTransfer(23087): interface-return ok bytes=13138031
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":4734}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":4856}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker ok bytes=0
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): destination-write start bytes=13138031
+I/DataTransfer(23087): destination-close ok bytes=13138031
+I/DataTransfer(23087): destination-verify ok bytes=13138031
+I/DataTransfer(23087): destination-write ok bytes=13138031
+I/DataTransfer(23087): interface-return ok bytes=13138031
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":1669}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"ok","ms":420}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"start","images":6}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"ok","ms":3769}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"ok","ms":11}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"ok","ms":0}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"ok","ms":94}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"ok","ms":280}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":3911}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker cancelled bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":6065}
+
+Final capture, before temporary instrumentation was removed:
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"ok","ms":194}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"start","images":6}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"ok","ms":3339}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"ok","ms":14}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"ok","ms":96}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"ok","ms":359}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":2101}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker ok bytes=0
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): destination-write start bytes=13138031
+I/DataTransfer(23087): destination-close ok bytes=13138031
+I/DataTransfer(23087): destination-verify ok bytes=13138031
+I/DataTransfer(23087): destination-write ok bytes=13138031
+I/DataTransfer(23087): interface-return ok bytes=13138031
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":4734}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":4856}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker ok bytes=0
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): destination-write start bytes=13138031
+I/DataTransfer(23087): destination-close ok bytes=13138031
+I/DataTransfer(23087): destination-verify ok bytes=13138031
+I/DataTransfer(23087): destination-write ok bytes=13138031
+I/DataTransfer(23087): interface-return ok bytes=13138031
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":1669}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"collection-read","status":"ok","ms":420}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-references","status":"ok","ms":1}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"start","images":6}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"photo-read","status":"ok","ms":3769}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"serialize","status":"ok","ms":11}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"manifest","status":"ok","ms":0}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"start"}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-compress","status":"ok","ms":94}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"zip-verify","status":"ok","ms":280}
+I/DataTransfer(23087): temporary-file start bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"start","bytes":13138031}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"temporary-file","status":"ok","ms":3911}
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"start"}
+I/DataTransfer(23087): temporary-file verified bytes=13138031
+I/DataTransfer(23087): picker start bytes=13138031
+I/DataTransfer(23087): picker cancelled bytes=0
+I/Capacitor/Console(23087): File: https://localhost/assets/index-D1KBIGdD.js - Line 11 - Msg: [DataTransfer] {"stage":"android-save","status":"ok","ms":6065}

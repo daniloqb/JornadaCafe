@@ -1,0 +1,51 @@
+{
+  "version": "0.6.4",
+  "versionCode": 14,
+  "schema": 5,
+  "typecheck": "passed",
+  "automatedTests": {
+    "files": 15,
+    "passed": 84
+  },
+  "webBuild": "passed",
+  "androidSync": "passed",
+  "androidBuild": {
+    "command": "./gradlew assembleDebug --offline",
+    "result": "BUILD SUCCESSFUL"
+  },
+  "apk": {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "4845bd0b300c73dd5d9ef597d1603a189b3d841fb21e8140dff064554504378b",
+    "badging": "package: name='br.com.jornadacafe.app' versionCode='14' versionName='0.6.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "webAssetsIdenticalToDist": [
+      "assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "assets/fraunces-latin-wght-italic-Py8at3oI.woff2",
+      "assets/fraunces-latin-wght-normal-ukD16Tqj.woff2",
+      "assets/index-C4bEjEw_.css",
+      "assets/index-CeDPHSBn.js",
+      "assets/sqlite-storage-B9fLsfd-.js",
+      "assets/web-DSUwCqY_.js",
+      "assets/web-ydde6iw2.js",
+      "favicon.svg",
+      "images/coffee-form-hero.png",
+      "images/coffee-library.png",
+      "images/coffees-hero.png",
+      "images/discoveries-hero.png",
+      "images/journey-botanical.png",
+      "images/journey-cup.png",
+      "images/journey-ritual.png",
+      "images/preparations-hero.png",
+      "images/producer-form-hero.png",
+      "images/v60-method.png",
+      "index.html",
+      "licenses/DM-Sans-OFL.txt",
+      "licenses/Fraunces-OFL.txt"
+    ]
+  },
+  "physicalAndroidValidation": false,
+  "warnings": [
+    "Vite: main chunk exceeds 500 kB after minification (507.20 kB).",
+    "Gradle: flatDir repository metadata warning.",
+    "Initial Gradle run: SDK XML version warning."
+  ]
+}

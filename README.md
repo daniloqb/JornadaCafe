@@ -1,8 +1,33 @@
 # Minha Jornada pelo Café
 
-**Fase 06.3 — Tipografia e preparo guiado:** cartões com tamanhos refinados, escala global de texto em cinco posições (85/90/100/110/115%) nas Configurações e controles Finalizar/Cancelar alinhados. Versão atual: **0.6.3 / versionCode 13**; esquema de dados **5**, sem migração. Funcionamento offline, fontes locais e temas Claro/Escuro/Automático.
+**Fase 07.2 — Imagens e referências de receitas:** fotografia opcional por família, apresentador e link original por versão, cartões com miniatura e compartilhamento explícito de imagens. Versão atual: **0.7.2 / versionCode 17**; esquema **5**, sem migração. Exporta `personal-full v2` e `library-share v2`, mantendo a leitura dos dois formatos v1. Funcionamento offline em web e Android, fontes locais e temas Claro/Escuro/Automático.
 
-Veja o [relatório da Fase 06.3](docs/phase-06.3.md), com implementação, persistência, validações, capturas e APK. Início e Histórico estão descritos na [Fase 06.2](docs/phase-06.2.md), a coleção na [Fase 06.1](docs/phase-06.1.md), Minhas Descobertas na [Fase 06](docs/phase-06.md) e o diário na [Fase 05](docs/phase-05.md).
+A [correção da exportação Android — Fase 07.1](docs/phase-07.1.md) elimina o ZIP inteiro em Base64 do estado da Activity e verifica a gravação externa antes de confirmar sucesso.
+
+Veja a [Fase 07.2](docs/phase-07.2.md), o [contrato v2 e compatibilidade](docs/transfer-formats-v2.md), o [relatório da Fase 07](docs/phase-07.md), os [formatos portáveis v1](docs/transfer-formats-v1.md) e as [capturas e evidências](docs/previews/phase-07/README.md). A correção/exclusão de experiências está na [Fase 06.4](docs/phase-06.4.md), a escala global e o preparo guiado na [Fase 06.3](docs/phase-06.3.md), Início e Histórico na [Fase 06.2](docs/phase-06.2.md), coleção na [Fase 06.1](docs/phase-06.1.md), Descobertas na [Fase 06](docs/phase-06.md) e diário na [Fase 05](docs/phase-05.md).
+
+## Imagem e referência da receita
+
+Em **Criar receita** ou **Corrigir esta versão**, abra **Imagem e referência da receita**. A fotografia é opcional e compartilhada pelas versões da família; trocar ou remover não cria uma versão técnica nem altera preparos anteriores. As referências aproveitam os campos já existentes: **Apresentado por** e **Link da referência**, preservando título e observações da fonte e a possibilidade de fontes diferentes por versão.
+
+Receitas sem foto mantêm o ícone de filtro. A imagem aparece nos cartões, detalhes e revisão de preparo. **Ver referência original** abre HTTP/HTTPS em navegação externa, somente quando solicitado. O backup pessoal inclui automaticamente as fotografias atuais e históricas; a biblioteca só as inclui com sua escolha explícita. Não há download de imagens por URL.
+
+## Proteger e compartilhar seus dados
+
+Abra **Início → Configurações → Dados, backup e compartilhamento**. Todas as operações desta fase ficam nessa tela.
+
+- **Criar backup completo:** revise as contagens, gere o ZIP e salve fora do aplicativo. Inclui cafés, origens, biblioteca, estoque com movimentações, histórico, correções, fotografias atuais/históricas, reflexões, checkpoints e preferências portáveis. É um arquivo privado, sem criptografia; guarde-o em destino seguro.
+- **Restaurar backup pessoal:** escolha um backup completo, confira o resumo e, se desejar, salve uma cópia da coleção atual. A confirmação **Substituir e restaurar** substitui todos os dados. Conclua ou descarte uma sessão atual antes de restaurar. Sessões recebidas ficam pausadas até retomada explícita.
+- **Exportar biblioteca:** marque métodos, técnicas ou receitas, ou selecione todos. Receitas incluem automaticamente métodos, técnicas e todas as versões da família. Revise o resumo e os textos técnicos, depois exporte os selecionados. A opção **Incluir imagens das receitas** começa desmarcada; quando ativada, a prévia mostra somente as imagens das receitas selecionadas. O arquivo não contém cafés, fotografias de cafés/produtores, estoque, preparações, avaliações, reflexões ou preferências. Nomes, instruções, notas e créditos técnicos escolhidos são compartilhados como escritos.
+- **Importar biblioteca:** selecione o ZIP recebido e revise itens novos, idênticos e conflitos antes de confirmar. Itens idênticos são reutilizados; mesmo nome com conteúdo diferente mantém cópias independentes. A operação adiciona conhecimento sem alterar dados pessoais ou uma sessão em andamento.
+
+Cada bloco também oferece sua limpeza: **Limpar dados pessoais** remove cafés, origens, pacotes, estoque, histórico, avaliações e reflexões, mantendo a biblioteca; os vínculos das receitas com cafés excluídos são retirados. **Limpar receitas e métodos** remove métodos, técnicas e todas as versões das receitas, mantendo os registros pessoais e os snapshots históricos. Fotografias ainda referenciadas são preservadas; as demais são removidas. As preferências permanecem nas duas operações.
+
+As limpezas exigem marcar a confirmação e acionar **Excluir os dados confirmados**. O foco inicial fica em **Manter meus dados**, e há uma ação para salvar um backup completo antes de continuar. Conclua ou descarte qualquer preparo em andamento antes de limpar. Veja o [complemento da Fase 07](docs/phase-07-data-clear.md).
+
+O tipo é verificado pelo manifesto: biblioteca não restaura a jornada e backup pessoal não entra pela importação de biblioteca. Fotografias ausentes, integridade divergente, versões futuras e relacionamentos inválidos bloqueiam a operação antes de gravar.
+
+Na web, salve pelo download do navegador; compartilhar depende de seu suporte e pode abrir um download. No Android, escolha o destino no seletor nativo para salvar fora do armazenamento privado ou abra o menu de compartilhamento. Abrir esse menu ou gerar uma cópia temporária não confirma envio nem salvamento externo. Não há nuvem, login ou sincronização; indicadores são recalculados dos registros restaurados.
 
 ## Executar no navegador
 
@@ -17,7 +42,7 @@ Abra o endereço indicado pelo Vite, normalmente `http://127.0.0.1:5173`. O Inde
 
 ```bash
 npm run typecheck   # TypeScript
-npm test            # 68 verificações de persistência, Jornada, Descobertas, histórico, cronômetro, navegação e preferências visuais
+npm test            # 172 testes: persistência, backup/importação, histórico, análises, cronômetro e preferências
 npm run build       # TypeScript e bundle de produção em dist/
 npm run preview     # Servir o build localmente
 ```
@@ -44,6 +69,16 @@ Para gerar apenas o APK de desenvolvimento, depois de sincronizar:
 cd android
 ./gradlew assembleDebug
 ```
+
+Para testar restaurações destrutivas com dados fictícios em uma instalação independente:
+
+```bash
+./gradlew assembleDebug -PjornadaTestApp
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb shell am start -n br.com.jornadacafe.sandbox/br.com.jornadacafe.app.MainActivity
+```
+
+Esse build usa **br.com.jornadacafe.sandbox**, com rótulo **Jornada Café — Teste**, e não atualiza a instalação principal. Antes de distribuir o APK normal, gere novamente **sem** `-PjornadaTestApp`; ambos usam o mesmo caminho de saída.
 
 No Windows, use `gradlew.bat assembleDebug`. O APK fica em `android/app/build/outputs/apk/debug/app-debug.apk`. Após alterações na interface, execute `npm run android:sync` antes de recompilar.
 
@@ -72,7 +107,7 @@ adb shell am start -n br.com.jornadacafe.app/.MainActivity
 
 A opção `-r` atualiza a instalação mantendo os dados locais, desde que a assinatura do APK seja compatível com a instalação existente. Com vários aparelhos, acrescente `-s SERIAL` depois de `adb`, usando o identificador mostrado por `adb devices -l`.
 
-As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático Android está desativado nesta fase local.
+As barras do sistema usam ícones escuros no tema claro e claros no tema escuro. O Capacitor fornece os insets e o tema aplica áreas seguras no cabeçalho, nas laterais e na navegação inferior. O backup automático do sistema Android permanece desativado; o backup pessoal desta fase é uma exportação manual e portável.
 
 ## Fase 04.4 — Fidelidade às referências aprovadas
 

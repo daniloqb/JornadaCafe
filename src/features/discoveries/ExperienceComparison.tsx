@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Check, Filter, Info, Pencil, Scale, Star } from 'lucide-react';
 import type { CollectionData } from '../../domain/collection';
 import { grams } from '../../domain/collection';
@@ -15,7 +15,7 @@ export function comparisonRows(p: Preparation) {
   return [
     ['Método', p.snapshot.method?.name || 'Não informado'], ['Técnica', p.snapshot.technique?.name || 'Não informada'], ['Receita e versão', `${r.name} · versão ${r.version}`],
     ['Dose de café', Number.isFinite(r.dose) ? grams(r.dose) : 'Não informada'], ['Água', Number.isFinite(r.water) ? grams(r.water) : 'Não informada'], ['Proporção', ratio(r.dose, r.water)],
-    ['Moagem (valor original)', r.grind || 'Não informada'], ['Moedor / escala', r.grinder || 'Referência do moedor não informada'], ['Temperatura', r.temperature !== undefined && Number.isFinite(r.temperature) ? `${formatNumber(r.temperature)} °C` : 'Não informada'],
+    ['Moagem registrada', r.grind || 'Não informada'], ['Moedor / escala', r.grinder || 'Referência do moedor não informada'], ['Temperatura', r.temperature !== undefined && Number.isFinite(r.temperature) ? `${formatNumber(r.temperature)} °C` : 'Não informada'],
     ['Tempo efetivo acompanhado', timeLabel(p.elapsedMs)], ['Avaliação geral', scoreLabel(p.evaluation?.overall)], ['Acidez', scoreLabel(p.evaluation?.acidity)], ['Doçura', scoreLabel(p.evaluation?.sweetness)], ['Corpo', scoreLabel(p.evaluation?.body)], ['Intensidade', scoreLabel(p.evaluation?.intensity)],
     ['Sensações registradas', [...new Set(p.evaluation?.tags ?? [])].join(' · ') || 'Não registradas'], ['Observações do preparo', p.notes || 'Não registradas'], ['Instruções da receita histórica', r.notes || 'Não registradas'],
   ];
@@ -29,6 +29,13 @@ export function ExperienceComparison({ data, query }: { data: CollectionData; qu
     return requested ? [...new Set(requested)].filter(id => group?.preparations.some(p => p.id === id)).slice(0, 3) : group?.preparations.slice(0, 3).map(p => p.id) ?? [];
   });
   const [selecting, setSelecting] = useState(false); const [view, setView] = useState('auto'); const [selectionLimit, setSelectionLimit] = useState(12);
+  useEffect(() => {
+    if (!group) { setCoffeeId(groups[0]?.id ?? ''); setIds(current => current.length ? [] : current); return; }
+    setIds(current => {
+      const available = current.filter(id => group.preparations.some(p => p.id === id));
+      return available.length === current.length ? current : available;
+    });
+  }, [group, groups]);
   const selected = useMemo(() => { const available = ids.filter(id => group?.preparations.some(p => p.id === id)); return available.length >= 2 ? comparisonPreparations(data, coffeeId, available) : []; }, [data, coffeeId, ids, group]);
   const highest = useMemo(() => highestRated(selected), [selected]);
   if (!groups.length) return <div className="discovery-content"><Card className="discovery-panel"><EmptyState icon={Scale} title="Suas comparações começam com dois preparos">Conclua preparos associados ao mesmo café. Eles poderão ser comparados mesmo sem avaliação.</EmptyState><ActionLink href="#/preparar">Preparar um café</ActionLink></Card></div>;

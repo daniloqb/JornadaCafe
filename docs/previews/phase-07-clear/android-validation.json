@@ -1,0 +1,14 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "version": "0.7.1 / 16",
+  "checks": [
+    "Cancel leaves all SQLite records unchanged",
+    "Library clear preserves every personal row, stock movement, correction and historical photo",
+    "Personal clear preserves technical library and preferences, removes personal photos and detaches coffee references"
+  ],
+  "recordsComparedFully": true,
+  "photosComparedByHash": true,
+  "doubleClickSafe": true,
+  "persistedAfterForceStop": true,
+  "sqliteIntegrity": "ok"
+}

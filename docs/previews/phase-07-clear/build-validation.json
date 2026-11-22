@@ -1,0 +1,22 @@
+{
+  "versionName": "0.7.1",
+  "versionCode": 16,
+  "package": "br.com.jornadacafe.app",
+  "schemaVersion": 5,
+  "personalFormat": 1,
+  "libraryFormat": 1,
+  "apkSha256": "4f3df39ed80d4624a805e158cfe6edb8edbcd83e547f60cd6b28b4531c916bb5",
+  "webFilesIdentical": 22,
+  "typecheck": "passed",
+  "tests": 135,
+  "testFiles": 18,
+  "webBuild": "passed",
+  "capacitorSync": "passed",
+  "androidBuild": "BUILD SUCCESSFUL (offline)",
+  "warnings": [
+    "Main chunk 572.63 kB exceeds 500 kB",
+    "Gradle flatDir repositories"
+  ],
+  "mainAppInstalled": true,
+  "installationEvidence": "install-validation.json"
+}

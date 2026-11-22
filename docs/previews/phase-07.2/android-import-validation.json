@@ -1,0 +1,12 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "nativeFilePicker": true,
+  "fullArchiveValidator": true,
+  "allExistingRowsUnchanged": true,
+  "allExistingPhotoHashesUnchanged": true,
+  "newVersions": 2,
+  "newPhotos": 1,
+  "importedRecipeImageDisplayed": true,
+  "guidedPreparationReviewDisplayed": true,
+  "noPreparationStarted": true
+}

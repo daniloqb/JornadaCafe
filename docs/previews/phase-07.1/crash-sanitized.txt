@@ -1,0 +1,17 @@
+Android crash buffer collected 2026-11-21. No entity values or image data included.
+11-21 13:01:18.024 E AndroidRuntime: FATAL EXCEPTION: main
+11-21 13:01:18.024 E AndroidRuntime: Process: br.com.jornadacafe.app
+11-21 13:01:18.024 E AndroidRuntime: java.lang.RuntimeException: android.os.TransactionTooLargeException: data parcel size 12322024 bytes
+Bundle stats:
+  capacitorLastPluginCallOptions [size=6159344]
+  capacitorLastPluginCallBundle [size=6159376]
+    _json [size=6159344]
+at android.app.servertransaction.PendingTransactionActions$StopInfo.run
+Caused by android.os.TransactionTooLargeException
+at android.app.IActivityClientController$Stub$Proxy.activityStopped
+Repeated at 13:04:20, 13:04:51 and 13:05:55 (12322080 / 12322032 / 12322080 bytes).
+
+Source confirmation (installed Capacitor Android 8.6.2):
+Bridge.saveInstanceState writes call.getData().toString() into capacitorLastPluginCallOptions.
+Plugin.saveInstanceState writes the same options into _json inside capacitorLastPluginCallBundle.
+Original DataFiles.save retained the complete ZIP Base64 in those options until SAF returned.

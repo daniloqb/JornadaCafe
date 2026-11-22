@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "typing in parameter form preserves scroll and route",
+    "corrected parameters reopen persisted after full reload",
+    "Escape keeps preparation",
+    "editing history preserves another active session, checkpoint and execution",
+    "deleting history preserves another active session and stock",
+    "fixture session discarded without stock movement"
+  ]
+}
