@@ -1,0 +1,4 @@
+# Publicação padrão do GitHub Pages por main /docs.
+# Apenas estes HTMLs e assets públicos entram no site; relatórios e previews ficam no Git.
+exclude: ["*"]
+include: ["index.html", "politica-de-privacidade.html", "assets"]

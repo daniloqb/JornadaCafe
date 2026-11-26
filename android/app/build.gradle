@@ -1,4 +1,32 @@
+import groovy.json.JsonSlurper
+
 apply plugin: 'com.android.application'
+
+def releaseInfo = new JsonSlurper().parse(rootProject.file('../config/release.json'))
+def signingEnv = ['ANDROID_KEYSTORE_PATH', 'ANDROID_KEYSTORE_PASSWORD', 'ANDROID_KEY_ALIAS', 'ANDROID_KEY_PASSWORD']
+def hasSigning = signingEnv.every { System.getenv(it)?.trim() }
+
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.project == project && it.name.contains('Release') }) {
+        if (project.hasProperty('jornadaTestApp')) throw new GradleException('Release permitido somente para br.com.jornadacafe.app.')
+        if (!hasSigning) throw new GradleException('Assinatura release exige as quatro variáveis ANDROID_KEYSTORE_PATH, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD. Sem fallback debug.')
+        def keyFile = file(System.getenv('ANDROID_KEYSTORE_PATH')).canonicalFile
+        def repoPath = rootProject.projectDir.parentFile.canonicalFile.toPath()
+        if (!keyFile.isFile() || keyFile.toPath().startsWith(repoPath)) throw new GradleException('Keystore deve existir fora do repositório.')
+        if (keyFile.name.toLowerCase().contains('booknook') || System.getenv('ANDROID_KEY_ALIAS').toLowerCase().contains('booknook')) throw new GradleException('Utilize uma chave própria do Jornada Café.')
+        try {
+            def store = java.security.KeyStore.getInstance(keyFile, System.getenv('ANDROID_KEYSTORE_PASSWORD').toCharArray())
+            def alias = System.getenv('ANDROID_KEY_ALIAS')
+            def certificate = store.getCertificate(alias)
+            if (!store.isKeyEntry(alias) || !(store.getKey(alias, System.getenv('ANDROID_KEY_PASSWORD').toCharArray()) instanceof java.security.PrivateKey) || certificate == null || certificate.subjectX500Principal.name.toLowerCase().contains('cn=android debug')) {
+                throw new IllegalArgumentException('Chave inválida')
+            }
+            certificate.checkValidity()
+        } catch (Exception ignored) {
+            throw new GradleException('Keystore/alias/certificado release inválido, expirado ou debug. Verifique as credenciais externas.')
+        }
+    }
+}
 
 android {
     namespace = "br.com.jornadacafe.app"
@@ -8,8 +36,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         resValue "string", "data_app_label", project.hasProperty("jornadaTestApp") ? "Jornada Café — Teste" : "Minha Jornada pelo Café"
-        versionCode 18
-        versionName "0.7.3"
+        versionCode releaseInfo.versionCode as int
+        versionName releaseInfo.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -17,8 +45,19 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            if (hasSigning) {
+                storeFile file(System.getenv('ANDROID_KEYSTORE_PATH'))
+                storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -44,12 +83,3 @@ dependencies {
 }
 
 apply from: 'capacitor.build.gradle'
-
-try {
-    def servicesJSON = file('google-services.json')
-    if (servicesJSON.text) {
-        apply plugin: 'com.google.gms.google-services'
-    }
-} catch(Exception e) {
-    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
-}

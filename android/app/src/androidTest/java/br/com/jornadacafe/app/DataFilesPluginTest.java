@@ -32,6 +32,25 @@ public class DataFilesPluginTest {
         @Override public void reject(String error) { this.error=error;done.countDown(); }
         void await() throws Exception { assertTrue("Native response timeout",done.await(15,TimeUnit.SECONDS)); }
     }
+    @Test public void fileProviderSharesOnlyTransferCache() throws Exception {
+        android.content.Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        assertEquals("br.com.jornadacafe.sandbox", context.getPackageName());
+        String authority = context.getPackageName() + ".fileprovider";
+        java.io.File allowed = new java.io.File(context.getCacheDir(), "data-sharing/visibility-test.zip");
+        Uri uri = androidx.core.content.FileProvider.getUriForFile(context, authority, allowed);
+        assertEquals("content", uri.getScheme());
+        assertTrue(uri.getPath().startsWith("/shared_backups/"));
+        for (java.io.File forbidden : new java.io.File[] {
+                new java.io.File(context.getCacheDir(), "private-test.zip"),
+                new java.io.File(context.getFilesDir(), "private-test.zip"),
+                new java.io.File(context.getCacheDir(), "data-sharing/../private-test.zip") }) {
+            try {
+                androidx.core.content.FileProvider.getUriForFile(context, authority, forbidden);
+                fail("Private paths must not be shared by FileProvider");
+            } catch (IllegalArgumentException expected) { }
+        }
+    }
+
     @Test public void nativeDestinationFailuresCancellationAndRetry() throws Exception {
         assertEquals("br.com.jornadacafe.sandbox", androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().getTargetContext().getPackageName());
         // MIUI rejects background launches from the instrumented app. Launch through

@@ -83,7 +83,7 @@ export function App() {
         {error && <Notice title="O armazenamento local precisa de atenção" onRetry={retry}>{error} Você pode explorar as áreas enquanto isso.</Notice>}
         <ActiveBrewNotice />
         {warning && <Notice title="Fotografia antiga">{warning}</Notice>}
-        {settings && <PreparationSettings />}
+        {settings && <PreparationSettings path={path} />}
         {active === 'inicio' && !settings && <HomePage />}
         <div hidden={active !== 'cafes' || settings}><CoffeesPage path={areaPaths.cafes} search={search} onSearch={setSearch} view={view} onView={setView} /></div>
         <div className="prepare-area" hidden={active !== 'preparar' || settings}><PreparePage path={areaPaths.preparar} /></div>

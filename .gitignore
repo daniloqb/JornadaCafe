@@ -10,3 +10,13 @@ coverage/
 /artifacts/
 
 .library-refresh-*/
+
+/release/
+*.jks
+*.keystore
+key.properties
+keystore.properties
+*.p12
+*.pem
+__pycache__/
+.jornada-promote-*/

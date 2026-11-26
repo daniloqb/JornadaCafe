@@ -1,7 +1,7 @@
 {
   "name": "minha-jornada-pelo-cafe",
   "private": true,
-  "version": "0.7.3",
+  "version": "1.0.0",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
@@ -16,7 +16,12 @@
     "android:open": "cap open android",
     "android:run": "npm run android:sync && cap run android",
     "library:refresh": "node scripts/library-refresh.mjs",
-    "library:check": "node scripts/library-refresh.mjs --verify"
+    "library:check": "node scripts/library-refresh.mjs --verify",
+    "build:release": "bash scripts/build_release_artifacts.sh",
+    "privacy:site": "node scripts/sync-privacy-docs.mjs",
+    "release:check": "python3 scripts/release_tools.py check",
+    "test:release": "python3 -m unittest discover -s scripts -p test_release_tools.py -v",
+    "privacy:check": "node scripts/sync-privacy-docs.mjs --check"
   },
   "dependencies": {
     "@capacitor-community/sqlite": "^8.1.1",

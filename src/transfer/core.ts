@@ -1,5 +1,6 @@
 import { collectionTables, type CollectionData } from '../domain/collection';
-export const APP_VERSION = '0.7.3';
+import release from '../../config/release.json';
+export const APP_VERSION = release.versionName;
 export const APPLICATION = 'minha-jornada-pelo-cafe';
 export const PERSONAL_FORMAT_VERSION = 2;
 export const LIBRARY_FORMAT_VERSION = 2;
