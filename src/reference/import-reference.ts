@@ -1,6 +1,6 @@
 import type { CollectionData } from '../domain/collection';
 import { applyBrewingMutation, type BrewingMutation } from '../domain/brewing';
-import { referenceCatalog, referenceItems, type ReferenceKind } from './catalog';
+import { referenceCatalog, referenceItems, type ReferenceKind } from './legacy-catalog';
 
 export type ReferenceMutation = { type: 'importReference'; kind: ReferenceKind; key: string } | { type: 'importReferenceCatalog' };
 /** One shared transaction imports the dependency graph. Stable IDs never merge by name. */

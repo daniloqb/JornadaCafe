@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-25",
+  "appVersion": "0.7.3",
+  "versionCode": 18,
+  "databaseSchema": 5,
+  "officialCatalog": {
+    "catalogId": "jornada-cafe-reference",
+    "version": 1,
+    "status": "consolidated",
+    "consolidatedAt": "2026-11-26T00:10:32.981Z",
+    "source": {
+      "kind": "approved-library-share",
+      "formatVersion": 2,
+      "sha256": "85a0aaf04c77c4d8a460d1f8a82b49ffc681e0c18161441c82022e937c14ccc1"
+    },
+    "counts": {
+      "methods": 8,
+      "techniques": 6,
+      "recipes": 8,
+      "versions": 8,
+      "images": 0
+    },
+    "compatibility": {
+      "catalogSchema": 1,
+      "libraryFormats": [
+        1,
+        2
+      ],
+      "databaseSchema": 5
+    }
+  },
+  "activeCatalog": {
+    "kind": "official",
+    "version": 1,
+    "methods": 8,
+    "techniques": 6,
+    "recipes": 8,
+    "versions": 8,
+    "images": 0
+  },
+  "typecheck": "passed",
+  "tests": {
+    "files": 22,
+    "passed": 182
+  },
+  "webBuild": "passed",
+  "mainChunk": {
+    "file": "index-R3aL-ERm.js",
+    "bytes": 616649,
+    "gzipBytes": 181181,
+    "gzipLevel": 6
+  },
+  "capacitorSync": "passed",
+  "androidBuild": {
+    "offline": true,
+    "jdk": 21,
+    "normal": "passed",
+    "sandbox": "passed"
+  },
+  "apkAssets": {
+    "debug": {
+      "sha256": "8ae0a1a250e282a58918a4ebfb3839a6639b105d16b13b1ec2df9860b619f189",
+      "bytes": 35026219,
+      "web_files_identical": 22,
+      "approvedCatalogPackaged": true
+    },
+    "sandbox": {
+      "sha256": "28f6276f9681fb4211ea2b1ff246249e31f8cab5b05c2edae4939ab7a17e304c",
+      "bytes": 35026251,
+      "web_files_identical": 22,
+      "approvedCatalogPackaged": true
+    }
+  },
+  "sourceZipIncluded": false,
+  "committed": false,
+  "pushed": false,
+  "warnings": [
+    "Web chunk over 500 kB",
+    "Gradle flatDir repositories",
+    "SDK XML version warning"
+  ]
+}

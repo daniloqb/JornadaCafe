@@ -1,0 +1,26 @@
+{
+  "catalogId": "jornada-cafe-reference",
+  "version": 1,
+  "status": "consolidated",
+  "consolidatedAt": "2026-11-26T00:10:32.981Z",
+  "source": {
+    "kind": "approved-library-share",
+    "formatVersion": 2,
+    "sha256": "85a0aaf04c77c4d8a460d1f8a82b49ffc681e0c18161441c82022e937c14ccc1"
+  },
+  "counts": {
+    "methods": 8,
+    "techniques": 6,
+    "recipes": 8,
+    "versions": 8,
+    "images": 0
+  },
+  "compatibility": {
+    "catalogSchema": 1,
+    "libraryFormats": [
+      1,
+      2
+    ],
+    "databaseSchema": 5
+  }
+}

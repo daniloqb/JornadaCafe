@@ -1,0 +1,19 @@
+{
+  "fixture": "Synthetic snapshots in temporary project only",
+  "v1_generated": true,
+  "v1_repeated_without_changes": true,
+  "v2_missing_continuity_blocked": true,
+  "previous_manifest_preserved_on_refusal": true,
+  "v2_explicit_removals_accepted": true,
+  "v2_counts": {
+    "methods": 1,
+    "techniques": 1,
+    "recipes": 1,
+    "versions": 2,
+    "images": 1
+  },
+  "v2_assets_verified": true,
+  "source_not_copied_into_project": true,
+  "production_build_with_synthetic_catalog": true,
+  "authorized_image_in_dist": 1
+}

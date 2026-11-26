@@ -1,0 +1,23 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "version": "0.7.3",
+  "versionCode": 18,
+  "catalog": "Legacy 1 preserved; approved ZIP not supplied",
+  "initial": {
+    "title": "Preparar · Minha Jornada pelo Café",
+    "cards": 4,
+    "origin": "https://localhost"
+  },
+  "offlineReload": {
+    "cards": 4,
+    "first": "#/preparar/referencia/receitas/quatro-seis-equilibrado",
+    "horizontalOverflow": false
+  },
+  "offlineDetail": {
+    "steps": true,
+    "title": "V60 4:6 equilibrado"
+  },
+  "mainInstallationAccessed": false,
+  "personalDataMutated": false,
+  "network": "Offline simulated by CDP, not by changing device connectivity settings"
+}

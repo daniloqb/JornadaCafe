@@ -1,0 +1,276 @@
+{
+  "manifest": {
+    "catalogId": "jornada-cafe-reference",
+    "version": 1,
+    "status": "consolidated",
+    "consolidatedAt": "2026-11-26T00:10:32.981Z",
+    "source": {
+      "kind": "approved-library-share",
+      "formatVersion": 2,
+      "sha256": "85a0aaf04c77c4d8a460d1f8a82b49ffc681e0c18161441c82022e937c14ccc1"
+    },
+    "counts": {
+      "methods": 8,
+      "techniques": 6,
+      "recipes": 8,
+      "versions": 8,
+      "images": 0
+    },
+    "compatibility": {
+      "catalogSchema": 1,
+      "libraryFormats": [
+        1,
+        2
+      ],
+      "databaseSchema": 5
+    }
+  },
+  "unchanged": false,
+  "changes": {
+    "methods": {
+      "added": [
+        {
+          "id": "official-06fea02c-63da-48a5-bd0a-15f5afb03b8a",
+          "fingerprint": "m-37b6a7580cf00f54386d06c082d1f89ac305e562307f4e2121711ad48dff0723"
+        },
+        {
+          "id": "official-9c1dc020-5030-4e3b-bc3b-3913cc1c61af",
+          "fingerprint": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1"
+        },
+        {
+          "id": "official-31214eb6-fd54-458e-9dd3-75f554dd5b51",
+          "fingerprint": "m-59f46b47cdecd882fbcd70df6e99a48e4d6f02b3a904ace7bc755f53d72fdc81"
+        },
+        {
+          "id": "official-f7e510df-216f-4ab1-8f02-66e686f1dc35",
+          "fingerprint": "m-614fca24d8b9b63fcd00c9d27c814b1cc099cb022fb3b309c38c1a03838eecb2"
+        },
+        {
+          "id": "official-bc68c35f-64a1-43af-8370-8eb4e28119a8",
+          "fingerprint": "m-6807b8d70ebdcbbc63d889b61420c3f716c690f10d4142ec87ef8ae32f22d7fc"
+        },
+        {
+          "id": "official-3d2ccfdc-3750-4a60-9543-6eb6ced7dfff",
+          "fingerprint": "m-a1fb06a96ae9153b976f7b619b0206bd2835b69c71b1209a2de658a960a37c34"
+        },
+        {
+          "id": "official-ec500d32-d77c-4e5d-ad70-1e57ba1d56cc",
+          "fingerprint": "m-c82498fecd2fca896aaa1499c57a6dcc15b7ea4d121ae544479c0902ffdb7fc8"
+        },
+        {
+          "id": "official-3bb288fb-3eda-4ebb-9a65-2b7cb29c1a55",
+          "fingerprint": "m-fb56097e06fa404dcd47bca2945df60ae2100b0ce81019167dd1630c696d2a34"
+        }
+      ],
+      "modified": [],
+      "removed": []
+    },
+    "techniques": {
+      "added": [
+        {
+          "id": "official-4c0cb817-25ac-4b45-b472-eb711c4ddf15",
+          "fingerprint": "t-1e6ed8a0d9100beca611e860ef40a0f3ed0b345419fcb682004d4f336428bfd5"
+        },
+        {
+          "id": "official-5aecef98-2e56-47d7-a6a9-398e4be37e01",
+          "fingerprint": "t-43b708366e1d70069db8dbf7f1edc43ffdbe131dac548b4df6f68998ad7e57af"
+        },
+        {
+          "id": "official-d21fa77f-d735-49da-ab21-04cb60bf3727",
+          "fingerprint": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739"
+        },
+        {
+          "id": "official-7681233c-8808-40df-a8d2-bf66ff74fbe4",
+          "fingerprint": "t-a6b1d4f4d66bee48dc69a555df278452be36054324ea1eac6938ab8e543e906f"
+        },
+        {
+          "id": "official-c7cd4c68-5d1a-4d7f-a428-9d014e15d988",
+          "fingerprint": "t-b31d4df0038aecdbe21d84c3e9db6ba4bab53fc0e2b1d89091e54542dc0ff1ff"
+        },
+        {
+          "id": "official-017bb511-35ef-4eb9-bb33-9612e0f38961",
+          "fingerprint": "t-f36655c9047fc790018d85fe585d0b72ed33261cea97d5e2c3aa16c32e847edb"
+        }
+      ],
+      "modified": [],
+      "removed": []
+    },
+    "families": {
+      "added": [
+        {
+          "id": "official-d3daf54b-54a5-41fd-a47d-e503d06d83b4",
+          "fingerprint": "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454"
+        },
+        {
+          "id": "official-3b2708a2-d863-4726-94c8-18bc8ee45395",
+          "fingerprint": "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59"
+        },
+        {
+          "id": "official-4b6b5fba-d295-4897-a143-b317642fabdb",
+          "fingerprint": "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04"
+        },
+        {
+          "id": "official-a34bd6f3-a643-488c-bb8d-9913426f63d6",
+          "fingerprint": "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd"
+        },
+        {
+          "id": "official-673a4795-647f-418b-9383-a77c2a6c7608",
+          "fingerprint": "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b"
+        },
+        {
+          "id": "official-f1e9fe06-9c25-4717-9d81-7331b04decb1",
+          "fingerprint": "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e"
+        },
+        {
+          "id": "official-706a7b1f-c355-4bde-9d01-637cfb17dd96",
+          "fingerprint": "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5"
+        },
+        {
+          "id": "official-d9deb756-5088-4422-9ce6-5a1d575c1e17",
+          "fingerprint": "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f"
+        }
+      ],
+      "modified": [],
+      "removed": []
+    },
+    "versions": {
+      "added": [
+        {
+          "id": "official-f09b1cb7-8b44-48b7-929b-797e9ea351b9",
+          "fingerprint": "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454-v1"
+        },
+        {
+          "id": "official-a8e79f7d-9f31-426e-84ca-6933c7fe05bb",
+          "fingerprint": "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59-v1"
+        },
+        {
+          "id": "official-58248082-04a5-4df3-94d7-88b0e03907a8",
+          "fingerprint": "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04-v1"
+        },
+        {
+          "id": "official-0557f417-5514-402a-83b2-77aa1e7e3f62",
+          "fingerprint": "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd-v1"
+        },
+        {
+          "id": "official-9207108d-c02e-4508-b1b8-9f4da2271b5f",
+          "fingerprint": "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b-v1"
+        },
+        {
+          "id": "official-5201d46f-d11e-4251-8989-1a92305370d0",
+          "fingerprint": "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e-v1"
+        },
+        {
+          "id": "official-d9b17390-11ee-47ed-b2e2-0b6a0d177d72",
+          "fingerprint": "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5-v1"
+        },
+        {
+          "id": "official-60e6fe0d-ba31-4119-a991-badae656c431",
+          "fingerprint": "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f-v1"
+        }
+      ],
+      "modified": [],
+      "removed": []
+    }
+  },
+  "presentationChanges": [],
+  "removedLegacy": {
+    "methods": [],
+    "techniques": [
+      {
+        "key": "tres-despejos",
+        "name": "Três despejos"
+      }
+    ],
+    "recipes": [
+      {
+        "key": "quatro-seis-equilibrado",
+        "name": "V60 4:6 equilibrado"
+      },
+      {
+        "key": "quatro-seis-modificado",
+        "name": "V60 4:6 com distribuição modificada"
+      },
+      {
+        "key": "tres-iguais",
+        "name": "V60 três despejos iguais"
+      },
+      {
+        "key": "cafe-geracoes",
+        "name": "V60 três despejos — referência Café Gerações"
+      }
+    ]
+  },
+  "images": {
+    "included": [],
+    "omittedWithoutPermission": [
+      "11ba784fca9626ffeecfe11c68835c4a7e8b151b1d996780b9799b5c61a98f3b",
+      "4add1e6f2ff315f7457f75ccfdaa41d3a130a00662d8c9dff5ea9592d85ee8a1",
+      "6400940a77bdd3bdd8bde7e67de2dd58cb90f660752f410a66cd7b60e2842b40",
+      "73e6993aef73e31983b84f2d18e2c85d69cd4d6e85da0bd008881a2f4de81d39",
+      "a4aa807431ae7fc933bf7ec9e149f84fdc46a07e0a9e5e0c08defeba71376159",
+      "aa9ecdd15aedc75d2ead751949e380821051d4ca6096bcd872f7b88cefecc519"
+    ]
+  },
+  "items": {
+    "methods": [
+      "Clever Dripper",
+      "V60",
+      "Melitta",
+      "Prensa francesa",
+      "Moka",
+      "AeroPress",
+      "Espresso",
+      "Chemex"
+    ],
+    "techniques": [
+      "Imersão seguida de filtragem",
+      "Imersão total",
+      "Três despejos",
+      "4:6 — Tetsu Kasuya",
+      "Cinco Despejos",
+      "Espresso tradicional"
+    ],
+    "recipes": [
+      {
+        "name": "Alberto Café Gerações - três despejos 3x 7x 5x",
+        "version": 1,
+        "family": "official-d3daf54b-54a5-41fd-a47d-e503d06d83b4"
+      },
+      {
+        "name": "Três despejos 3x +6x + 6x",
+        "version": 1,
+        "family": "official-3b2708a2-d863-4726-94c8-18bc8ee45395"
+      },
+      {
+        "name": "Tetsu Kasuya V60 4:6 equilibrado",
+        "version": 1,
+        "family": "official-4b6b5fba-d295-4897-a143-b317642fabdb"
+      },
+      {
+        "name": "Alberto Café Gerações - três despejos iguais",
+        "version": 1,
+        "family": "official-a34bd6f3-a643-488c-bb8d-9913426f63d6"
+      },
+      {
+        "name": "Matt Winton - 5 despejos",
+        "version": 1,
+        "family": "official-673a4795-647f-418b-9383-a77c2a6c7608"
+      },
+      {
+        "name": "Martin Wölfl Recipe",
+        "version": 1,
+        "family": "official-f1e9fe06-9c25-4717-9d81-7331b04decb1"
+      },
+      {
+        "name": "V60 4:6 com distribuição modificada",
+        "version": 1,
+        "family": "official-706a7b1f-c355-4bde-9d01-637cfb17dd96"
+      },
+      {
+        "name": "James Hoffman One Cup",
+        "version": 1,
+        "family": "official-d9deb756-5088-4422-9ce6-5a1d575c1e17"
+      }
+    ]
+  }
+}

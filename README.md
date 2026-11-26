@@ -1,10 +1,24 @@
 # Minha Jornada pelo Café
 
-**Fase 07.2 — Imagens e referências de receitas:** fotografia opcional por família, apresentador e link original por versão, cartões com miniatura e compartilhamento explícito de imagens. Versão atual: **0.7.2 / versionCode 17**; esquema **5**, sem migração. Exporta `personal-full v2` e `library-share v2`, mantendo a leitura dos dois formatos v1. Funcionamento offline em web e Android, fontes locais e temas Claro/Escuro/Automático.
+**Fase 07.3 — Biblioteca padrão consolidada:** o snapshot compartilhável aprovado pelo responsável agora abastece **Explorar Biblioteca**, com **8 métodos, 6 técnicas e 8 famílias de receitas (8 versões)**, disponíveis offline. Catálogo oficial **1**, aplicativo **0.7.3 / versionCode 18**, banco **5**, sem migração. A coleção pessoal permanece independente. As seis imagens recebidas foram omitidas por falta de autorização de redistribuição; os dados e links foram preservados. Os formatos `personal-full v2` e `library-share v2` e a leitura de v1 continuam compatíveis.
 
 A [correção da exportação Android — Fase 07.1](docs/phase-07.1.md) elimina o ZIP inteiro em Base64 do estado da Activity e verifica a gravação externa antes de confirmar sucesso.
 
-Veja a [Fase 07.2](docs/phase-07.2.md), o [contrato v2 e compatibilidade](docs/transfer-formats-v2.md), o [relatório da Fase 07](docs/phase-07.md), os [formatos portáveis v1](docs/transfer-formats-v1.md) e as [capturas e evidências](docs/previews/phase-07/README.md). A correção/exclusão de experiências está na [Fase 06.4](docs/phase-06.4.md), a escala global e o preparo guiado na [Fase 06.3](docs/phase-06.3.md), Início e Histórico na [Fase 06.2](docs/phase-06.2.md), coleção na [Fase 06.1](docs/phase-06.1.md), Descobertas na [Fase 06](docs/phase-06.md) e diário na [Fase 05](docs/phase-05.md).
+Veja o [relatório da Fase 07.3](docs/phase-07.3.md), suas [capturas e evidências](docs/previews/phase-07.3/README.md), a [Fase 07.2](docs/phase-07.2.md), o [contrato v2 e compatibilidade](docs/transfer-formats-v2.md), o [relatório da Fase 07](docs/phase-07.md), os [formatos portáveis v1](docs/transfer-formats-v1.md) e as [capturas e evidências](docs/previews/phase-07/README.md). A correção/exclusão de experiências está na [Fase 06.4](docs/phase-06.4.md), a escala global e o preparo guiado na [Fase 06.3](docs/phase-06.3.md), Início e Histórico na [Fase 06.2](docs/phase-06.2.md), coleção na [Fase 06.1](docs/phase-06.1.md), Descobertas na [Fase 06](docs/phase-06.md) e diário na [Fase 05](docs/phase-05.md).
+
+## Atualizar o catálogo padrão
+
+Exporte a coleção aprovada em **Configurações → Compartilhar receitas e métodos → Exportar biblioteca → Selecionar todos**. Forneça esse ZIP como fonte oficial. O gerador não consulta bancos ou fotos do telefone.
+
+```bash
+npm run library:refresh -- /caminho/snapshot-aprovado.zip --check
+npm run library:refresh -- /caminho/snapshot-aprovado.zip
+npm run library:check
+```
+
+A prévia `--check` informa nomes, contagens e diferenças sem gravar. Para imagens, acrescente `--rights autorizacoes.json`, com origem, autorização pública e créditos por hash; sem autorização, as fotografias são omitidas. Atualizações de conteúdo usam `--continuity continuidade.json` para manter IDs públicos. Remoções de identidades existentes bloqueiam a gravação até que sejam resolvidas pelo mapa ou explicitamente aceitas com `--allow-removals`. Veja os formatos e o procedimento completo na [Fase 07.3](docs/phase-07.3.md).
+
+Os arquivos gerados ficam em `src/reference/generated/` e os assets autorizados em `public/images/reference-library/`. O build verifica os recursos congelados, sem exigir o ZIP ou o telefone. Importar conteúdos em Explorar Biblioteca adiciona cópias pessoais com suas dependências; atualizar o catálogo não executa migrações nem grava na coleção pessoal.
 
 ## Imagem e referência da receita
 
@@ -159,7 +173,7 @@ Em **Preparar → Biblioteca de referência**, o catálogo local oferece explica
 
 Consultar referências e salvar registros pessoais são ações distintas. Para editar ou usar no preparo, escolha **Adicionar catálogo à minha biblioteca** e depois **Abrir minha biblioteca**. Os registros permanecem após encerrar e reabrir. A abertura do app não reinsere itens excluídos; uma nova incorporação exige sua ação explícita.
 
-O catálogo versão **1** fica em `src/reference/catalog.ts`, incluído no build e congelado em memória. A importação em `src/reference/import-reference.ts` usa as validações e os adaptadores atuais. Identificações estáveis e o campo opcional `referenceKey` no payload mantêm a origem das cópias e suas versões. **IndexedDB, SQLite e metadado continuam na versão 4**, sem migração, novas tabelas ou dependências. Estoque e histórico só mudam pelas ações normais de preparação existentes.
+O catálogo oficial **1** é carregado de `src/reference/generated/` por `src/reference/catalog.ts` e congelado em memória. A lista anterior fica isolada em `src/reference/legacy-catalog.ts` para compatibilidade e testes e não é apresentada como catálogo ativo. A importação oficial usa `src/reference/import-official.ts` e o planejador de importação compartilhável existente, com UUIDs pessoais independentes. O campo `referenceKey` mantém a origem pública sem substituir a equivalência de conteúdo. **IndexedDB, SQLite e metadado estão no esquema 5**, sem migração nesta fase. Estoque e histórico só mudam pelas ações normais de preparação existentes.
 
 As descrições usam fontes dos fabricantes e documentação de preparo: [HARIO V60](https://www.hario-europe.com/pages/the-v60-dripper), [entrevista com Kasuya](https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya), [Melitta](https://shoponline.melitta.com/products/1-cup-pour-over-coffee-brew-cone-black), [Bodum](https://www.bodum.com/us/en/10938-01b-brazil), [AeroPress](https://aeropress.com/pages/how-it-works), [Bialetti](https://bialettiafrica.com/blogs/news/how-the-moka-works-lift-the-lid-and-discover-all-its-secrets), [Chemex](https://chemexcoffeemaker.com/pages/how-to-brew-with-chemex), [Clever / Sweet Maria’s](https://library.sweetmarias.com/clever-coffee-dripper-a-full-immersion-brewing-method/) e [La Marzocco](https://www.lamarzocco.com/ca/en/beginners-guide-to-espresso/). As fontes específicas também aparecem nas fichas. Os parâmetros das quatro receitas vieram da referência fornecida pelo usuário; a biblioteca não apresenta resultados de degustação nem avaliações inventadas.
 

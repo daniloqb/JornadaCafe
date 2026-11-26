@@ -8,6 +8,8 @@ import { createPersonalArchive,parseArchive,createLibraryArchive } from '../tran
 import { allLibrarySelection,buildLibrary,planLibraryImport } from '../transfer/library';
 import { canonical,PENDING_PREFERENCES,recoveredCollection,sha256,bytesToBase64,base64ToBytes,type ArchiveState } from '../transfer/core';
 import { fixture,preferences,personalPart,stableCollection } from '../transfer/fixtures.test-helper';
+import { consolidateCatalog } from '../reference/consolidate';
+import { planReferenceImport } from '../reference/import-official';
 import { mutateWithPhotos, saveRecipeWithPhoto } from './media-mutation';
 const native=vi.hoisted(()=>({open:vi.fn(),execute:vi.fn(),query:vi.fn(),run:vi.fn(),beginTransaction:vi.fn(),commitTransaction:vi.fn(),rollbackTransaction:vi.fn()}));
 const filesystem=vi.hoisted(()=>({readFile:vi.fn(),writeFile:vi.fn(),deleteFile:vi.fn(),readdir:vi.fn(),rmdir:vi.fn(),stat:vi.fn(),getUri:vi.fn()}));
@@ -177,3 +179,24 @@ it('falha e corrupção da preparação de imagem recusam publicação SQLite',a
  const source=await seed(local),before=canonical(await local.loadCollection());failWrite();await expect(saveRecipeWithPhoto(local,source.data.recipes[0],source.photos[0].blob)).rejects.toThrow('fotografia');expect(canonical(await local.loadCollection())).toBe(before);
  corruptRead();await expect(saveRecipeWithPhoto(local,source.data.recipes[0],source.photos[0].blob)).rejects.toThrow('preparar');expect(canonical(await local.loadCollection())).toBe(before);
 }));
+
+// The official catalog uses the same transaction and media path in both adapters.
+describe.each(['indexeddb','sqlite'])('catálogo oficial em %s', engine => {
+ it('preserva a coleção anterior, grava versões/fotografia e reabre sem duplicar', async()=>withStore(engine,async({local})=>{
+  await seed(local, 'PERSONAL');
+  const before=await local.exportState();
+  const source=fixture('OFFICIAL_TEST');source.data.methods[0].description='Método sintético distinto';
+  source.data.recipes.forEach(r=>{r.photoId=source.photos[0].id;});
+  const prepared=await buildLibrary(source.data,allLibrarySelection(source.data),{includeImages:true,readPhoto:async id=>source.photos.find(p=>p.id===id)?.blob});
+  const zip=await createLibraryArchive(prepared.library,prepared.photos);
+  const result=await consolidateCatalog(zip.bytes,{schemaVersion:1,library:null,identities:{methods:{},techniques:{},families:{},versions:{}},images:[]},{catalogId:'jornada-cafe-reference',version:0,status:'awaiting-approved-snapshot',consolidatedAt:null,source:null,counts:null,compatibility:{catalogSchema:1,libraryFormats:[1,2],databaseSchema:5}},{rights:[{sha256:prepared.photos[0].id,origin:'Fixture de teste',permission:'Somente teste isolado'}]});
+  const plan=await planReferenceImport(before.data,result.bundle,undefined,undefined,async()=>prepared.photos[0].blob);
+  await mutateWithPhotos(local,{type:'importLibrary',plan},plan.photos);await local.close();await validateStorage(local);
+  const after=await local.exportState();expect(personalPart(after.data)).toEqual(personalPart(before.data));
+  for(const table of ['methods','techniques','recipes'] as const) for(const row of before.data[table]) expect(after.data[table].find(r=>r.id===row.id)).toEqual(row);
+  expect(after.data.recipes).toHaveLength(before.data.recipes.length+2);
+  const repeated=await planReferenceImport(after.data,result.bundle,undefined,undefined,async()=>prepared.photos[0].blob);
+  expect(repeated.additions).toEqual({methods:[],techniques:[],recipes:[]});expect(repeated.photos).toEqual([]);
+  expect(await local.getMetadata('schema-version')).toBe('5');
+ }));
+});

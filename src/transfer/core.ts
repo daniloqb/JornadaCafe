@@ -1,5 +1,5 @@
 import { collectionTables, type CollectionData } from '../domain/collection';
-export const APP_VERSION = '0.7.2';
+export const APP_VERSION = '0.7.3';
 export const APPLICATION = 'minha-jornada-pelo-cafe';
 export const PERSONAL_FORMAT_VERSION = 2;
 export const LIBRARY_FORMAT_VERSION = 2;

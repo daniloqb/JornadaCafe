@@ -1,0 +1,1313 @@
+{
+  "source": "Approved library-share v2 snapshot, official catalog 1",
+  "combinations": 144,
+  "errors": [],
+  "runtimeErrors": [],
+  "rows": [
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "light",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 85,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 100,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 768,
+      "viewport": 768,
+      "scroll": 753,
+      "overflow": []
+    },
+    {
+      "view": "official-recipes",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-methods",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-techniques",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-recipe-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-method-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    },
+    {
+      "view": "official-technique-detail",
+      "theme": "dark",
+      "scale": 115,
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1425,
+      "overflow": []
+    }
+  ],
+  "flow": {
+    "singleImportRecognized": true,
+    "personalCopyOpened": true,
+    "guidedReviewOpened": true,
+    "entireCatalogRecognizedAfterImport": true,
+    "persistedAfterReload": true,
+    "preparationStarted": false
+  },
+  "images": "Six source images omitted pending redistribution permission"
+}

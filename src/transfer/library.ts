@@ -11,6 +11,7 @@ export interface SharedLibrary { methods: SharedMethod[]; techniques: SharedTech
 export interface LibraryImportPlan {
   expectedLibrary: string; additions: { methods: BrewMethod[]; techniques: BrewTechnique[]; recipes: BrewRecipe[] };
   photos: StoredPhoto[]; receivedPhotos: StoredPhoto[]; imageUpdates: { id: string; photoId: string }[]; retainedImages: number;
+  resolvedIds: { methods: Map<string,string>; techniques: Map<string,string>; recipes: Map<string,string> };
   received: SharedLibrary; duplicates: number; conflicts: string[]; dispositions: Record<string,'new'|'existing'>;
 }
 const methodFields=['id','name','description','notes'];
@@ -98,7 +99,7 @@ export async function planLibraryImport(data:CollectionData,received:SharedLibra
     for(const r of additions.recipes.filter(r=>r.familyId===localFamily))r.photoId=photo.id;
     for(const r of data.recipes.filter(r=>r.familyId===localFamily))imageUpdates.push({id:r.id,photoId:photo.id});
   }
-  return {expectedLibrary:libraryStamp(data),additions,photos:[...staged.values()],receivedPhotos:photos,imageUpdates,retainedImages,received,duplicates,conflicts:[...new Set(conflicts)],dispositions};
+  return {resolvedIds:localMaps,expectedLibrary:libraryStamp(data),additions,photos:[...staged.values()],receivedPhotos:photos,imageUpdates,retainedImages,received,duplicates,conflicts:[...new Set(conflicts)],dispositions};
 }
 export function applyLibraryImport(data:CollectionData,plan:LibraryImportPlan):CollectionData{
   if(plan.expectedLibrary!==libraryStamp(data))fail('A biblioteca mudou. Selecione novamente o arquivo para atualizar a pré-visualização.');

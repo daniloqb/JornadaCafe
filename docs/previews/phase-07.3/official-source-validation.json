@@ -1,0 +1,27 @@
+{
+  "source": {
+    "formatVersion": 2,
+    "sha256": "85a0aaf04c77c4d8a460d1f8a82b49ffc681e0c18161441c82022e937c14ccc1"
+  },
+  "counts": {
+    "methods": 8,
+    "techniques": 6,
+    "recipes": 8,
+    "versions": 8,
+    "images": 0
+  },
+  "technicalContentExactlyMatchesApprovedZip": true,
+  "onlyOmittedFields": "recipe.image (no redistribution permission supplied)",
+  "sourceImageCount": 6,
+  "allDependenciesValid": true,
+  "allEightRecipesAcceptedByGuidedPreparation": true,
+  "existingPersonalAndLegacyRecordsPreserved": true,
+  "reimportAddsNothing": true,
+  "additionsAgainstPersonalAndLegacy": {
+    "methods": 0,
+    "techniques": 2,
+    "versions": 8
+  },
+  "recognizedCopies": 22,
+  "repeatPreservesIdentityManifestAndVersion": true
+}

@@ -1,0 +1,32 @@
+{
+  "package": "br.com.jornadacafe.sandbox",
+  "appVersion": "0.7.3",
+  "versionCode": 18,
+  "catalog": "Official 1 from approved snapshot",
+  "network": "Offline simulated in sandbox WebView only; physical connectivity unchanged",
+  "offlineReload": {
+    "origin": "https://localhost",
+    "cards": [
+      "Alberto Café Gerações - três despejos 3x 7x 5x",
+      "Três despejos 3x +6x + 6x",
+      "Tetsu Kasuya V60 4:6 equilibrado",
+      "Alberto Café Gerações - três despejos iguais",
+      "Matt Winton - 5 despejos",
+      "Martin Wölfl Recipe",
+      "V60 4:6 com distribuição modificada",
+      "James Hoffman One Cup"
+    ],
+    "horizontalOverflow": false
+  },
+  "offlineDetail": {
+    "title": "James Hoffman One Cup",
+    "steps": 9,
+    "originalLink": [
+      "https://youtu.be/1oB1oDrDkHM?is=WSNGotFIWd0ZbptR"
+    ],
+    "offlineReady": true,
+    "horizontalOverflow": false
+  },
+  "personalMutationRequested": false,
+  "mainInstallationAccessed": false
+}

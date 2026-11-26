@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto';
 import { describe, expect, it } from 'vitest';
 import { applyMutation, emptyCollection, newEntity } from '../domain/collection';
-import { referenceCatalog } from '../reference/catalog';
+import { referenceCatalog } from '../reference/legacy-catalog';
 import { IndexedDBStorage } from './indexeddb-storage';
 import { validateStorage } from '../domain/local-storage';
 

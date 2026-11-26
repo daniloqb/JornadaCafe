@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "library": {
+    "methods": [
+      {
+        "description": "Preparador com filtro de papel e válvula de liberação na base.",
+        "id": "m-37b6a7580cf00f54386d06c082d1f89ac305e562307f4e2121711ad48dff0723",
+        "name": "Clever Dripper",
+        "notes": "A válvula retém a água durante a imersão. Ao apoiar o equipamento sobre um recipiente adequado, a bebida escoa pelo filtro.\n\nCombina imersão e filtragem por gravidade em momentos distintos.\n\nO momento da liberação e a sequência de água e café dependem da receita.\n\nFontes: Sweet Maria’s: Clever: imersão e filtragem (https://library.sweetmarias.com/clever-coffee-dripper-a-full-immersion-brewing-method/)"
+      },
+      {
+        "description": "Coador cônico para preparo manual com filtro de papel.",
+        "id": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "V60",
+        "notes": "A água atravessa o café e o filtro pela gravidade, saindo por uma abertura na base.\n\nCone com relevos em espiral e saída única. A forma de despejar e a moagem participam do controle do fluxo.\n\nUse filtro e suporte compatíveis com o seu equipamento. Não há uma única distribuição de despejos obrigatória.\n\nFontes: HARIO: O coador V60 (https://www.hario-europe.com/pages/the-v60-dripper)"
+      },
+      {
+        "description": "Sistema de preparo filtrado com suporte e filtro de papel.",
+        "id": "m-59f46b47cdecd882fbcd70df6e99a48e4d6f02b3a904ace7bc755f53d72fdc81",
+        "name": "Melitta",
+        "notes": "A água é adicionada sobre o café e atravessa o leito e o papel por gravidade.\n\nPreparo por percolação, com adição manual de água. O formato e as saídas dependem do modelo do suporte.\n\nConfira o filtro apropriado para o seu suporte; não extrapole medidas de um modelo para todos.\n\nFontes: Melitta: Preparo manual com filtro (https://shoponline.melitta.com/products/1-cup-pour-over-coffee-brew-cone-black)"
+      },
+      {
+        "description": "Recipiente de imersão com êmbolo e filtro de malha.",
+        "id": "m-614fca24d8b9b63fcd00c9d27c814b1cc099cb022fb3b309c38c1a03838eecb2",
+        "name": "Prensa francesa",
+        "notes": "Café e água ficam em contato no recipiente. Ao final, o êmbolo separa os sólidos antes de servir.\n\nFiltro reutilizável de malha, sem exigir papel. A separação dos sólidos é diferente da filtragem em papel.\n\nO tempo de contato, a moagem e a proporção são escolhas da receita, não características fixas do equipamento.\n\nFontes: Bodum: Prensa francesa — funcionamento (https://www.bodum.com/us/en/10938-01b-brazil)"
+      },
+      {
+        "description": "Cafeteira aquecida com reservatório inferior, funil de café e coletor superior.",
+        "id": "m-6807b8d70ebdcbbc63d889b61420c3f716c690f10d4142ec87ef8ae32f22d7fc",
+        "name": "Moka",
+        "notes": "O aquecimento aumenta a pressão no compartimento inferior e conduz a água através do café até o coletor.\n\nExtração impulsionada pelo aquecimento, com montagem própria do equipamento.\n\nNão é uma máquina de espresso. Observe as orientações de enchimento, montagem e aquecimento do fabricante.\n\nFontes: Bialetti: Como funciona a moka (https://bialettiafrica.com/blogs/news/how-the-moka-works-lift-the-lid-and-discover-all-its-secrets)"
+      },
+      {
+        "description": "Preparador com câmara, êmbolo e filtro na saída.",
+        "id": "m-a1fb06a96ae9153b976f7b619b0206bd2835b69c71b1209a2de658a960a37c34",
+        "name": "AeroPress",
+        "notes": "O café entra em contato com a água; a pressão manual no êmbolo conduz a bebida através do filtro.\n\nCombina contato por imersão e filtragem assistida por pressão manual. A sequência varia conforme a receita e a montagem.\n\nA pressão manual não torna o preparo equivalente ao espresso de máquina. Siga as instruções do seu modelo.\n\nFontes: AeroPress: Como funciona (https://aeropress.com/pages/how-it-works)"
+      },
+      {
+        "description": "Sistema de extração com água sob pressão através de café moído em um filtro.",
+        "id": "m-c82498fecd2fca896aaa1499c57a6dcc15b7ea4d121ae544479c0902ffdb7fc8",
+        "name": "Espresso",
+        "notes": "A máquina conduz água através de um leito de café preparado no porta-filtro.\n\nDose, moagem, distribuição, rendimento e equipamento participam do preparo.\n\nNo espresso, a proporção costuma comparar dose seca e massa da bebida obtida. Isso difere da água adicionada nas receitas filtradas desta biblioteca.\n\nFontes: La Marzocco: Introdução ao espresso (https://www.lamarzocco.com/ca/en/beginners-guide-to-espresso/); La Marzocco: Proporções no espresso (https://www.lamarzocco.com/sg/en/using-espresso-brew-ratios/)"
+      },
+      {
+        "description": "Preparador de vidro que reúne suporte de filtro e recipiente de serviço.",
+        "id": "m-fb56097e06fa404dcd47bca2945df60ae2100b0ce81019167dd1630c696d2a34",
+        "name": "Chemex",
+        "notes": "A água atravessa o café e o filtro de papel por gravidade, chegando ao recipiente inferior.\n\nPreparo manual por percolação, com filtros próprios e canal de saída de ar junto ao bico.\n\nObserve a montagem do filtro indicada pelo fabricante. Não há receita única imposta pelo formato.\n\nFontes: Chemex: Preparo com Chemex (https://chemexcoffeemaker.com/pages/how-to-brew-with-chemex)"
+      }
+    ],
+    "recipes": [
+      {
+        "dose": 25,
+        "familyId": "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454",
+        "grind": "35/40",
+        "id": "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Alberto Café Gerações - três despejos 3x 7x 5x",
+        "notes": "Fonte da variação: Alberto, Café Gerações, conforme referência fornecida pelo usuário. Pré-infusão de 40 segundos é uma duração indicativa, com confirmação manual. Antes do terceiro despejo, observe a cama do café. A referência a 1min40s permanece sem significado temporal confirmado; não foi convertida em início absoluto nem duração.\n\n3x de infusão. Completa 10x no segundo e finaliza com 15x no terceiro.",
+        "source": {
+          "author": "Alberto — Café Gerações",
+          "id": "source-1",
+          "title": "Referência Café Gerações",
+          "url": "https://youtu.be/zx-INeaYT4g?is=FmLyr1_cuBZ4Evdr"
+        },
+        "steps": [
+          {
+            "advance": "manual",
+            "cumulativeWater": 75,
+            "durationSeconds": 40,
+            "id": "step-1",
+            "name": "Pré-infusão",
+            "notes": "Referência indicativa: aguarde cerca de 40 segundos e confirme quando decidir seguir.",
+            "order": 0,
+            "type": "pour",
+            "water": 75
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 250,
+            "id": "step-2",
+            "name": "Despejo 2",
+            "order": 1,
+            "type": "pour",
+            "water": 175
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 375,
+            "id": "step-3",
+            "name": "Despejo final",
+            "order": 2,
+            "type": "pour",
+            "water": 125
+          }
+        ],
+        "techniqueId": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739",
+        "temperature": 93,
+        "version": 1,
+        "water": 375
+      },
+      {
+        "dose": 20,
+        "estimatedSeconds": 210,
+        "familyId": "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59",
+        "grind": "33/40",
+        "id": "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Três despejos 3x +6x + 6x",
+        "steps": [
+          {
+            "advance": "time",
+            "cumulativeWater": 60,
+            "durationSeconds": 40,
+            "id": "step-1",
+            "name": "Pré infusão ",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "observable",
+            "condition": "Quase aparecer a cama do café ",
+            "cumulativeWater": 180,
+            "durationSeconds": 65,
+            "id": "step-2",
+            "name": "Primeiro despejo",
+            "order": 1,
+            "startSeconds": 40,
+            "type": "pour",
+            "water": 120
+          },
+          {
+            "advance": "observable",
+            "condition": "A Água passar totalmente pelo pó ",
+            "cumulativeWater": 300,
+            "durationSeconds": 90,
+            "id": "step-3",
+            "name": "Finalização ",
+            "order": 2,
+            "startSeconds": 105,
+            "type": "pour",
+            "water": 120
+          }
+        ],
+        "techniqueId": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739",
+        "temperature": 93,
+        "version": 1,
+        "water": 300
+      },
+      {
+        "dose": 20,
+        "familyId": "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04",
+        "grind": "27/40 — referência experimental do usuário; moedor não informado",
+        "id": "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Tetsu Kasuya V60 4:6 equilibrado",
+        "notes": "Referência experimental fornecida pelo usuário. Os 93 °C e a moagem 27/40 são parâmetros deste exemplo, não regras da técnica nem uma regulagem transferível a qualquer moedor. Não foram definidos intervalos entre despejos.",
+        "source": {
+          "author": "Usuário",
+          "id": "source-1",
+          "notes": "Distribuição de cinco despejos iguais; o princípio 4:6 é explicado na técnica associada.",
+          "title": "Referência experimental do usuário"
+        },
+        "steps": [
+          {
+            "advance": "time",
+            "cumulativeWater": 60,
+            "durationSeconds": 45,
+            "id": "step-1",
+            "name": "Extração Acidez",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 120,
+            "durationSeconds": 45,
+            "id": "step-2",
+            "name": "Extração Doçura ",
+            "order": 1,
+            "startSeconds": 45,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 180,
+            "durationSeconds": 45,
+            "id": "step-3",
+            "name": "Intensidade 1",
+            "order": 2,
+            "startSeconds": 90,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 240,
+            "durationSeconds": 45,
+            "id": "step-4",
+            "name": "Intensidade 2",
+            "order": 3,
+            "startSeconds": 135,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 300,
+            "durationSeconds": 45,
+            "id": "step-5",
+            "name": "Intensidade 3",
+            "order": 4,
+            "startSeconds": 180,
+            "type": "pour",
+            "water": 60
+          }
+        ],
+        "techniqueId": "t-a6b1d4f4d66bee48dc69a555df278452be36054324ea1eac6938ab8e543e906f",
+        "temperature": 93,
+        "version": 1,
+        "water": 300
+      },
+      {
+        "dose": 25,
+        "familyId": "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd",
+        "grind": "35/40",
+        "id": "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Alberto Café Gerações - três despejos iguais",
+        "notes": "Três adições iguais de água. Temperatura, moagem e intervalos ficam a seu critério; não foram confirmados nesta referência.",
+        "source": {
+          "author": "Usuário",
+          "id": "source-1",
+          "title": "Exemplo de três despejos iguais"
+        },
+        "steps": [
+          {
+            "advance": "manual",
+            "cumulativeWater": 125,
+            "id": "step-1",
+            "name": "Pré infusão ",
+            "order": 0,
+            "type": "pour",
+            "water": 125
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 250,
+            "id": "step-2",
+            "name": "Primeiro despejo ",
+            "order": 1,
+            "type": "pour",
+            "water": 125
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 375,
+            "id": "step-3",
+            "name": "Último despejo ",
+            "order": 2,
+            "type": "pour",
+            "water": 125
+          }
+        ],
+        "techniqueId": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739",
+        "temperature": 93,
+        "version": 1,
+        "water": 375
+      },
+      {
+        "dose": 20,
+        "estimatedSeconds": 180,
+        "familyId": "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b",
+        "grind": "35/40",
+        "id": "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Matt Winton - 5 despejos",
+        "notes": "Está técnica espera que a condição de um próximo desejo seja a água do despejo anterior ter passado pela cama.",
+        "source": {
+          "author": "Matt Winton",
+          "id": "source-1",
+          "url": "https://youtu.be/YIC-2nFQ7vM?is=sTbn0xsonrDqC196"
+        },
+        "steps": [
+          {
+            "advance": "manual",
+            "cumulativeWater": 60,
+            "durationSeconds": 45,
+            "id": "step-1",
+            "name": "Infusão ",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 120,
+            "durationSeconds": 45,
+            "id": "step-2",
+            "name": "Segundo despejo ",
+            "order": 1,
+            "startSeconds": 45,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 180,
+            "durationSeconds": 45,
+            "id": "step-3",
+            "name": "Terceiro despejo ",
+            "order": 2,
+            "startSeconds": 90,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 240,
+            "durationSeconds": 45,
+            "id": "step-4",
+            "name": "Quarto despejo ",
+            "order": 3,
+            "startSeconds": 135,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "manual",
+            "cumulativeWater": 300,
+            "durationSeconds": 45,
+            "id": "step-5",
+            "name": "Último Despejo ",
+            "order": 4,
+            "startSeconds": 180,
+            "type": "pour",
+            "water": 60
+          }
+        ],
+        "techniqueId": "t-b31d4df0038aecdbe21d84c3e9db6ba4bab53fc0e2b1d89091e54542dc0ff1ff",
+        "temperature": 93,
+        "version": 1,
+        "water": 300
+      },
+      {
+        "dose": 16,
+        "estimatedSeconds": 150,
+        "familyId": "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e",
+        "grind": "35/40",
+        "id": "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Martin Wölfl Recipe",
+        "source": {
+          "author": "Martin Wölfl",
+          "id": "source-1",
+          "url": "https://youtu.be/N6TTIFPQPbk?is=xy64D_6FABbtnOfp"
+        },
+        "steps": [
+          {
+            "advance": "time",
+            "cumulativeWater": 60,
+            "durationSeconds": 40,
+            "id": "step-1",
+            "name": "Infusão ",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 60
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 160,
+            "durationSeconds": 50,
+            "id": "step-2",
+            "name": "Primeiro Despejo",
+            "order": 1,
+            "startSeconds": 40,
+            "type": "pour",
+            "water": 100
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 260,
+            "durationSeconds": 60,
+            "id": "step-3",
+            "name": "Despejo final",
+            "notes": "Despejo parte da água no centro da cama",
+            "order": 2,
+            "startSeconds": 90,
+            "type": "pour",
+            "water": 100
+          }
+        ],
+        "techniqueId": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739",
+        "temperature": 90,
+        "version": 1,
+        "water": 260
+      },
+      {
+        "dose": 20,
+        "familyId": "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5",
+        "id": "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "V60 4:6 com distribuição modificada",
+        "notes": "Variação ilustrativa para experimentação, não apresentada como receita oficial de Tetsu Kasuya. Os dois primeiros despejos somam 120 g (40%); os demais somam 180 g (60%). Não foram definidos tempos, temperatura ou moagem.",
+        "source": {
+          "author": "Usuário",
+          "id": "source-1",
+          "title": "Variação ilustrativa fornecida pelo usuário"
+        },
+        "steps": [
+          {
+            "advance": "time",
+            "cumulativeWater": 50,
+            "durationSeconds": 45,
+            "id": "step-1",
+            "name": "Despejo 1",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 120,
+            "durationSeconds": 45,
+            "id": "step-2",
+            "name": "Despejo 2",
+            "order": 1,
+            "startSeconds": 45,
+            "type": "pour",
+            "water": 70
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 210,
+            "durationSeconds": 45,
+            "id": "step-3",
+            "name": "Despejo 3",
+            "order": 2,
+            "startSeconds": 90,
+            "type": "pour",
+            "water": 90
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 300,
+            "durationSeconds": 45,
+            "id": "step-4",
+            "name": "Despejo 5",
+            "order": 3,
+            "startSeconds": 135,
+            "type": "pour",
+            "water": 90
+          }
+        ],
+        "techniqueId": "t-a6b1d4f4d66bee48dc69a555df278452be36054324ea1eac6938ab8e543e906f",
+        "version": 1,
+        "water": 300
+      },
+      {
+        "dose": 15,
+        "familyId": "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f",
+        "grind": "25",
+        "id": "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f-v1",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "James Hoffman One Cup",
+        "notes": "O ideal é terminar com 3 minutos",
+        "source": {
+          "author": "James Hoffman",
+          "id": "source-1",
+          "notes": "Moagem mais fina para que seja possível ter uma maior extração.\nUsando uma proposição de 1:16,5 aproximadamente.\n\n5 blocos de despejo com 20% de água por bloco.\n\nA água pode ser fervida até 100°C\n\nFaça um buraco central.\nFaça despejos e no primeiro e no último agite a cama.\n\nOs despejos tem que ser 2x a 3x o peso do pó",
+          "url": "https://youtu.be/1oB1oDrDkHM?is=WSNGotFIWd0ZbptR"
+        },
+        "steps": [
+          {
+            "advance": "time",
+            "cumulativeWater": 50,
+            "durationSeconds": 45,
+            "id": "step-1",
+            "name": "Infusão ",
+            "notes": "Gire a cama suavemente por 5 segundos",
+            "order": 0,
+            "startSeconds": 0,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 100,
+            "durationSeconds": 15,
+            "id": "step-2",
+            "name": "Segundo despejo",
+            "order": 1,
+            "startSeconds": 45,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 100,
+            "durationSeconds": 10,
+            "id": "step-3",
+            "name": "Pausa",
+            "notes": "Faça uma pausa de 10 segundos. ",
+            "order": 2,
+            "startSeconds": 60,
+            "type": "wait",
+            "water": 0
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 150,
+            "durationSeconds": 10,
+            "id": "step-4",
+            "name": "Terceiro despejo",
+            "order": 3,
+            "startSeconds": 70,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 150,
+            "durationSeconds": 10,
+            "id": "step-5",
+            "name": "Pausa",
+            "notes": "Pause por 10 segundos",
+            "order": 4,
+            "startSeconds": 80,
+            "type": "wait",
+            "water": 0
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 200,
+            "durationSeconds": 10,
+            "id": "step-6",
+            "name": "Quarto despejo",
+            "order": 5,
+            "startSeconds": 90,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 200,
+            "durationSeconds": 10,
+            "id": "step-7",
+            "name": "Pausa",
+            "order": 6,
+            "startSeconds": 100,
+            "type": "wait",
+            "water": 0
+          },
+          {
+            "advance": "time",
+            "cumulativeWater": 250,
+            "durationSeconds": 10,
+            "id": "step-8",
+            "name": "Último despejo",
+            "notes": "Faça uma leve agitação ",
+            "order": 7,
+            "startSeconds": 110,
+            "type": "pour",
+            "water": 50
+          },
+          {
+            "advance": "observable",
+            "condition": "A água atravessou todo a cama de pó de café ",
+            "cumulativeWater": 250,
+            "durationSeconds": 60,
+            "id": "step-9",
+            "name": "Finalizando ",
+            "order": 8,
+            "startSeconds": 120,
+            "type": "finish",
+            "water": 0
+          }
+        ],
+        "techniqueId": "t-b31d4df0038aecdbe21d84c3e9db6ba4bab53fc0e2b1d89091e54542dc0ff1ff",
+        "temperature": 100,
+        "version": 1,
+        "water": 250
+      }
+    ],
+    "techniques": [
+      {
+        "guidance": "No Clever Dripper, a válvula permite separar os momentos de contato e drenagem. O princípio não exige uma única sequência ou duração.",
+        "id": "t-1e6ed8a0d9100beca611e860ef40a0f3ed0b345419fcb682004d4f336428bfd5",
+        "methodId": "m-37b6a7580cf00f54386d06c082d1f89ac305e562307f4e2121711ad48dff0723",
+        "name": "Imersão seguida de filtragem",
+        "principle": "Primeiro ocorre o contato por imersão; depois a bebida é liberada através de um filtro.",
+        "sources": [
+          {
+            "author": "Sweet Maria’s",
+            "id": "source-1",
+            "title": "Clever: imersão e filtragem",
+            "url": "https://library.sweetmarias.com/clever-coffee-dripper-a-full-immersion-brewing-method/"
+          }
+        ]
+      },
+      {
+        "guidance": "A prensa francesa é o método de referência aqui, mas o princípio pode ser aplicado em outros equipamentos. Tempo, moagem e proporção devem ser definidos na receita.",
+        "id": "t-43b708366e1d70069db8dbf7f1edc43ffdbe131dac548b4df6f68998ad7e57af",
+        "methodId": "m-614fca24d8b9b63fcd00c9d27c814b1cc099cb022fb3b309c38c1a03838eecb2",
+        "name": "Imersão total",
+        "principle": "Café e água permanecem em contato no mesmo recipiente antes da separação dos sólidos.",
+        "sources": [
+          {
+            "author": "Bodum",
+            "id": "source-1",
+            "title": "Prensa francesa — funcionamento",
+            "url": "https://www.bodum.com/us/en/10938-01b-brazil"
+          }
+        ]
+      },
+      {
+        "guidance": "Os volumes e os intervalos variam conforme a receita. Três partes iguais e pré-infusão seguida de duas adições são aplicações da mesma estratégia.",
+        "id": "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Três despejos",
+        "notes": "Não é atribuída aqui a um criador único. A autoria ou a fonte de cada variação pertence à receita específica.",
+        "principle": "Distribuição da água em três adições ao longo do preparo filtrado.\n\nUsar uma moagem mais grossa para V60\n\nPrimeira etapa seria a infusão, seguida da primeira extração e por fim a extração final.\n\nProcurar terminar perto de 3 minutos.",
+        "sources": []
+      },
+      {
+        "creator": "Tetsu Kasuya",
+        "guidance": "Kasuya atribui à distribuição dos primeiros despejos um papel no equilíbrio entre acidez e doçura, e à divisão dos 60% seguintes um papel na intensidade. Essas são orientações da técnica, não garantias sensoriais para qualquer café ou equipamento.",
+        "id": "t-a6b1d4f4d66bee48dc69a555df278452be36054324ea1eac6938ab8e543e906f",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "4:6 — Tetsu Kasuya",
+        "notes": "Diferentes doses, proporções e distribuições são receitas da mesma técnica. Observe os resultados do seu próprio preparo.",
+        "principle": "A água total é dividida conceitualmente em dois blocos: os primeiros 40% e os últimos 60%.",
+        "sources": [
+          {
+            "author": "HARIO / Tetsu Kasuya",
+            "id": "source-1",
+            "notes": "Fonte do princípio 4:6. Os parâmetros das receitas desta biblioteca são as referências experimentais fornecidas pelo usuário.",
+            "title": "Entrevista com Tetsu Kasuya",
+            "url": "https://www.hario-europe.com/blogs/hario-community/v60-ambassadors-tetsu-kasuya"
+          }
+        ]
+      },
+      {
+        "id": "t-b31d4df0038aecdbe21d84c3e9db6ba4bab53fc0e2b1d89091e54542dc0ff1ff",
+        "methodId": "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1",
+        "name": "Cinco Despejos",
+        "principle": "A ideia central é criar uma extração com 5 despejos. \n\nA técnica mais básica é usar uma moagem mais grossa, realizar o despejo e esperar a água passar pela cama, e seguir com o próximo despejo \n\nIsso pode ser modificado. \n\nO mais básico é dividir o total de água por 5 e fazer os 5 despejos iguais",
+        "sources": []
+      },
+      {
+        "guidance": "Ajuste dose, moagem e rendimento conforme café, cesta e equipamento. Uma proporção entre dose seca e bebida obtida não é uma regra universal, nem equivale à água adicionada no filtrado.",
+        "id": "t-f36655c9047fc790018d85fe585d0b72ed33261cea97d5e2c3aa16c32e847edb",
+        "methodId": "m-c82498fecd2fca896aaa1499c57a6dcc15b7ea4d121ae544479c0902ffdb7fc8",
+        "name": "Espresso tradicional",
+        "principle": "Extração por passagem de água sob pressão através de café moído preparado no filtro da máquina.",
+        "sources": [
+          {
+            "author": "La Marzocco",
+            "id": "source-1",
+            "title": "Introdução ao espresso",
+            "url": "https://www.lamarzocco.com/ca/en/beginners-guide-to-espresso/"
+          },
+          {
+            "author": "La Marzocco",
+            "id": "source-2",
+            "title": "Proporções no espresso",
+            "url": "https://www.lamarzocco.com/sg/en/using-espresso-brew-ratios/"
+          }
+        ]
+      }
+    ]
+  },
+  "identities": {
+    "methods": {
+      "m-37b6a7580cf00f54386d06c082d1f89ac305e562307f4e2121711ad48dff0723": "official-06fea02c-63da-48a5-bd0a-15f5afb03b8a",
+      "m-4311af549c08bc198a02bdefa6595b8de95557d94c7e6a1c4510ed150f44efb1": "official-9c1dc020-5030-4e3b-bc3b-3913cc1c61af",
+      "m-59f46b47cdecd882fbcd70df6e99a48e4d6f02b3a904ace7bc755f53d72fdc81": "official-31214eb6-fd54-458e-9dd3-75f554dd5b51",
+      "m-614fca24d8b9b63fcd00c9d27c814b1cc099cb022fb3b309c38c1a03838eecb2": "official-f7e510df-216f-4ab1-8f02-66e686f1dc35",
+      "m-6807b8d70ebdcbbc63d889b61420c3f716c690f10d4142ec87ef8ae32f22d7fc": "official-bc68c35f-64a1-43af-8370-8eb4e28119a8",
+      "m-a1fb06a96ae9153b976f7b619b0206bd2835b69c71b1209a2de658a960a37c34": "official-3d2ccfdc-3750-4a60-9543-6eb6ced7dfff",
+      "m-c82498fecd2fca896aaa1499c57a6dcc15b7ea4d121ae544479c0902ffdb7fc8": "official-ec500d32-d77c-4e5d-ad70-1e57ba1d56cc",
+      "m-fb56097e06fa404dcd47bca2945df60ae2100b0ce81019167dd1630c696d2a34": "official-3bb288fb-3eda-4ebb-9a65-2b7cb29c1a55"
+    },
+    "techniques": {
+      "t-1e6ed8a0d9100beca611e860ef40a0f3ed0b345419fcb682004d4f336428bfd5": "official-4c0cb817-25ac-4b45-b472-eb711c4ddf15",
+      "t-43b708366e1d70069db8dbf7f1edc43ffdbe131dac548b4df6f68998ad7e57af": "official-5aecef98-2e56-47d7-a6a9-398e4be37e01",
+      "t-a0c6ed6f865dac5e6305a7aa5f202069271790d365d0d84df467c4a5639de739": "official-d21fa77f-d735-49da-ab21-04cb60bf3727",
+      "t-a6b1d4f4d66bee48dc69a555df278452be36054324ea1eac6938ab8e543e906f": "official-7681233c-8808-40df-a8d2-bf66ff74fbe4",
+      "t-b31d4df0038aecdbe21d84c3e9db6ba4bab53fc0e2b1d89091e54542dc0ff1ff": "official-c7cd4c68-5d1a-4d7f-a428-9d014e15d988",
+      "t-f36655c9047fc790018d85fe585d0b72ed33261cea97d5e2c3aa16c32e847edb": "official-017bb511-35ef-4eb9-bb33-9612e0f38961"
+    },
+    "families": {
+      "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454": "official-d3daf54b-54a5-41fd-a47d-e503d06d83b4",
+      "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59": "official-3b2708a2-d863-4726-94c8-18bc8ee45395",
+      "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04": "official-4b6b5fba-d295-4897-a143-b317642fabdb",
+      "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd": "official-a34bd6f3-a643-488c-bb8d-9913426f63d6",
+      "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b": "official-673a4795-647f-418b-9383-a77c2a6c7608",
+      "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e": "official-f1e9fe06-9c25-4717-9d81-7331b04decb1",
+      "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5": "official-706a7b1f-c355-4bde-9d01-637cfb17dd96",
+      "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f": "official-d9deb756-5088-4422-9ce6-5a1d575c1e17"
+    },
+    "versions": {
+      "f-089007b0a073fef0c09669550f8a057d5e30d9b0f6ac60e76648145d1f4ed454-v1": "official-f09b1cb7-8b44-48b7-929b-797e9ea351b9",
+      "f-7728b7aefd5e83c92c539ea7fa51ed5970b323a0ad4b1a0bc66ad99c20e3fc59-v1": "official-a8e79f7d-9f31-426e-84ca-6933c7fe05bb",
+      "f-860b4f3f274abb0a3d3f44f7e25ee6da92385d3bdaaf470c98e129cbab7c1a04-v1": "official-58248082-04a5-4df3-94d7-88b0e03907a8",
+      "f-8f79df5647270473cfc22814a2b0c2ad6ff7201fb09808fdcdb872f4a5c283cd-v1": "official-0557f417-5514-402a-83b2-77aa1e7e3f62",
+      "f-9097142da3e5d1e6be02e9a4d8fab99484c535faf789c7f415a4a4aa3ae4265b-v1": "official-9207108d-c02e-4508-b1b8-9f4da2271b5f",
+      "f-aecea9e43ed410e9c141d465d539f488a694bbba34ea6a74e4636db8d353b01e-v1": "official-5201d46f-d11e-4251-8989-1a92305370d0",
+      "f-cc26d48460db05701db4ecff88421dce2328854dd5f6c5e331a4560c70afcbb5-v1": "official-d9b17390-11ee-47ed-b2e2-0b6a0d177d72",
+      "f-d5059c7941e34a0d5adab83e5f371bc7073d14eba0bd1b2dcb6c9bad528be81f-v1": "official-60e6fe0d-ba31-4119-a991-badae656c431"
+    }
+  },
+  "images": []
+}
