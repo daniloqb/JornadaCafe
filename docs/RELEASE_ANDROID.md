@@ -71,6 +71,14 @@ O script valida argumentos, ferramentas, appId, keystore externa/alias/certifica
 
 O suporte a [páginas de 16 KB](https://developer.android.com/guide/practices/page-sizes) exige também teste de execução em dispositivo/emulador 16 KB. As bibliotecas SQLCipher 4.17.0 das quatro ABIs inspecionadas já têm alinhamento ELF 16384. Isso sozinho não comprova o bundle release nem substitui o teste de execução. Consulte o relatório da fase para separar o que foi executado das pendências.
 
+## Comparação de certificados e formatos do apksigner
+
+O digest da keystore é calculado sobre o certificado DER retornado por `keytool -exportcert`; não depende da aparência do fingerprint em `keytool -list`. O parser APK aceita tanto `Signer #1 certificate SHA-256 digest:` quanto os rótulos por esquema do Build Tools 37, como `V2 Signer: certificate SHA-256 digest:`. O AAB continua exigindo assinatura JAR estrita e comparação do certificado folha DER.
+
+Espaços, dois-pontos e caixa são normalizados, com exigência de 64 dígitos hexadecimais. Não confundir certificado com digest de chave pública ou hash dos arquivos. A proteção de senhas atua somente nos logs, preservando os dados internos usados pelas verificações.
+
+O [relatório da correção de assinatura](phase-08-signature-fix.md) registra a falsa rejeição reproduzida, os 21 testes de release e a auditoria dos pacotes existentes. Uma execução interrompida não declara os artefatos prontos: repetir o comando no terminal com as credenciais externas e concluir todas as etapas obrigatórias.
+
 ## Entrega e evidências
 
 ```text

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Fail-closed Android release builder. Never creates a key or installs an app."""
 import argparse
+import base64
+import binascii
 import datetime as dt
 import hashlib
 import json
@@ -24,19 +26,27 @@ def fail(message):
     raise RuntimeError(message)
 
 
-def run(args, cwd=ROOT, quiet=False, pass_fds=()):
-    result = subprocess.run([str(a) for a in args], cwd=cwd, text=True, stdout=subprocess.PIPE,
-                            stderr=subprocess.STDOUT, pass_fds=pass_fds)
-    output = result.stdout
+def redact(output):
+    # Redaction is only for display. Never change bytes/text used by validators.
     for name in ('ANDROID_KEYSTORE_PASSWORD', 'ANDROID_KEY_PASSWORD'):
         secret = os.environ.get(name)
         if secret:
             output = output.replace(secret, '[REDACTED]')
-    if result.returncode:
-        fail(f'Falha em {Path(str(args[0])).name} (código {result.returncode}):\n{output[-14000:]}')
-    if not quiet:
-        print(output, end='', flush=True)
     return output
+
+
+def run(args, cwd=ROOT, quiet=False, pass_fds=(), binary=False):
+    result = subprocess.run([str(a) for a in args], cwd=cwd, text=not binary,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE if binary else subprocess.STDOUT,
+                            pass_fds=pass_fds)
+    # Binary stdout can be DER. Keep stderr separate and never decode/log DER.
+    diagnostic = result.stderr.decode('utf-8', errors='replace') if binary else result.stdout
+    if result.returncode:
+        fail(f'Falha em {Path(str(args[0])).name} (código {result.returncode}):\n{redact(diagnostic)[-14000:]}')
+    if not quiet and not binary:
+        print(redact(diagnostic), end='', flush=True)
+    return result.stdout
 
 
 def load_config():
@@ -67,11 +77,79 @@ def tools():
     return choices[-1]
 
 
-def fingerprint(output):
-    match = re.search(r'SHA-?256:\s*([0-9A-Fa-f:]{64,95})', output)
-    if not match:
-        fail('Não foi possível ler fingerprint SHA-256.')
-    return match[1].replace(':', '').upper()
+def normalize_sha256(value):
+    if not isinstance(value, str):
+        fail('Fingerprint SHA-256 ausente ou inválido.')
+    digest = re.sub(r'[:\s]', '', value)
+    if not re.fullmatch(r'[0-9a-fA-F]{64}', digest):
+        fail('Fingerprint SHA-256 ausente ou inválido; esperado certificado de 32 bytes.')
+    return digest.upper()
+
+
+def is_debug_certificate(output):
+    return bool(re.search(r'\bCN\s*=\s*Android\s+Debug\b', output, re.IGNORECASE))
+
+
+def certificate_sha256(der):
+    # keytool exports a DER X.509 certificate. Empty/non-DER output must fail closed.
+    if not isinstance(der, bytes) or len(der) < 2 or der[0] != 0x30:
+        fail('Certificado DER ausente ou inválido.')
+    return hashlib.sha256(der).hexdigest().upper()
+
+
+def keystore_certificate_sha256(key, alias):
+    der = run(['keytool', '-J-Duser.language=en', '-exportcert', '-keystore', key,
+               '-alias', alias, '-storepass:env', 'ANDROID_KEYSTORE_PASSWORD'],
+              quiet=True, binary=True)
+    return certificate_sha256(der)
+
+
+def apk_certificate_sha256(output):
+    if is_debug_certificate(output):
+        fail('Certificado debug não é permitido no APK release.')
+    counts = re.findall(r'^Number of signers:\s*(\d+)\s*$', output, re.MULTILINE | re.IGNORECASE)
+    if counts != ['1']:
+        fail('APK deve conter exatamente um assinante de upload.')
+    # Build-tools <=36: "Signer #1 certificate ..."; 37: "V2 Signer: certificate ...".
+    # Scheme-specific labels can repeat the SAME certificate across v1/v2/v3.
+    prefix = r'(?:Signer #1|V[1-4](?:\.[0-9]+)? Signer(?: #1)?)'
+    digests = []
+    for line in output.splitlines():
+        match = re.fullmatch(prefix + r':?\s+certificate\s+SHA-?256\s+digest\s*:\s*(.*)',
+                             line.strip(), re.IGNORECASE)
+        if match:
+            digests.append(normalize_sha256(match[1]))
+    if not digests:
+        fail('Fingerprint SHA-256 do certificado APK ausente ou inválido.')
+    if len(set(digests)) != 1:
+        fail('Certificados APK divergentes entre esquemas de assinatura.')
+    return digests[0]
+
+
+def aab_certificate_sha256(aab):
+    output = run(['keytool', '-J-Duser.language=en', '-printcert', '-rfc', '-jarfile', aab], quiet=True)
+    if is_debug_certificate(output):
+        fail('Certificado debug não é permitido no AAB release.')
+    signers = re.findall(r'^Signer #(\d+):\s*$', output, re.MULTILINE)
+    if signers != ['1']:
+        fail('AAB deve conter exatamente um assinante de upload.')
+    certs = re.findall(r'-----BEGIN CERTIFICATE-----\s*(.*?)\s*-----END CERTIFICATE-----', output, re.DOTALL)
+    if not certs:
+        fail('Certificado DER do assinante AAB ausente.')
+    try:
+        # keytool prints the signer's leaf certificate first, followed by its chain.
+        der = base64.b64decode(re.sub(r'\s', '', certs[0]), validate=True)
+    except (ValueError, binascii.Error):
+        fail('Certificado DER do assinante AAB inválido.')
+    return certificate_sha256(der)
+
+
+def verify_aab_signature(aab, key, cert):
+    # A fingerprint match alone does not verify signed JAR entries.
+    run(['jarsigner', '-J-Duser.language=en', '-verify', '-strict', '-keystore', key,
+         '-storepass:env', 'ANDROID_KEYSTORE_PASSWORD', aab], quiet=True)
+    if aab_certificate_sha256(aab) != normalize_sha256(cert):
+        fail('Certificado AAB não corresponde à chave de upload.')
 
 
 def preflight():
@@ -86,14 +164,14 @@ def preflight():
         fail('Utilize uma chave de upload própria, sem assinatura debug ou chave do BookNook.')
     cert = run(['keytool', '-J-Duser.language=en', '-list', '-v', '-keystore', key,
                 '-alias', alias, '-storepass:env', 'ANDROID_KEYSTORE_PASSWORD'], quiet=True)
-    if 'PrivateKeyEntry' not in cert or 'CN=Android Debug' in cert:
+    if 'PrivateKeyEntry' not in cert or is_debug_certificate(cert):
         fail('Alias não contém chave privada de produção válida.')
     os.environ['ANDROID_KEYSTORE_PATH'] = str(key)
     bundletool = Path(os.environ.get('BUNDLETOOL_JAR', '')).expanduser()
     if not bundletool.is_file():
         fail('Defina BUNDLETOOL_JAR para o bundletool-all.jar oficial. A validação AAB/16 KB é obrigatória neste script.')
     run(['java', '-jar', bundletool.resolve(), 'version'], quiet=True)
-    return key, fingerprint(cert), bundletool.resolve()
+    return key, keystore_certificate_sha256(key, alias), bundletool.resolve()
 
 
 def elf_alignment(data):
@@ -129,8 +207,7 @@ def audit_zip(path):
 
 def apk_info(path, bt, expected, cert):
     signature = run([bt / 'apksigner', 'verify', '--verbose', '--print-certs', path], quiet=True)
-    match = re.search(r'Signer #1 certificate SHA-256 digest:\s*([0-9a-fA-F]+)', signature)
-    if not match or match[1].upper() != cert or 'CN=Android Debug' in signature:
+    if apk_certificate_sha256(signature) != normalize_sha256(cert):
         fail('Certificado APK não corresponde à chave de upload.')
     run([bt / 'zipalign', '-c', '-P', '16', '-v', '4', path], quiet=True)
     badging = run([bt / 'aapt', 'dump', 'badging', path], quiet=True)
@@ -221,11 +298,7 @@ def build(args):
     apk = ROOT / 'android/app/build/outputs/apk/release/app-release.apk'
     aab = ROOT / 'android/app/build/outputs/bundle/release/app-release.aab'
     apk_metadata = apk_info(apk, bt, config, cert)
-    # Trust the known upload certificate explicitly; strict verification still rejects corrupted/unsigned entries.
-    run(['jarsigner', '-J-Duser.language=en', '-verify', '-strict', '-keystore', key, '-storepass:env', 'ANDROID_KEYSTORE_PASSWORD', aab], quiet=True)
-    jar_cert = run(['keytool', '-J-Duser.language=en', '-printcert', '-jarfile', aab], quiet=True)
-    if fingerprint(jar_cert) != cert:
-        fail('Certificado AAB não corresponde à chave de upload.')
+    verify_aab_signature(aab, key, cert)
     run(['java', '-jar', jar, 'validate', f'--bundle={aab}'], quiet=True)
     exported = bundle_manifest(aab, jar, config, apk_metadata)
     bundle_config = json.loads(run(['java', '-jar', jar, 'dump', 'config', f'--bundle={aab}'], quiet=True))
